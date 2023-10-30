@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ControladoraEspecialidades.cs" />
     <Compile Include="Controladores\ControladoraIngresos.cs" />
     <Compile Include="Controladores\ControladoraMedicos.cs" />
     <Compile Include="Controladores\ControladoraPacientes.cs" />
     <Compile Include="Controladores\ControladoraPersonalLaboratorio.cs" />
     <Compile Include="Controladores\ControladoraPracticas.cs" />
+    <Compile Include="Modelos\Especialidades.cs" />
     <Compile Include="Modelos\Ingresos.cs" />
     <Compile Include="Modelos\Medicos.cs" />
     <Compile Include="Modelos\Pacientes.cs" />
@@ -62,17 +64,17 @@
     <Compile Include="Vistas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\FormEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormEspecialidades.Designer.cs">
+      <DependentUpon>FormEspecialidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FormIngresos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\FormIngresos.Designer.cs">
       <DependentUpon>FormIngresos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\FormLocalidades.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\FormLocalidades.Designer.cs">
-      <DependentUpon>FormLocalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,11 +105,11 @@
     <EmbeddedResource Include="Vistas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormEspecialidades.resx">
+      <DependentUpon>FormEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormIngresos.resx">
       <DependentUpon>FormIngresos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\FormLocalidades.resx">
-      <DependentUpon>FormLocalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

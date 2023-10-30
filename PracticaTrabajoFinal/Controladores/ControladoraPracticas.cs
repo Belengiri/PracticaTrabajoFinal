@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace PracticaTrabajoFinal.Controladores
 {
+    //controla las Practicas y Las muestras 
     public class ControladoraPracticas
     {
         // aca se hacen todos los controles de los datos que vienen de la vista y van al modelo
@@ -32,7 +33,7 @@ namespace PracticaTrabajoFinal.Controladores
             }catch (Exception ex)
             {
                 //error si no pudo enviar los datos
-                MessageBox.Show("error al cargar muestra", ex.ToString());
+                MessageBox.Show("la muestra es existente", ex.Message);
             }
         }
         //metodo que manda los datos para agregar una practica al modelo

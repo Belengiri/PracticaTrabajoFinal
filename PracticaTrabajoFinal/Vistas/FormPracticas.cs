@@ -142,7 +142,6 @@ namespace PracticaTrabajoFinal.Vistas
             cbtipodemuestra.Visible = true;
             agregarmuestra.Visible = true;
             DataGridViewCellEventArgs evento = new DataGridViewCellEventArgs(0, 0);
-
             // Llama manualmente al evento de clic de celda
             dgvgrillapracticas_CellClick(dgvgrillapracticas, evento);
             modificar = true;
