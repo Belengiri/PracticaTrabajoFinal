@@ -40,12 +40,12 @@ namespace PracticaTrabajoFinal.Vistas
         //metodo para cargar el combobox de especialidades con las especialidades disponibles
         public void cargarcbespecialidades()
         {
-            cbespacialidadpractica.DataSource = null;
-            cbespacialidadpractica.Items.Clear();
-            string query = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
-            conexion.Open();
             try
             {
+                cbespacialidadpractica.DataSource = null;
+                cbespacialidadpractica.Items.Clear();
+                string query = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
+                conexion.Open();
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -53,9 +53,9 @@ namespace PracticaTrabajoFinal.Vistas
                 cbespacialidadpractica.ValueMember = "id_especialidad";
                 cbespacialidadpractica.DisplayMember = "nombre";
                 cbespacialidadpractica.DataSource = dt;
-            }catch (Exception e)
+            }catch (Exception ex)
             {
-                MessageBox.Show("error al cargar especialidades"+e.Message);
+                MessageBox.Show("error", ex.Message);
             }
             finally
             {
@@ -65,12 +65,12 @@ namespace PracticaTrabajoFinal.Vistas
         //metodo para carga combobox con las muestras que ahi disponibles
         public void cargarcbmuestras()
         {
-            cbtipodemuestra.DataSource = null;
-            cbtipodemuestra.Items.Clear();
-            string query = "select id_muestra,nombre_muestra as nombre from Muestras";
-            conexion.Open();
             try
             {
+                cbtipodemuestra.DataSource = null;
+                cbtipodemuestra.Items.Clear();
+                string query = "select id_muestra,nombre_muestra as nombre from Muestras";
+                conexion.Open();
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -78,16 +78,14 @@ namespace PracticaTrabajoFinal.Vistas
                 cbtipodemuestra.ValueMember = "id_muestra";
                 cbtipodemuestra.DisplayMember = "nombre";
                 cbtipodemuestra.DataSource = dt;
-                
-            }
-            catch (Exception e)
+            }catch(Exception ex)
             {
-                MessageBox.Show("error al cargar especialidades" + e.Message);
-            }finally
+                MessageBox.Show("error", ex.Message);
+            }
+            finally
             {
                 conexion.Close();
             }
-            
         }
         private void FormPracticas_Load(object sender, EventArgs e)
         {
@@ -128,9 +126,9 @@ namespace PracticaTrabajoFinal.Vistas
         //boton modificar practica
         private void btnmodificarpractica_Click(object sender, EventArgs e)
         {
+            
             //hago visible el panel para modificar los datos
             dgvgrillapracticas.ClearSelection();
-            paneldatospracticas.Visible = true;
             paneldatospracticas.Visible = true;
             lblnombrepractica.Visible = true;
             txtnombrepractica.Visible = true;
@@ -140,10 +138,6 @@ namespace PracticaTrabajoFinal.Vistas
             cbespacialidadpractica.Visible = true;
             lbltipomuestra.Visible = true;
             cbtipodemuestra.Visible = true;
-            agregarmuestra.Visible = true;
-            DataGridViewCellEventArgs evento = new DataGridViewCellEventArgs(0, 0);
-            // Llama manualmente al evento de clic de celda
-            dgvgrillapracticas_CellClick(dgvgrillapracticas, evento);
             modificar = true;
             agregar = false;
             eliminar = false;
@@ -154,15 +148,20 @@ namespace PracticaTrabajoFinal.Vistas
             btnguardarmuestra.Visible = false;
             btncancelar.Visible = false;
             btnaceptarpractica.Enabled = true;
+            
+            DataGridViewCellEventArgs evento = new DataGridViewCellEventArgs(0, 0);
+            // Llama manualmente al evento de clic de celda
+            dgvgrillapracticas_CellClick(dgvgrillapracticas, evento);
         }
         //metodo de la grilla para cargar los textbox con los datos seleccionados
         private void dgvgrillapracticas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //aca llena los textbox con los datos de la grilla para el boton modificar
-            txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
-            txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
-            cbespacialidadpractica.Text=dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
-            cbtipodemuestra.Text=dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
+                txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
+                txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
+                cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
+                cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
+            
         }
         //boton de Aceptar acciones de la practica 
         //en este boton envia los datos de la vista al controlador

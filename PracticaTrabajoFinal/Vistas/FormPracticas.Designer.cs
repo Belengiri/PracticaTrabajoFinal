@@ -237,6 +237,7 @@
             this.dgvgrillapracticas.Name = "dgvgrillapracticas";
             this.dgvgrillapracticas.Size = new System.Drawing.Size(322, 312);
             this.dgvgrillapracticas.TabIndex = 11;
+            this.dgvgrillapracticas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgrillapracticas_CellClick);
             // 
             // btnagregarpractica
             // 

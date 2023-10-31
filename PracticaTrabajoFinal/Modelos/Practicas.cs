@@ -16,22 +16,32 @@ namespace PracticaTrabajoFinal.Modelos
         //agrega una muestra nueva a la base de datos
         public void agregarmuestra(string nombre)
         {
-            conexion.Open();
-            //query que corrobora que no exista la muestra nueva en la base de datos
-            string existe = "select nombre_muestra from Muestras where nombre_muestra='" + nombre+"'";
-            SqlCommand comando = new SqlCommand(existe, conexion);
-            comando.ExecuteNonQuery();
-            if (existe==nombre)
+            try
             {
-                //mesaje si existe
-                MessageBox.Show("la muestra ya existe");
-            }else
-            {
-                //query que la agrega a la base de datos si no existe
-                string sql = "insert into Muestras(nombre_muestra)values('" + nombre + "')";
-                //vuelvo a asignarñe otra query y conexion al comando 
-                comando = new SqlCommand(sql, conexion);
+                conexion.Open();
+                //query que corrobora que no exista la muestra nueva en la base de datos
+                string existe = "select nombre_muestra from Muestras where nombre_muestra='" + nombre + "'";
+                SqlCommand comando = new SqlCommand(existe, conexion);
                 comando.ExecuteNonQuery();
+                if (existe == nombre)
+                {
+                    //mesaje si existe
+                    MessageBox.Show("la muestra ya existe");
+                }
+                else
+                {
+                    //query que la agrega a la base de datos si no existe
+                    string sql = "insert into Muestras(nombre_muestra)values('" + nombre + "')";
+                    //vuelvo a asignarñe otra query y conexion al comando 
+                    comando = new SqlCommand(sql, conexion);
+                    comando.ExecuteNonQuery();  
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show("error al modificar los datos", ex.Message);
+            }
+            finally
+            {
                 conexion.Close();
             }
         }
@@ -53,12 +63,23 @@ namespace PracticaTrabajoFinal.Modelos
         //modifica una practica en la base de datos
         public void modificarpractica(string nombre,int tiemporesultado,int especialidad,int tipomuestra,int idpractica)
         {
-            conexion.Open();
-            string consulta = "update Practicas set id_especialidad ="+especialidad+",id_muestra="+tipomuestra+",nombre_practica='"+nombre+"',tiempo_resultado="+tiemporesultado+"where id_practica ="+idpractica+"";
-            SqlCommand comando = new SqlCommand(@consulta, conexion);
-            comando.ExecuteNonQuery();
-            MessageBox.Show("Registro MODIFICADO");
-            conexion.Close();
+            try
+            {
+                conexion.Open();
+                string consulta = "update Practicas set id_especialidad ="+especialidad+",id_muestra="+tipomuestra+",nombre_practica='"+nombre+"',tiempo_resultado="+tiemporesultado+"where id_practica ="+idpractica+"";
+                SqlCommand comando = new SqlCommand(@consulta, conexion);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Registro MODIFICADO");
+            }catch (Exception ex)
+            {
+                MessageBox.Show("error al modificar registro",ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            
+            
         }
         //elimina una practica de la base de datos
         public void eliminarpractica(int idpractica)
