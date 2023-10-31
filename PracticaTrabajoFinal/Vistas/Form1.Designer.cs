@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.btnsalirprogram = new System.Windows.Forms.Button();
             this.btnpracticasporespecialidad = new System.Windows.Forms.Button();
             this.btnpersonalporespecialidad = new System.Windows.Forms.Button();
             this.btnpracticas = new System.Windows.Forms.Button();
@@ -36,20 +37,20 @@
             this.btncategorias = new System.Windows.Forms.Button();
             this.btnpersonallaboratorio = new System.Windows.Forms.Button();
             this.btnpersonalmedico = new System.Windows.Forms.Button();
-            this.btnlocalidades = new System.Windows.Forms.Button();
             this.btnlaboratorio = new System.Windows.Forms.Button();
             this.btningresos = new System.Windows.Forms.Button();
             this.lbltitulo = new System.Windows.Forms.Label();
             this.btnpaciente = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelcontenedor = new System.Windows.Forms.Panel();
-            this.btnsalirprogram = new System.Windows.Forms.Button();
+            this.btnlocalidades = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelmenu.Controls.Add(this.btnlocalidades);
             this.panelmenu.Controls.Add(this.btnsalirprogram);
             this.panelmenu.Controls.Add(this.btnpracticasporespecialidad);
             this.panelmenu.Controls.Add(this.btnpersonalporespecialidad);
@@ -58,7 +59,6 @@
             this.panelmenu.Controls.Add(this.btncategorias);
             this.panelmenu.Controls.Add(this.btnpersonallaboratorio);
             this.panelmenu.Controls.Add(this.btnpersonalmedico);
-            this.panelmenu.Controls.Add(this.btnlocalidades);
             this.panelmenu.Controls.Add(this.btnlaboratorio);
             this.panelmenu.Controls.Add(this.btningresos);
             this.panelmenu.Controls.Add(this.lbltitulo);
@@ -68,6 +68,17 @@
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(181, 417);
             this.panelmenu.TabIndex = 0;
+            // 
+            // btnsalirprogram
+            // 
+            this.btnsalirprogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnsalirprogram.Location = new System.Drawing.Point(103, 391);
+            this.btnsalirprogram.Name = "btnsalirprogram";
+            this.btnsalirprogram.Size = new System.Drawing.Size(75, 23);
+            this.btnsalirprogram.TabIndex = 34;
+            this.btnsalirprogram.Text = "Salir";
+            this.btnsalirprogram.UseVisualStyleBackColor = true;
+            this.btnsalirprogram.Click += new System.EventHandler(this.btnsalirprogram_Click);
             // 
             // btnpracticasporespecialidad
             // 
@@ -121,6 +132,7 @@
             this.btnespecialidades.Text = "Especialidades";
             this.btnespecialidades.UseVisualStyleBackColor = true;
             this.btnespecialidades.Visible = false;
+            this.btnespecialidades.Click += new System.EventHandler(this.btnespecialidades_Click);
             // 
             // btncategorias
             // 
@@ -162,20 +174,6 @@
             this.btnpersonalmedico.UseVisualStyleBackColor = true;
             this.btnpersonalmedico.Visible = false;
             this.btnpersonalmedico.Click += new System.EventHandler(this.btnpersonalmedico_Click);
-            // 
-            // btnlocalidades
-            // 
-            this.btnlocalidades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlocalidades.FlatAppearance.BorderSize = 2;
-            this.btnlocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlocalidades.Location = new System.Drawing.Point(52, 152);
-            this.btnlocalidades.Name = "btnlocalidades";
-            this.btnlocalidades.Size = new System.Drawing.Size(120, 23);
-            this.btnlocalidades.TabIndex = 26;
-            this.btnlocalidades.Text = "Localidades";
-            this.btnlocalidades.UseVisualStyleBackColor = true;
-            this.btnlocalidades.Visible = false;
-            this.btnlocalidades.Click += new System.EventHandler(this.btnlocalidades_Click);
             // 
             // btnlaboratorio
             // 
@@ -237,16 +235,18 @@
             this.panelcontenedor.Size = new System.Drawing.Size(581, 417);
             this.panelcontenedor.TabIndex = 3;
             // 
-            // btnsalirprogram
+            // btnlocalidades
             // 
-            this.btnsalirprogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnsalirprogram.Location = new System.Drawing.Point(103, 391);
-            this.btnsalirprogram.Name = "btnsalirprogram";
-            this.btnsalirprogram.Size = new System.Drawing.Size(75, 23);
-            this.btnsalirprogram.TabIndex = 34;
-            this.btnsalirprogram.Text = "Salir";
-            this.btnsalirprogram.UseVisualStyleBackColor = true;
-            this.btnsalirprogram.Click += new System.EventHandler(this.btnsalirprogram_Click);
+            this.btnlocalidades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlocalidades.FlatAppearance.BorderSize = 2;
+            this.btnlocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnlocalidades.Location = new System.Drawing.Point(52, 152);
+            this.btnlocalidades.Name = "btnlocalidades";
+            this.btnlocalidades.Size = new System.Drawing.Size(120, 23);
+            this.btnlocalidades.TabIndex = 35;
+            this.btnlocalidades.Text = "Localidades";
+            this.btnlocalidades.UseVisualStyleBackColor = true;
+            this.btnlocalidades.Visible = false;
             // 
             // Laboratorio
             // 
@@ -276,11 +276,11 @@
         private System.Windows.Forms.Button btncategorias;
         private System.Windows.Forms.Button btnpersonallaboratorio;
         private System.Windows.Forms.Button btnpersonalmedico;
-        private System.Windows.Forms.Button btnlocalidades;
         private System.Windows.Forms.Button btnlaboratorio;
         private System.Windows.Forms.Button btningresos;
         private System.Windows.Forms.Panel panelcontenedor;
         private System.Windows.Forms.Button btnsalirprogram;
+        private System.Windows.Forms.Button btnlocalidades;
     }
 }
 

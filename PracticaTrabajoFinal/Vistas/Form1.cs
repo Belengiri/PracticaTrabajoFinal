@@ -71,11 +71,6 @@ namespace PracticaTrabajoFinal
             btnpracticasporespecialidad.Visible = true;
         }
 
-        private void btnlocalidades_Click(object sender, EventArgs e)
-        {
-            abrirform(new FormLocalidades());
-        }
-
         private void btnpersonalmedico_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalMedico());
@@ -94,6 +89,11 @@ namespace PracticaTrabajoFinal
         private void btnsalirprogram_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnespecialidades_Click(object sender, EventArgs e)
+        {
+            abrirform(new FormEspecialidades());
         }
     }
 }

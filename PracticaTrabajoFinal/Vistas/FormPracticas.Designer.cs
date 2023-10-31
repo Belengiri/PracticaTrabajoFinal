@@ -236,7 +236,7 @@
             this.dgvgrillapracticas.Location = new System.Drawing.Point(0, 0);
             this.dgvgrillapracticas.Name = "dgvgrillapracticas";
             this.dgvgrillapracticas.Size = new System.Drawing.Size(322, 312);
-            this.dgvgrillapracticas.TabIndex = 9;
+            this.dgvgrillapracticas.TabIndex = 11;
             this.dgvgrillapracticas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgrillapracticas_CellClick);
             // 
             // btnagregarpractica
@@ -308,7 +308,6 @@
         private System.Windows.Forms.ComboBox cbtipodemuestra;
         private System.Windows.Forms.Panel paneldatospracticas;
         private System.Windows.Forms.Panel paneldgvpracticas;
-        private System.Windows.Forms.DataGridView dgvgrillapracticas;
         private System.Windows.Forms.Button btnagregarpractica;
         private System.Windows.Forms.Button btnmodificarpractica;
         private System.Windows.Forms.Button btnaceptarpractica;
@@ -318,5 +317,6 @@
         private System.Windows.Forms.TextBox txtnuevamuestra;
         private System.Windows.Forms.Label lblnuevamuestra;
         private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.DataGridView dgvgrillapracticas;
     }
 }
