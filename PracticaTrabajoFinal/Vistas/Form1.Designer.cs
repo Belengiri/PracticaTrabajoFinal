@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.btnlocalidades = new System.Windows.Forms.Button();
             this.btnsalirprogram = new System.Windows.Forms.Button();
             this.btnpracticasporespecialidad = new System.Windows.Forms.Button();
             this.btnpersonalporespecialidad = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btnpaciente = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelcontenedor = new System.Windows.Forms.Panel();
-            this.btnlocalidades = new System.Windows.Forms.Button();
             this.panelmenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,19 @@
             this.panelmenu.Size = new System.Drawing.Size(181, 417);
             this.panelmenu.TabIndex = 0;
             // 
+            // btnlocalidades
+            // 
+            this.btnlocalidades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlocalidades.FlatAppearance.BorderSize = 2;
+            this.btnlocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnlocalidades.Location = new System.Drawing.Point(52, 152);
+            this.btnlocalidades.Name = "btnlocalidades";
+            this.btnlocalidades.Size = new System.Drawing.Size(120, 23);
+            this.btnlocalidades.TabIndex = 35;
+            this.btnlocalidades.Text = "Localidades";
+            this.btnlocalidades.UseVisualStyleBackColor = true;
+            this.btnlocalidades.Visible = false;
+            // 
             // btnsalirprogram
             // 
             this.btnsalirprogram.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -92,6 +105,7 @@
             this.btnpracticasporespecialidad.Text = "Practicas por Especialidad";
             this.btnpracticasporespecialidad.UseVisualStyleBackColor = true;
             this.btnpracticasporespecialidad.Visible = false;
+            this.btnpracticasporespecialidad.Click += new System.EventHandler(this.btnpracticasporespecialidad_Click);
             // 
             // btnpersonalporespecialidad
             // 
@@ -234,19 +248,6 @@
             this.panelcontenedor.Name = "panelcontenedor";
             this.panelcontenedor.Size = new System.Drawing.Size(581, 417);
             this.panelcontenedor.TabIndex = 3;
-            // 
-            // btnlocalidades
-            // 
-            this.btnlocalidades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlocalidades.FlatAppearance.BorderSize = 2;
-            this.btnlocalidades.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnlocalidades.Location = new System.Drawing.Point(52, 152);
-            this.btnlocalidades.Name = "btnlocalidades";
-            this.btnlocalidades.Size = new System.Drawing.Size(120, 23);
-            this.btnlocalidades.TabIndex = 35;
-            this.btnlocalidades.Text = "Localidades";
-            this.btnlocalidades.UseVisualStyleBackColor = true;
-            this.btnlocalidades.Visible = false;
             // 
             // Laboratorio
             // 

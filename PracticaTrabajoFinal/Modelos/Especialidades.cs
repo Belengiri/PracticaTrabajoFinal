@@ -38,6 +38,7 @@ namespace PracticaTrabajoFinal.Modelos
                 string sql = "update Especialidades set nombre_especialidad='"+nombre+"' where id_especialidad="+idespecialidad;
                 SqlCommand cmd = new SqlCommand(sql, conexion);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("registro MODIFICADO");
             }
             catch (Exception ex)
             {
@@ -56,7 +57,9 @@ namespace PracticaTrabajoFinal.Modelos
                 string sql = "delete from Especialidades where id_especialidad=" + idespecialidad;
                 SqlCommand cmd = new SqlCommand(sql,conexion);
                 cmd.ExecuteNonQuery();
-            }catch (Exception ex)
+                MessageBox.Show("registro ELIMINADO");
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("error al modificar los datos", ex.Message);
             }
