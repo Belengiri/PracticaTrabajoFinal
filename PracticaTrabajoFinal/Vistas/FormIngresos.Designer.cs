@@ -38,7 +38,7 @@
             this.labelfechaingresos = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelretiroingresos = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.paneldgvingresos.SuspendLayout();
             this.panelbtingresos.SuspendLayout();
@@ -48,7 +48,7 @@
             // paneldatosingresos
             // 
             this.paneldatosingresos.Controls.Add(this.dateTimePicker2);
-            this.paneldatosingresos.Controls.Add(this.label1);
+            this.paneldatosingresos.Controls.Add(this.labelretiroingresos);
             this.paneldatosingresos.Controls.Add(this.dateTimePicker1);
             this.paneldatosingresos.Controls.Add(this.labelfechaingresos);
             this.paneldatosingresos.Dock = System.Windows.Forms.DockStyle.Right;
@@ -140,14 +140,14 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(294, 26);
             this.dateTimePicker2.TabIndex = 3;
             // 
-            // label1
+            // labelretiroingresos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 242);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Fecha de ingreso";
+            this.labelretiroingresos.AutoSize = true;
+            this.labelretiroingresos.Location = new System.Drawing.Point(3, 242);
+            this.labelretiroingresos.Name = "labelretiroingresos";
+            this.labelretiroingresos.Size = new System.Drawing.Size(116, 20);
+            this.labelretiroingresos.TabIndex = 2;
+            this.labelretiroingresos.Text = "Fecha de retiro";
             // 
             // FormIngresos
             // 
@@ -183,7 +183,7 @@
         private System.Windows.Forms.Button btnmodificarespecialidad;
         private System.Windows.Forms.Button btnagregarespecialidad;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelretiroingresos;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
