@@ -48,17 +48,25 @@ namespace PracticaTrabajoFinal.Modelos
         //agrega una nueva practica a la base de datos
         public void agregarpractica(string nombre,int tiemporesultado,int especialidad,int tipomuestra)
         {
-
-            conexion.Open(); 
-            string consulta = "insert into Practicas(id_especialidad,id_muestra,nombre_practica,tiempo_resultado) values (@id_especialidades,@id_muestra,@nombre_practica,@tiempo_resultado)";
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            comando.Parameters.AddWithValue("@id_especialidades", especialidad);
-            comando.Parameters.AddWithValue("@id_muestra", tipomuestra);
-            comando.Parameters.AddWithValue("@tiempo_resultado", tiemporesultado);
-            comando.Parameters.AddWithValue("@nombre_practica", nombre);
-            comando.ExecuteNonQuery();
-            MessageBox.Show("Registro AGREGADO");
-            conexion.Close();
+            try
+            {
+                conexion.Open(); 
+                string consulta = "insert into Practicas(id_especialidad,id_muestra,nombre_practica,tiempo_resultado) values (@id_especialidades,@id_muestra,@nombre_practica,@tiempo_resultado)";
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                comando.Parameters.AddWithValue("@id_especialidades", especialidad);
+                comando.Parameters.AddWithValue("@id_muestra", tipomuestra);
+                comando.Parameters.AddWithValue("@tiempo_resultado", tiemporesultado);
+                comando.Parameters.AddWithValue("@nombre_practica", nombre);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Registro AGREGADO");
+            }catch (Exception ex)
+            {
+                MessageBox.Show("error",ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
         //modifica una practica en la base de datos
         public void modificarpractica(string nombre,int tiemporesultado,int especialidad,int tipomuestra,int idpractica)
@@ -78,18 +86,25 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 conexion.Close();
             }
-            
-            
         }
         //elimina una practica de la base de datos
         public void eliminarpractica(int idpractica)
         {
-            conexion.Open();
-            string consulta = "delete from Practicas where id_practica = "+idpractica;
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            comando.ExecuteNonQuery();
-            MessageBox.Show("Registro ELIMINADO");
-            conexion.Close();
+            try
+            {
+                conexion.Open();
+                string consulta = "delete from Practicas where id_practica = "+idpractica;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Registro ELIMINADO");
+            }catch(Exception ex)
+            {
+                MessageBox.Show("error al modificar registro", ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
     }
 }
