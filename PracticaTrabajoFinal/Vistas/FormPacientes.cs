@@ -176,17 +176,21 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
-            txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
-            txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
-            txtfechanacpaciente.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
-            txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
-            txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
-            txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();
-            txtdepartamento.Text = dgvpacientes.CurrentRow.Cells[8].Value.ToString();
-            txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
-            txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
-            cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
+            if(modificar==true || eliminar == true)
+            {
+                txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
+                txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
+                txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
+                txtfechanacpaciente.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
+                txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
+                txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
+                txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();
+                txtdepartamento.Text = dgvpacientes.CurrentRow.Cells[8].Value.ToString();
+                txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
+                txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
+                cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
+            }
+            
 
         }
     }
