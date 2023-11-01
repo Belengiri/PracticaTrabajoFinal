@@ -57,7 +57,7 @@
             this.lblpisocasa = new System.Windows.Forms.Label();
             this.lbldeptopaciente = new System.Windows.Forms.Label();
             this.lblnombrepaciente = new System.Windows.Forms.Label();
-            this.txtxorreo = new System.Windows.Forms.TextBox();
+            this.txtcorreo = new System.Windows.Forms.TextBox();
             this.txtdepartamento = new System.Windows.Forms.TextBox();
             this.txtpiso = new System.Windows.Forms.TextBox();
             this.txtcalle = new System.Windows.Forms.TextBox();
@@ -94,6 +94,7 @@
             this.dgvpacientes.Name = "dgvpacientes";
             this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.dgvpacientes.TabIndex = 5;
+            this.dgvpacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpacientes_CellClick);
             // 
             // panelbtnaceptarpaciente
             // 
@@ -103,6 +104,7 @@
             this.panelbtnaceptarpaciente.Name = "panelbtnaceptarpaciente";
             this.panelbtnaceptarpaciente.Size = new System.Drawing.Size(123, 58);
             this.panelbtnaceptarpaciente.TabIndex = 1;
+            this.panelbtnaceptarpaciente.Visible = false;
             // 
             // btnaceptar
             // 
@@ -132,6 +134,7 @@
             this.btneliminarpaciente.TabIndex = 3;
             this.btneliminarpaciente.Text = "Eliminar";
             this.btneliminarpaciente.UseVisualStyleBackColor = true;
+            this.btneliminarpaciente.Click += new System.EventHandler(this.btneliminarpaciente_Click);
             // 
             // btnmodificarpaciente
             // 
@@ -141,6 +144,7 @@
             this.btnmodificarpaciente.TabIndex = 2;
             this.btnmodificarpaciente.Text = "Modificar";
             this.btnmodificarpaciente.UseVisualStyleBackColor = true;
+            this.btnmodificarpaciente.Click += new System.EventHandler(this.btnmodificarpaciente_Click);
             // 
             // btnagregarpaciente
             // 
@@ -150,6 +154,7 @@
             this.btnagregarpaciente.TabIndex = 1;
             this.btnagregarpaciente.Text = "Agregar";
             this.btnagregarpaciente.UseVisualStyleBackColor = true;
+            this.btnagregarpaciente.Click += new System.EventHandler(this.btnagregarpaciente_Click);
             // 
             // paneldatospaciente
             // 
@@ -167,7 +172,7 @@
             this.paneldatospaciente.Controls.Add(this.lblpisocasa);
             this.paneldatospaciente.Controls.Add(this.lbldeptopaciente);
             this.paneldatospaciente.Controls.Add(this.lblnombrepaciente);
-            this.paneldatospaciente.Controls.Add(this.txtxorreo);
+            this.paneldatospaciente.Controls.Add(this.txtcorreo);
             this.paneldatospaciente.Controls.Add(this.txtdepartamento);
             this.paneldatospaciente.Controls.Add(this.txtpiso);
             this.paneldatospaciente.Controls.Add(this.txtcalle);
@@ -182,6 +187,7 @@
             this.paneldatospaciente.Name = "paneldatospaciente";
             this.paneldatospaciente.Size = new System.Drawing.Size(214, 417);
             this.paneldatospaciente.TabIndex = 3;
+            this.paneldatospaciente.Visible = false;
             // 
             // panelnuevalocalidad
             // 
@@ -379,13 +385,13 @@
             this.lblnombrepaciente.TabIndex = 10;
             this.lblnombrepaciente.Text = "Nombre";
             // 
-            // txtxorreo
+            // txtcorreo
             // 
-            this.txtxorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtxorreo.Location = new System.Drawing.Point(111, 142);
-            this.txtxorreo.Name = "txtxorreo";
-            this.txtxorreo.Size = new System.Drawing.Size(100, 20);
-            this.txtxorreo.TabIndex = 9;
+            this.txtcorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtcorreo.Location = new System.Drawing.Point(111, 142);
+            this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtcorreo.TabIndex = 9;
             // 
             // txtdepartamento
             // 
@@ -506,7 +512,7 @@
         private System.Windows.Forms.Label lblpisocasa;
         private System.Windows.Forms.Label lbldeptopaciente;
         private System.Windows.Forms.Label lblnombrepaciente;
-        private System.Windows.Forms.TextBox txtxorreo;
+        private System.Windows.Forms.TextBox txtcorreo;
         private System.Windows.Forms.TextBox txtdepartamento;
         private System.Windows.Forms.TextBox txtpiso;
         private System.Windows.Forms.TextBox txtcalle;

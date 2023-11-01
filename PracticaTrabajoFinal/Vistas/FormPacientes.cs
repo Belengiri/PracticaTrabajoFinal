@@ -37,7 +37,7 @@ namespace PracticaTrabajoFinal.Vistas
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
-                cblocalidades.ValueMember = "id_especialidad";
+                cblocalidades.ValueMember = "id_localidad";
                 cblocalidades.DisplayMember = "nombre";
                 cblocalidades.DataSource = dt;
             }
@@ -53,12 +53,22 @@ namespace PracticaTrabajoFinal.Vistas
 
         public void cargar_tabla()
         {
-            string consulta = "select p.id_paciente as n, nombre_paciente as nombre, apellido_paciente as apellido , dni as dni,direccion_nombre as calle, direccion_numero as altura, direccion_piso as piso, direccion_departamento  as departamento,correo_paciente as correo,telefono_paciente as telefono ,L.nombre_localidad as localidad from Pacientes P inner join Localidades L on P.id_localidad = L.id_localidad";
-            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
-            DataTable dt = new DataTable();
-            adaptador.Fill(dt);
-            dgvpacientes.DataSource = dt;
-
+            try
+            {
+                conexion.Open();
+                string consulta = "select p.id_paciente as n, nombre_paciente as nombre, apellido_paciente as apellido , dni,fecha_nacimiento as fecha,direccion_nombre as calle, direccion_numero as altura, direccion_piso as piso, direccion_departamento  as departamento,correo_paciente as correo,telefono_paciente as telefono ,L.nombre_localidad as localidad from Pacientes P inner join Localidades L on P.id_localidad = L.id_localidad";
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvpacientes.DataSource = dt;
+            }catch(Exception e)
+            {
+                MessageBox.Show("error", e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         private void agregarlocalidad_CheckedChanged(object sender, EventArgs e)
@@ -69,6 +79,115 @@ namespace PracticaTrabajoFinal.Vistas
         private void FormPacientes_Load(object sender, EventArgs e)
         {
             cargarcblocalidades();
+            cargar_tabla();
+        }
+
+        private void btnagregarpaciente_Click(object sender, EventArgs e)
+        {
+            paneldatospaciente.Visible = true;
+            panelbtnaceptarpaciente.Visible = true;
+            lblnombrepaciente.Visible = true;
+            txtnombrepaciente.Visible = true;
+            txtapellidopaciente.Visible = true;
+            lblapellidopaciente.Visible = true;
+            lbldnipaciente.Visible = true;
+            txtdnipaciente.Visible = true;
+            lblfechanacpaciente.Visible = true;
+            txtfechanacpaciente.Visible = true;
+            lblcorreopaciente.Visible = true;
+            txtcorreo.Visible = true;
+            lbltelefonopaciente.Visible = true;
+            txttelefono.Visible = true;
+            lblcallepaciente.Visible = true;
+            txtcalle.Visible = true;
+            lblalturacalle.Visible = true;
+            txtaltura.Visible = true;
+            lblpisocasa.Visible = true;
+            txtpiso.Visible = true;
+            lbldeptopaciente.Visible = true;
+            txtdepartamento.Visible = true;
+            lbllocalidad.Visible = true;
+            cblocalidades.Visible = true;
+            agregarlocalidad.Visible = true;
+        }
+
+        private void btnmodificarpaciente_Click(object sender, EventArgs e)
+        {
+            paneldatospaciente.Visible = true;
+            panelbtnaceptarpaciente.Visible = true;
+            lblnombrepaciente.Visible = true;
+            txtnombrepaciente.Visible = true;
+            txtapellidopaciente.Visible = true;
+            lblapellidopaciente.Visible = true;
+            lbldnipaciente.Visible = true;
+            txtdnipaciente.Visible = true;
+            lblfechanacpaciente.Visible = true;
+            txtfechanacpaciente.Visible = true;
+            lblcorreopaciente.Visible = true;
+            txtcorreo.Visible = true;
+            lbltelefonopaciente.Visible = true;
+            txttelefono.Visible = true;
+            lblcallepaciente.Visible = true;
+            txtcalle.Visible = true;
+            lblalturacalle.Visible = true;
+            txtaltura.Visible = true;
+            lblpisocasa.Visible = true;
+            txtpiso.Visible = true;
+            lbldeptopaciente.Visible = true;
+            txtdepartamento.Visible = true;
+            lbllocalidad.Visible = true;
+            cblocalidades.Visible = true;
+            agregarlocalidad.Visible = false;
+            DataGridViewCellEventArgs even = new DataGridViewCellEventArgs(1,1);
+            dgvpacientes_CellClick(dgvpacientes, even);
+
+        }
+
+        private void btneliminarpaciente_Click(object sender, EventArgs e)
+        {
+            paneldatospaciente.Visible = true;
+            panelbtnaceptarpaciente.Visible = true;
+            lblnombrepaciente.Visible = false;
+            txtnombrepaciente.Visible = false;
+            txtapellidopaciente.Visible = false;
+            lblapellidopaciente.Visible = false;
+            lbldnipaciente.Visible = false;
+            txtdnipaciente.Visible = false;
+            lblfechanacpaciente.Visible = false;
+            txtfechanacpaciente.Visible = false;
+            lblcorreopaciente.Visible = false;
+            txtcorreo.Visible = false;
+            lbltelefonopaciente.Visible = false;
+            txttelefono.Visible = false;
+            lblcallepaciente.Visible = false;
+            txtcalle.Visible = false;
+            lblalturacalle.Visible = false;
+            txtaltura.Visible = false;
+            lblpisocasa.Visible = false;
+            txtpiso.Visible = false;
+            lbldeptopaciente.Visible = false;
+            txtdepartamento.Visible = false;
+            lbllocalidad.Visible = false;
+            cblocalidades.Visible = false;
+            agregarlocalidad.Visible = false;
+            DataGridViewCellEventArgs even = new DataGridViewCellEventArgs(0, 0);
+            dgvpacientes_CellClick(dgvpacientes, even);
+        }
+
+        private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
+            txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
+            txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
+            txtfechanacpaciente.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
+            txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
+            txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
+            txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();
+            txtdepartamento.Text = dgvpacientes.CurrentRow.Cells[8].Value.ToString();
+            txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
+            txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
+            cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
+
         }
     }
 }
