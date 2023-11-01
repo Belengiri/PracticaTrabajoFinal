@@ -84,6 +84,7 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btnagregarpaciente_Click(object sender, EventArgs e)
         {
+            agregar = true;
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
             lblnombrepaciente.Visible = true;
@@ -93,7 +94,7 @@ namespace PracticaTrabajoFinal.Vistas
             lbldnipaciente.Visible = true;
             txtdnipaciente.Visible = true;
             lblfechanacpaciente.Visible = true;
-            txtfechanacpaciente.Visible = true;
+            dtfecha.Visible = true;
             lblcorreopaciente.Visible = true;
             txtcorreo.Visible = true;
             lbltelefonopaciente.Visible = true;
@@ -113,6 +114,7 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btnmodificarpaciente_Click(object sender, EventArgs e)
         {
+            modificar = true;
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
             lblnombrepaciente.Visible = true;
@@ -122,7 +124,7 @@ namespace PracticaTrabajoFinal.Vistas
             lbldnipaciente.Visible = true;
             txtdnipaciente.Visible = true;
             lblfechanacpaciente.Visible = true;
-            txtfechanacpaciente.Visible = true;
+            dtfecha.Visible = true;
             lblcorreopaciente.Visible = true;
             txtcorreo.Visible = true;
             lbltelefonopaciente.Visible = true;
@@ -145,6 +147,7 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btneliminarpaciente_Click(object sender, EventArgs e)
         {
+            eliminar = true;
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
             lblnombrepaciente.Visible = false;
@@ -154,7 +157,7 @@ namespace PracticaTrabajoFinal.Vistas
             lbldnipaciente.Visible = false;
             txtdnipaciente.Visible = false;
             lblfechanacpaciente.Visible = false;
-            txtfechanacpaciente.Visible = false;
+            dtfecha.Visible = false;
             lblcorreopaciente.Visible = false;
             txtcorreo.Visible = false;
             lbltelefonopaciente.Visible = false;
@@ -181,7 +184,7 @@ namespace PracticaTrabajoFinal.Vistas
                 txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
                 txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
                 txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
-                txtfechanacpaciente.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
+                dtfecha.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
                 txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
                 txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
                 txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();

@@ -63,10 +63,10 @@
             this.txtcalle = new System.Windows.Forms.TextBox();
             this.txtaltura = new System.Windows.Forms.TextBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
-            this.txtfechanacpaciente = new System.Windows.Forms.TextBox();
             this.txtdnipaciente = new System.Windows.Forms.TextBox();
             this.txtapellidopaciente = new System.Windows.Forms.TextBox();
             this.txtnombrepaciente = new System.Windows.Forms.TextBox();
+            this.dtfecha = new System.Windows.Forms.DateTimePicker();
             this.paneldgvpacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
             this.panelbtnaceptarpaciente.SuspendLayout();
@@ -88,6 +88,7 @@
             // 
             // dgvpacientes
             // 
+            this.dgvpacientes.AllowUserToAddRows = false;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
@@ -158,6 +159,7 @@
             // 
             // paneldatospaciente
             // 
+            this.paneldatospaciente.Controls.Add(this.dtfecha);
             this.paneldatospaciente.Controls.Add(this.panelnuevalocalidad);
             this.paneldatospaciente.Controls.Add(this.agregarlocalidad);
             this.paneldatospaciente.Controls.Add(this.lbllocalidad);
@@ -178,7 +180,6 @@
             this.paneldatospaciente.Controls.Add(this.txtcalle);
             this.paneldatospaciente.Controls.Add(this.txtaltura);
             this.paneldatospaciente.Controls.Add(this.txttelefono);
-            this.paneldatospaciente.Controls.Add(this.txtfechanacpaciente);
             this.paneldatospaciente.Controls.Add(this.txtdnipaciente);
             this.paneldatospaciente.Controls.Add(this.txtapellidopaciente);
             this.paneldatospaciente.Controls.Add(this.txtnombrepaciente);
@@ -433,14 +434,6 @@
             this.txttelefono.Size = new System.Drawing.Size(100, 20);
             this.txttelefono.TabIndex = 4;
             // 
-            // txtfechanacpaciente
-            // 
-            this.txtfechanacpaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfechanacpaciente.Location = new System.Drawing.Point(114, 90);
-            this.txtfechanacpaciente.Name = "txtfechanacpaciente";
-            this.txtfechanacpaciente.Size = new System.Drawing.Size(100, 20);
-            this.txtfechanacpaciente.TabIndex = 3;
-            // 
             // txtdnipaciente
             // 
             this.txtdnipaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -464,6 +457,13 @@
             this.txtnombrepaciente.Name = "txtnombrepaciente";
             this.txtnombrepaciente.Size = new System.Drawing.Size(100, 20);
             this.txtnombrepaciente.TabIndex = 0;
+            // 
+            // dtfecha
+            // 
+            this.dtfecha.Location = new System.Drawing.Point(111, 91);
+            this.dtfecha.Name = "dtfecha";
+            this.dtfecha.Size = new System.Drawing.Size(103, 20);
+            this.dtfecha.TabIndex = 24;
             // 
             // FormPacientes
             // 
@@ -518,7 +518,6 @@
         private System.Windows.Forms.TextBox txtcalle;
         private System.Windows.Forms.TextBox txtaltura;
         private System.Windows.Forms.TextBox txttelefono;
-        private System.Windows.Forms.TextBox txtfechanacpaciente;
         private System.Windows.Forms.TextBox txtdnipaciente;
         private System.Windows.Forms.TextBox txtapellidopaciente;
         private System.Windows.Forms.TextBox txtnombrepaciente;
@@ -533,5 +532,6 @@
         private System.Windows.Forms.Label lbllocalidad;
         private System.Windows.Forms.ComboBox cblocalidades;
         private System.Windows.Forms.DataGridView dgvpacientes;
+        private System.Windows.Forms.DateTimePicker dtfecha;
     }
 }
