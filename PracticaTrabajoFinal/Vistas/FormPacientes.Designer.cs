@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
             this.dgvpacientes = new System.Windows.Forms.DataGridView();
             this.panelbtnaceptarpaciente = new System.Windows.Forms.Panel();
@@ -37,6 +38,7 @@
             this.btnmodificarpaciente = new System.Windows.Forms.Button();
             this.btnagregarpaciente = new System.Windows.Forms.Button();
             this.paneldatospaciente = new System.Windows.Forms.Panel();
+            this.dtfecha = new System.Windows.Forms.DateTimePicker();
             this.panelnuevalocalidad = new System.Windows.Forms.Panel();
             this.btncancelarlocalidad = new System.Windows.Forms.Button();
             this.btnguardarlocalidad = new System.Windows.Forms.Button();
@@ -66,7 +68,6 @@
             this.txtdnipaciente = new System.Windows.Forms.TextBox();
             this.txtapellidopaciente = new System.Windows.Forms.TextBox();
             this.txtnombrepaciente = new System.Windows.Forms.TextBox();
-            this.dtfecha = new System.Windows.Forms.DateTimePicker();
             this.paneldgvpacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
             this.panelbtnaceptarpaciente.SuspendLayout();
@@ -89,10 +90,23 @@
             // dgvpacientes
             // 
             this.dgvpacientes.AllowUserToAddRows = false;
+            this.dgvpacientes.AllowUserToDeleteRows = false;
+            this.dgvpacientes.AllowUserToResizeColumns = false;
+            this.dgvpacientes.AllowUserToResizeRows = false;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvpacientes.MultiSelect = false;
             this.dgvpacientes.Name = "dgvpacientes";
+            this.dgvpacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.dgvpacientes.TabIndex = 5;
             this.dgvpacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpacientes_CellClick);
@@ -109,12 +123,14 @@
             // 
             // btnaceptar
             // 
+            this.btnaceptar.Enabled = false;
             this.btnaceptar.Location = new System.Drawing.Point(20, 16);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(78, 30);
             this.btnaceptar.TabIndex = 1;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
             // panelbotones
             // 
@@ -190,6 +206,15 @@
             this.paneldatospaciente.TabIndex = 3;
             this.paneldatospaciente.Visible = false;
             // 
+            // dtfecha
+            // 
+            this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtfecha.Location = new System.Drawing.Point(111, 91);
+            this.dtfecha.Name = "dtfecha";
+            this.dtfecha.Size = new System.Drawing.Size(103, 20);
+            this.dtfecha.TabIndex = 24;
+            this.dtfecha.Value = new System.DateTime(2023, 11, 1, 19, 0, 53, 0);
+            // 
             // panelnuevalocalidad
             // 
             this.panelnuevalocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -213,6 +238,7 @@
             this.btncancelarlocalidad.TabIndex = 25;
             this.btncancelarlocalidad.Text = "Cancelar";
             this.btncancelarlocalidad.UseVisualStyleBackColor = true;
+            this.btncancelarlocalidad.Click += new System.EventHandler(this.btncancelarlocalidad_Click);
             // 
             // btnguardarlocalidad
             // 
@@ -222,6 +248,7 @@
             this.btnguardarlocalidad.TabIndex = 24;
             this.btnguardarlocalidad.Text = "Guardar";
             this.btnguardarlocalidad.UseVisualStyleBackColor = true;
+            this.btnguardarlocalidad.Click += new System.EventHandler(this.btnguardarlocalidad_Click);
             // 
             // lblnombrelocalidad
             // 
@@ -457,13 +484,6 @@
             this.txtnombrepaciente.Name = "txtnombrepaciente";
             this.txtnombrepaciente.Size = new System.Drawing.Size(100, 20);
             this.txtnombrepaciente.TabIndex = 0;
-            // 
-            // dtfecha
-            // 
-            this.dtfecha.Location = new System.Drawing.Point(111, 91);
-            this.dtfecha.Name = "dtfecha";
-            this.dtfecha.Size = new System.Drawing.Size(103, 20);
-            this.dtfecha.TabIndex = 24;
             // 
             // FormPacientes
             // 

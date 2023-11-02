@@ -24,6 +24,7 @@ namespace PracticaTrabajoFinal.Vistas
         {
             InitializeComponent();
             cargar_tabla();
+            dgvpacientes.ClearSelection();
         }
         public void cargarcblocalidades()
         {
@@ -74,10 +75,13 @@ namespace PracticaTrabajoFinal.Vistas
         private void agregarlocalidad_CheckedChanged(object sender, EventArgs e)
         {
             panelnuevalocalidad.Visible = true;
+            btnaceptar.Enabled = false;
+            txtnombrelocalidad.Focus();
         }
 
         private void FormPacientes_Load(object sender, EventArgs e)
         {
+            dgvpacientes.ClearSelection();
             cargarcblocalidades();
             cargar_tabla();
         }
@@ -85,101 +89,51 @@ namespace PracticaTrabajoFinal.Vistas
         private void btnagregarpaciente_Click(object sender, EventArgs e)
         {
             agregar = true;
+            eliminar = false;
+            modificar = false;
+            dgvpacientes.ClearSelection();
+            btnaceptar.Enabled = true;
+            txtnombrepaciente.Clear();
+            txtapellidopaciente.Clear();
+            txtdnipaciente.Clear();
+            dtfecha.Text="";
+            txtcorreo.Clear();
+            txttelefono.Clear();
+            txtcalle.Clear();
+            txtaltura.Clear();
+            txtpiso.Clear();
+            txtdepartamento.Clear();
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
-            lblnombrepaciente.Visible = true;
-            txtnombrepaciente.Visible = true;
-            txtapellidopaciente.Visible = true;
-            lblapellidopaciente.Visible = true;
-            lbldnipaciente.Visible = true;
-            txtdnipaciente.Visible = true;
-            lblfechanacpaciente.Visible = true;
-            dtfecha.Visible = true;
-            lblcorreopaciente.Visible = true;
-            txtcorreo.Visible = true;
-            lbltelefonopaciente.Visible = true;
-            txttelefono.Visible = true;
-            lblcallepaciente.Visible = true;
-            txtcalle.Visible = true;
-            lblalturacalle.Visible = true;
-            txtaltura.Visible = true;
-            lblpisocasa.Visible = true;
-            txtpiso.Visible = true;
-            lbldeptopaciente.Visible = true;
-            txtdepartamento.Visible = true;
-            lbllocalidad.Visible = true;
-            cblocalidades.Visible = true;
             agregarlocalidad.Visible = true;
         }
 
         private void btnmodificarpaciente_Click(object sender, EventArgs e)
         {
             modificar = true;
+            eliminar = false;
+            agregar = false;
+            dgvpacientes.ClearSelection();
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
-            lblnombrepaciente.Visible = true;
-            txtnombrepaciente.Visible = true;
-            txtapellidopaciente.Visible = true;
-            lblapellidopaciente.Visible = true;
-            lbldnipaciente.Visible = true;
-            txtdnipaciente.Visible = true;
-            lblfechanacpaciente.Visible = true;
-            dtfecha.Visible = true;
-            lblcorreopaciente.Visible = true;
-            txtcorreo.Visible = true;
-            lbltelefonopaciente.Visible = true;
-            txttelefono.Visible = true;
-            lblcallepaciente.Visible = true;
-            txtcalle.Visible = true;
-            lblalturacalle.Visible = true;
-            txtaltura.Visible = true;
-            lblpisocasa.Visible = true;
-            txtpiso.Visible = true;
-            lbldeptopaciente.Visible = true;
-            txtdepartamento.Visible = true;
-            lbllocalidad.Visible = true;
-            cblocalidades.Visible = true;
             agregarlocalidad.Visible = false;
-            DataGridViewCellEventArgs even = new DataGridViewCellEventArgs(1,1);
-            dgvpacientes_CellClick(dgvpacientes, even);
-
+            btnaceptar.Enabled = false;
         }
 
         private void btneliminarpaciente_Click(object sender, EventArgs e)
         {
             eliminar = true;
-            paneldatospaciente.Visible = true;
+            agregar=false;
+            modificar=false;
+            dgvpacientes.ClearSelection();
+            paneldatospaciente.Visible = false;
             panelbtnaceptarpaciente.Visible = true;
-            lblnombrepaciente.Visible = false;
-            txtnombrepaciente.Visible = false;
-            txtapellidopaciente.Visible = false;
-            lblapellidopaciente.Visible = false;
-            lbldnipaciente.Visible = false;
-            txtdnipaciente.Visible = false;
-            lblfechanacpaciente.Visible = false;
-            dtfecha.Visible = false;
-            lblcorreopaciente.Visible = false;
-            txtcorreo.Visible = false;
-            lbltelefonopaciente.Visible = false;
-            txttelefono.Visible = false;
-            lblcallepaciente.Visible = false;
-            txtcalle.Visible = false;
-            lblalturacalle.Visible = false;
-            txtaltura.Visible = false;
-            lblpisocasa.Visible = false;
-            txtpiso.Visible = false;
-            lbldeptopaciente.Visible = false;
-            txtdepartamento.Visible = false;
-            lbllocalidad.Visible = false;
-            cblocalidades.Visible = false;
-            agregarlocalidad.Visible = false;
-            DataGridViewCellEventArgs even = new DataGridViewCellEventArgs(0, 0);
-            dgvpacientes_CellClick(dgvpacientes, even);
+            btnaceptar.Enabled = true;
         }
 
         private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(modificar==true || eliminar == true)
+            if(modificar==true )
             {
                 txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
                 txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
@@ -192,9 +146,81 @@ namespace PracticaTrabajoFinal.Vistas
                 txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
                 txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
                 cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
+                btnaceptar.Enabled = true;
+            }
+        }
+
+        private void btnaceptar_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+
+                if (agregar == true)
+                {
+
+                    cpp.Agregar_Paciente(Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
+                    cargar_tabla();
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
+                }
+                else if (modificar == true)
+                {
+                    cpp.Modificar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
+                    cargar_tabla();
+                    dgvpacientes.ClearSelection();
+                }
+                else if (eliminar == true)
+                {
+                    cpp.Eliminar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    dgvpacientes.ClearSelection();
+                }
+
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                dgvpacientes.ClearSelection();
+            }
+        }
+
+        private void btnguardarlocalidad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                btnaceptar.Enabled = false;
+                cpp.Agregar_Localidad(txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
+                cargarcblocalidades();
+                txtnombrelocalidad.Clear();
+                txtnombrelocalidad.Focus();
+                txtcodigopostal.Clear();
+                agregarlocalidad.Checked = false;
+                panelnuevalocalidad.Visible = false;
+                btnaceptar.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al guardar la Localidad",ex.Message);
             }
             
+        }
 
+        private void btncancelarlocalidad_Click(object sender, EventArgs e)
+        {
+            agregarlocalidad.Checked = false;
+            panelnuevalocalidad.Visible = false;
+            btnaceptar.Enabled = true;
         }
     }
 }

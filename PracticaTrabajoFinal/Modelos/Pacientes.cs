@@ -13,7 +13,7 @@ namespace PracticaTrabajoFinal.Modelos
         
         SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
 
-        public void agregarlocalidad(string nombre)
+        public void agregarlocalidad(string nombre,int codigo_postal)
         {
             try
             {
@@ -27,9 +27,10 @@ namespace PracticaTrabajoFinal.Modelos
                 }
                 else
                 {
-                    string sql = "insert into Localidades(nombre_localidad)values('" + nombre + "')";
+                    string sql = "insert into Localidades(nombre_localidad,codigo_postal)values('" + nombre + "',"+codigo_postal+")";
                     comando = new SqlCommand(sql, conexion);
                     comando.ExecuteNonQuery();
+                    MessageBox.Show("Localidad AGREGADA");
                 }
             }
             catch (Exception ex)
@@ -41,7 +42,7 @@ namespace PracticaTrabajoFinal.Modelos
                 conexion.Close();
             }
         }
-        public void agregarpaciente(int idlocal,string nombre,string apellido,DateTime fecha,int dni, string calle, int altura,int piso,int depto,string correo,string telefono)
+        public void agregarpaciente(int idlocal,string nombre,string apellido,string fecha,int dni, string calle, int altura,int piso,int depto,string correo,string telefono)
         {
             try
             {
@@ -60,7 +61,7 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.Parameters.AddWithValue("@correo_paciente ", correo);
                 comando.Parameters.AddWithValue("@telefono_paciente ", telefono);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro AGREGADO");
+                MessageBox.Show("Paciente AGREGADO");
             }
             catch (Exception ex)
             {
@@ -71,15 +72,15 @@ namespace PracticaTrabajoFinal.Modelos
                 conexion.Close();
             }
         }
-        public void modificarpaciente(int idlocal,string nombre,string apellido,DateTime fecha,int dni,string calle,int altura,int piso,int depto,string correo,string telefono,int idpaciente)
+        public void modificarpaciente(int idlocal,string nombre,string apellido,string fecha,int dni,string calle,int altura,int piso,int depto,string correo,string telefono,int idpaciente)
         {
             try
             {
                 conexion.Open();
-                string consulta = "update Pacientes set id_localidad =" + idlocal + ",nombre_paciente='" + nombre + "',apellido_paciente='" + apellido + "',fecha_nacimiento=" + fecha + ", dni="+dni+", domicilio_nombre='"+calle+"',domicilio_numero="+altura+",domicilio_piso="+piso+",domicilio_departamento="+depto+",correo_paciente='"+correo+"',telefono_paciente="+telefono+"where id_practica =" + idpaciente + "";
-                SqlCommand comando = new SqlCommand(@consulta, conexion);
+                string consulta = "update Pacientes set id_localidad =" + idlocal + ",nombre_paciente = '" + nombre + "',apellido_paciente = '" + apellido + "',fecha_nacimiento = '" + fecha + "',dni = " + dni + ",direccion_nombre = '" + calle + "',direccion_numero = " + altura + ",direccion_piso =" + piso + ",direccion_departamento = " + depto + ",correo_paciente = '" + correo + "',telefono_paciente = '" + telefono + "' where id_paciente = " + idpaciente;
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro MODIFICADO");
+                MessageBox.Show("Paciente MODIFICADO");
             }
             catch (Exception ex)
             {
@@ -98,7 +99,7 @@ namespace PracticaTrabajoFinal.Modelos
                 string consulta = "delete from Pacientes where id_paciente = " + idpaciente;
                 SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro ELIMINADO");
+                MessageBox.Show("Paciente ELIMINADO");
             }
             catch (Exception ex)
             {
