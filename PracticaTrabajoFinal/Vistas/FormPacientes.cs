@@ -124,6 +124,16 @@ namespace PracticaTrabajoFinal.Vistas
             eliminar = false;
             agregar = false;
             dgvpacientes.ClearSelection();
+            txtnombrepaciente.Clear();
+            txtapellidopaciente.Clear();
+            txtdnipaciente.Clear();
+            dtfecha.Text = "";
+            txtcorreo.Clear();
+            txttelefono.Clear();
+            txtcalle.Clear();
+            txtaltura.Clear();
+            txtpiso.Clear();
+            txtdepartamento.Clear();
             paneldatospaciente.Visible = true;
             panelbtnaceptarpaciente.Visible = true;
             agregarlocalidad.Visible = false;

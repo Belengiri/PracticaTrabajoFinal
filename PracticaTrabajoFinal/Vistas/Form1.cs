@@ -16,6 +16,8 @@ namespace PracticaTrabajoFinal
         public Laboratorio()
         {
             InitializeComponent();
+            abrirform(new Inicio());
+            
         }
 
         private void btnpaciente_Click(object sender, EventArgs e)
