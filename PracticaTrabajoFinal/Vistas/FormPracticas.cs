@@ -148,19 +148,19 @@ namespace PracticaTrabajoFinal.Vistas
             btnguardarmuestra.Visible = false;
             btncancelar.Visible = false;
             btnaceptarpractica.Enabled = true;
-            
-            DataGridViewCellEventArgs evento = new DataGridViewCellEventArgs(0, 0);
-            // Llama manualmente al evento de clic de celda
-            dgvgrillapracticas_CellClick(dgvgrillapracticas, evento);
         }
         //metodo de la grilla para cargar los textbox con los datos seleccionados
         private void dgvgrillapracticas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //aca llena los textbox con los datos de la grilla para el boton modificar
+            if(modificar==true)
+            {
                 txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
                 txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
                 cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
                 cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
+            }
+            //aca llena los textbox con los datos de la grilla para el boton modificar
+                
             
         }
         //boton de Aceptar acciones de la practica 
@@ -258,10 +258,6 @@ namespace PracticaTrabajoFinal.Vistas
             cbespacialidadpractica.Visible = false;
             lbltipomuestra.Visible = false;
             cbtipodemuestra.Visible = false;
-            DataGridViewCellEventArgs evento = new DataGridViewCellEventArgs(0, 0);
-
-            // Llama manualmente al evento de clic de celda
-            dgvgrillapracticas_CellClick(dgvgrillapracticas, evento);
             modificar = false;
             agregar = false;
             eliminar = true;

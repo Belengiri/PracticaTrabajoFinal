@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace PracticaTrabajoFinal.Vistas
 {
-    public partial class FormIngresos : Form
+    public partial class Inicio : Form
     {
-        public FormIngresos()
+        public Inicio()
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
     }
 }
