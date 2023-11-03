@@ -74,8 +74,18 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void agregarlocalidad_CheckedChanged(object sender, EventArgs e)
         {
-            panelnuevalocalidad.Visible = true;
-            btnaceptar.Enabled = false;
+           if(agregarlocalidad.Checked==true)
+            {
+                panelnuevalocalidad.Visible = true;
+                btnaceptar.Enabled = false;
+            }
+            else
+            {
+                panelnuevalocalidad.Visible = false;
+                btnaceptar.Enabled = true;
+            }
+            
+            
             txtnombrelocalidad.Focus();
         }
 
@@ -128,12 +138,12 @@ namespace PracticaTrabajoFinal.Vistas
             dgvpacientes.ClearSelection();
             paneldatospaciente.Visible = false;
             panelbtnaceptarpaciente.Visible = true;
-            btnaceptar.Enabled = true;
+            btnaceptar.Enabled = false;
         }
 
         private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(modificar==true )
+            if(modificar==true)
             {
                 txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
                 txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
@@ -146,8 +156,8 @@ namespace PracticaTrabajoFinal.Vistas
                 txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
                 txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
                 cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
-                btnaceptar.Enabled = true;
             }
+            btnaceptar.Enabled = true;
         }
 
         private void btnaceptar_Click(object sender, EventArgs e)
@@ -159,32 +169,53 @@ namespace PracticaTrabajoFinal.Vistas
 
                 if (agregar == true)
                 {
+                    try
+                    {
+                        cpp.Agregar_Paciente(Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
+                        cargar_tabla();
+                        dgvpacientes.ClearSelection();
+                        txtnombrepaciente.Clear();
+                        txtapellidopaciente.Clear();
+                        txtdnipaciente.Clear();
+                        dtfecha.Text = "";
+                        txtcorreo.Clear();
+                        txttelefono.Clear();
+                        txtcalle.Clear();
+                        txtaltura.Clear();
+                        txtpiso.Clear();
+                        txtdepartamento.Clear();
+                    }catch (Exception ex)
+                    {
+                        MessageBox.Show("error al cargar", ex.Message);
+                    }
 
-                    cpp.Agregar_Paciente(Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
-                    cargar_tabla();
-                    dgvpacientes.ClearSelection();
-                    txtnombrepaciente.Clear();
-                    txtapellidopaciente.Clear();
-                    txtdnipaciente.Clear();
-                    dtfecha.Text = "";
-                    txtcorreo.Clear();
-                    txttelefono.Clear();
-                    txtcalle.Clear();
-                    txtaltura.Clear();
-                    txtpiso.Clear();
-                    txtdepartamento.Clear();
+                    
                 }
                 else if (modificar == true)
                 {
-                    cpp.Modificar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
-                    cargar_tabla();
-                    dgvpacientes.ClearSelection();
+                    try
+                    {
+                        cpp.Modificar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
+                        cargar_tabla();
+                        dgvpacientes.ClearSelection();
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show("error al modificar", ex.Message);
+                    }
+                    
                 }
                 else if (eliminar == true)
                 {
-                    cpp.Eliminar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
-                    dgvpacientes.ClearSelection();
+                    try
+                    {
+                        cpp.Eliminar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()));
+                        cargar_tabla();
+                        dgvpacientes.ClearSelection();
+                    }catch (Exception ex)
+                    {
+                        MessageBox.Show("error al eliminar", ex.Message);
+                    }
+                    
                 }
 
             }
