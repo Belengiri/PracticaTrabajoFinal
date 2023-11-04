@@ -81,6 +81,7 @@
             this.btnlocalidades.Text = "Localidades";
             this.btnlocalidades.UseVisualStyleBackColor = true;
             this.btnlocalidades.Visible = false;
+            this.btnlocalidades.Click += new System.EventHandler(this.btnlocalidades_Click);
             // 
             // btnsalirprogram
             // 
@@ -119,6 +120,7 @@
             this.btnpersonalporespecialidad.Text = "Personal por Especialidad";
             this.btnpersonalporespecialidad.UseVisualStyleBackColor = true;
             this.btnpersonalporespecialidad.Visible = false;
+            this.btnpersonalporespecialidad.Click += new System.EventHandler(this.btnpersonalporespecialidad_Click);
             // 
             // btnpracticas
             // 

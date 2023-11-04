@@ -102,5 +102,15 @@ namespace PracticaTrabajoFinal
         {
             abrirform(new FormPracticasPorEspecialidad());
         }
+
+        private void btnpersonalporespecialidad_Click(object sender, EventArgs e)
+        {
+            abrirform(new FormPersonalPorEspecialidad());
+        }
+
+        private void btnlocalidades_Click(object sender, EventArgs e)
+        {
+            abrirform(new FormLocalidades());
+        }
     }
 }

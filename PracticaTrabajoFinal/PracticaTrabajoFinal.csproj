@@ -52,6 +52,7 @@
     <Compile Include="Controladores\ControladoraPacientes.cs" />
     <Compile Include="Controladores\ControladoraPersonalLaboratorio.cs" />
     <Compile Include="Controladores\ControladoraPracticas.cs" />
+    <Compile Include="Modelos\Conexion.cs" />
     <Compile Include="Modelos\Especialidades.cs" />
     <Compile Include="Modelos\Ingresos.cs" />
     <Compile Include="Modelos\Medicos.cs" />
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FormLocalidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormLocalidades.Designer.cs">
+      <DependentUpon>FormLocalidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FormPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +102,12 @@
     </Compile>
     <Compile Include="Vistas\FormPersonalMedico.Designer.cs">
       <DependentUpon>FormPersonalMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormPersonalPorEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormPersonalPorEspecialidad.Designer.cs">
+      <DependentUpon>FormPersonalPorEspecialidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\FormPracticas.cs">
       <SubType>Form</SubType>
@@ -132,6 +145,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\FormLocalidades.resx">
+      <DependentUpon>FormLocalidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormPacientes.resx">
       <DependentUpon>FormPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormPersonalMedico.resx">
       <DependentUpon>FormPersonalMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormPersonalPorEspecialidad.resx">
+      <DependentUpon>FormPersonalPorEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormPracticas.resx">
       <DependentUpon>FormPracticas.cs</DependentUpon>
