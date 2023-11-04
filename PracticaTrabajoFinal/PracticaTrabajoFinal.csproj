@@ -51,6 +51,7 @@
     <Compile Include="Controladores\ControladoraPacientes.cs" />
     <Compile Include="Controladores\ControladoraPersonalLaboratorio.cs" />
     <Compile Include="Controladores\ControladoraPracticas.cs" />
+    <Compile Include="Modelos\CadenaString.cs" />
     <Compile Include="Modelos\Especialidades.cs" />
     <Compile Include="Modelos\Ingresos.cs" />
     <Compile Include="Modelos\Medicos.cs" />

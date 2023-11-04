@@ -1,4 +1,5 @@
 ﻿using PracticaTrabajoFinal.Controladores;
+using PracticaTrabajoFinal.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace PracticaTrabajoFinal.Vistas
                 cbespecialidades.Items.Clear();
                 string query = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand(query, conexion);
+                SqlCommand cmd = new SqlCommand(query,conexion); 
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
