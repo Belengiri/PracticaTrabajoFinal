@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controladores\ControladoraEspecialidades.cs" />
+    <Compile Include="Controladores\ControladoraIngresos.cs" />
     <Compile Include="Controladores\ControladoraMedicos.cs" />
     <Compile Include="Controladores\ControladoraPacientes.cs" />
     <Compile Include="Controladores\ControladoraPersonalLaboratorio.cs" />
