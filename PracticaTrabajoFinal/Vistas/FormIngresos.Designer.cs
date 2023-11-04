@@ -29,147 +29,87 @@
         private void InitializeComponent()
         {
             this.paneldatosingresos = new System.Windows.Forms.Panel();
-            this.btnagregarpaciente = new System.Windows.Forms.Button();
-            this.lblpaciente = new System.Windows.Forms.Label();
-            this.btnagregarmedico = new System.Windows.Forms.Button();
-            this.lblagregarnuevomedico = new System.Windows.Forms.Label();
-            this.lblmedicosolicitante = new System.Windows.Forms.Label();
-            this.cbmedicos = new System.Windows.Forms.ComboBox();
-            this.lblespecialidades = new System.Windows.Forms.Label();
-            this.checklistespecialidades = new System.Windows.Forms.CheckedListBox();
-            this.dtfecharetiro = new System.Windows.Forms.DateTimePicker();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.labelretiroingresos = new System.Windows.Forms.Label();
-            this.dtfechaingreso = new System.Windows.Forms.DateTimePicker();
-            this.panelbotones = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelfechaingresos = new System.Windows.Forms.Label();
+            this.panelbtingresos = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btneliminarespecialidad = new System.Windows.Forms.Button();
             this.btnmodificarespecialidad = new System.Windows.Forms.Button();
             this.btnagregarespecialidad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvingresos = new System.Windows.Forms.DataGridView();
-            this.panelaceptar = new System.Windows.Forms.Panel();
-            this.lblagregarnuevopaciente = new System.Windows.Forms.Label();
-            this.labelfechaingresos = new System.Windows.Forms.Label();
-            this.cbpacienteapellido = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.paneldatosingresos.SuspendLayout();
-            this.panelbotones.SuspendLayout();
+            this.panelbtingresos.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).BeginInit();
-            this.panelaceptar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneldatosingresos
             // 
             this.paneldatosingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldatosingresos.Controls.Add(this.cbpacienteapellido);
-            this.paneldatosingresos.Controls.Add(this.labelfechaingresos);
-            this.paneldatosingresos.Controls.Add(this.lblagregarnuevopaciente);
-            this.paneldatosingresos.Controls.Add(this.btnagregarpaciente);
-            this.paneldatosingresos.Controls.Add(this.lblpaciente);
-            this.paneldatosingresos.Controls.Add(this.btnagregarmedico);
-            this.paneldatosingresos.Controls.Add(this.lblagregarnuevomedico);
-            this.paneldatosingresos.Controls.Add(this.lblmedicosolicitante);
-            this.paneldatosingresos.Controls.Add(this.cbmedicos);
-            this.paneldatosingresos.Controls.Add(this.lblespecialidades);
-            this.paneldatosingresos.Controls.Add(this.checklistespecialidades);
-            this.paneldatosingresos.Controls.Add(this.dtfecharetiro);
+            this.paneldatosingresos.Controls.Add(this.button3);
+            this.paneldatosingresos.Controls.Add(this.label1);
+            this.paneldatosingresos.Controls.Add(this.label4);
+            this.paneldatosingresos.Controls.Add(this.comboBox1);
+            this.paneldatosingresos.Controls.Add(this.button2);
+            this.paneldatosingresos.Controls.Add(this.label5);
+            this.paneldatosingresos.Controls.Add(this.label3);
+            this.paneldatosingresos.Controls.Add(this.comboBox2);
+            this.paneldatosingresos.Controls.Add(this.label2);
+            this.paneldatosingresos.Controls.Add(this.checkedListBox1);
+            this.paneldatosingresos.Controls.Add(this.dateTimePicker2);
             this.paneldatosingresos.Controls.Add(this.labelretiroingresos);
-            this.paneldatosingresos.Controls.Add(this.dtfechaingreso);
+            this.paneldatosingresos.Controls.Add(this.dateTimePicker1);
+            this.paneldatosingresos.Controls.Add(this.labelfechaingresos);
             this.paneldatosingresos.Location = new System.Drawing.Point(373, 8);
-            this.paneldatosingresos.Margin = new System.Windows.Forms.Padding(2);
+            this.paneldatosingresos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.paneldatosingresos.Name = "paneldatosingresos";
             this.paneldatosingresos.Size = new System.Drawing.Size(209, 406);
             this.paneldatosingresos.TabIndex = 0;
             // 
-            // btnagregarpaciente
+            // checkedListBox1
             // 
-            this.btnagregarpaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarpaciente.Location = new System.Drawing.Point(182, 60);
-            this.btnagregarpaciente.Name = "btnagregarpaciente";
-            this.btnagregarpaciente.Size = new System.Drawing.Size(24, 23);
-            this.btnagregarpaciente.TabIndex = 16;
-            this.btnagregarpaciente.Text = "+";
-            this.btnagregarpaciente.UseVisualStyleBackColor = true;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Cancer",
+            "Corte",
+            "f",
+            "Fractura",
+            "Hemorragia",
+            "Infección",
+            "Infección",
+            "Ser Negro",
+            "Ser Peruano"});
+            this.checkedListBox1.Location = new System.Drawing.Point(5, 221);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(197, 79);
+            this.checkedListBox1.Sorted = true;
+            this.checkedListBox1.TabIndex = 4;
+            this.checkedListBox1.ThreeDCheckBoxes = true;
             // 
-            // lblpaciente
+            // dateTimePicker2
             // 
-            this.lblpaciente.AutoSize = true;
-            this.lblpaciente.Location = new System.Drawing.Point(5, 11);
-            this.lblpaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblpaciente.Name = "lblpaciente";
-            this.lblpaciente.Size = new System.Drawing.Size(49, 13);
-            this.lblpaciente.TabIndex = 14;
-            this.lblpaciente.Text = "Paciente";
-            // 
-            // btnagregarmedico
-            // 
-            this.btnagregarmedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregarmedico.Location = new System.Drawing.Point(178, 158);
-            this.btnagregarmedico.Name = "btnagregarmedico";
-            this.btnagregarmedico.Size = new System.Drawing.Size(24, 23);
-            this.btnagregarmedico.TabIndex = 12;
-            this.btnagregarmedico.Text = "+";
-            this.btnagregarmedico.UseVisualStyleBackColor = true;
-            // 
-            // lblagregarnuevomedico
-            // 
-            this.lblagregarnuevomedico.AutoSize = true;
-            this.lblagregarnuevomedico.Location = new System.Drawing.Point(5, 168);
-            this.lblagregarnuevomedico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblagregarnuevomedico.Name = "lblagregarnuevomedico";
-            this.lblagregarnuevomedico.Size = new System.Drawing.Size(132, 13);
-            this.lblagregarnuevomedico.TabIndex = 11;
-            this.lblagregarnuevomedico.Text = "Agregar un nuevo medico ";
-            // 
-            // lblmedicosolicitante
-            // 
-            this.lblmedicosolicitante.AutoSize = true;
-            this.lblmedicosolicitante.Location = new System.Drawing.Point(5, 117);
-            this.lblmedicosolicitante.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblmedicosolicitante.Name = "lblmedicosolicitante";
-            this.lblmedicosolicitante.Size = new System.Drawing.Size(92, 13);
-            this.lblmedicosolicitante.TabIndex = 9;
-            this.lblmedicosolicitante.Text = "Medico solicitante";
-            // 
-            // cbmedicos
-            // 
-            this.cbmedicos.FormattingEnabled = true;
-            this.cbmedicos.Location = new System.Drawing.Point(5, 132);
-            this.cbmedicos.Margin = new System.Windows.Forms.Padding(2);
-            this.cbmedicos.Name = "cbmedicos";
-            this.cbmedicos.Size = new System.Drawing.Size(197, 21);
-            this.cbmedicos.TabIndex = 8;
-            // 
-            // lblespecialidades
-            // 
-            this.lblespecialidades.AutoSize = true;
-            this.lblespecialidades.Location = new System.Drawing.Point(5, 218);
-            this.lblespecialidades.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblespecialidades.Name = "lblespecialidades";
-            this.lblespecialidades.Size = new System.Drawing.Size(78, 13);
-            this.lblespecialidades.TabIndex = 7;
-            this.lblespecialidades.Text = "Especialidades";
-            // 
-            // checklistespecialidades
-            // 
-            this.checklistespecialidades.FormattingEnabled = true;
-            this.checklistespecialidades.Location = new System.Drawing.Point(5, 233);
-            this.checklistespecialidades.Margin = new System.Windows.Forms.Padding(2);
-            this.checklistespecialidades.Name = "checklistespecialidades";
-            this.checklistespecialidades.Size = new System.Drawing.Size(197, 79);
-            this.checklistespecialidades.Sorted = true;
-            this.checklistespecialidades.TabIndex = 4;
-            this.checklistespecialidades.ThreeDCheckBoxes = true;
-            this.checklistespecialidades.SelectedIndexChanged += new System.EventHandler(this.checklistespecialidades_SelectedIndexChanged);
-            // 
-            // dtfecharetiro
-            // 
-            this.dtfecharetiro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfecharetiro.Location = new System.Drawing.Point(5, 378);
-            this.dtfecharetiro.Margin = new System.Windows.Forms.Padding(2);
-            this.dtfecharetiro.Name = "dtfecharetiro";
-            this.dtfecharetiro.Size = new System.Drawing.Size(113, 20);
-            this.dtfecharetiro.TabIndex = 3;
+            this.dateTimePicker2.Location = new System.Drawing.Point(5, 378);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(197, 20);
+            this.dateTimePicker2.TabIndex = 3;
             // 
             // labelretiroingresos
             // 
@@ -181,26 +121,45 @@
             this.labelretiroingresos.TabIndex = 2;
             this.labelretiroingresos.Text = "Fecha de retiro";
             // 
-            // dtfechaingreso
+            // dateTimePicker1
             // 
-            this.dtfechaingreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfechaingreso.Location = new System.Drawing.Point(5, 335);
-            this.dtfechaingreso.Margin = new System.Windows.Forms.Padding(2);
-            this.dtfechaingreso.Name = "dtfechaingreso";
-            this.dtfechaingreso.Size = new System.Drawing.Size(113, 20);
-            this.dtfechaingreso.TabIndex = 1;
+            this.dateTimePicker1.Location = new System.Drawing.Point(5, 335);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(197, 20);
+            this.dateTimePicker1.TabIndex = 1;
             // 
-            // panelbotones
+            // labelfechaingresos
             // 
-            this.panelbotones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelbotones.Controls.Add(this.btneliminarespecialidad);
-            this.panelbotones.Controls.Add(this.btnmodificarespecialidad);
-            this.panelbotones.Controls.Add(this.btnagregarespecialidad);
-            this.panelbotones.Location = new System.Drawing.Point(8, 324);
-            this.panelbotones.Margin = new System.Windows.Forms.Padding(2);
-            this.panelbotones.Name = "panelbotones";
-            this.panelbotones.Size = new System.Drawing.Size(361, 50);
-            this.panelbotones.TabIndex = 2;
+            this.labelfechaingresos.AutoSize = true;
+            this.labelfechaingresos.Location = new System.Drawing.Point(2, 316);
+            this.labelfechaingresos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelfechaingresos.Name = "labelfechaingresos";
+            this.labelfechaingresos.Size = new System.Drawing.Size(89, 13);
+            this.labelfechaingresos.TabIndex = 0;
+            this.labelfechaingresos.Text = "Fecha de ingreso";
+            this.labelfechaingresos.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panelbtingresos
+            // 
+            this.panelbtingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelbtingresos.Controls.Add(this.btneliminarespecialidad);
+            this.panelbtingresos.Controls.Add(this.btnmodificarespecialidad);
+            this.panelbtingresos.Controls.Add(this.btnagregarespecialidad);
+            this.panelbtingresos.Location = new System.Drawing.Point(8, 324);
+            this.panelbtingresos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelbtingresos.Name = "panelbtingresos";
+            this.panelbtingresos.Size = new System.Drawing.Size(361, 50);
+            this.panelbtingresos.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(122, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btneliminarespecialidad
             // 
@@ -229,76 +188,136 @@
             this.btnagregarespecialidad.Text = "Agregar";
             this.btnagregarespecialidad.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(16, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.dgvingresos);
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(8, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(361, 312);
             this.panel1.TabIndex = 3;
             // 
-            // dgvingresos
+            // dataGridView1
             // 
-            this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvingresos.Location = new System.Drawing.Point(0, 0);
-            this.dgvingresos.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvingresos.Name = "dgvingresos";
-            this.dgvingresos.RowHeadersWidth = 62;
-            this.dgvingresos.RowTemplate.Height = 28;
-            this.dgvingresos.Size = new System.Drawing.Size(361, 312);
-            this.dgvingresos.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(361, 312);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // panelaceptar
+            // label2
             // 
-            this.panelaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelaceptar.Controls.Add(this.button1);
-            this.panelaceptar.Location = new System.Drawing.Point(264, 382);
-            this.panelaceptar.Name = "panelaceptar";
-            this.panelaceptar.Size = new System.Drawing.Size(106, 32);
-            this.panelaceptar.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(2, 206);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Especialidades";
             // 
-            // lblagregarnuevopaciente
+            // label3
             // 
-            this.lblagregarnuevopaciente.AutoSize = true;
-            this.lblagregarnuevopaciente.Location = new System.Drawing.Point(5, 65);
-            this.lblagregarnuevopaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblagregarnuevopaciente.Name = "lblagregarnuevopaciente";
-            this.lblagregarnuevopaciente.Size = new System.Drawing.Size(139, 13);
-            this.lblagregarnuevopaciente.TabIndex = 17;
-            this.lblagregarnuevopaciente.Text = "Agregar un nuevo paciente ";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(2, 104);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Medico solicitante";
             // 
-            // labelfechaingresos
+            // comboBox2
             // 
-            this.labelfechaingresos.AutoSize = true;
-            this.labelfechaingresos.Location = new System.Drawing.Point(5, 316);
-            this.labelfechaingresos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelfechaingresos.Name = "labelfechaingresos";
-            this.labelfechaingresos.Size = new System.Drawing.Size(89, 13);
-            this.labelfechaingresos.TabIndex = 18;
-            this.labelfechaingresos.Text = "Fecha de ingreso";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(5, 119);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(197, 21);
+            this.comboBox2.TabIndex = 8;
             // 
-            // cbpacienteapellido
+            // label5
             // 
-            this.cbpacienteapellido.FormattingEnabled = true;
-            this.cbpacienteapellido.Location = new System.Drawing.Point(5, 26);
-            this.cbpacienteapellido.Margin = new System.Windows.Forms.Padding(2);
-            this.cbpacienteapellido.Name = "cbpacienteapellido";
-            this.cbpacienteapellido.Size = new System.Drawing.Size(192, 21);
-            this.cbpacienteapellido.TabIndex = 20;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(2, 166);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Agregar un nuevo medico ";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(172, 166);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(24, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(172, 63);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(24, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "+";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Agregar un nuevo paciente ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(2, 1);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Paciente";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(5, 16);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(197, 21);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(41, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "Limpiar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Location = new System.Drawing.Point(170, 382);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 32);
+            this.panel2.TabIndex = 8;
             // 
             // FormIngresos
             // 
@@ -306,21 +325,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
-            this.Controls.Add(this.panelaceptar);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelbotones);
+            this.Controls.Add(this.panelbtingresos);
             this.Controls.Add(this.paneldatosingresos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormIngresos";
             this.Text = "FormIngresos";
-            this.Load += new System.EventHandler(this.FormIngresos_Load);
             this.paneldatosingresos.ResumeLayout(false);
             this.paneldatosingresos.PerformLayout();
-            this.panelbotones.ResumeLayout(false);
+            this.panelbtingresos.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).EndInit();
-            this.panelaceptar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -328,27 +346,28 @@
         #endregion
 
         private System.Windows.Forms.Panel paneldatosingresos;
-        private System.Windows.Forms.Panel panelbotones;
+        private System.Windows.Forms.Panel panelbtingresos;
+        private System.Windows.Forms.Label labelfechaingresos;
         private System.Windows.Forms.Button btneliminarespecialidad;
         private System.Windows.Forms.Button btnmodificarespecialidad;
         private System.Windows.Forms.Button btnagregarespecialidad;
-        private System.Windows.Forms.DateTimePicker dtfecharetiro;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label labelretiroingresos;
-        private System.Windows.Forms.DateTimePicker dtfechaingreso;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvingresos;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckedListBox checklistespecialidades;
-        private System.Windows.Forms.Label lblagregarnuevomedico;
-        private System.Windows.Forms.Label lblmedicosolicitante;
-        private System.Windows.Forms.ComboBox cbmedicos;
-        private System.Windows.Forms.Label lblespecialidades;
-        private System.Windows.Forms.Button btnagregarmedico;
-        private System.Windows.Forms.Button btnagregarpaciente;
-        private System.Windows.Forms.Label lblpaciente;
-        private System.Windows.Forms.Panel panelaceptar;
-        private System.Windows.Forms.Label lblagregarnuevopaciente;
-        private System.Windows.Forms.Label labelfechaingresos;
-        private System.Windows.Forms.ComboBox cbpacienteapellido;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel2;
     }
 }

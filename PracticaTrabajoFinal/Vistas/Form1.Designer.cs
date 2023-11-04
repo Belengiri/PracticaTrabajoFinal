@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Laboratorio));
             this.panelmenu = new System.Windows.Forms.Panel();
             this.btnlocalidades = new System.Windows.Forms.Button();
             this.btnsalirprogram = new System.Windows.Forms.Button();
@@ -120,7 +119,6 @@
             this.btnpersonalporespecialidad.Text = "Personal por Especialidad";
             this.btnpersonalporespecialidad.UseVisualStyleBackColor = true;
             this.btnpersonalporespecialidad.Visible = false;
-            this.btnpersonalporespecialidad.Click += new System.EventHandler(this.btnpersonalporespecialidad_Click);
             // 
             // btnpracticas
             // 
@@ -222,7 +220,7 @@
             this.lbltitulo.AutoSize = true;
             this.lbltitulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbltitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitulo.Location = new System.Drawing.Point(23, 9);
+            this.lbltitulo.Location = new System.Drawing.Point(25, 19);
             this.lbltitulo.Name = "lbltitulo";
             this.lbltitulo.Size = new System.Drawing.Size(149, 31);
             this.lbltitulo.TabIndex = 11;
@@ -255,11 +253,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(762, 417);
             this.Controls.Add(this.panelcontenedor);
             this.Controls.Add(this.panelmenu);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(778, 456);
             this.Name = "Laboratorio";
             this.panelmenu.ResumeLayout(false);

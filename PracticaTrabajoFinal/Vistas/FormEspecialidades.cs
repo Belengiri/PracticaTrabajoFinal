@@ -1,5 +1,4 @@
 ﻿using PracticaTrabajoFinal.Controladores;
-using PracticaTrabajoFinal.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +14,7 @@ namespace PracticaTrabajoFinal.Vistas
 {
     public partial class FormEspecialidades : Form
     {
-        private CadenaString conexion;
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         ControladoraEspecialidades ce = new ControladoraEspecialidades();
         bool agregar=false;
         bool modificar=false;
@@ -27,11 +26,8 @@ namespace PracticaTrabajoFinal.Vistas
         }
         public void cargar_tabla()
         {
-            conexion = new CadenaString();
             string consulta = "select id_especialidad as numero,nombre_especialidad as nombre from Especialidades";
-            SqlCommand cmd = new SqlCommand(consulta);
-            cmd.Connection = conexion.GetConnection();
-            SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
             adaptador.Fill(dt);
             dgvespecialidades.DataSource = dt;

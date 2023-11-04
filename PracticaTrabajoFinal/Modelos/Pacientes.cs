@@ -10,17 +10,16 @@ namespace PracticaTrabajoFinal.Modelos
 {
     public class Pacientes
     {
-
-        private CadenaString conexion;
+        
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
 
         public void agregarlocalidad(string nombre,int codigo_postal)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string existe = "select nombre_localidad from Localidades where nombre_localidad='" + nombre + "'";
-                SqlCommand comando = new SqlCommand(existe);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(existe, conexion);
                 comando.ExecuteNonQuery();
                 if (existe == nombre)
                 {
@@ -29,8 +28,7 @@ namespace PracticaTrabajoFinal.Modelos
                 else
                 {
                     string sql = "insert into Localidades(nombre_localidad,codigo_postal)values('" + nombre + "',"+codigo_postal+")";
-                    comando = new SqlCommand(sql);
-                    comando.Connection = conexion.GetConnection();
+                    comando = new SqlCommand(sql, conexion);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Localidad AGREGADA");
                 }
@@ -39,15 +37,18 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 MessageBox.Show("error al cargar los datos", ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         public void agregarpaciente(int idlocal,string nombre,string apellido,string fecha,int dni, string calle, int altura,int piso,int depto,string correo,string telefono)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string consulta = "insert into Pacientes(id_localidad,nombre_paciente,apellido_paciente,fecha_nacimiento ,dni,direccion_nombre ,direccion_numero,direccion_piso,direccion_departamento,correo_paciente,telefono_paciente) values (@id_localidad,@nombre_paciente,@apellido_paciente,@fecha_nacimiento ,@dni,@direccion_nombre ,@direccion_numero,@direccion_piso,@direccion_departamento,@correo_paciente,@telefono_paciente)";
-                SqlCommand comando = new SqlCommand(consulta);
-                comando.Connection=conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.Parameters.AddWithValue("@id_localidad", idlocal);
                 comando.Parameters.AddWithValue("@nombre_paciente", nombre);
                 comando.Parameters.AddWithValue("@apellido_paciente", apellido);
@@ -66,15 +67,18 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 MessageBox.Show("error", ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         public void modificarpaciente(int idlocal,string nombre,string apellido,string fecha,int dni,string calle,int altura,int piso,int depto,string correo,string telefono,int idpaciente)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string consulta = "update Pacientes set id_localidad =" + idlocal + ",nombre_paciente = '" + nombre + "',apellido_paciente = '" + apellido + "',fecha_nacimiento = '" + fecha + "',dni = " + dni + ",direccion_nombre = '" + calle + "',direccion_numero = " + altura + ",direccion_piso =" + piso + ",direccion_departamento = " + depto + ",correo_paciente = '" + correo + "',telefono_paciente = '" + telefono + "' where id_paciente = " + idpaciente;
-                SqlCommand comando = new SqlCommand(consulta);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Paciente MODIFICADO");
             }
@@ -82,21 +86,28 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 MessageBox.Show("error al modificar registro", ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         public void eliminarpaciente(int idpaciente)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string consulta = "delete from Pacientes where id_paciente = " + idpaciente;
-                SqlCommand comando = new SqlCommand(consulta);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Paciente ELIMINADO");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error al modificar registro", ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
     }

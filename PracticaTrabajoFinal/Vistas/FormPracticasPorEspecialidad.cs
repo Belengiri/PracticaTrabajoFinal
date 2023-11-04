@@ -1,5 +1,4 @@
 ﻿using PracticaTrabajoFinal.Controladores;
-using PracticaTrabajoFinal.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,22 +14,21 @@ namespace PracticaTrabajoFinal.Vistas
 {
     public partial class FormPracticasPorEspecialidad : Form
     {
-        private CadenaString conexion;
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
         public FormPracticasPorEspecialidad()
         {
             InitializeComponent();
-            conexion= new CadenaString();
         }
-        public void cargarcbespecialidades_practica()
+        public void cargarcbespecialidades()
         {
             try
             {
                 cbespecialidades.DataSource = null;
                 cbespecialidades.Items.Clear();
                 string query = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Connection = conexion.GetConnection();
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -42,17 +40,18 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
-            
+            finally
+            {
+                conexion.Close();
+            }
         }
-        public void cargar_tabla_practica()
+        public void cargar_tabla()
         {
             try
             {
-               
+                conexion.Open();
                 string consulta = "select id_practica as numero, nombre_practica as nombre,tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra where E.id_especialidad="+Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
-                SqlCommand cmd = new SqlCommand(consulta);
-                cmd.Connection = conexion.GetConnection();
-                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
                 dgvpracticasporespecialidad.DataSource = dt;
@@ -62,19 +61,21 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
-            
+            finally
+            {
+                conexion.Close();
+            }
 
         }
 
         private void FormPracticasPorEspecialidad_Load(object sender, EventArgs e)
         {
-            cargarcbespecialidades_practica();
-            conexion = new CadenaString();
+            cargarcbespecialidades();
         }
 
         private void btnbuscarpracticaporespecialidad_Click(object sender, EventArgs e)
         {
-            cargar_tabla_practica();
+            cargar_tabla();
         }
     }
 }

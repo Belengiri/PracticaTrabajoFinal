@@ -10,19 +10,18 @@ namespace PracticaTrabajoFinal.Modelos
 {
     public class Practicas
     {
-
-        private CadenaString conexion;
+       
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
 
         //agrega una muestra nueva a la base de datos
         public void agregarmuestra(string nombre)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 //query que corrobora que no exista la muestra nueva en la base de datos
                 string existe = "select nombre_muestra from Muestras where nombre_muestra='" + nombre + "'";
-                SqlCommand comando = new SqlCommand(existe);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(existe, conexion);
                 comando.ExecuteNonQuery();
                 if (existe == nombre)
                 {
@@ -34,13 +33,16 @@ namespace PracticaTrabajoFinal.Modelos
                     //query que la agrega a la base de datos si no existe
                     string sql = "insert into Muestras(nombre_muestra)values('" + nombre + "')";
                     //vuelvo a asignarñe otra query y conexion al comando 
-                    comando = new SqlCommand(sql);
-                    comando.Connection=conexion.GetConnection();
+                    comando = new SqlCommand(sql, conexion);
                     comando.ExecuteNonQuery();  
                 }
             }catch (Exception ex)
             {
                 MessageBox.Show("error al modificar los datos", ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
         //agrega una nueva practica a la base de datos
@@ -48,10 +50,9 @@ namespace PracticaTrabajoFinal.Modelos
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open(); 
                 string consulta = "insert into Practicas(id_especialidad,id_muestra,nombre_practica,tiempo_resultado) values (@id_especialidades,@id_muestra,@nombre_practica,@tiempo_resultado)";
-                SqlCommand comando = new SqlCommand(consulta);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.Parameters.AddWithValue("@id_especialidades", especialidad);
                 comando.Parameters.AddWithValue("@id_muestra", tipomuestra);
                 comando.Parameters.AddWithValue("@tiempo_resultado", tiemporesultado);
@@ -62,21 +63,28 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 MessageBox.Show("error",ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         //modifica una practica en la base de datos
         public void modificarpractica(string nombre,int tiemporesultado,int especialidad,int tipomuestra,int idpractica)
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string consulta = "update Practicas set id_especialidad ="+especialidad+",id_muestra="+tipomuestra+",nombre_practica='"+nombre+"',tiempo_resultado="+tiemporesultado+"where id_practica ="+idpractica+"";
-                SqlCommand comando = new SqlCommand(@consulta);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(@consulta, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Registro MODIFICADO");
             }catch (Exception ex)
             {
                 MessageBox.Show("error al modificar registro",ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
         //elimina una practica de la base de datos
@@ -84,15 +92,18 @@ namespace PracticaTrabajoFinal.Modelos
         {
             try
             {
-                conexion = new CadenaString();
+                conexion.Open();
                 string consulta = "delete from Practicas where id_practica = "+idpractica;
-                SqlCommand comando = new SqlCommand(consulta);
-                comando.Connection = conexion.GetConnection();
+                SqlCommand comando = new SqlCommand(consulta, conexion);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Registro ELIMINADO");
             }catch(Exception ex)
             {
                 MessageBox.Show("error al modificar registro", ex.Message);
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
     }
