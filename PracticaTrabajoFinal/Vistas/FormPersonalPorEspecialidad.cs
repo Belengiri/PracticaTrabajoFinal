@@ -13,18 +13,21 @@ using System.Windows.Forms;
 
 namespace PracticaTrabajoFinal.Vistas
 {
-    public partial class FormPracticasPorEspecialidad : Form
+    public partial class FormPersonalPorEspecialidad : Form
     {
-        private CadenaString conexion;
-        //SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
-        ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
-        public FormPracticasPorEspecialidad()
+        public FormPersonalPorEspecialidad()
         {
             InitializeComponent();
-            conexion= new CadenaString();
+            cargarcbespecialidades();
+            //conexion = new CadenaString();
         }
-        public void cargarcbespecialidades_practica()
+        private CadenaString conexion;
+
+        //SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
+        ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
+        public void cargarcbespecialidades()
         {
+            conexion = new CadenaString();
             try
             {
                 cbespecialidades.DataSource = null;
@@ -43,39 +46,30 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
-            
         }
-        public void cargar_tabla_practica()
+        public void cargar_tabla()
         {
             try
             {
-               
-                string consulta = "select id_practica as numero, nombre_practica as nombre,tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra where E.id_especialidad="+Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
+                string consulta = "select id_personal_lab as n,nombre_personal_lab as nombre,apellido_personal_lab as apellido,matricula_personal_lab as matricula, E.nombre_especialidad as especilidad,C.nombre_categoria as categoria from Personal_Laboratorio P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria where E.id_especialidad=" + Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adaptador.Fill(dt);
-                dgvpracticasporespecialidad.DataSource = dt;
+                DataTable dts = new DataTable();
+                adaptador.Fill(dts);
+                dgvpersonalporespecialidad.DataSource = dts;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
-            
 
-        }
-
-        private void FormPracticasPorEspecialidad_Load(object sender, EventArgs e)
-        {
-            cargarcbespecialidades_practica();
-            conexion = new CadenaString();
         }
 
         private void btnbuscarpracticaporespecialidad_Click(object sender, EventArgs e)
         {
-            cargar_tabla_practica();
+            cargar_tabla();
         }
     }
 }
