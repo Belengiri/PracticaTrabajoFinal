@@ -22,7 +22,7 @@ namespace PracticaTrabajoFinal
         private void btnpaciente_Click(object sender, EventArgs e)
         {
             abrirform(new FormPacientes());
-            btnpaciente.BackColor = SystemColors.Window;
+            btnpaciente.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -59,7 +59,7 @@ namespace PracticaTrabajoFinal
         private void btningresos_Click(object sender, EventArgs e)
         {
             abrirform(new FormIngresos());
-            btningresos.BackColor = SystemColors.Window;
+            btningresos.BackColor = SystemColors.ControlDark;
             btnpaciente.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -104,7 +104,7 @@ namespace PracticaTrabajoFinal
         private void btnpersonalmedico_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalMedico());
-            btnpersonalmedico.BackColor = SystemColors.Window;
+            btnpersonalmedico.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpaciente.BackColor = SystemColors.ActiveCaption;
@@ -119,7 +119,7 @@ namespace PracticaTrabajoFinal
         private void btnpersonallaboratorio_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalLaboratorio());
-            btnpersonallaboratorio.BackColor = SystemColors.Window;
+            btnpersonallaboratorio.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -134,7 +134,7 @@ namespace PracticaTrabajoFinal
         private void btnpracticas_Click(object sender, EventArgs e)
         {
             abrirform(new FormPracticas());
-            btnpracticas.BackColor = SystemColors.Window;
+            btnpracticas.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -154,7 +154,7 @@ namespace PracticaTrabajoFinal
         private void btnespecialidades_Click(object sender, EventArgs e)
         {
             abrirform(new FormEspecialidades());
-            btnespecialidades.BackColor = SystemColors.Window;
+            btnespecialidades.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -169,7 +169,7 @@ namespace PracticaTrabajoFinal
         private void btnpracticasporespecialidad_Click(object sender, EventArgs e)
         {
             abrirform(new FormPracticasPorEspecialidad());
-            btnpracticasporespecialidad.BackColor = SystemColors.Window;
+            btnpracticasporespecialidad.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
@@ -184,7 +184,7 @@ namespace PracticaTrabajoFinal
         private void btnpersonalporespecialidad_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalPorEspecialidad());
-            btnpersonalporespecialidad.BackColor = SystemColors.Window;
+            btnpersonalporespecialidad.BackColor = SystemColors.ControlDark;
             btningresos.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.BackColor = SystemColors.ActiveCaption;
             btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
