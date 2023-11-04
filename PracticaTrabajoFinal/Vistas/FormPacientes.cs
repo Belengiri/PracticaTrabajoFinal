@@ -32,7 +32,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 cblocalidades.DataSource = null;
                 cblocalidades.Items.Clear();
-                string query = "select id_localidad,nombre_localidad as nombre,codigo_postal as cp from Localidades";
+                string query = "select id_localidad,nombre_localidad as nombre from Localidades";
                 conexion.Open();
                 SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);

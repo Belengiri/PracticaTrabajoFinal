@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PracticaTrabajoFinal.Modelos
 {
     public class Ingresos
     {
-        private DateTime fecha_ingreso { get => fecha_ingreso; set => fecha_ingreso = value; }
-        private DateTime fecha_retiro { get => fecha_retiro; set => fecha_retiro = value; }
-        private Pacientes paciente { get => paciente; set => paciente = value; }
-        private Medicos medico { get => medico; set => medico = value; }
-        private List<Practicas> Practicas;
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
+        
+        
+       public void agregaringreso(int idpaciente,int idmedico,string fechaingreso,string fecharetiro)
+        {
+
+        }
     }
 }
