@@ -16,7 +16,6 @@ namespace PracticaTrabajoFinal.Vistas
     public partial class FormPracticasPorEspecialidad : Form
     {
         private CadenaString conexion;
-        //SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
         public FormPracticasPorEspecialidad()
         {

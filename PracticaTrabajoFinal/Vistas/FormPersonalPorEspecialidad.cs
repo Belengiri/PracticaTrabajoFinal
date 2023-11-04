@@ -19,11 +19,8 @@ namespace PracticaTrabajoFinal.Vistas
         {
             InitializeComponent();
             cargarcbespecialidades();
-            //conexion = new CadenaString();
         }
         private CadenaString conexion;
-
-        //SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
         public void cargarcbespecialidades()
         {
@@ -49,6 +46,7 @@ namespace PracticaTrabajoFinal.Vistas
         }
         public void cargar_tabla()
         {
+            conexion = new CadenaString();
             try
             {
                 string consulta = "select id_personal_lab as n,nombre_personal_lab as nombre,apellido_personal_lab as apellido,matricula_personal_lab as matricula, E.nombre_especialidad as especilidad,C.nombre_categoria as categoria from Personal_Laboratorio P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria where E.id_especialidad=" + Convert.ToInt32(cbespecialidades.SelectedValue.ToString());

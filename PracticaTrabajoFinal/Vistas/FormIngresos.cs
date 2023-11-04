@@ -14,21 +14,23 @@ namespace PracticaTrabajoFinal.Vistas
 {
     public partial class FormIngresos : Form
     {
-        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
+        private CadenaString conexion;
         public FormIngresos()
         {
             InitializeComponent();
         }
+
         List<string> listaespe = new List<string>();
         public void cargarchecklistespecialidades()
         {
             try
             {
+                conexion = new CadenaString();
                 checklistespecialidades.DataSource = null;
                 checklistespecialidades.Items.Clear();
                 string sql = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
-                conexion.Open();
-                SqlCommand cmd = new SqlCommand(sql, conexion);
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Connection = conexion.GetConnection();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -45,20 +47,17 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
         }
         public void cargarcbmedicos()
         {
             try
             {
+                conexion = new CadenaString();
                 cbmedicos.DataSource = null;
                 cbmedicos.Items.Clear();
                 string sql = "select id_profesional,nombre_profesional+' '+apellido_profesional as 'apellido' from Profesionales";
-                conexion.Open();
-                SqlCommand cmd = new SqlCommand(sql, conexion);
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Connection = conexion.GetConnection();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -75,22 +74,19 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
-            finally
-            {
-                conexion.Close();
-            }
 
         }
        public void cargarcbpacientes()
         {   
            
             try
-            {   
+            {
+                conexion = new CadenaString();
                 cbpacienteapellido.DataSource = null;
                 cbpacienteapellido.Items.Clear();
                 string sql = "select id_paciente,nombre_paciente+' '+apellido_paciente as 'apellido' from Pacientes";
-                conexion.Open();
-                SqlCommand cmd = new SqlCommand(sql, conexion);
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Connection = conexion.GetConnection();
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -106,10 +102,6 @@ namespace PracticaTrabajoFinal.Vistas
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
-            }
-            finally
-            {
-                conexion.Close();
             }
         }
 

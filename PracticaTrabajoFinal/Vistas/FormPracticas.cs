@@ -19,7 +19,6 @@ namespace PracticaTrabajoFinal.Vistas
         ControladoraPracticas cp = new ControladoraPracticas();
         //creo una nueva conexio a la base de datos 
         private CadenaString conexion;
-        //SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         //variables booleana para que el boton aceptar detecte la accion que debe realizar
         bool agregar = false;
         bool modificar = false;
