@@ -13,13 +13,14 @@ using System.Windows.Forms;
 
 namespace PracticaTrabajoFinal.Vistas
 {
-    public partial class FormPracticasPorEspecialidad : Form
+    public partial class FormPersonalPorEspecialidad : Form
     {
         private Conexion conexion;
-        ControladoraEspecialidades cespxprac = new ControladoraEspecialidades();
-        public FormPracticasPorEspecialidad()
+        ControladoraEspecialidades cespxper = new ControladoraEspecialidades();
+        public FormPersonalPorEspecialidad()
         {
             InitializeComponent();
+            cargarcbespecialidades();
         }
         public void cargarcbespecialidades()
         {
@@ -48,28 +49,22 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select id_practica as numero, nombre_practica as nombre,tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra where E.id_especialidad="+Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
+                string consulta = "select id_personal_lab as n,nombre_personal_lab as nombre,apellido_personal_lab as apellido,matricula_personal_lab as matricula,C.nombre_categoria as categoria, E.nombre_especialidad as especialidad from Personal_Laboratorio P inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria where E.id_especialidad ="+ Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
-                dgvpracticasporespecialidad.DataSource = dt;
+                dgvpersonalporespecialidad.DataSource = dt;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
-
         }
 
-        private void FormPracticasPorEspecialidad_Load(object sender, EventArgs e)
-        {
-            cargarcbespecialidades();
-        }
-
-        private void btnbuscarpracticaporespecialidad_Click(object sender, EventArgs e)
+        private void btnbuscarpersonalporespecialidad_Click(object sender, EventArgs e)
         {
             cargar_tabla();
         }
