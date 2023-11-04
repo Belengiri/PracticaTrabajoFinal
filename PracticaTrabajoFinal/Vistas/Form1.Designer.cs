@@ -81,7 +81,6 @@
             this.btnlocalidades.Text = "Localidades";
             this.btnlocalidades.UseVisualStyleBackColor = true;
             this.btnlocalidades.Visible = false;
-            this.btnlocalidades.Click += new System.EventHandler(this.btnlocalidades_Click);
             // 
             // btnsalirprogram
             // 
