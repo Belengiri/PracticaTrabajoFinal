@@ -1,5 +1,4 @@
 ﻿using PracticaTrabajoFinal.Controladores;
-using PracticaTrabajoFinal.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +17,7 @@ namespace PracticaTrabajoFinal.Vistas
         //instrancion un control de practicas para enviar los datos
         ControladoraPracticas cp = new ControladoraPracticas();
         //creo una nueva conexio a la base de datos 
-        private CadenaString conexion;
+        SqlConnection conexion = new SqlConnection("workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal");
         //variables booleana para que el boton aceptar detecte la accion que debe realizar
         bool agregar = false;
         bool modificar = false;
@@ -31,11 +30,8 @@ namespace PracticaTrabajoFinal.Vistas
         //metodo para carga la grilla de practicas mostrando nombre de  especialidad y muestra
         public void cargar_tabla()
         {
-            conexion = new CadenaString();
             string consulta = "select p.id_practica as numero, nombre_practica as nombre, tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra";
-            SqlCommand cmd = new SqlCommand(consulta);
-            cmd.Connection = conexion.GetConnection();
-            SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, conexion);
             DataTable dt = new DataTable();
             adaptador.Fill(dt);
             dgvgrillapracticas.DataSource = dt;
@@ -46,12 +42,11 @@ namespace PracticaTrabajoFinal.Vistas
         {
             try
             {
-                conexion = new CadenaString();
                 cbespacialidadpractica.DataSource = null;
                 cbespacialidadpractica.Items.Clear();
                 string query = "select id_especialidad,nombre_especialidad as nombre from Especialidades";
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Connection = conexion.GetConnection();
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -62,18 +57,21 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         //metodo para carga combobox con las muestras que ahi disponibles
         public void cargarcbmuestras()
         {
             try
             {
-                conexion = new CadenaString();
                 cbtipodemuestra.DataSource = null;
                 cbtipodemuestra.Items.Clear();
                 string query = "select id_muestra,nombre_muestra as nombre from Muestras";
-                SqlCommand cmd = new SqlCommand(query);
-                cmd.Connection = conexion.GetConnection();
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand(query, conexion);
                 SqlDataAdapter data = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 data.Fill(dt);
@@ -84,13 +82,16 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("error", ex.Message);
             }
+            finally
+            {
+                conexion.Close();
+            }
         }
         private void FormPracticas_Load(object sender, EventArgs e)
         {
             dgvgrillapracticas.ClearSelection();
             cargarcbespecialidades();
             cargarcbmuestras();
-            conexion = new CadenaString();
 
         }
         //boton agregar practica
