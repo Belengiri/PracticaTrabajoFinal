@@ -48,11 +48,15 @@ namespace PracticaTrabajoFinal.Vistas
 
                     cl.Agregar_Localidad(txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
                     cargar_tabla();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
                 }
                 else if (modificar == true)
                 {
                     cl.Modificar_Localidad( Convert.ToInt32(dgvlocalidades.CurrentRow.Cells[0].Value.ToString()),txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
                     cargar_tabla();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
                     dgvlocalidades.ClearSelection();
                 }
                 else if (eliminar == true)
@@ -66,6 +70,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("Accion no confirmada");
                 txtnombrelocalidad.Clear();
+                txtcodigopostal.Clear();
                 txtnombrelocalidad.Focus();
                 dgvlocalidades.ClearSelection();
             }
@@ -83,6 +88,13 @@ namespace PracticaTrabajoFinal.Vistas
         private void btnagregarlocalidad_Click(object sender, EventArgs e)
         {
             paneldatoslocalidades.Visible = true;
+            txtnombrelocalidad.Clear();
+            txtnombrelocalidad.Focus();
+            txtcodigopostal.Clear();
+            txtcodigopostal.Visible = true;
+            txtnombrelocalidad.Visible = true;
+            lblnombrelocalidad.Visible = true;
+            llblcodigopostal.Visible = true;
             agregar = true;
             eliminar = false;
             modificar = false;
@@ -93,7 +105,12 @@ namespace PracticaTrabajoFinal.Vistas
             
             paneldatoslocalidades.Visible = true;
             txtnombrelocalidad.Clear();
+            txtcodigopostal.Clear();
             txtnombrelocalidad.Focus();
+            txtcodigopostal.Visible = true;
+            txtnombrelocalidad.Visible = true;
+            lblnombrelocalidad.Visible = true;
+            llblcodigopostal.Visible = true;
             modificar = true;
             agregar = false;
             eliminar = false;
