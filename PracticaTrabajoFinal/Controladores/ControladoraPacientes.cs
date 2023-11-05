@@ -39,11 +39,15 @@ namespace PracticaTrabajoFinal.Controladores
                 if (id_localidad!=0 && nombre_localidad!=""&&codigo_postal!=0) {
                     pac.modificarlocalidad(Convert.ToInt32(id_localidad),nombre_localidad,Convert.ToInt32(codigo_postal));
                 }
+                else
+                {
+                    MessageBox.Show("campos vacios");
+                }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar el paciente", e.ToString());
+                MessageBox.Show("error al modificar la localidad", e.ToString());
             }
 
         }
@@ -55,10 +59,14 @@ namespace PracticaTrabajoFinal.Controladores
                 {
                     pac.eliminarlocalidad(id_localidad);
                 }
+                else
+                {
+                    MessageBox.Show("campos vacios");
+                }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar el paciente", e.ToString());
+                MessageBox.Show("error al eliminar la localidad", e.ToString());
             }
         }
         public void Agregar_Paciente(int idlocal,string nombre,string apellido,int dni, string fecha, string calle,int altura,int piso,int depto,string correo,string telefono)

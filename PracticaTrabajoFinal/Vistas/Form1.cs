@@ -112,5 +112,10 @@ namespace PracticaTrabajoFinal
         {
             abrirform(new FormLocalidades());
         }
+
+        private void btncategorias_Click(object sender, EventArgs e)
+        {
+            abrirform(new FormCategorias());
+        }
     }
 }

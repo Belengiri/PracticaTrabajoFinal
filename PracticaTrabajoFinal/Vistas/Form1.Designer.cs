@@ -162,6 +162,7 @@
             this.btncategorias.Text = "Categorias";
             this.btncategorias.UseVisualStyleBackColor = true;
             this.btncategorias.Visible = false;
+            this.btncategorias.Click += new System.EventHandler(this.btncategorias_Click);
             // 
             // btnpersonallaboratorio
             // 

@@ -28,6 +28,7 @@ namespace PracticaTrabajoFinal.Modelos
                 }
                 else
                 {
+                    conexion = new Conexion();
                     string sql = "insert into Localidades(nombre_localidad,codigo_postal)values('" + nombre + "',"+codigo_postal+")";
                     comando = new SqlCommand(sql);
                     comando.Connection = conexion.GetSqlConnection();
@@ -37,7 +38,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al cargar los datos", ex.Message);
+                MessageBox.Show("error al cargar la localidad", ex.Message);
             }
         }
         public void modificarlocalidad(int id_localidad,string nombre_localidad,int codigo_postal)
@@ -45,11 +46,11 @@ namespace PracticaTrabajoFinal.Modelos
             try
             {
                 conexion = new Conexion();
-                string consulta = "update Localidades set id_localidad =" + id_localidad + ",nombre_localidad = '" + nombre_localidad + "',codigo_postal = " + codigo_postal + " where id_localidad = " + id_localidad;
+                string consulta = "update Localidades set nombre_localidad = '" + nombre_localidad + "',codigo_postal = " + codigo_postal + " where id_localidad = " + id_localidad;
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Paciente MODIFICADO");
+                MessageBox.Show("localidad MODIFICADA");
             }
             catch (Exception ex)
             {
@@ -66,7 +67,7 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Paciente ELIMINADO");
+                MessageBox.Show("localidad ELIMINADA");
             }
             catch (Exception ex)
             {
