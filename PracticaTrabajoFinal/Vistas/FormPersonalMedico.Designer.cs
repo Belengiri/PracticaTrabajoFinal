@@ -29,7 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.paneldatospaciente = new System.Windows.Forms.Panel();
+            this.paneldatosmedico = new System.Windows.Forms.Panel();
+            this.lblserviciomedico = new System.Windows.Forms.Label();
+            this.cbservicio = new System.Windows.Forms.ComboBox();
+            this.panelnuevoservicio = new System.Windows.Forms.Panel();
+            this.btncancelarservicio = new System.Windows.Forms.Button();
+            this.btnguardarservicio = new System.Windows.Forms.Button();
+            this.lblnombreservicio = new System.Windows.Forms.Label();
+            this.txtnombreservicio = new System.Windows.Forms.TextBox();
             this.agregarservicio = new System.Windows.Forms.CheckBox();
             this.lblapellidomedico = new System.Windows.Forms.Label();
             this.lblmatriculamedico = new System.Windows.Forms.Label();
@@ -41,43 +48,105 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
-            this.panelbtnaceptarpaciente = new System.Windows.Forms.Panel();
+            this.panelbtnaceptar = new System.Windows.Forms.Panel();
             this.btnaceptar = new System.Windows.Forms.Button();
-            this.paneldgvpacientes = new System.Windows.Forms.Panel();
-            this.dgvpacientes = new System.Windows.Forms.DataGridView();
-            this.panelnuevalocalidad = new System.Windows.Forms.Panel();
-            this.btncancelarservicio = new System.Windows.Forms.Button();
-            this.btnguardarservicio = new System.Windows.Forms.Button();
-            this.lblnombreservicio = new System.Windows.Forms.Label();
-            this.txtnombreservicio = new System.Windows.Forms.TextBox();
-            this.lblserviciomedico = new System.Windows.Forms.Label();
-            this.cblocalidades = new System.Windows.Forms.ComboBox();
-            this.paneldatospaciente.SuspendLayout();
+            this.btncancelar = new System.Windows.Forms.Button();
+            this.paneldgvmedicos = new System.Windows.Forms.Panel();
+            this.dgvpmedicos = new System.Windows.Forms.DataGridView();
+            this.paneldatosmedico.SuspendLayout();
+            this.panelnuevoservicio.SuspendLayout();
             this.panelbotones.SuspendLayout();
-            this.panelbtnaceptarpaciente.SuspendLayout();
-            this.paneldgvpacientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
-            this.panelnuevalocalidad.SuspendLayout();
+            this.panelbtnaceptar.SuspendLayout();
+            this.paneldgvmedicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpmedicos)).BeginInit();
             this.SuspendLayout();
             // 
-            // paneldatospaciente
+            // paneldatosmedico
             // 
-            this.paneldatospaciente.Controls.Add(this.lblserviciomedico);
-            this.paneldatospaciente.Controls.Add(this.cblocalidades);
-            this.paneldatospaciente.Controls.Add(this.panelnuevalocalidad);
-            this.paneldatospaciente.Controls.Add(this.agregarservicio);
-            this.paneldatospaciente.Controls.Add(this.lblapellidomedico);
-            this.paneldatospaciente.Controls.Add(this.lblmatriculamedico);
-            this.paneldatospaciente.Controls.Add(this.lblnombremedico);
-            this.paneldatospaciente.Controls.Add(this.txtmatriculamedico);
-            this.paneldatospaciente.Controls.Add(this.txtapellidomedico);
-            this.paneldatospaciente.Controls.Add(this.txtnombremedico);
-            this.paneldatospaciente.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneldatospaciente.Location = new System.Drawing.Point(367, 0);
-            this.paneldatospaciente.Name = "paneldatospaciente";
-            this.paneldatospaciente.Size = new System.Drawing.Size(214, 417);
-            this.paneldatospaciente.TabIndex = 7;
-            this.paneldatospaciente.Visible = false;
+            this.paneldatosmedico.Controls.Add(this.lblserviciomedico);
+            this.paneldatosmedico.Controls.Add(this.cbservicio);
+            this.paneldatosmedico.Controls.Add(this.panelnuevoservicio);
+            this.paneldatosmedico.Controls.Add(this.agregarservicio);
+            this.paneldatosmedico.Controls.Add(this.lblapellidomedico);
+            this.paneldatosmedico.Controls.Add(this.lblmatriculamedico);
+            this.paneldatosmedico.Controls.Add(this.lblnombremedico);
+            this.paneldatosmedico.Controls.Add(this.txtmatriculamedico);
+            this.paneldatosmedico.Controls.Add(this.txtapellidomedico);
+            this.paneldatosmedico.Controls.Add(this.txtnombremedico);
+            this.paneldatosmedico.Dock = System.Windows.Forms.DockStyle.Right;
+            this.paneldatosmedico.Location = new System.Drawing.Point(367, 0);
+            this.paneldatosmedico.Name = "paneldatosmedico";
+            this.paneldatosmedico.Size = new System.Drawing.Size(214, 417);
+            this.paneldatosmedico.TabIndex = 7;
+            this.paneldatosmedico.Visible = false;
+            // 
+            // lblserviciomedico
+            // 
+            this.lblserviciomedico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblserviciomedico.AutoSize = true;
+            this.lblserviciomedico.Location = new System.Drawing.Point(6, 125);
+            this.lblserviciomedico.Name = "lblserviciomedico";
+            this.lblserviciomedico.Size = new System.Drawing.Size(45, 13);
+            this.lblserviciomedico.TabIndex = 26;
+            this.lblserviciomedico.Text = "Servicio";
+            // 
+            // cbservicio
+            // 
+            this.cbservicio.FormattingEnabled = true;
+            this.cbservicio.Location = new System.Drawing.Point(82, 122);
+            this.cbservicio.Name = "cbservicio";
+            this.cbservicio.Size = new System.Drawing.Size(128, 21);
+            this.cbservicio.TabIndex = 25;
+            // 
+            // panelnuevoservicio
+            // 
+            this.panelnuevoservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelnuevoservicio.Controls.Add(this.btncancelarservicio);
+            this.panelnuevoservicio.Controls.Add(this.btnguardarservicio);
+            this.panelnuevoservicio.Controls.Add(this.lblnombreservicio);
+            this.panelnuevoservicio.Controls.Add(this.txtnombreservicio);
+            this.panelnuevoservicio.Location = new System.Drawing.Point(9, 192);
+            this.panelnuevoservicio.Name = "panelnuevoservicio";
+            this.panelnuevoservicio.Size = new System.Drawing.Size(201, 94);
+            this.panelnuevoservicio.TabIndex = 24;
+            this.panelnuevoservicio.Visible = false;
+            // 
+            // btncancelarservicio
+            // 
+            this.btncancelarservicio.Location = new System.Drawing.Point(111, 53);
+            this.btncancelarservicio.Name = "btncancelarservicio";
+            this.btncancelarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btncancelarservicio.TabIndex = 25;
+            this.btncancelarservicio.Text = "Cancelar";
+            this.btncancelarservicio.UseVisualStyleBackColor = true;
+            this.btncancelarservicio.Click += new System.EventHandler(this.btncancelarservicio_Click);
+            // 
+            // btnguardarservicio
+            // 
+            this.btnguardarservicio.Location = new System.Drawing.Point(23, 53);
+            this.btnguardarservicio.Name = "btnguardarservicio";
+            this.btnguardarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btnguardarservicio.TabIndex = 24;
+            this.btnguardarservicio.Text = "Guardar";
+            this.btnguardarservicio.UseVisualStyleBackColor = true;
+            this.btnguardarservicio.Click += new System.EventHandler(this.btnguardarservicio_Click);
+            // 
+            // lblnombreservicio
+            // 
+            this.lblnombreservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblnombreservicio.AutoSize = true;
+            this.lblnombreservicio.Location = new System.Drawing.Point(3, 10);
+            this.lblnombreservicio.Name = "lblnombreservicio";
+            this.lblnombreservicio.Size = new System.Drawing.Size(85, 13);
+            this.lblnombreservicio.TabIndex = 23;
+            this.lblnombreservicio.Text = "Nombre Servicio";
+            // 
+            // txtnombreservicio
+            // 
+            this.txtnombreservicio.Location = new System.Drawing.Point(98, 3);
+            this.txtnombreservicio.Name = "txtnombreservicio";
+            this.txtnombreservicio.Size = new System.Drawing.Size(100, 20);
+            this.txtnombreservicio.TabIndex = 1;
             // 
             // agregarservicio
             // 
@@ -88,6 +157,7 @@
             this.agregarservicio.TabIndex = 22;
             this.agregarservicio.Text = "Agregar Servicio";
             this.agregarservicio.UseVisualStyleBackColor = true;
+            this.agregarservicio.CheckedChanged += new System.EventHandler(this.agregarservicio_CheckedChanged);
             // 
             // lblapellidomedico
             // 
@@ -156,12 +226,14 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Enabled = false;
             this.btneliminar.Location = new System.Drawing.Point(174, 18);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(79, 39);
             this.btneliminar.TabIndex = 3;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnmodificar
             // 
@@ -171,6 +243,7 @@
             this.btnmodificar.TabIndex = 2;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnagregar
             // 
@@ -180,45 +253,57 @@
             this.btnagregar.TabIndex = 1;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // panelbtnaceptarpaciente
+            // panelbtnaceptar
             // 
-            this.panelbtnaceptarpaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelbtnaceptarpaciente.Controls.Add(this.btnaceptar);
-            this.panelbtnaceptarpaciente.Location = new System.Drawing.Point(236, 359);
-            this.panelbtnaceptarpaciente.Name = "panelbtnaceptarpaciente";
-            this.panelbtnaceptarpaciente.Size = new System.Drawing.Size(123, 58);
-            this.panelbtnaceptarpaciente.TabIndex = 5;
-            this.panelbtnaceptarpaciente.Visible = false;
+            this.panelbtnaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelbtnaceptar.Controls.Add(this.btnaceptar);
+            this.panelbtnaceptar.Controls.Add(this.btncancelar);
+            this.panelbtnaceptar.Location = new System.Drawing.Point(160, 359);
+            this.panelbtnaceptar.Name = "panelbtnaceptar";
+            this.panelbtnaceptar.Size = new System.Drawing.Size(199, 58);
+            this.panelbtnaceptar.TabIndex = 5;
             // 
             // btnaceptar
             // 
             this.btnaceptar.Enabled = false;
-            this.btnaceptar.Location = new System.Drawing.Point(20, 16);
+            this.btnaceptar.Location = new System.Drawing.Point(104, 16);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(78, 30);
-            this.btnaceptar.TabIndex = 1;
+            this.btnaceptar.TabIndex = 2;
             this.btnaceptar.Text = "Aceptar";
             this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
-            // paneldgvpacientes
+            // btncancelar
             // 
-            this.paneldgvpacientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btncancelar.Location = new System.Drawing.Point(20, 16);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(78, 30);
+            this.btncancelar.TabIndex = 1;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // paneldgvmedicos
+            // 
+            this.paneldgvmedicos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldgvpacientes.Controls.Add(this.dgvpacientes);
-            this.paneldgvpacientes.Location = new System.Drawing.Point(1, 38);
-            this.paneldgvpacientes.Name = "paneldgvpacientes";
-            this.paneldgvpacientes.Size = new System.Drawing.Size(346, 248);
-            this.paneldgvpacientes.TabIndex = 4;
+            this.paneldgvmedicos.Controls.Add(this.dgvpmedicos);
+            this.paneldgvmedicos.Location = new System.Drawing.Point(1, 38);
+            this.paneldgvmedicos.Name = "paneldgvmedicos";
+            this.paneldgvmedicos.Size = new System.Drawing.Size(346, 248);
+            this.paneldgvmedicos.TabIndex = 4;
             // 
-            // dgvpacientes
+            // dgvpmedicos
             // 
-            this.dgvpacientes.AllowUserToAddRows = false;
-            this.dgvpacientes.AllowUserToDeleteRows = false;
-            this.dgvpacientes.AllowUserToResizeColumns = false;
-            this.dgvpacientes.AllowUserToResizeRows = false;
-            this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpmedicos.AllowUserToAddRows = false;
+            this.dgvpmedicos.AllowUserToDeleteRows = false;
+            this.dgvpmedicos.AllowUserToResizeColumns = false;
+            this.dgvpmedicos.AllowUserToResizeRows = false;
+            this.dgvpmedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -226,80 +311,15 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
-            this.dgvpacientes.MultiSelect = false;
-            this.dgvpacientes.Name = "dgvpacientes";
-            this.dgvpacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
-            this.dgvpacientes.TabIndex = 5;
-            // 
-            // panelnuevalocalidad
-            // 
-            this.panelnuevalocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelnuevalocalidad.Controls.Add(this.btncancelarservicio);
-            this.panelnuevalocalidad.Controls.Add(this.btnguardarservicio);
-            this.panelnuevalocalidad.Controls.Add(this.lblnombreservicio);
-            this.panelnuevalocalidad.Controls.Add(this.txtnombreservicio);
-            this.panelnuevalocalidad.Location = new System.Drawing.Point(9, 192);
-            this.panelnuevalocalidad.Name = "panelnuevalocalidad";
-            this.panelnuevalocalidad.Size = new System.Drawing.Size(201, 94);
-            this.panelnuevalocalidad.TabIndex = 24;
-            this.panelnuevalocalidad.Visible = false;
-            // 
-            // btncancelarservicio
-            // 
-            this.btncancelarservicio.Location = new System.Drawing.Point(111, 53);
-            this.btncancelarservicio.Name = "btncancelarservicio";
-            this.btncancelarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btncancelarservicio.TabIndex = 25;
-            this.btncancelarservicio.Text = "Cancelar";
-            this.btncancelarservicio.UseVisualStyleBackColor = true;
-            // 
-            // btnguardarservicio
-            // 
-            this.btnguardarservicio.Location = new System.Drawing.Point(23, 53);
-            this.btnguardarservicio.Name = "btnguardarservicio";
-            this.btnguardarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btnguardarservicio.TabIndex = 24;
-            this.btnguardarservicio.Text = "Guardar";
-            this.btnguardarservicio.UseVisualStyleBackColor = true;
-            // 
-            // lblnombreservicio
-            // 
-            this.lblnombreservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblnombreservicio.AutoSize = true;
-            this.lblnombreservicio.Location = new System.Drawing.Point(3, 10);
-            this.lblnombreservicio.Name = "lblnombreservicio";
-            this.lblnombreservicio.Size = new System.Drawing.Size(85, 13);
-            this.lblnombreservicio.TabIndex = 23;
-            this.lblnombreservicio.Text = "Nombre Servicio";
-            // 
-            // txtnombreservicio
-            // 
-            this.txtnombreservicio.Location = new System.Drawing.Point(98, 3);
-            this.txtnombreservicio.Name = "txtnombreservicio";
-            this.txtnombreservicio.Size = new System.Drawing.Size(100, 20);
-            this.txtnombreservicio.TabIndex = 1;
-            // 
-            // lblserviciomedico
-            // 
-            this.lblserviciomedico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblserviciomedico.AutoSize = true;
-            this.lblserviciomedico.Location = new System.Drawing.Point(6, 125);
-            this.lblserviciomedico.Name = "lblserviciomedico";
-            this.lblserviciomedico.Size = new System.Drawing.Size(45, 13);
-            this.lblserviciomedico.TabIndex = 26;
-            this.lblserviciomedico.Text = "Servicio";
-            // 
-            // cblocalidades
-            // 
-            this.cblocalidades.FormattingEnabled = true;
-            this.cblocalidades.Location = new System.Drawing.Point(82, 122);
-            this.cblocalidades.Name = "cblocalidades";
-            this.cblocalidades.Size = new System.Drawing.Size(128, 21);
-            this.cblocalidades.TabIndex = 25;
+            this.dgvpmedicos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvpmedicos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvpmedicos.Location = new System.Drawing.Point(0, 0);
+            this.dgvpmedicos.MultiSelect = false;
+            this.dgvpmedicos.Name = "dgvpmedicos";
+            this.dgvpmedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvpmedicos.Size = new System.Drawing.Size(346, 248);
+            this.dgvpmedicos.TabIndex = 6;
+            this.dgvpmedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpmedicos_CellClick);
             // 
             // FormPersonalMedico
             // 
@@ -307,30 +327,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
-            this.Controls.Add(this.paneldatospaciente);
+            this.Controls.Add(this.paneldatosmedico);
             this.Controls.Add(this.panelbotones);
-            this.Controls.Add(this.panelbtnaceptarpaciente);
-            this.Controls.Add(this.paneldgvpacientes);
+            this.Controls.Add(this.panelbtnaceptar);
+            this.Controls.Add(this.paneldgvmedicos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormPersonalMedico";
             this.Text = "FormPersonalMedico";
-            this.paneldatospaciente.ResumeLayout(false);
-            this.paneldatospaciente.PerformLayout();
+            this.paneldatosmedico.ResumeLayout(false);
+            this.paneldatosmedico.PerformLayout();
+            this.panelnuevoservicio.ResumeLayout(false);
+            this.panelnuevoservicio.PerformLayout();
             this.panelbotones.ResumeLayout(false);
-            this.panelbtnaceptarpaciente.ResumeLayout(false);
-            this.paneldgvpacientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).EndInit();
-            this.panelnuevalocalidad.ResumeLayout(false);
-            this.panelnuevalocalidad.PerformLayout();
+            this.panelbtnaceptar.ResumeLayout(false);
+            this.paneldgvmedicos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpmedicos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel paneldatospaciente;
-        private System.Windows.Forms.Panel panelnuevalocalidad;
+        private System.Windows.Forms.Panel paneldatosmedico;
+        private System.Windows.Forms.Panel panelnuevoservicio;
         private System.Windows.Forms.Button btncancelarservicio;
         private System.Windows.Forms.Button btnguardarservicio;
         private System.Windows.Forms.Label lblnombreservicio;
@@ -346,11 +366,12 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.Panel panelbtnaceptarpaciente;
-        private System.Windows.Forms.Button btnaceptar;
-        private System.Windows.Forms.Panel paneldgvpacientes;
-        private System.Windows.Forms.DataGridView dgvpacientes;
+        private System.Windows.Forms.Panel panelbtnaceptar;
+        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.Panel paneldgvmedicos;
         private System.Windows.Forms.Label lblserviciomedico;
-        private System.Windows.Forms.ComboBox cblocalidades;
+        private System.Windows.Forms.ComboBox cbservicio;
+        private System.Windows.Forms.Button btnaceptar;
+        private System.Windows.Forms.DataGridView dgvpmedicos;
     }
 }
