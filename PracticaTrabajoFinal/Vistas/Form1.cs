@@ -22,6 +22,17 @@ namespace PracticaTrabajoFinal
 
         private void btnpaciente_Click(object sender, EventArgs e)
         {
+            btnlaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
             abrirform(new FormPacientes());
             btnlocalidades.Visible = false;
             btnpersonalmedico.Visible = false;
@@ -49,6 +60,17 @@ namespace PracticaTrabajoFinal
 
         private void btningresos_Click(object sender, EventArgs e)
         {
+            btnlaboratorio.BackColor = SystemColors.ActiveCaption;
+            btningresos.BackColor = SystemColors.ActiveBorder;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
             abrirform(new FormIngresos());
             btnlocalidades.Visible = false;
             btnpersonalmedico.Visible = false;
@@ -63,6 +85,17 @@ namespace PracticaTrabajoFinal
 
         private void btnlaboratorio_Click(object sender, EventArgs e)
         {
+            btnlaboratorio.BackColor = SystemColors.ControlDarkDark;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
             btnlocalidades.Visible = true;
             btnpersonalmedico.Visible = true;
             btnpersonallaboratorio.Visible = true;
@@ -76,16 +109,46 @@ namespace PracticaTrabajoFinal
         private void btnpersonalmedico_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalMedico());
+            btnpersonalmedico.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnpersonallaboratorio_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalLaboratorio());
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnpracticas_Click(object sender, EventArgs e)
         {
             abrirform(new FormPracticas());
+            btnpracticas.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnsalirprogram_Click(object sender, EventArgs e)
@@ -96,26 +159,76 @@ namespace PracticaTrabajoFinal
         private void btnespecialidades_Click(object sender, EventArgs e)
         {
             abrirform(new FormEspecialidades());
+            btnespecialidades.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnpracticasporespecialidad_Click(object sender, EventArgs e)
         {
             abrirform(new FormPracticasPorEspecialidad());
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnpersonalporespecialidad_Click(object sender, EventArgs e)
         {
             abrirform(new FormPersonalPorEspecialidad());
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnlocalidades_Click(object sender, EventArgs e)
         {
             abrirform(new FormLocalidades());
+            btnlocalidades.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btncategorias.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btncategorias_Click(object sender, EventArgs e)
         {
             abrirform(new FormCategorias());
+            btncategorias.BackColor = SystemColors.ActiveBorder;
+            btningresos.BackColor = SystemColors.ActiveCaption;
+            btnlocalidades.BackColor = SystemColors.ActiveCaption;
+            btnpersonallaboratorio.BackColor = SystemColors.ActiveCaption;
+            btnpersonalmedico.BackColor = SystemColors.ActiveCaption;
+            btnpaciente.BackColor = SystemColors.ActiveCaption;
+            btnespecialidades.BackColor = SystemColors.ActiveCaption;
+            btnpracticas.BackColor = SystemColors.ActiveCaption;
+            btnpracticasporespecialidad.BackColor = SystemColors.ActiveCaption;
+            btnpersonalporespecialidad.BackColor = SystemColors.ActiveCaption;
         }
     }
 }
