@@ -60,14 +60,28 @@ namespace PracticaTrabajoFinal.Vistas
         }
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            btnmodificar.Enabled = true;
+            btnagregar.Enabled = true;
+            btneliminar.Enabled = false;
+            btnaceptar.Visible= true;
+            btnaceptar.Enabled = false;
+            paneldatosmedico.Visible = false;
+            txtnombremedico.Clear();
+            txtapellidomedico.Clear();
+            txtmatriculamedico.Clear();
+            agregar = false;
+            modificar = false;
+            //this.Close();
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
             btnaceptar.Enabled = true;
             btnagregar.Enabled = false;
+            btnmodificar.Enabled = false;
+            modificar = false;
             paneldatosmedico.Visible = true;
+            agregarservicio.Visible = true;
             dgvpmedicos.ClearSelection();
             if (agregar == true)
             {
@@ -75,6 +89,7 @@ namespace PracticaTrabajoFinal.Vistas
                 {
                     cm.Agregar_Medico(Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text, Convert.ToInt32(txtmatriculamedico.Text));
                     cargar_tabla();
+                    agregar = false;
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
                     txtapellidomedico.Clear();
@@ -86,6 +101,7 @@ namespace PracticaTrabajoFinal.Vistas
                 catch
                 {
                     MessageBox.Show("datos incorrectos");
+                    btnagregar.Enabled = true;
                 }
                 
             }
@@ -118,10 +134,17 @@ namespace PracticaTrabajoFinal.Vistas
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                btnagregar.Enabled = true;
-                agregar = true;
-                btnmodificar.Enabled = true;
-                modificar = true;
+                if (agregarservicio.Visible==true)
+                {
+                    btnagregar.Enabled = true;
+                    agregar = true;
+                }
+                if (agregarservicio.Visible == false)
+                {
+                    btnmodificar.Enabled = true;
+                    modificar = true;
+                }
+                
             }
             else if (dr == DialogResult.Cancel)
             {
@@ -135,9 +158,14 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
+            
+            btnagregar.Enabled = false;
+            dgvpmedicos.ClearSelection();
             btnaceptar.Enabled = true;
             btnmodificar.Enabled = false;
+            agregarservicio.Visible = false;
             paneldatosmedico.Visible = true;
+            agregar = false;
             if (modificar == true)
             {
                 try
@@ -148,6 +176,7 @@ namespace PracticaTrabajoFinal.Vistas
                     txtnombremedico.Clear();
                     txtapellidomedico.Clear();
                     txtmatriculamedico.Clear();
+                    modificar = false;
                     dgvpmedicos.ClearSelection();
                     btnmodificar.Enabled = true;
                     btnaceptar.Enabled = false;
@@ -155,6 +184,7 @@ namespace PracticaTrabajoFinal.Vistas
                 catch
                 {
                     MessageBox.Show("datos incorrectos");
+                    btnmodificar.Enabled = true;
                 }
 
             }
@@ -162,26 +192,33 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void dgvpmedicos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (btnmodificar.Enabled == false)
+            if (btnaceptar.Enabled==false)
             {
                 txtnombremedico.Text = dgvpmedicos.CurrentRow.Cells[1].Value.ToString();
                 txtapellidomedico.Text = dgvpmedicos.CurrentRow.Cells[2].Value.ToString();
                 txtmatriculamedico.Text = dgvpmedicos.CurrentRow.Cells[3].Value.ToString();
                 cbservicio.Text = dgvpmedicos.CurrentRow.Cells[4].Value.ToString();
 
+            }else if(btneliminar.Enabled==false)
+            {
+                btneliminar.Enabled = true;
+                btnmodificar.Enabled = false;
+                btnagregar.Enabled = false;
+                btnaceptar.Visible = false;
             }
-            btneliminar.Enabled = true;
+            
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
             btnaceptar.Visible = false;
+            agregar = false;
+            modificar =false;
+            btnmodificar.Enabled = false;
+            btnagregar.Enabled = false;
             cm.Eliminar_Medico(Convert.ToInt32(dgvpmedicos.CurrentRow.Cells[0].Value.ToString()));
             cargar_tabla();
-            txtnombremedico.Focus();
-            txtnombremedico.Clear();
-            txtapellidomedico.Clear();
-            txtmatriculamedico.Clear();
+            paneldatosmedico.Visible = false;
             dgvpmedicos.ClearSelection();
             btneliminar.Enabled = true;
             btnaceptar.Enabled = false;
