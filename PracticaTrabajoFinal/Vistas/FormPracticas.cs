@@ -19,10 +19,6 @@ namespace PracticaTrabajoFinal.Vistas
         ControladoraPracticas cp = new ControladoraPracticas();
         //creo una nueva conexio a la base de datos 
         private Conexion conexion;
-        //variables booleana para que el boton aceptar detecte la accion que debe realizar
-        bool agregar = false;
-        bool modificar = false;
-        bool eliminar = false;
         public FormPracticas()
         {
             InitializeComponent();
@@ -95,111 +91,88 @@ namespace PracticaTrabajoFinal.Vistas
         //boton agregar practica
         private void btnagregarpractica_Click(object sender, EventArgs e)
         {
-            //hago visible el panel para agregar los datos
-            dgvgrillapracticas.ClearSelection();
-            paneldatospracticas.Visible = true;
-            lblnombrepractica.Visible = true;
-            txtnombrepractica.Visible = true;
-            lbltiempoderesultado.Visible = true;
-            txttiempoderesultado.Visible = true;
-            lblespecialidadpractica.Visible = true;
-            cbespacialidadpractica.Visible = true;
-            lbltipomuestra.Visible = true;
-            cbtipodemuestra.Visible = true;
-            agregarmuestra.Visible = true;
-            agregarmuestra.Checked = false;
-            lblnuevamuestra.Visible = false;
-            txtnuevamuestra.Visible = false;
-            btnguardarmuestra.Visible = false;
-            btncancelar.Visible = false;
-            txtnombrepractica.Clear();
-            txttiempoderesultado.Clear();
-            txtnombrepractica.Focus();
-            agregar = true;
-            modificar = false;
-            eliminar = false;
-            btnaceptarpractica.Enabled = true;
-            
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cp.Agregar_Practica(txtnombrepractica.Text, Convert.ToInt32(txttiempoderesultado.Text), cbespacialidadpractica.SelectedValue.ToString(), cbtipodemuestra.SelectedValue.ToString());
+                    cargar_tabla();
+                    txtnombrepractica.Focus();
+                    txtnombrepractica.Clear();
+                    txttiempoderesultado.Clear();
+                    dgvgrillapracticas.ClearSelection();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    txtnombrepractica.Focus();
+                    txtnombrepractica.Clear();
+                    txttiempoderesultado.Clear();
+                    dgvgrillapracticas.ClearSelection();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                txtnombrepractica.Focus();
+                txtnombrepractica.Clear();
+                txttiempoderesultado.Clear();
+                dgvgrillapracticas.ClearSelection();
+            }
         }
         //boton modificar practica
         private void btnmodificarpractica_Click(object sender, EventArgs e)
-        {
-            
-            //hago visible el panel para modificar los datos
-            dgvgrillapracticas.ClearSelection();
-            paneldatospracticas.Visible = true;
-            lblnombrepractica.Visible = true;
-            txtnombrepractica.Visible = true;
-            lbltiempoderesultado.Visible = true;
-            txttiempoderesultado.Visible = true;
-            lblespecialidadpractica.Visible = true;
-            cbespacialidadpractica.Visible = true;
-            lbltipomuestra.Visible = true;
-            cbtipodemuestra.Visible = true;
-            modificar = true;
-            agregar = false;
-            eliminar = false;
-            agregarmuestra.Visible = false;
-            agregarmuestra.Checked = false;
-            lblnuevamuestra.Visible = false;
-            txtnuevamuestra.Visible = false;
-            btnguardarmuestra.Visible = false;
-            btncancelar.Visible = false;
-            btnaceptarpractica.Enabled = true;
-        }
-        //metodo de la grilla para cargar los textbox con los datos seleccionados
-        private void dgvgrillapracticas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(modificar==true)
-            {
-                txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
-                txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
-                cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
-                cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
-            }
-            //aca llena los textbox con los datos de la grilla para el boton modificar
-                
-            
-        }
-        //boton de Aceptar acciones de la practica 
-        //en este boton envia los datos de la vista al controlador
-        private void btnaceptarpractica_Click(object sender, EventArgs e)
         {
             MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-
-                if (agregar == true)
+                try
                 {
-
-                    cp.Agregar_Practica(txtnombrepractica.Text, Convert.ToInt32(txttiempoderesultado.Text), cbespacialidadpractica.SelectedValue.ToString(), cbtipodemuestra.SelectedValue.ToString());
+                    cp.Modificar_Practica(txtnombrepractica.Text, Convert.ToInt32(txttiempoderesultado.Text), cbespacialidadpractica.SelectedValue.ToString(), cbtipodemuestra.SelectedValue.ToString(), Convert.ToInt32(dgvgrillapracticas.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
+                    btnmodificarpractica.Enabled = false;
+                    btneliminarpractica.Enabled = false;
+                    btnagregarpractica.Enabled = true;
+                    agregarmuestra.Visible = true;
+                    txtnombrepractica.Focus();
                     txtnombrepractica.Clear();
                     txttiempoderesultado.Clear();
                     dgvgrillapracticas.ClearSelection();
                 }
-                else if (modificar == true)
+                catch
                 {
-                    cp.Modificar_Practica(txtnombrepractica.Text, Convert.ToInt32(txttiempoderesultado.Text), cbespacialidadpractica.SelectedValue.ToString(), cbtipodemuestra.SelectedValue.ToString(), Convert.ToInt32(dgvgrillapracticas.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
-                    dgvgrillapracticas.ClearSelection();
-                } else if (eliminar == true)
-                {
-                    cp.Eliminar_Practica(Convert.ToInt32(dgvgrillapracticas.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
+                    MessageBox.Show("datos incorrectos");
+                    txtnombrepractica.Focus();
+                    txtnombrepractica.Clear();
+                    txttiempoderesultado.Clear();
                     dgvgrillapracticas.ClearSelection();
                 }
-               
-            }else if (dr==DialogResult.Cancel)
+            }
+            else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("Accion no confirmada");
+                txtnombrepractica.Focus();
                 txtnombrepractica.Clear();
                 txttiempoderesultado.Clear();
                 dgvgrillapracticas.ClearSelection();
             }
-
         }
+        //metodo de la grilla para cargar los textbox con los datos seleccionados
+        private void dgvgrillapracticas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
+            txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
+            cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
+            cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
+            btneliminarpractica.Enabled = true;
+            btnmodificarpractica.Enabled = true;
+            btnagregarpractica.Enabled = false;
+            agregarmuestra.Visible = false;
+        }
+       
         //metodo del textbox para cambiar el foco del nombre ala demora con la tecla enter
         private void txtnombrepractica_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -217,9 +190,9 @@ namespace PracticaTrabajoFinal.Vistas
             lblnuevamuestra.Visible = true;
             txtnuevamuestra.Visible = true;
             btnguardarmuestra.Visible = true;
-            btncancelar.Visible = true;
+            btncancelarmuestra.Visible = true;
             txtnuevamuestra.Focus();
-            btnaceptarpractica.Enabled=false;
+            btncancelar.Enabled=false;
         }
         //boton para guardar una nueva muestra
         private void btnguardarmuestra_Click(object sender, EventArgs e)
@@ -230,42 +203,75 @@ namespace PracticaTrabajoFinal.Vistas
             btnguardarmuestra.Visible = false;
             lblnuevamuestra.Visible = false;
             txtnuevamuestra.Visible = false;
-            btncancelar.Visible = false;
-            btnaceptarpractica.Enabled = true;
+            btncancelarmuestra.Visible = false;
+            btncancelar.Enabled = true;
         }
         //boton para cancelar la accion de la carga de nueva muestra
         private void btncancelar_Click(object sender, EventArgs e)
         {
             agregarmuestra.Checked = false;
-            btncancelar.Visible = false;
+            btncancelarmuestra.Visible = false;
             lblnuevamuestra.Visible = false;
             txtnuevamuestra.Visible = false;
             btnguardarmuestra.Visible = false;
-            btnaceptarpractica.Enabled = true;
+            btncancelar.Enabled = true;
+            dgvgrillapracticas.ClearSelection();
         }
         //boton para eliminar una practica
         private void btneliminarpractica_Click(object sender, EventArgs e)
         {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cp.Eliminar_Practica(Convert.ToInt32(dgvgrillapracticas.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    btnmodificarpractica.Enabled = false;
+                    btneliminarpractica.Enabled = false;
+                    btnagregarpractica.Enabled = true;
+                    agregarmuestra.Visible = true;
+                    txtnombrepractica.Focus();
+                    txtnombrepractica.Clear();
+                    txttiempoderesultado.Clear();
+                    dgvgrillapracticas.ClearSelection();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    txtnombrepractica.Focus();
+                    txtnombrepractica.Clear();
+                    txttiempoderesultado.Clear();
+                    dgvgrillapracticas.ClearSelection();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                txtnombrepractica.Focus();
+                txtnombrepractica.Clear();
+                txttiempoderesultado.Clear();
+                dgvgrillapracticas.ClearSelection();
+            }
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btncancelar_Click_1(object sender, EventArgs e)
+        {
+            btneliminarpractica.Enabled = false;
+            btnmodificarpractica.Enabled = false;
+            btnagregarpractica.Enabled = true;
+            txtnombrepractica.Clear();
+            txttiempoderesultado.Clear();
+            txtnombrepractica.Focus();
+            agregarmuestra.Visible = true;
             dgvgrillapracticas.ClearSelection();
-            paneldatospracticas.Visible = true;
-            lblnombrepractica.Visible = false;
-            txtnombrepractica.Visible = false;
-            lbltiempoderesultado.Visible = false;
-            txttiempoderesultado.Visible = false;
-            lblespecialidadpractica.Visible = false;
-            cbespacialidadpractica.Visible = false;
-            lbltipomuestra.Visible = false;
-            cbtipodemuestra.Visible = false;
-            modificar = false;
-            agregar = false;
-            eliminar = true;
-            agregarmuestra.Visible = false;
-            agregarmuestra.Checked = false;
-            lblnuevamuestra.Visible = false;
-            txtnuevamuestra.Visible = false;
-            btnguardarmuestra.Visible = false;
-            btncancelar.Visible = false;
-            btnaceptarpractica.Enabled = true;
+            panelnuevamuestra.Visible = false;
         }
     }
 }

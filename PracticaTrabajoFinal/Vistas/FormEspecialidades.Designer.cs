@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.paneldgvespecialidades = new System.Windows.Forms.Panel();
+            this.dgvespecialidades = new System.Windows.Forms.DataGridView();
             this.txtnombreespecialidad = new System.Windows.Forms.TextBox();
             this.lblnombreespecialidad = new System.Windows.Forms.Label();
-            this.btnaceptarespecialidad = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.paneldatosespecialidad = new System.Windows.Forms.Panel();
-            this.dgvespecialidades = new System.Windows.Forms.DataGridView();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.panelbotones = new System.Windows.Forms.Panel();
-            this.btnagregarespecialidad = new System.Windows.Forms.Button();
-            this.btnmodificarespecialidad = new System.Windows.Forms.Button();
             this.btneliminarespecialidad = new System.Windows.Forms.Button();
+            this.btnmodificarespecialidad = new System.Windows.Forms.Button();
+            this.btnagregarespecialidad = new System.Windows.Forms.Button();
             this.paneldgvespecialidades.SuspendLayout();
-            this.paneldatosespecialidad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvespecialidades)).BeginInit();
+            this.paneldatosespecialidad.SuspendLayout();
             this.panelbotones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,47 +56,6 @@
             this.paneldgvespecialidades.Size = new System.Drawing.Size(305, 222);
             this.paneldgvespecialidades.TabIndex = 0;
             // 
-            // txtnombreespecialidad
-            // 
-            this.txtnombreespecialidad.Location = new System.Drawing.Point(3, 58);
-            this.txtnombreespecialidad.Name = "txtnombreespecialidad";
-            this.txtnombreespecialidad.Size = new System.Drawing.Size(193, 20);
-            this.txtnombreespecialidad.TabIndex = 4;
-            // 
-            // lblnombreespecialidad
-            // 
-            this.lblnombreespecialidad.AutoSize = true;
-            this.lblnombreespecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombreespecialidad.Location = new System.Drawing.Point(3, 21);
-            this.lblnombreespecialidad.MinimumSize = new System.Drawing.Size(133, 13);
-            this.lblnombreespecialidad.Name = "lblnombreespecialidad";
-            this.lblnombreespecialidad.Size = new System.Drawing.Size(197, 20);
-            this.lblnombreespecialidad.TabIndex = 3;
-            this.lblnombreespecialidad.Text = "Nombre de la Especialidad";
-            // 
-            // btnaceptarespecialidad
-            // 
-            this.btnaceptarespecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnaceptarespecialidad.Location = new System.Drawing.Point(88, 373);
-            this.btnaceptarespecialidad.Name = "btnaceptarespecialidad";
-            this.btnaceptarespecialidad.Size = new System.Drawing.Size(98, 41);
-            this.btnaceptarespecialidad.TabIndex = 5;
-            this.btnaceptarespecialidad.Text = "Aceptar";
-            this.btnaceptarespecialidad.UseVisualStyleBackColor = true;
-            this.btnaceptarespecialidad.Click += new System.EventHandler(this.btnaceptarespecialidad_Click);
-            // 
-            // paneldatosespecialidad
-            // 
-            this.paneldatosespecialidad.Controls.Add(this.btnaceptarespecialidad);
-            this.paneldatosespecialidad.Controls.Add(this.lblnombreespecialidad);
-            this.paneldatosespecialidad.Controls.Add(this.txtnombreespecialidad);
-            this.paneldatosespecialidad.Dock = System.Windows.Forms.DockStyle.Right;
-            this.paneldatosespecialidad.Location = new System.Drawing.Point(323, 0);
-            this.paneldatosespecialidad.Name = "paneldatosespecialidad";
-            this.paneldatosespecialidad.Size = new System.Drawing.Size(258, 417);
-            this.paneldatosespecialidad.TabIndex = 5;
-            this.paneldatosespecialidad.Visible = false;
-            // 
             // dgvespecialidades
             // 
             this.dgvespecialidades.AllowUserToAddRows = false;
@@ -106,6 +66,58 @@
             this.dgvespecialidades.Size = new System.Drawing.Size(305, 222);
             this.dgvespecialidades.TabIndex = 10;
             this.dgvespecialidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvespecialidades_CellClick);
+            // 
+            // txtnombreespecialidad
+            // 
+            this.txtnombreespecialidad.Location = new System.Drawing.Point(3, 108);
+            this.txtnombreespecialidad.Name = "txtnombreespecialidad";
+            this.txtnombreespecialidad.Size = new System.Drawing.Size(193, 20);
+            this.txtnombreespecialidad.TabIndex = 4;
+            // 
+            // lblnombreespecialidad
+            // 
+            this.lblnombreespecialidad.AutoSize = true;
+            this.lblnombreespecialidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnombreespecialidad.Location = new System.Drawing.Point(3, 71);
+            this.lblnombreespecialidad.MinimumSize = new System.Drawing.Size(133, 13);
+            this.lblnombreespecialidad.Name = "lblnombreespecialidad";
+            this.lblnombreespecialidad.Size = new System.Drawing.Size(197, 20);
+            this.lblnombreespecialidad.TabIndex = 3;
+            this.lblnombreespecialidad.Text = "Nombre de la Especialidad";
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelar.Location = new System.Drawing.Point(88, 373);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(98, 41);
+            this.btncancelar.TabIndex = 5;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // paneldatosespecialidad
+            // 
+            this.paneldatosespecialidad.Controls.Add(this.btnsalir);
+            this.paneldatosespecialidad.Controls.Add(this.btncancelar);
+            this.paneldatosespecialidad.Controls.Add(this.lblnombreespecialidad);
+            this.paneldatosespecialidad.Controls.Add(this.txtnombreespecialidad);
+            this.paneldatosespecialidad.Dock = System.Windows.Forms.DockStyle.Right;
+            this.paneldatosespecialidad.Location = new System.Drawing.Point(323, 0);
+            this.paneldatosespecialidad.Name = "paneldatosespecialidad";
+            this.paneldatosespecialidad.Size = new System.Drawing.Size(258, 417);
+            this.paneldatosespecialidad.TabIndex = 5;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(238, 0);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(20, 23);
+            this.btnsalir.TabIndex = 6;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // panelbotones
             // 
@@ -118,6 +130,28 @@
             this.panelbotones.Size = new System.Drawing.Size(294, 66);
             this.panelbotones.TabIndex = 6;
             // 
+            // btneliminarespecialidad
+            // 
+            this.btneliminarespecialidad.Enabled = false;
+            this.btneliminarespecialidad.Location = new System.Drawing.Point(191, 0);
+            this.btneliminarespecialidad.Name = "btneliminarespecialidad";
+            this.btneliminarespecialidad.Size = new System.Drawing.Size(88, 34);
+            this.btneliminarespecialidad.TabIndex = 2;
+            this.btneliminarespecialidad.Text = "Eliminar";
+            this.btneliminarespecialidad.UseVisualStyleBackColor = true;
+            this.btneliminarespecialidad.Click += new System.EventHandler(this.btneliminarespecialidad_Click);
+            // 
+            // btnmodificarespecialidad
+            // 
+            this.btnmodificarespecialidad.Enabled = false;
+            this.btnmodificarespecialidad.Location = new System.Drawing.Point(97, 0);
+            this.btnmodificarespecialidad.Name = "btnmodificarespecialidad";
+            this.btnmodificarespecialidad.Size = new System.Drawing.Size(88, 34);
+            this.btnmodificarespecialidad.TabIndex = 1;
+            this.btnmodificarespecialidad.Text = "Modificar";
+            this.btnmodificarespecialidad.UseVisualStyleBackColor = true;
+            this.btnmodificarespecialidad.Click += new System.EventHandler(this.btnmodificarespecialidad_Click);
+            // 
             // btnagregarespecialidad
             // 
             this.btnagregarespecialidad.Location = new System.Drawing.Point(3, 0);
@@ -127,26 +161,6 @@
             this.btnagregarespecialidad.Text = "Agregar";
             this.btnagregarespecialidad.UseVisualStyleBackColor = true;
             this.btnagregarespecialidad.Click += new System.EventHandler(this.btnagregarespecialidad_Click);
-            // 
-            // btnmodificarespecialidad
-            // 
-            this.btnmodificarespecialidad.Location = new System.Drawing.Point(97, 0);
-            this.btnmodificarespecialidad.Name = "btnmodificarespecialidad";
-            this.btnmodificarespecialidad.Size = new System.Drawing.Size(88, 34);
-            this.btnmodificarespecialidad.TabIndex = 1;
-            this.btnmodificarespecialidad.Text = "Modificar";
-            this.btnmodificarespecialidad.UseVisualStyleBackColor = true;
-            this.btnmodificarespecialidad.Click += new System.EventHandler(this.btnmodificarespecialidad_Click);
-            // 
-            // btneliminarespecialidad
-            // 
-            this.btneliminarespecialidad.Location = new System.Drawing.Point(191, 0);
-            this.btneliminarespecialidad.Name = "btneliminarespecialidad";
-            this.btneliminarespecialidad.Size = new System.Drawing.Size(88, 34);
-            this.btneliminarespecialidad.TabIndex = 2;
-            this.btneliminarespecialidad.Text = "Eliminar";
-            this.btneliminarespecialidad.UseVisualStyleBackColor = true;
-            this.btneliminarespecialidad.Click += new System.EventHandler(this.btneliminarespecialidad_Click);
             // 
             // FormEspecialidades
             // 
@@ -163,9 +177,9 @@
             this.Text = "FormEspecialidades";
             this.Load += new System.EventHandler(this.FormEspecialidades_Load);
             this.paneldgvespecialidades.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvespecialidades)).EndInit();
             this.paneldatosespecialidad.ResumeLayout(false);
             this.paneldatosespecialidad.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvespecialidades)).EndInit();
             this.panelbotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -174,7 +188,7 @@
         #endregion
 
         private System.Windows.Forms.Panel paneldgvespecialidades;
-        private System.Windows.Forms.Button btnaceptarespecialidad;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.TextBox txtnombreespecialidad;
         private System.Windows.Forms.Label lblnombreespecialidad;
         private System.Windows.Forms.Panel paneldatosespecialidad;
@@ -183,5 +197,6 @@
         private System.Windows.Forms.Button btneliminarespecialidad;
         private System.Windows.Forms.Button btnmodificarespecialidad;
         private System.Windows.Forms.Button btnagregarespecialidad;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

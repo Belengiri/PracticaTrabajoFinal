@@ -17,9 +17,6 @@ namespace PracticaTrabajoFinal.Vistas
     {
         ControladoraPacientes cpp = new ControladoraPacientes();
         private Conexion conexion;
-        bool agregar = false;
-        bool modificar = false;
-        bool eliminar = false;
 
         public FormPacientes()
         {
@@ -71,19 +68,7 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void agregarlocalidad_CheckedChanged(object sender, EventArgs e)
         {
-           if(agregarlocalidad.Checked==true)
-            {
-                panelnuevalocalidad.Visible = true;
-                btnaceptar.Enabled = false;
-            }
-            else
-            {
-                panelnuevalocalidad.Visible = false;
-                btnaceptar.Enabled = true;
-            }
-            
-            
-            txtnombrelocalidad.Focus();
+            panelnuevalocalidad.Visible = true;
         }
 
         private void FormPacientes_Load(object sender, EventArgs e)
@@ -95,134 +80,103 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btnagregarpaciente_Click(object sender, EventArgs e)
         {
-            agregar = true;
-            eliminar = false;
-            modificar = false;
-            dgvpacientes.ClearSelection();
-            btnaceptar.Enabled = true;
-            txtnombrepaciente.Clear();
-            txtapellidopaciente.Clear();
-            txtdnipaciente.Clear();
-            dtfecha.Text="";
-            txtcorreo.Clear();
-            txttelefono.Clear();
-            txtcalle.Clear();
-            txtaltura.Clear();
-            txtpiso.Clear();
-            txtdepartamento.Clear();
-            paneldatospaciente.Visible = true;
-            panelbtnaceptarpaciente.Visible = true;
-            agregarlocalidad.Visible = true;
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cpp.Agregar_Paciente(Convert.ToInt32(cblocalidades.SelectedValue.ToString()), txtnombrepaciente.Text, txtapellidopaciente.Text, Convert.ToInt32(txtdnipaciente.Text), dtfecha.Value.ToShortDateString(), txtcalle.Text, Convert.ToInt32(txtaltura.Text), Convert.ToInt32(txtpiso.Text), Convert.ToInt32(txtdepartamento.Text), txtcorreo.Text, txttelefono.Text);
+                    cargar_tabla();
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
+                    btnagregarpaciente.Enabled = true;
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
+                }
+
+
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                dgvpacientes.ClearSelection();
+                txtnombrepaciente.Clear();
+                txtapellidopaciente.Clear();
+                txtdnipaciente.Clear();
+                dtfecha.Text = "";
+                txtcorreo.Clear();
+                txttelefono.Clear();
+                txtcalle.Clear();
+                txtaltura.Clear();
+                txtpiso.Clear();
+                txtdepartamento.Clear();
+                agregarlocalidad.Visible = true;
+            }
         }
 
         private void btnmodificarpaciente_Click(object sender, EventArgs e)
-        {
-            modificar = true;
-            eliminar = false;
-            agregar = false;
-            dgvpacientes.ClearSelection();
-            txtnombrepaciente.Clear();
-            txtapellidopaciente.Clear();
-            txtdnipaciente.Clear();
-            dtfecha.Text = "";
-            txtcorreo.Clear();
-            txttelefono.Clear();
-            txtcalle.Clear();
-            txtaltura.Clear();
-            txtpiso.Clear();
-            txtdepartamento.Clear();
-            paneldatospaciente.Visible = true;
-            panelbtnaceptarpaciente.Visible = true;
-            agregarlocalidad.Visible = false;
-            btnaceptar.Enabled = false;
-        }
-
-        private void btneliminarpaciente_Click(object sender, EventArgs e)
-        {
-            eliminar = true;
-            agregar=false;
-            modificar=false;
-            dgvpacientes.ClearSelection();
-            paneldatospaciente.Visible = false;
-            panelbtnaceptarpaciente.Visible = true;
-            btnaceptar.Enabled = false;
-        }
-
-        private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(modificar==true)
-            {
-                txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
-                txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
-                txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
-                dtfecha.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
-                txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
-                txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
-                txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();
-                txtdepartamento.Text = dgvpacientes.CurrentRow.Cells[8].Value.ToString();
-                txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
-                txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
-                cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
-            }
-            btnaceptar.Enabled = true;
-        }
-
-        private void btnaceptar_Click(object sender, EventArgs e)
         {
             MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-
-                if (agregar == true)
+                try
                 {
-                    try
-                    {
-                        cpp.Agregar_Paciente(Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
-                        cargar_tabla();
-                        dgvpacientes.ClearSelection();
-                        txtnombrepaciente.Clear();
-                        txtapellidopaciente.Clear();
-                        txtdnipaciente.Clear();
-                        dtfecha.Text = "";
-                        txtcorreo.Clear();
-                        txttelefono.Clear();
-                        txtcalle.Clear();
-                        txtaltura.Clear();
-                        txtpiso.Clear();
-                        txtdepartamento.Clear();
-                    }catch (Exception ex)
-                    {
-                        MessageBox.Show("error al cargar", ex.Message);
-                    }
-
-                    
+                    cpp.Modificar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cblocalidades.SelectedValue.ToString()), txtnombrepaciente.Text, txtapellidopaciente.Text, Convert.ToInt32(txtdnipaciente.Text), dtfecha.Value.ToShortDateString(), txtcalle.Text, Convert.ToInt32(txtaltura.Text), Convert.ToInt32(txtpiso.Text), Convert.ToInt32(txtdepartamento.Text), txtcorreo.Text, txttelefono.Text);
+                    cargar_tabla();
+                    btnagregarpaciente.Enabled = true;
+                    btneliminarpaciente.Enabled = false;
+                    btnmodificarpaciente.Enabled = false;
+                    agregarlocalidad.Visible = true;
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
                 }
-                else if (modificar == true)
+                catch
                 {
-                    try
-                    {
-                        cpp.Modificar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()),Convert.ToInt32(cblocalidades.SelectedValue.ToString()),txtnombrepaciente.Text,txtapellidopaciente.Text,Convert.ToInt32(txtdnipaciente.Text),dtfecha.Value.ToShortDateString(),txtcalle.Text,Convert.ToInt32(txtaltura.Text),Convert.ToInt32(txtpiso.Text),Convert.ToInt32(txtdepartamento.Text),txtcorreo.Text,txttelefono.Text);
-                        cargar_tabla();
-                        dgvpacientes.ClearSelection();
-                    }catch(Exception ex)
-                    {
-                        MessageBox.Show("error al modificar", ex.Message);
-                    }
-                    
-                }
-                else if (eliminar == true)
-                {
-                    try
-                    {
-                        cpp.Eliminar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()));
-                        cargar_tabla();
-                        dgvpacientes.ClearSelection();
-                    }catch (Exception ex)
-                    {
-                        MessageBox.Show("error al eliminar", ex.Message);
-                    }
-                    
+                    MessageBox.Show("datos incorrectos");
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
                 }
 
             }
@@ -230,14 +184,100 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 MessageBox.Show("Accion no confirmada");
                 dgvpacientes.ClearSelection();
+                txtnombrepaciente.Clear();
+                txtapellidopaciente.Clear();
+                txtdnipaciente.Clear();
+                dtfecha.Text = "";
+                txtcorreo.Clear();
+                txttelefono.Clear();
+                txtcalle.Clear();
+                txtaltura.Clear();
+                txtpiso.Clear();
+                txtdepartamento.Clear();
             }
+        }
+
+        private void btneliminarpaciente_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cpp.Eliminar_Paciente(Convert.ToInt32(dgvpacientes.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    btnagregarpaciente.Enabled = true;
+                    btneliminarpaciente.Enabled = false;
+                    btnmodificarpaciente.Enabled = false;
+                    agregarlocalidad.Visible = true;
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    dgvpacientes.ClearSelection();
+                    txtnombrepaciente.Clear();
+                    txtapellidopaciente.Clear();
+                    txtdnipaciente.Clear();
+                    dtfecha.Text = "";
+                    txtcorreo.Clear();
+                    txttelefono.Clear();
+                    txtcalle.Clear();
+                    txtaltura.Clear();
+                    txtpiso.Clear();
+                    txtdepartamento.Clear();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                txtnombrepaciente.Clear();
+                txtapellidopaciente.Clear();
+                txtdnipaciente.Clear();
+                dtfecha.Text = "";
+                txtcorreo.Clear();
+                txttelefono.Clear();
+                txtcalle.Clear();
+                txtaltura.Clear();
+                txtpiso.Clear();
+                txtdepartamento.Clear();
+            }
+        }
+
+        private void dgvpacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrepaciente.Text = dgvpacientes.CurrentRow.Cells[1].Value.ToString();
+            txtapellidopaciente.Text = dgvpacientes.CurrentRow.Cells[2].Value.ToString();
+            txtdnipaciente.Text = dgvpacientes.CurrentRow.Cells[3].Value.ToString();
+            dtfecha.Text = dgvpacientes.CurrentRow.Cells[4].Value.ToString();
+            txtcalle.Text = dgvpacientes.CurrentRow.Cells[5].Value.ToString();
+            txtaltura.Text = dgvpacientes.CurrentRow.Cells[6].Value.ToString();
+            txtpiso.Text = dgvpacientes.CurrentRow.Cells[7].Value.ToString();
+            txtdepartamento.Text = dgvpacientes.CurrentRow.Cells[8].Value.ToString();
+            txtcorreo.Text = dgvpacientes.CurrentRow.Cells[9].Value.ToString();
+            txttelefono.Text = dgvpacientes.CurrentRow.Cells[10].Value.ToString();
+            cblocalidades.Text = dgvpacientes.CurrentRow.Cells[11].Value.ToString();
+            btneliminarpaciente.Enabled = true;
+            btnmodificarpaciente.Enabled = true;
+            btnagregarpaciente.Enabled = false;
+            agregarlocalidad.Visible = false;
         }
 
         private void btnguardarlocalidad_Click(object sender, EventArgs e)
         {
             try
             {
-                btnaceptar.Enabled = false;
                 cpp.Agregar_Localidad(txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
                 cargarcblocalidades();
                 txtnombrelocalidad.Clear();
@@ -245,7 +285,6 @@ namespace PracticaTrabajoFinal.Vistas
                 txtcodigopostal.Clear();
                 agregarlocalidad.Checked = false;
                 panelnuevalocalidad.Visible = false;
-                btnaceptar.Enabled = true;
             }
             catch(Exception ex)
             {
@@ -258,7 +297,31 @@ namespace PracticaTrabajoFinal.Vistas
         {
             agregarlocalidad.Checked = false;
             panelnuevalocalidad.Visible = false;
-            btnaceptar.Enabled = true;
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            btneliminarpaciente.Enabled = false;
+            btnmodificarpaciente.Enabled = false;
+            btnagregarpaciente.Enabled = true;
+            dgvpacientes.ClearSelection();
+            txtnombrepaciente.Clear();
+            txtapellidopaciente.Clear();
+            txtdnipaciente.Clear();
+            dtfecha.Text = "";
+            txtcorreo.Clear();
+            txttelefono.Clear();
+            txtcalle.Clear();
+            txtaltura.Clear();
+            txtpiso.Clear();
+            txtdepartamento.Clear();
+            agregarlocalidad.Visible = true;
+            panelnuevalocalidad.Visible = false;
         }
     }
 }

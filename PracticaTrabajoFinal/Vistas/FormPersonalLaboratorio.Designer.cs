@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosperlab = new System.Windows.Forms.Panel();
             this.btnsalir = new System.Windows.Forms.Button();
             this.panelagregarnuevaespecialidad = new System.Windows.Forms.Panel();
@@ -73,7 +73,6 @@
             // paneldatosperlab
             // 
             this.paneldatosperlab.Controls.Add(this.btnsalir);
-            this.paneldatosperlab.Controls.Add(this.panelagregarnuevaespecialidad);
             this.paneldatosperlab.Controls.Add(this.agregarnuevaespecialidad);
             this.paneldatosperlab.Controls.Add(this.lblespecialidadperlab);
             this.paneldatosperlab.Controls.Add(this.cbespecialidadperlab);
@@ -111,7 +110,7 @@
             this.panelagregarnuevaespecialidad.Controls.Add(this.btnguardarespecialidad);
             this.panelagregarnuevaespecialidad.Controls.Add(this.lblnombreespecialidad);
             this.panelagregarnuevaespecialidad.Controls.Add(this.txtespecialidadperlab);
-            this.panelagregarnuevaespecialidad.Location = new System.Drawing.Point(3, 323);
+            this.panelagregarnuevaespecialidad.Location = new System.Drawing.Point(0, 0);
             this.panelagregarnuevaespecialidad.Name = "panelagregarnuevaespecialidad";
             this.panelagregarnuevaespecialidad.Size = new System.Drawing.Size(208, 94);
             this.panelagregarnuevaespecialidad.TabIndex = 26;
@@ -205,12 +204,13 @@
             // 
             this.panelnuevacategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelnuevacategoria.Controls.Add(this.btncancelarcategoria);
+            this.panelnuevacategoria.Controls.Add(this.panelagregarnuevaespecialidad);
             this.panelnuevacategoria.Controls.Add(this.btnguardarcategoria);
             this.panelnuevacategoria.Controls.Add(this.lblnombrecategoria);
             this.panelnuevacategoria.Controls.Add(this.txtnombrecategoria);
-            this.panelnuevacategoria.Location = new System.Drawing.Point(10, 227);
+            this.panelnuevacategoria.Location = new System.Drawing.Point(3, 227);
             this.panelnuevacategoria.Name = "panelnuevacategoria";
-            this.panelnuevacategoria.Size = new System.Drawing.Size(201, 94);
+            this.panelnuevacategoria.Size = new System.Drawing.Size(208, 94);
             this.panelnuevacategoria.TabIndex = 24;
             this.panelnuevacategoria.Visible = false;
             // 
@@ -238,7 +238,7 @@
             // 
             this.lblnombrecategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblnombrecategoria.AutoSize = true;
-            this.lblnombrecategoria.Location = new System.Drawing.Point(48, 11);
+            this.lblnombrecategoria.Location = new System.Drawing.Point(55, 11);
             this.lblnombrecategoria.Name = "lblnombrecategoria";
             this.lblnombrecategoria.Size = new System.Drawing.Size(92, 13);
             this.lblnombrecategoria.TabIndex = 23;
@@ -396,14 +396,14 @@
             this.dgvperlab.AllowUserToResizeColumns = false;
             this.dgvperlab.AllowUserToResizeRows = false;
             this.dgvperlab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvperlab.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvperlab.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvperlab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvperlab.Location = new System.Drawing.Point(0, 0);
             this.dgvperlab.MultiSelect = false;

@@ -37,18 +37,21 @@
             this.lbltipomuestra = new System.Windows.Forms.Label();
             this.cbtipodemuestra = new System.Windows.Forms.ComboBox();
             this.paneldatospracticas = new System.Windows.Forms.Panel();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.txtnuevamuestra = new System.Windows.Forms.TextBox();
+            this.panelnuevamuestra = new System.Windows.Forms.Panel();
             this.lblnuevamuestra = new System.Windows.Forms.Label();
+            this.btncancelarmuestra = new System.Windows.Forms.Button();
             this.btnguardarmuestra = new System.Windows.Forms.Button();
+            this.txtnuevamuestra = new System.Windows.Forms.TextBox();
             this.agregarmuestra = new System.Windows.Forms.CheckBox();
-            this.btnaceptarpractica = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvpracticas = new System.Windows.Forms.Panel();
             this.dgvgrillapracticas = new System.Windows.Forms.DataGridView();
             this.btnagregarpractica = new System.Windows.Forms.Button();
             this.btnmodificarpractica = new System.Windows.Forms.Button();
             this.btneliminarpractica = new System.Windows.Forms.Button();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.paneldatospracticas.SuspendLayout();
+            this.panelnuevamuestra.SuspendLayout();
             this.paneldgvpracticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgrillapracticas)).BeginInit();
             this.SuspendLayout();
@@ -130,12 +133,10 @@
             // 
             // paneldatospracticas
             // 
-            this.paneldatospracticas.Controls.Add(this.btncancelar);
-            this.paneldatospracticas.Controls.Add(this.txtnuevamuestra);
-            this.paneldatospracticas.Controls.Add(this.lblnuevamuestra);
-            this.paneldatospracticas.Controls.Add(this.btnguardarmuestra);
+            this.paneldatospracticas.Controls.Add(this.btnsalir);
+            this.paneldatospracticas.Controls.Add(this.panelnuevamuestra);
             this.paneldatospracticas.Controls.Add(this.agregarmuestra);
-            this.paneldatospracticas.Controls.Add(this.btnaceptarpractica);
+            this.paneldatospracticas.Controls.Add(this.btncancelar);
             this.paneldatospracticas.Controls.Add(this.lblnombrepractica);
             this.paneldatospracticas.Controls.Add(this.cbtipodemuestra);
             this.paneldatospracticas.Controls.Add(this.txtnombrepractica);
@@ -149,44 +150,46 @@
             this.paneldatospracticas.Name = "paneldatospracticas";
             this.paneldatospracticas.Size = new System.Drawing.Size(241, 417);
             this.paneldatospracticas.TabIndex = 8;
-            this.paneldatospracticas.Visible = false;
             // 
-            // btncancelar
+            // panelnuevamuestra
             // 
-            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btncancelar.Location = new System.Drawing.Point(125, 330);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(58, 23);
-            this.btncancelar.TabIndex = 32;
-            this.btncancelar.Text = "Cancelar";
-            this.btncancelar.UseVisualStyleBackColor = true;
-            this.btncancelar.Visible = false;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // txtnuevamuestra
-            // 
-            this.txtnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtnuevamuestra.Location = new System.Drawing.Point(69, 307);
-            this.txtnuevamuestra.Name = "txtnuevamuestra";
-            this.txtnuevamuestra.Size = new System.Drawing.Size(100, 20);
-            this.txtnuevamuestra.TabIndex = 31;
-            this.txtnuevamuestra.Visible = false;
+            this.panelnuevamuestra.Controls.Add(this.lblnuevamuestra);
+            this.panelnuevamuestra.Controls.Add(this.btncancelarmuestra);
+            this.panelnuevamuestra.Controls.Add(this.btnguardarmuestra);
+            this.panelnuevamuestra.Controls.Add(this.txtnuevamuestra);
+            this.panelnuevamuestra.Location = new System.Drawing.Point(24, 283);
+            this.panelnuevamuestra.Name = "panelnuevamuestra";
+            this.panelnuevamuestra.Size = new System.Drawing.Size(200, 100);
+            this.panelnuevamuestra.TabIndex = 33;
+            this.panelnuevamuestra.Visible = false;
             // 
             // lblnuevamuestra
             // 
             this.lblnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblnuevamuestra.AutoSize = true;
-            this.lblnuevamuestra.Location = new System.Drawing.Point(75, 291);
+            this.lblnuevamuestra.Location = new System.Drawing.Point(51, 12);
             this.lblnuevamuestra.Name = "lblnuevamuestra";
             this.lblnuevamuestra.Size = new System.Drawing.Size(80, 13);
             this.lblnuevamuestra.TabIndex = 30;
             this.lblnuevamuestra.Text = "Nueva Muestra";
             this.lblnuevamuestra.Visible = false;
             // 
+            // btncancelarmuestra
+            // 
+            this.btncancelarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btncancelarmuestra.Location = new System.Drawing.Point(101, 51);
+            this.btncancelarmuestra.Name = "btncancelarmuestra";
+            this.btncancelarmuestra.Size = new System.Drawing.Size(58, 23);
+            this.btncancelarmuestra.TabIndex = 32;
+            this.btncancelarmuestra.Text = "Cancelar";
+            this.btncancelarmuestra.UseVisualStyleBackColor = true;
+            this.btncancelarmuestra.Visible = false;
+            this.btncancelarmuestra.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
             // btnguardarmuestra
             // 
             this.btnguardarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnguardarmuestra.Location = new System.Drawing.Point(56, 330);
+            this.btnguardarmuestra.Location = new System.Drawing.Point(32, 51);
             this.btnguardarmuestra.Name = "btnguardarmuestra";
             this.btnguardarmuestra.Size = new System.Drawing.Size(58, 23);
             this.btnguardarmuestra.TabIndex = 29;
@@ -194,6 +197,15 @@
             this.btnguardarmuestra.UseVisualStyleBackColor = true;
             this.btnguardarmuestra.Visible = false;
             this.btnguardarmuestra.Click += new System.EventHandler(this.btnguardarmuestra_Click);
+            // 
+            // txtnuevamuestra
+            // 
+            this.txtnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtnuevamuestra.Location = new System.Drawing.Point(45, 28);
+            this.txtnuevamuestra.Name = "txtnuevamuestra";
+            this.txtnuevamuestra.Size = new System.Drawing.Size(100, 20);
+            this.txtnuevamuestra.TabIndex = 31;
+            this.txtnuevamuestra.Visible = false;
             // 
             // agregarmuestra
             // 
@@ -207,17 +219,17 @@
             this.agregarmuestra.UseVisualStyleBackColor = true;
             this.agregarmuestra.CheckedChanged += new System.EventHandler(this.agregarmuestra_CheckedChanged);
             // 
-            // btnaceptarpractica
+            // btncancelar
             // 
-            this.btnaceptarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnaceptarpractica.Location = new System.Drawing.Point(85, 391);
-            this.btnaceptarpractica.Name = "btnaceptarpractica";
-            this.btnaceptarpractica.Size = new System.Drawing.Size(75, 23);
-            this.btnaceptarpractica.TabIndex = 13;
-            this.btnaceptarpractica.Text = "Aceptar";
-            this.btnaceptarpractica.UseVisualStyleBackColor = true;
-            this.btnaceptarpractica.Click += new System.EventHandler(this.btnaceptarpractica_Click);
+            this.btncancelar.Location = new System.Drawing.Point(85, 391);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.btncancelar.TabIndex = 13;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click_1);
             // 
             // paneldgvpracticas
             // 
@@ -253,6 +265,7 @@
             // btnmodificarpractica
             // 
             this.btnmodificarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnmodificarpractica.Enabled = false;
             this.btnmodificarpractica.Location = new System.Drawing.Point(93, 330);
             this.btnmodificarpractica.Name = "btnmodificarpractica";
             this.btnmodificarpractica.Size = new System.Drawing.Size(75, 23);
@@ -264,6 +277,7 @@
             // btneliminarpractica
             // 
             this.btneliminarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btneliminarpractica.Enabled = false;
             this.btneliminarpractica.Location = new System.Drawing.Point(174, 330);
             this.btneliminarpractica.Name = "btneliminarpractica";
             this.btneliminarpractica.Size = new System.Drawing.Size(75, 23);
@@ -271,6 +285,17 @@
             this.btneliminarpractica.Text = "Eliminar";
             this.btneliminarpractica.UseVisualStyleBackColor = true;
             this.btneliminarpractica.Click += new System.EventHandler(this.btneliminarpractica_Click);
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(211, 4);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(27, 23);
+            this.btnsalir.TabIndex = 34;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // FormPracticas
             // 
@@ -290,6 +315,8 @@
             this.Load += new System.EventHandler(this.FormPracticas_Load);
             this.paneldatospracticas.ResumeLayout(false);
             this.paneldatospracticas.PerformLayout();
+            this.panelnuevamuestra.ResumeLayout(false);
+            this.panelnuevamuestra.PerformLayout();
             this.paneldgvpracticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgrillapracticas)).EndInit();
             this.ResumeLayout(false);
@@ -310,13 +337,15 @@
         private System.Windows.Forms.Panel paneldgvpracticas;
         private System.Windows.Forms.Button btnagregarpractica;
         private System.Windows.Forms.Button btnmodificarpractica;
-        private System.Windows.Forms.Button btnaceptarpractica;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Button btneliminarpractica;
         private System.Windows.Forms.CheckBox agregarmuestra;
         private System.Windows.Forms.Button btnguardarmuestra;
         private System.Windows.Forms.TextBox txtnuevamuestra;
         private System.Windows.Forms.Label lblnuevamuestra;
-        private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.Button btncancelarmuestra;
         private System.Windows.Forms.DataGridView dgvgrillapracticas;
+        private System.Windows.Forms.Panel panelnuevamuestra;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

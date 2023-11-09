@@ -28,14 +28,21 @@ namespace PracticaTrabajoFinal.Vistas
         }
         public void cargar_tabla()
         {
-            conexion = new Conexion();
-            string consulta = "select id_personal_lab  as n, nombre_personal_lab  as nombre, apellido_personal_lab  as apellido,matricula_personal_lab  as matricula, E.nombre_especialidad as especialidad,C.nombre_categoria as categoria from Personal_Laboratorio P inner join Especialidades E on P.id_especialidad  = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria";
-            SqlCommand cmd = new SqlCommand(consulta);
-            cmd.Connection = conexion.GetSqlConnection();
-            SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adaptador.Fill(dt);
-            dgvperlab.DataSource = dt;
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "select id_personal_lab  as n, nombre_personal_lab  as nombre, apellido_personal_lab  as apellido,matricula_personal_lab  as matricula, E.nombre_especialidad as especialidad,C.nombre_categoria as categoria from Personal_Laboratorio P inner join Especialidades E on P.id_especialidad  = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria";
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvperlab.DataSource = dt;
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
         }
         public void cargacbcategoria()
         {
@@ -99,6 +106,7 @@ namespace PracticaTrabajoFinal.Vistas
             agregarnuevaespecialidad.Visible = true;
             panelnuevacategoria.Visible = false;
             panelagregarnuevaespecialidad.Visible = false;
+            dgvperlab.ClearSelection();
         }
 
 
@@ -219,6 +227,10 @@ namespace PracticaTrabajoFinal.Vistas
                     cpl.Eliminar_Personal(Convert.ToInt32(dgvperlab.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
                     btneliminar.Enabled = false;
+                    btnmodificar.Enabled = false;
+                    btnagregar.Enabled = true;
+                    agregarnuevacategoria.Visible = true;
+                    agregarnuevaespecialidad.Visible = true;
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
                     txtnombreperlab.Clear();
@@ -257,6 +269,10 @@ namespace PracticaTrabajoFinal.Vistas
                     cpl.Modificar_Personal(Convert.ToInt32(dgvperlab.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), Convert.ToInt32(cbespecialidadperlab.SelectedValue.ToString()), txtnombreperlab.Text, txtapellidoperlab.Text, Convert.ToInt32(txtmatriculaperlab.Text));
                     cargar_tabla();
                     btnmodificar.Enabled = false;
+                    btneliminar.Enabled = false;
+                    btnagregar.Enabled = true;
+                    agregarnuevacategoria.Visible = true;
+                    agregarnuevaespecialidad.Visible = true;
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
                     txtnombreperlab.Clear();
