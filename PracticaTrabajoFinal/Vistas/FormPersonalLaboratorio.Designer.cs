@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosperlab = new System.Windows.Forms.Panel();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.panelagregarnuevaespecialidad = new System.Windows.Forms.Panel();
             this.btncancelarespecialidad = new System.Windows.Forms.Button();
             this.btnguardarespecialidad = new System.Windows.Forms.Button();
@@ -57,20 +58,21 @@
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             this.panelbtnaceptarpaciente = new System.Windows.Forms.Panel();
-            this.btnaceptar = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
-            this.dgvpacientes = new System.Windows.Forms.DataGridView();
+            this.dgvperlab = new System.Windows.Forms.DataGridView();
             this.paneldatosperlab.SuspendLayout();
             this.panelagregarnuevaespecialidad.SuspendLayout();
             this.panelnuevacategoria.SuspendLayout();
             this.panelbotones.SuspendLayout();
             this.panelbtnaceptarpaciente.SuspendLayout();
             this.paneldgvpacientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvperlab)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldatosperlab
             // 
+            this.paneldatosperlab.Controls.Add(this.btnsalir);
             this.paneldatosperlab.Controls.Add(this.panelagregarnuevaespecialidad);
             this.paneldatosperlab.Controls.Add(this.agregarnuevaespecialidad);
             this.paneldatosperlab.Controls.Add(this.lblespecialidadperlab);
@@ -90,6 +92,17 @@
             this.paneldatosperlab.Name = "paneldatosperlab";
             this.paneldatosperlab.Size = new System.Drawing.Size(214, 417);
             this.paneldatosperlab.TabIndex = 11;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(183, 3);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(28, 23);
+            this.btnsalir.TabIndex = 12;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // panelagregarnuevaespecialidad
             // 
@@ -112,6 +125,7 @@
             this.btncancelarespecialidad.TabIndex = 25;
             this.btncancelarespecialidad.Text = "Cancelar";
             this.btncancelarespecialidad.UseVisualStyleBackColor = true;
+            this.btncancelarespecialidad.Click += new System.EventHandler(this.btncancelarespecialidad_Click);
             // 
             // btnguardarespecialidad
             // 
@@ -121,6 +135,7 @@
             this.btnguardarespecialidad.TabIndex = 24;
             this.btnguardarespecialidad.Text = "Guardar";
             this.btnguardarespecialidad.UseVisualStyleBackColor = true;
+            this.btnguardarespecialidad.Click += new System.EventHandler(this.btnguardarespecialidad_Click);
             // 
             // lblnombreespecialidad
             // 
@@ -131,7 +146,6 @@
             this.lblnombreespecialidad.Size = new System.Drawing.Size(107, 13);
             this.lblnombreespecialidad.TabIndex = 23;
             this.lblnombreespecialidad.Text = "Nombre Especialidad";
-            this.lblnombreespecialidad.Visible = false;
             // 
             // txtespecialidadperlab
             // 
@@ -149,6 +163,7 @@
             this.agregarnuevaespecialidad.TabIndex = 29;
             this.agregarnuevaespecialidad.Text = "Agregar Especialidad";
             this.agregarnuevaespecialidad.UseVisualStyleBackColor = true;
+            this.agregarnuevaespecialidad.CheckedChanged += new System.EventHandler(this.agregarnuevaespecialidad_CheckedChanged);
             // 
             // lblespecialidadperlab
             // 
@@ -207,6 +222,7 @@
             this.btncancelarcategoria.TabIndex = 25;
             this.btncancelarcategoria.Text = "Cancelar";
             this.btncancelarcategoria.UseVisualStyleBackColor = true;
+            this.btncancelarcategoria.Click += new System.EventHandler(this.btncancelarcategoria_Click);
             // 
             // btnguardarcategoria
             // 
@@ -216,6 +232,7 @@
             this.btnguardarcategoria.TabIndex = 24;
             this.btnguardarcategoria.Text = "Guardar";
             this.btnguardarcategoria.UseVisualStyleBackColor = true;
+            this.btnguardarcategoria.Click += new System.EventHandler(this.btnguardarcategoria_Click);
             // 
             // lblnombrecategoria
             // 
@@ -243,6 +260,7 @@
             this.agregarnuevacategoria.TabIndex = 22;
             this.agregarnuevacategoria.Text = "Agregar Categoria";
             this.agregarnuevacategoria.UseVisualStyleBackColor = true;
+            this.agregarnuevacategoria.CheckedChanged += new System.EventHandler(this.agregarnuevacategoria_CheckedChanged);
             // 
             // lblapellidoperlab
             // 
@@ -311,21 +329,25 @@
             // 
             // btneliminar
             // 
+            this.btneliminar.Enabled = false;
             this.btneliminar.Location = new System.Drawing.Point(174, 18);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(79, 39);
             this.btneliminar.TabIndex = 3;
             this.btneliminar.Text = "Eliminar";
             this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnmodificar
             // 
+            this.btnmodificar.Enabled = false;
             this.btnmodificar.Location = new System.Drawing.Point(89, 18);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(79, 39);
             this.btnmodificar.TabIndex = 2;
             this.btnmodificar.Text = "Modificar";
             this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnagregar
             // 
@@ -335,60 +357,61 @@
             this.btnagregar.TabIndex = 1;
             this.btnagregar.Text = "Agregar";
             this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // panelbtnaceptarpaciente
             // 
             this.panelbtnaceptarpaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelbtnaceptarpaciente.Controls.Add(this.btnaceptar);
+            this.panelbtnaceptarpaciente.Controls.Add(this.btncancelar);
             this.panelbtnaceptarpaciente.Location = new System.Drawing.Point(235, 359);
             this.panelbtnaceptarpaciente.Name = "panelbtnaceptarpaciente";
             this.panelbtnaceptarpaciente.Size = new System.Drawing.Size(123, 58);
             this.panelbtnaceptarpaciente.TabIndex = 9;
-            this.panelbtnaceptarpaciente.Visible = false;
             // 
-            // btnaceptar
+            // btncancelar
             // 
-            this.btnaceptar.Enabled = false;
-            this.btnaceptar.Location = new System.Drawing.Point(20, 16);
-            this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(78, 30);
-            this.btnaceptar.TabIndex = 1;
-            this.btnaceptar.Text = "Aceptar";
-            this.btnaceptar.UseVisualStyleBackColor = true;
+            this.btncancelar.Location = new System.Drawing.Point(20, 16);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(78, 30);
+            this.btncancelar.TabIndex = 1;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // paneldgvpacientes
             // 
             this.paneldgvpacientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldgvpacientes.Controls.Add(this.dgvpacientes);
+            this.paneldgvpacientes.Controls.Add(this.dgvperlab);
             this.paneldgvpacientes.Location = new System.Drawing.Point(0, 38);
             this.paneldgvpacientes.Name = "paneldgvpacientes";
             this.paneldgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.paneldgvpacientes.TabIndex = 8;
             // 
-            // dgvpacientes
+            // dgvperlab
             // 
-            this.dgvpacientes.AllowUserToAddRows = false;
-            this.dgvpacientes.AllowUserToDeleteRows = false;
-            this.dgvpacientes.AllowUserToResizeColumns = false;
-            this.dgvpacientes.AllowUserToResizeRows = false;
-            this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
-            this.dgvpacientes.MultiSelect = false;
-            this.dgvpacientes.Name = "dgvpacientes";
-            this.dgvpacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
-            this.dgvpacientes.TabIndex = 5;
+            this.dgvperlab.AllowUserToAddRows = false;
+            this.dgvperlab.AllowUserToDeleteRows = false;
+            this.dgvperlab.AllowUserToResizeColumns = false;
+            this.dgvperlab.AllowUserToResizeRows = false;
+            this.dgvperlab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvperlab.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvperlab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvperlab.Location = new System.Drawing.Point(0, 0);
+            this.dgvperlab.MultiSelect = false;
+            this.dgvperlab.Name = "dgvperlab";
+            this.dgvperlab.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvperlab.Size = new System.Drawing.Size(346, 248);
+            this.dgvperlab.TabIndex = 5;
+            this.dgvperlab.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvperlab_CellClick);
             // 
             // FormPersonalLaboratorio
             // 
@@ -413,7 +436,7 @@
             this.panelbotones.ResumeLayout(false);
             this.panelbtnaceptarpaciente.ResumeLayout(false);
             this.paneldgvpacientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvperlab)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,14 +465,15 @@
         private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.Panel panelbtnaceptarpaciente;
-        private System.Windows.Forms.Button btnaceptar;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Panel paneldgvpacientes;
-        private System.Windows.Forms.DataGridView dgvpacientes;
+        private System.Windows.Forms.DataGridView dgvperlab;
         private System.Windows.Forms.CheckBox agregarnuevaespecialidad;
         private System.Windows.Forms.Panel panelagregarnuevaespecialidad;
         private System.Windows.Forms.Button btncancelarespecialidad;
         private System.Windows.Forms.Button btnguardarespecialidad;
         private System.Windows.Forms.Label lblnombreespecialidad;
         private System.Windows.Forms.TextBox txtespecialidadperlab;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

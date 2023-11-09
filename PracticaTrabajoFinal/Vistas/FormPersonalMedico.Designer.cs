@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosmedico = new System.Windows.Forms.Panel();
+            this.btnsalirvista = new System.Windows.Forms.Button();
             this.lblserviciomedico = new System.Windows.Forms.Label();
             this.cbservicio = new System.Windows.Forms.ComboBox();
             this.panelnuevoservicio = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvmedicos = new System.Windows.Forms.Panel();
             this.dgvpmedicos = new System.Windows.Forms.DataGridView();
-            this.btnsalirvista = new System.Windows.Forms.Button();
             this.paneldatosmedico.SuspendLayout();
             this.panelnuevoservicio.SuspendLayout();
             this.panelbotones.SuspendLayout();
@@ -79,6 +79,17 @@
             this.paneldatosmedico.Name = "paneldatosmedico";
             this.paneldatosmedico.Size = new System.Drawing.Size(214, 417);
             this.paneldatosmedico.TabIndex = 7;
+            // 
+            // btnsalirvista
+            // 
+            this.btnsalirvista.BackColor = System.Drawing.Color.Red;
+            this.btnsalirvista.Location = new System.Drawing.Point(180, 3);
+            this.btnsalirvista.Name = "btnsalirvista";
+            this.btnsalirvista.Size = new System.Drawing.Size(27, 23);
+            this.btnsalirvista.TabIndex = 8;
+            this.btnsalirvista.Text = "X";
+            this.btnsalirvista.UseVisualStyleBackColor = false;
+            this.btnsalirvista.Click += new System.EventHandler(this.btnsalirvista_Click);
             // 
             // lblserviciomedico
             // 
@@ -309,16 +320,6 @@
             this.dgvpmedicos.Size = new System.Drawing.Size(346, 248);
             this.dgvpmedicos.TabIndex = 6;
             this.dgvpmedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpmedicos_CellClick);
-            // 
-            // btnsalirvista
-            // 
-            this.btnsalirvista.Location = new System.Drawing.Point(180, 3);
-            this.btnsalirvista.Name = "btnsalirvista";
-            this.btnsalirvista.Size = new System.Drawing.Size(27, 23);
-            this.btnsalirvista.TabIndex = 8;
-            this.btnsalirvista.Text = "X";
-            this.btnsalirvista.UseVisualStyleBackColor = true;
-            this.btnsalirvista.Click += new System.EventHandler(this.btnsalirvista_Click);
             // 
             // FormPersonalMedico
             // 

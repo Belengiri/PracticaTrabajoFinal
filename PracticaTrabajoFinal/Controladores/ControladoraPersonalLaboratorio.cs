@@ -69,5 +69,60 @@ namespace PracticaTrabajoFinal.Controladores
             }
 
         }
+        public void Agregar_Personal(int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
+        {
+            try
+            {
+                if (id_categoria != 0 && nombre != "" && apellido != "" && matricula != 0&& id_especialidad!=0)
+                {
+                    pl.agregarpersonal(id_categoria,id_especialidad, nombre, apellido, matricula);
+                }
+                else
+                {
+                    MessageBox.Show("campos vacios");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error al agregar un Medico", ex.Message);
+            }
+        }
+        public void Modificar_Personal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
+        {
+            try
+            {
+                if (id_personal != 0 && nombre != "" && id_categoria != 0 && apellido != "" && matricula != 0&& id_especialidad!=0)
+                {
+                    pl.modificarpersonal(id_personal,id_categoria, id_especialidad, nombre, apellido, matricula);
+                }
+                else
+                {
+                    MessageBox.Show("campos vacios");
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error al modificar un Medico", e.ToString());
+            }
+        }
+        public void Eliminar_Personal(int id_personal)
+        {
+            try
+            {
+                if (id_personal != 0)
+                {
+                    pl.eliminarpersonal(id_personal);
+                }
+                else
+                {
+                    MessageBox.Show("campos vacios");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error al eliminar un Medico", e.ToString());
+            }
+        }
     }
 }
