@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosperlab = new System.Windows.Forms.Panel();
+            this.panelagregarnuevaespecialidad = new System.Windows.Forms.Panel();
+            this.btncancelarespecialidad = new System.Windows.Forms.Button();
+            this.btnguardarespecialidad = new System.Windows.Forms.Button();
+            this.lblnombreespecialidad = new System.Windows.Forms.Label();
+            this.txtespecialidadperlab = new System.Windows.Forms.TextBox();
+            this.agregarnuevaespecialidad = new System.Windows.Forms.CheckBox();
             this.lblespecialidadperlab = new System.Windows.Forms.Label();
             this.cbespecialidadperlab = new System.Windows.Forms.ComboBox();
             this.lblcategoriaperlab = new System.Windows.Forms.Label();
@@ -54,19 +60,13 @@
             this.btnaceptar = new System.Windows.Forms.Button();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
             this.dgvpacientes = new System.Windows.Forms.DataGridView();
-            this.agregarnuevaespecialidad = new System.Windows.Forms.CheckBox();
-            this.panelagregarnuevaespecialidad = new System.Windows.Forms.Panel();
-            this.btncancelarespecialidad = new System.Windows.Forms.Button();
-            this.btnguardarespecialidad = new System.Windows.Forms.Button();
-            this.lblnombreespecialidad = new System.Windows.Forms.Label();
-            this.txtespecialidadperlab = new System.Windows.Forms.TextBox();
             this.paneldatosperlab.SuspendLayout();
+            this.panelagregarnuevaespecialidad.SuspendLayout();
             this.panelnuevacategoria.SuspendLayout();
             this.panelbotones.SuspendLayout();
             this.panelbtnaceptarpaciente.SuspendLayout();
             this.paneldgvpacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
-            this.panelagregarnuevaespecialidad.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneldatosperlab
@@ -90,7 +90,65 @@
             this.paneldatosperlab.Name = "paneldatosperlab";
             this.paneldatosperlab.Size = new System.Drawing.Size(214, 417);
             this.paneldatosperlab.TabIndex = 11;
-            this.paneldatosperlab.Visible = false;
+            // 
+            // panelagregarnuevaespecialidad
+            // 
+            this.panelagregarnuevaespecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelagregarnuevaespecialidad.Controls.Add(this.btncancelarespecialidad);
+            this.panelagregarnuevaespecialidad.Controls.Add(this.btnguardarespecialidad);
+            this.panelagregarnuevaespecialidad.Controls.Add(this.lblnombreespecialidad);
+            this.panelagregarnuevaespecialidad.Controls.Add(this.txtespecialidadperlab);
+            this.panelagregarnuevaespecialidad.Location = new System.Drawing.Point(3, 323);
+            this.panelagregarnuevaespecialidad.Name = "panelagregarnuevaespecialidad";
+            this.panelagregarnuevaespecialidad.Size = new System.Drawing.Size(208, 94);
+            this.panelagregarnuevaespecialidad.TabIndex = 26;
+            this.panelagregarnuevaespecialidad.Visible = false;
+            // 
+            // btncancelarespecialidad
+            // 
+            this.btncancelarespecialidad.Location = new System.Drawing.Point(111, 53);
+            this.btncancelarespecialidad.Name = "btncancelarespecialidad";
+            this.btncancelarespecialidad.Size = new System.Drawing.Size(75, 23);
+            this.btncancelarespecialidad.TabIndex = 25;
+            this.btncancelarespecialidad.Text = "Cancelar";
+            this.btncancelarespecialidad.UseVisualStyleBackColor = true;
+            // 
+            // btnguardarespecialidad
+            // 
+            this.btnguardarespecialidad.Location = new System.Drawing.Point(23, 53);
+            this.btnguardarespecialidad.Name = "btnguardarespecialidad";
+            this.btnguardarespecialidad.Size = new System.Drawing.Size(75, 23);
+            this.btnguardarespecialidad.TabIndex = 24;
+            this.btnguardarespecialidad.Text = "Guardar";
+            this.btnguardarespecialidad.UseVisualStyleBackColor = true;
+            // 
+            // lblnombreespecialidad
+            // 
+            this.lblnombreespecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblnombreespecialidad.AutoSize = true;
+            this.lblnombreespecialidad.Location = new System.Drawing.Point(51, 7);
+            this.lblnombreespecialidad.Name = "lblnombreespecialidad";
+            this.lblnombreespecialidad.Size = new System.Drawing.Size(107, 13);
+            this.lblnombreespecialidad.TabIndex = 23;
+            this.lblnombreespecialidad.Text = "Nombre Especialidad";
+            this.lblnombreespecialidad.Visible = false;
+            // 
+            // txtespecialidadperlab
+            // 
+            this.txtespecialidadperlab.Location = new System.Drawing.Point(54, 23);
+            this.txtespecialidadperlab.Name = "txtespecialidadperlab";
+            this.txtespecialidadperlab.Size = new System.Drawing.Size(100, 20);
+            this.txtespecialidadperlab.TabIndex = 1;
+            // 
+            // agregarnuevaespecialidad
+            // 
+            this.agregarnuevaespecialidad.AutoSize = true;
+            this.agregarnuevaespecialidad.Location = new System.Drawing.Point(82, 204);
+            this.agregarnuevaespecialidad.Name = "agregarnuevaespecialidad";
+            this.agregarnuevaespecialidad.Size = new System.Drawing.Size(126, 17);
+            this.agregarnuevaespecialidad.TabIndex = 29;
+            this.agregarnuevaespecialidad.Text = "Agregar Especialidad";
+            this.agregarnuevaespecialidad.UseVisualStyleBackColor = true;
             // 
             // lblespecialidadperlab
             // 
@@ -163,7 +221,7 @@
             // 
             this.lblnombrecategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblnombrecategoria.AutoSize = true;
-            this.lblnombrecategoria.Location = new System.Drawing.Point(3, 10);
+            this.lblnombrecategoria.Location = new System.Drawing.Point(48, 11);
             this.lblnombrecategoria.Name = "lblnombrecategoria";
             this.lblnombrecategoria.Size = new System.Drawing.Size(92, 13);
             this.lblnombrecategoria.TabIndex = 23;
@@ -171,7 +229,7 @@
             // 
             // txtnombrecategoria
             // 
-            this.txtnombrecategoria.Location = new System.Drawing.Point(98, 3);
+            this.txtnombrecategoria.Location = new System.Drawing.Point(51, 27);
             this.txtnombrecategoria.Name = "txtnombrecategoria";
             this.txtnombrecategoria.Size = new System.Drawing.Size(100, 20);
             this.txtnombrecategoria.TabIndex = 1;
@@ -316,14 +374,14 @@
             this.dgvpacientes.AllowUserToResizeColumns = false;
             this.dgvpacientes.AllowUserToResizeRows = false;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
             this.dgvpacientes.MultiSelect = false;
@@ -331,65 +389,6 @@
             this.dgvpacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.dgvpacientes.TabIndex = 5;
-            // 
-            // agregarnuevaespecialidad
-            // 
-            this.agregarnuevaespecialidad.AutoSize = true;
-            this.agregarnuevaespecialidad.Location = new System.Drawing.Point(82, 204);
-            this.agregarnuevaespecialidad.Name = "agregarnuevaespecialidad";
-            this.agregarnuevaespecialidad.Size = new System.Drawing.Size(126, 17);
-            this.agregarnuevaespecialidad.TabIndex = 29;
-            this.agregarnuevaespecialidad.Text = "Agregar Especialidad";
-            this.agregarnuevaespecialidad.UseVisualStyleBackColor = true;
-            // 
-            // panelagregarnuevaespecialidad
-            // 
-            this.panelagregarnuevaespecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelagregarnuevaespecialidad.Controls.Add(this.btncancelarespecialidad);
-            this.panelagregarnuevaespecialidad.Controls.Add(this.btnguardarespecialidad);
-            this.panelagregarnuevaespecialidad.Controls.Add(this.lblnombreespecialidad);
-            this.panelagregarnuevaespecialidad.Controls.Add(this.txtespecialidadperlab);
-            this.panelagregarnuevaespecialidad.Location = new System.Drawing.Point(3, 323);
-            this.panelagregarnuevaespecialidad.Name = "panelagregarnuevaespecialidad";
-            this.panelagregarnuevaespecialidad.Size = new System.Drawing.Size(208, 94);
-            this.panelagregarnuevaespecialidad.TabIndex = 26;
-            this.panelagregarnuevaespecialidad.Visible = false;
-            // 
-            // btncancelarespecialidad
-            // 
-            this.btncancelarespecialidad.Location = new System.Drawing.Point(111, 53);
-            this.btncancelarespecialidad.Name = "btncancelarespecialidad";
-            this.btncancelarespecialidad.Size = new System.Drawing.Size(75, 23);
-            this.btncancelarespecialidad.TabIndex = 25;
-            this.btncancelarespecialidad.Text = "Cancelar";
-            this.btncancelarespecialidad.UseVisualStyleBackColor = true;
-            // 
-            // btnguardarespecialidad
-            // 
-            this.btnguardarespecialidad.Location = new System.Drawing.Point(23, 53);
-            this.btnguardarespecialidad.Name = "btnguardarespecialidad";
-            this.btnguardarespecialidad.Size = new System.Drawing.Size(75, 23);
-            this.btnguardarespecialidad.TabIndex = 24;
-            this.btnguardarespecialidad.Text = "Guardar";
-            this.btnguardarespecialidad.UseVisualStyleBackColor = true;
-            // 
-            // lblnombreespecialidad
-            // 
-            this.lblnombreespecialidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblnombreespecialidad.AutoSize = true;
-            this.lblnombreespecialidad.Location = new System.Drawing.Point(51, 7);
-            this.lblnombreespecialidad.Name = "lblnombreespecialidad";
-            this.lblnombreespecialidad.Size = new System.Drawing.Size(107, 13);
-            this.lblnombreespecialidad.TabIndex = 23;
-            this.lblnombreespecialidad.Text = "Nombre Especialidad";
-            this.lblnombreespecialidad.Visible = false;
-            // 
-            // txtespecialidadperlab
-            // 
-            this.txtespecialidadperlab.Location = new System.Drawing.Point(54, 23);
-            this.txtespecialidadperlab.Name = "txtespecialidadperlab";
-            this.txtespecialidadperlab.Size = new System.Drawing.Size(100, 20);
-            this.txtespecialidadperlab.TabIndex = 1;
             // 
             // FormPersonalLaboratorio
             // 
@@ -407,14 +406,14 @@
             this.Text = "FormPersonalLaboratorio";
             this.paneldatosperlab.ResumeLayout(false);
             this.paneldatosperlab.PerformLayout();
+            this.panelagregarnuevaespecialidad.ResumeLayout(false);
+            this.panelagregarnuevaespecialidad.PerformLayout();
             this.panelnuevacategoria.ResumeLayout(false);
             this.panelnuevacategoria.PerformLayout();
             this.panelbotones.ResumeLayout(false);
             this.panelbtnaceptarpaciente.ResumeLayout(false);
             this.paneldgvpacientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).EndInit();
-            this.panelagregarnuevaespecialidad.ResumeLayout(false);
-            this.panelagregarnuevaespecialidad.PerformLayout();
             this.ResumeLayout(false);
 
         }
