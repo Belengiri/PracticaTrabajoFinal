@@ -49,10 +49,10 @@
             this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             this.panelbtnaceptar = new System.Windows.Forms.Panel();
-            this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvmedicos = new System.Windows.Forms.Panel();
             this.dgvpmedicos = new System.Windows.Forms.DataGridView();
+            this.btnsalirvista = new System.Windows.Forms.Button();
             this.paneldatosmedico.SuspendLayout();
             this.panelnuevoservicio.SuspendLayout();
             this.panelbotones.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             // paneldatosmedico
             // 
+            this.paneldatosmedico.Controls.Add(this.btnsalirvista);
             this.paneldatosmedico.Controls.Add(this.lblserviciomedico);
             this.paneldatosmedico.Controls.Add(this.cbservicio);
             this.paneldatosmedico.Controls.Add(this.panelnuevoservicio);
@@ -78,7 +79,6 @@
             this.paneldatosmedico.Name = "paneldatosmedico";
             this.paneldatosmedico.Size = new System.Drawing.Size(214, 417);
             this.paneldatosmedico.TabIndex = 7;
-            this.paneldatosmedico.Visible = false;
             // 
             // lblserviciomedico
             // 
@@ -237,6 +237,7 @@
             // 
             // btnmodificar
             // 
+            this.btnmodificar.Enabled = false;
             this.btnmodificar.Location = new System.Drawing.Point(89, 18);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(79, 39);
@@ -258,27 +259,15 @@
             // panelbtnaceptar
             // 
             this.panelbtnaceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelbtnaceptar.Controls.Add(this.btnaceptar);
             this.panelbtnaceptar.Controls.Add(this.btncancelar);
-            this.panelbtnaceptar.Location = new System.Drawing.Point(160, 359);
+            this.panelbtnaceptar.Location = new System.Drawing.Point(260, 359);
             this.panelbtnaceptar.Name = "panelbtnaceptar";
-            this.panelbtnaceptar.Size = new System.Drawing.Size(199, 58);
+            this.panelbtnaceptar.Size = new System.Drawing.Size(99, 58);
             this.panelbtnaceptar.TabIndex = 5;
-            // 
-            // btnaceptar
-            // 
-            this.btnaceptar.Enabled = false;
-            this.btnaceptar.Location = new System.Drawing.Point(104, 16);
-            this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(78, 30);
-            this.btnaceptar.TabIndex = 2;
-            this.btnaceptar.Text = "Aceptar";
-            this.btnaceptar.UseVisualStyleBackColor = true;
-            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(20, 16);
+            this.btncancelar.Location = new System.Drawing.Point(11, 16);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(78, 30);
             this.btncancelar.TabIndex = 1;
@@ -320,6 +309,16 @@
             this.dgvpmedicos.Size = new System.Drawing.Size(346, 248);
             this.dgvpmedicos.TabIndex = 6;
             this.dgvpmedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpmedicos_CellClick);
+            // 
+            // btnsalirvista
+            // 
+            this.btnsalirvista.Location = new System.Drawing.Point(180, 3);
+            this.btnsalirvista.Name = "btnsalirvista";
+            this.btnsalirvista.Size = new System.Drawing.Size(27, 23);
+            this.btnsalirvista.TabIndex = 8;
+            this.btnsalirvista.Text = "X";
+            this.btnsalirvista.UseVisualStyleBackColor = true;
+            this.btnsalirvista.Click += new System.EventHandler(this.btnsalirvista_Click);
             // 
             // FormPersonalMedico
             // 
@@ -371,7 +370,7 @@
         private System.Windows.Forms.Panel paneldgvmedicos;
         private System.Windows.Forms.Label lblserviciomedico;
         private System.Windows.Forms.ComboBox cbservicio;
-        private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.DataGridView dgvpmedicos;
+        private System.Windows.Forms.Button btnsalirvista;
     }
 }
