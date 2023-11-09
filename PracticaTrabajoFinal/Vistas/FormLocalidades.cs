@@ -17,9 +17,6 @@ namespace PracticaTrabajoFinal.Vistas
     {
         private Conexion conexion;
         ControladoraPacientes cl = new ControladoraPacientes();
-        bool agregar = false;
-        bool modificar = false;
-        bool eliminar = false;
         public FormLocalidades()
         {
             InitializeComponent();
@@ -37,95 +34,137 @@ namespace PracticaTrabajoFinal.Vistas
             dgvlocalidades.DataSource = dt;
         }
 
-        private void btnaceptarlocalidad_Click(object sender, EventArgs e)
+        private void dgvlocalidades_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrelocalidad.Text = dgvlocalidades.CurrentRow.Cells[1].Value.ToString();
+            txtcodigopostal.Text = dgvlocalidades.CurrentRow.Cells[2].Value.ToString();
+            btneliminarlocalidad.Enabled = true;
+            btnmodificarlocalidad.Enabled = true;
+            btnagregarlocalidad.Enabled = false;
+            
+        }
+
+        private void btnagregarlocalidad_Click(object sender, EventArgs e)
         {
             MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                if (agregar == true)
+                try
                 {
-
-                    cl.Agregar_Localidad(txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
+                    cl.Agregar_Localidad(txtnombrelocalidad.Text, Convert.ToInt32(txtcodigopostal.Text));
                     cargar_tabla();
-                    txtnombrelocalidad.Clear();
-                    txtcodigopostal.Clear();
-                }
-                else if (modificar == true)
-                {
-                    cl.Modificar_Localidad( Convert.ToInt32(dgvlocalidades.CurrentRow.Cells[0].Value.ToString()),txtnombrelocalidad.Text,Convert.ToInt32(txtcodigopostal.Text));
-                    cargar_tabla();
+                    txtnombrelocalidad.Focus();
                     txtnombrelocalidad.Clear();
                     txtcodigopostal.Clear();
                     dgvlocalidades.ClearSelection();
                 }
-                else if (eliminar == true)
+                catch
                 {
-                    cl.Eliminar_Localidad(Convert.ToInt32(dgvlocalidades.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
+                    MessageBox.Show("datos incorrectos");
                     dgvlocalidades.ClearSelection();
+                    txtnombrelocalidad.Focus();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
                 }
             }
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("Accion no confirmada");
+                dgvlocalidades.ClearSelection();
+                txtnombrelocalidad.Focus();
                 txtnombrelocalidad.Clear();
                 txtcodigopostal.Clear();
-                txtnombrelocalidad.Focus();
-                dgvlocalidades.ClearSelection();
             }
-        }
-
-        private void dgvlocalidades_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (modificar == true)
-            {
-                txtnombrelocalidad.Text = dgvlocalidades.CurrentRow.Cells[1].Value.ToString();
-                txtcodigopostal.Text = dgvlocalidades.CurrentRow.Cells[2].Value.ToString();
-            }
-        }
-
-        private void btnagregarlocalidad_Click(object sender, EventArgs e)
-        {
-            paneldatoslocalidades.Visible = true;
-            txtnombrelocalidad.Clear();
-            txtnombrelocalidad.Focus();
-            txtcodigopostal.Clear();
-            txtcodigopostal.Visible = true;
-            txtnombrelocalidad.Visible = true;
-            lblnombrelocalidad.Visible = true;
-            llblcodigopostal.Visible = true;
-            agregar = true;
-            eliminar = false;
-            modificar = false;
         }
 
         private void btnmodificarlocalidad_Click(object sender, EventArgs e)
         {
-            
-            paneldatoslocalidades.Visible = true;
-            txtnombrelocalidad.Clear();
-            txtcodigopostal.Clear();
-            txtnombrelocalidad.Focus();
-            txtcodigopostal.Visible = true;
-            txtnombrelocalidad.Visible = true;
-            lblnombrelocalidad.Visible = true;
-            llblcodigopostal.Visible = true;
-            modificar = true;
-            agregar = false;
-            eliminar = false;
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cl.Modificar_Localidad(Convert.ToInt32(dgvlocalidades.CurrentRow.Cells[0].Value.ToString()), txtnombrelocalidad.Text, Convert.ToInt32(txtcodigopostal.Text));
+                    cargar_tabla();
+                    btneliminarlocalidad.Enabled = false;
+                    btnmodificarlocalidad.Enabled = false;
+                    btnagregarlocalidad.Enabled = true;
+                    txtnombrelocalidad.Focus();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
+                    dgvlocalidades.ClearSelection();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    dgvlocalidades.ClearSelection();
+                    txtnombrelocalidad.Focus();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                dgvlocalidades.ClearSelection();
+                txtnombrelocalidad.Focus();
+                txtnombrelocalidad.Clear();
+                txtcodigopostal.Clear();
+            }
         }
 
         private void btneliminarlocalidad_Click(object sender, EventArgs e)
         {
-            eliminar = true;
-            modificar = false;
-            agregar = false;
-            paneldatoslocalidades.Visible = true;
-            txtcodigopostal.Visible = false;
-            txtnombrelocalidad.Visible = false;
-            lblnombrelocalidad.Visible = false;
-            llblcodigopostal.Visible = false;
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cl.Eliminar_Localidad(Convert.ToInt32(dgvlocalidades.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    btneliminarlocalidad.Enabled = false;
+                    btnmodificarlocalidad.Enabled = false;
+                    btnagregarlocalidad.Enabled = true;
+                    dgvlocalidades.ClearSelection();
+                    txtnombrelocalidad.Focus();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    dgvlocalidades.ClearSelection();
+                    txtnombrelocalidad.Focus();
+                    txtnombrelocalidad.Clear();
+                    txtcodigopostal.Clear();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                dgvlocalidades.ClearSelection();
+                txtnombrelocalidad.Focus();
+                txtnombrelocalidad.Clear();
+                txtcodigopostal.Clear();
+            }
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            btneliminarlocalidad.Enabled = false;
+            btnmodificarlocalidad.Enabled = false;
+            btnagregarlocalidad.Enabled = true;
+            txtnombrelocalidad.Clear();
+            txtcodigopostal.Clear();
+            txtnombrelocalidad.Focus();
         }
     }
 }

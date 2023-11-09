@@ -142,6 +142,9 @@ namespace PracticaTrabajoFinal.Vistas
                     cm.Modificar_Medico(Convert.ToInt32(dgvpmedicos.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text, Convert.ToInt32(txtmatriculamedico.Text));
                     cargar_tabla();
                     btnmodificar.Enabled = false;
+                    btneliminar.Enabled = false;
+                    btnagregar.Enabled = true;
+                    agregarservicio.Visible = true;
                     dgvpmedicos.ClearSelection();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
@@ -195,6 +198,9 @@ namespace PracticaTrabajoFinal.Vistas
                     cm.Eliminar_Medico(Convert.ToInt32(dgvpmedicos.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
                     btneliminar.Enabled = false;
+                    btnmodificar.Enabled = false;
+                    btnagregar.Enabled = true;
+                    agregarservicio.Visible = true;
                     dgvpmedicos.ClearSelection();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();

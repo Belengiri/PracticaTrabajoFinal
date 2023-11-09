@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
             this.dgvpacientes = new System.Windows.Forms.DataGridView();
             this.panelbtnaceptarpaciente = new System.Windows.Forms.Panel();
-            this.btnaceptar = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.panelbotones = new System.Windows.Forms.Panel();
             this.btneliminarpaciente = new System.Windows.Forms.Button();
             this.btnmodificarpaciente = new System.Windows.Forms.Button();
             this.btnagregarpaciente = new System.Windows.Forms.Button();
             this.paneldatospaciente = new System.Windows.Forms.Panel();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.dtfecha = new System.Windows.Forms.DateTimePicker();
             this.panelnuevalocalidad = new System.Windows.Forms.Panel();
             this.btncancelarlocalidad = new System.Windows.Forms.Button();
@@ -94,14 +95,14 @@
             this.dgvpacientes.AllowUserToResizeColumns = false;
             this.dgvpacientes.AllowUserToResizeRows = false;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
             this.dgvpacientes.MultiSelect = false;
@@ -114,23 +115,21 @@
             // panelbtnaceptarpaciente
             // 
             this.panelbtnaceptarpaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelbtnaceptarpaciente.Controls.Add(this.btnaceptar);
+            this.panelbtnaceptarpaciente.Controls.Add(this.btncancelar);
             this.panelbtnaceptarpaciente.Location = new System.Drawing.Point(238, 359);
             this.panelbtnaceptarpaciente.Name = "panelbtnaceptarpaciente";
             this.panelbtnaceptarpaciente.Size = new System.Drawing.Size(123, 58);
             this.panelbtnaceptarpaciente.TabIndex = 1;
-            this.panelbtnaceptarpaciente.Visible = false;
             // 
-            // btnaceptar
+            // btncancelar
             // 
-            this.btnaceptar.Enabled = false;
-            this.btnaceptar.Location = new System.Drawing.Point(20, 16);
-            this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(78, 30);
-            this.btnaceptar.TabIndex = 1;
-            this.btnaceptar.Text = "Aceptar";
-            this.btnaceptar.UseVisualStyleBackColor = true;
-            this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
+            this.btncancelar.Location = new System.Drawing.Point(20, 16);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(78, 30);
+            this.btncancelar.TabIndex = 1;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // panelbotones
             // 
@@ -145,6 +144,7 @@
             // 
             // btneliminarpaciente
             // 
+            this.btneliminarpaciente.Enabled = false;
             this.btneliminarpaciente.Location = new System.Drawing.Point(174, 18);
             this.btneliminarpaciente.Name = "btneliminarpaciente";
             this.btneliminarpaciente.Size = new System.Drawing.Size(79, 39);
@@ -155,6 +155,7 @@
             // 
             // btnmodificarpaciente
             // 
+            this.btnmodificarpaciente.Enabled = false;
             this.btnmodificarpaciente.Location = new System.Drawing.Point(89, 18);
             this.btnmodificarpaciente.Name = "btnmodificarpaciente";
             this.btnmodificarpaciente.Size = new System.Drawing.Size(79, 39);
@@ -175,6 +176,7 @@
             // 
             // paneldatospaciente
             // 
+            this.paneldatospaciente.Controls.Add(this.btnsalir);
             this.paneldatospaciente.Controls.Add(this.dtfecha);
             this.paneldatospaciente.Controls.Add(this.panelnuevalocalidad);
             this.paneldatospaciente.Controls.Add(this.agregarlocalidad);
@@ -204,12 +206,22 @@
             this.paneldatospaciente.Name = "paneldatospaciente";
             this.paneldatospaciente.Size = new System.Drawing.Size(214, 417);
             this.paneldatospaciente.TabIndex = 3;
-            this.paneldatospaciente.Visible = false;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(189, 0);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(25, 23);
+            this.btnsalir.TabIndex = 4;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // dtfecha
             // 
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(111, 91);
+            this.dtfecha.Location = new System.Drawing.Point(111, 96);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(103, 20);
             this.dtfecha.TabIndex = 24;
@@ -287,7 +299,7 @@
             // agregarlocalidad
             // 
             this.agregarlocalidad.AutoSize = true;
-            this.agregarlocalidad.Location = new System.Drawing.Point(83, 296);
+            this.agregarlocalidad.Location = new System.Drawing.Point(83, 302);
             this.agregarlocalidad.Name = "agregarlocalidad";
             this.agregarlocalidad.Size = new System.Drawing.Size(112, 17);
             this.agregarlocalidad.TabIndex = 22;
@@ -299,7 +311,7 @@
             // 
             this.lbllocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbllocalidad.AutoSize = true;
-            this.lbllocalidad.Location = new System.Drawing.Point(7, 273);
+            this.lbllocalidad.Location = new System.Drawing.Point(7, 278);
             this.lbllocalidad.Name = "lbllocalidad";
             this.lbllocalidad.Size = new System.Drawing.Size(53, 13);
             this.lbllocalidad.TabIndex = 21;
@@ -308,7 +320,7 @@
             // cblocalidades
             // 
             this.cblocalidades.FormattingEnabled = true;
-            this.cblocalidades.Location = new System.Drawing.Point(83, 270);
+            this.cblocalidades.Location = new System.Drawing.Point(83, 275);
             this.cblocalidades.Name = "cblocalidades";
             this.cblocalidades.Size = new System.Drawing.Size(128, 21);
             this.cblocalidades.TabIndex = 20;
@@ -317,7 +329,7 @@
             // 
             this.lblapellidopaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblapellidopaciente.AutoSize = true;
-            this.lblapellidopaciente.Location = new System.Drawing.Point(3, 45);
+            this.lblapellidopaciente.Location = new System.Drawing.Point(3, 50);
             this.lblapellidopaciente.Name = "lblapellidopaciente";
             this.lblapellidopaciente.Size = new System.Drawing.Size(44, 13);
             this.lblapellidopaciente.TabIndex = 19;
@@ -327,7 +339,7 @@
             // 
             this.lbldnipaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbldnipaciente.AutoSize = true;
-            this.lbldnipaciente.Location = new System.Drawing.Point(3, 71);
+            this.lbldnipaciente.Location = new System.Drawing.Point(3, 76);
             this.lbldnipaciente.Name = "lbldnipaciente";
             this.lbldnipaciente.Size = new System.Drawing.Size(77, 13);
             this.lbldnipaciente.TabIndex = 18;
@@ -337,7 +349,7 @@
             // 
             this.lblfechanacpaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblfechanacpaciente.AutoSize = true;
-            this.lblfechanacpaciente.Location = new System.Drawing.Point(7, 97);
+            this.lblfechanacpaciente.Location = new System.Drawing.Point(7, 102);
             this.lblfechanacpaciente.Name = "lblfechanacpaciente";
             this.lblfechanacpaciente.Size = new System.Drawing.Size(108, 13);
             this.lblfechanacpaciente.TabIndex = 17;
@@ -347,7 +359,7 @@
             // 
             this.lbltelefonopaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltelefonopaciente.AutoSize = true;
-            this.lbltelefonopaciente.Location = new System.Drawing.Point(3, 123);
+            this.lbltelefonopaciente.Location = new System.Drawing.Point(3, 128);
             this.lbltelefonopaciente.Name = "lbltelefonopaciente";
             this.lbltelefonopaciente.Size = new System.Drawing.Size(49, 13);
             this.lbltelefonopaciente.TabIndex = 16;
@@ -357,7 +369,7 @@
             // 
             this.lblcorreopaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblcorreopaciente.AutoSize = true;
-            this.lblcorreopaciente.Location = new System.Drawing.Point(3, 149);
+            this.lblcorreopaciente.Location = new System.Drawing.Point(3, 154);
             this.lblcorreopaciente.Name = "lblcorreopaciente";
             this.lblcorreopaciente.Size = new System.Drawing.Size(94, 13);
             this.lblcorreopaciente.TabIndex = 15;
@@ -367,7 +379,7 @@
             // 
             this.lblcallepaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblcallepaciente.AutoSize = true;
-            this.lblcallepaciente.Location = new System.Drawing.Point(9, 175);
+            this.lblcallepaciente.Location = new System.Drawing.Point(9, 180);
             this.lblcallepaciente.Name = "lblcallepaciente";
             this.lblcallepaciente.Size = new System.Drawing.Size(33, 13);
             this.lblcallepaciente.TabIndex = 14;
@@ -377,7 +389,7 @@
             // 
             this.lblalturacalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblalturacalle.AutoSize = true;
-            this.lblalturacalle.Location = new System.Drawing.Point(8, 198);
+            this.lblalturacalle.Location = new System.Drawing.Point(8, 203);
             this.lblalturacalle.Name = "lblalturacalle";
             this.lblalturacalle.Size = new System.Drawing.Size(34, 13);
             this.lblalturacalle.TabIndex = 13;
@@ -387,7 +399,7 @@
             // 
             this.lblpisocasa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblpisocasa.AutoSize = true;
-            this.lblpisocasa.Location = new System.Drawing.Point(9, 224);
+            this.lblpisocasa.Location = new System.Drawing.Point(9, 229);
             this.lblpisocasa.Name = "lblpisocasa";
             this.lblpisocasa.Size = new System.Drawing.Size(27, 13);
             this.lblpisocasa.TabIndex = 12;
@@ -397,7 +409,7 @@
             // 
             this.lbldeptopaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbldeptopaciente.AutoSize = true;
-            this.lbldeptopaciente.Location = new System.Drawing.Point(7, 247);
+            this.lbldeptopaciente.Location = new System.Drawing.Point(7, 252);
             this.lbldeptopaciente.Name = "lbldeptopaciente";
             this.lbldeptopaciente.Size = new System.Drawing.Size(89, 13);
             this.lbldeptopaciente.TabIndex = 11;
@@ -407,7 +419,7 @@
             // 
             this.lblnombrepaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblnombrepaciente.AutoSize = true;
-            this.lblnombrepaciente.Location = new System.Drawing.Point(3, 19);
+            this.lblnombrepaciente.Location = new System.Drawing.Point(3, 24);
             this.lblnombrepaciente.Name = "lblnombrepaciente";
             this.lblnombrepaciente.Size = new System.Drawing.Size(44, 13);
             this.lblnombrepaciente.TabIndex = 10;
@@ -416,7 +428,7 @@
             // txtcorreo
             // 
             this.txtcorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcorreo.Location = new System.Drawing.Point(111, 142);
+            this.txtcorreo.Location = new System.Drawing.Point(111, 147);
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(100, 20);
             this.txtcorreo.TabIndex = 9;
@@ -424,7 +436,7 @@
             // txtdepartamento
             // 
             this.txtdepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdepartamento.Location = new System.Drawing.Point(111, 244);
+            this.txtdepartamento.Location = new System.Drawing.Point(111, 249);
             this.txtdepartamento.Name = "txtdepartamento";
             this.txtdepartamento.Size = new System.Drawing.Size(100, 20);
             this.txtdepartamento.TabIndex = 8;
@@ -432,7 +444,7 @@
             // txtpiso
             // 
             this.txtpiso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtpiso.Location = new System.Drawing.Point(83, 220);
+            this.txtpiso.Location = new System.Drawing.Point(83, 225);
             this.txtpiso.Name = "txtpiso";
             this.txtpiso.Size = new System.Drawing.Size(100, 20);
             this.txtpiso.TabIndex = 7;
@@ -440,7 +452,7 @@
             // txtcalle
             // 
             this.txtcalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtcalle.Location = new System.Drawing.Point(83, 168);
+            this.txtcalle.Location = new System.Drawing.Point(83, 173);
             this.txtcalle.Name = "txtcalle";
             this.txtcalle.Size = new System.Drawing.Size(100, 20);
             this.txtcalle.TabIndex = 6;
@@ -448,7 +460,7 @@
             // txtaltura
             // 
             this.txtaltura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtaltura.Location = new System.Drawing.Point(83, 194);
+            this.txtaltura.Location = new System.Drawing.Point(83, 199);
             this.txtaltura.Name = "txtaltura";
             this.txtaltura.Size = new System.Drawing.Size(100, 20);
             this.txtaltura.TabIndex = 5;
@@ -456,7 +468,7 @@
             // txttelefono
             // 
             this.txttelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttelefono.Location = new System.Drawing.Point(83, 116);
+            this.txttelefono.Location = new System.Drawing.Point(83, 121);
             this.txttelefono.Name = "txttelefono";
             this.txttelefono.Size = new System.Drawing.Size(100, 20);
             this.txttelefono.TabIndex = 4;
@@ -464,7 +476,7 @@
             // txtdnipaciente
             // 
             this.txtdnipaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtdnipaciente.Location = new System.Drawing.Point(83, 64);
+            this.txtdnipaciente.Location = new System.Drawing.Point(83, 69);
             this.txtdnipaciente.Name = "txtdnipaciente";
             this.txtdnipaciente.Size = new System.Drawing.Size(100, 20);
             this.txtdnipaciente.TabIndex = 2;
@@ -472,7 +484,7 @@
             // txtapellidopaciente
             // 
             this.txtapellidopaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtapellidopaciente.Location = new System.Drawing.Point(83, 38);
+            this.txtapellidopaciente.Location = new System.Drawing.Point(83, 43);
             this.txtapellidopaciente.Name = "txtapellidopaciente";
             this.txtapellidopaciente.Size = new System.Drawing.Size(100, 20);
             this.txtapellidopaciente.TabIndex = 1;
@@ -480,7 +492,7 @@
             // txtnombrepaciente
             // 
             this.txtnombrepaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnombrepaciente.Location = new System.Drawing.Point(83, 12);
+            this.txtnombrepaciente.Location = new System.Drawing.Point(83, 17);
             this.txtnombrepaciente.Name = "txtnombrepaciente";
             this.txtnombrepaciente.Size = new System.Drawing.Size(100, 20);
             this.txtnombrepaciente.TabIndex = 0;
@@ -516,7 +528,7 @@
 
         private System.Windows.Forms.Panel paneldgvpacientes;
         private System.Windows.Forms.Panel panelbtnaceptarpaciente;
-        private System.Windows.Forms.Button btnaceptar;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Panel panelbotones;
         private System.Windows.Forms.Button btneliminarpaciente;
         private System.Windows.Forms.Button btnmodificarpaciente;
@@ -553,5 +565,6 @@
         private System.Windows.Forms.ComboBox cblocalidades;
         private System.Windows.Forms.DataGridView dgvpacientes;
         private System.Windows.Forms.DateTimePicker dtfecha;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

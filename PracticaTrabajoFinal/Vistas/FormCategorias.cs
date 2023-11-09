@@ -17,9 +17,6 @@ namespace PracticaTrabajoFinal.Vistas
     {
         private Conexion conexion = new Conexion();
         ControladoraPersonalLaboratorio cc = new ControladoraPersonalLaboratorio();
-        bool agregar=false;
-        bool eliminar = false;
-        bool modificar=false;
         public FormCategorias()
         {
             InitializeComponent();
@@ -38,31 +35,28 @@ namespace PracticaTrabajoFinal.Vistas
             dgvcategoria.DataSource = dt;
         }
 
-        private void btnaceptarcategoria_Click(object sender, EventArgs e)
+        private void btneliminarcategoria_Click(object sender, EventArgs e)
         {
             MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
-                if (agregar == true)
+                try
                 {
-                    cc.Agregar_Categoria(txtnombrecategoria.Text);
+                    cc.Eliminar_Categoria(Convert.ToInt32(dgvcategoria.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
+                    btneliminarcategoria.Enabled = false;
+                    btnmodificarcategoria.Enabled = false;
+                    btnagregarcategoria.Enabled = true;
                     txtnombrecategoria.Clear();
                     txtnombrecategoria.Focus();
                     dgvcategoria.ClearSelection();
                 }
-                else if (modificar == true)
+                catch
                 {
-                    cc.Modificar_Categoria(txtnombrecategoria.Text, Convert.ToInt32(dgvcategoria.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
-                    dgvcategoria.ClearSelection();
-                }
-                else if (eliminar == true)
-                {
-                    cc.Eliminar_Categoria(Convert.ToInt32(dgvcategoria.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tabla();
+                    MessageBox.Show("datos incorrectos");
                     txtnombrecategoria.Clear();
+                    txtnombrecategoria.Focus();
                     dgvcategoria.ClearSelection();
                 }
             }
@@ -75,46 +69,94 @@ namespace PracticaTrabajoFinal.Vistas
             }
         }
 
-        private void btneliminarcategoria_Click(object sender, EventArgs e)
-        {
-            eliminar = true;
-            agregar = false;
-            eliminar = false;
-            txtnombrecategoria.Clear();
-            paneldatoscategoria.Visible = true;
-            txtnombrecategoria.Visible = false;
-            lblnombrecategoria.Visible = false;
-
-        }
-
         private void btnmodificarcategoria_Click(object sender, EventArgs e)
         {
-            modificar = true;
-            agregar = false;
-            eliminar = false;
-            txtnombrecategoria.Clear();
-            paneldatoscategoria.Visible = true;
-            txtnombrecategoria.Visible = true;
-            lblnombrecategoria.Visible = true;
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cc.Modificar_Categoria(txtnombrecategoria.Text, Convert.ToInt32(dgvcategoria.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    dgvcategoria.ClearSelection();
+                    btnmodificarcategoria.Enabled = false;
+                    btneliminarcategoria.Enabled = false;
+                    btnagregarcategoria.Enabled = true;
+                    txtnombrecategoria.Clear();
+                    txtnombrecategoria.Focus();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    txtnombrecategoria.Clear();
+                    txtnombrecategoria.Focus();
+                    dgvcategoria.ClearSelection();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                txtnombrecategoria.Clear();
+                txtnombrecategoria.Focus();
+                dgvcategoria.ClearSelection();
+            }
         }
 
         private void btnagregarcategoria_Click(object sender, EventArgs e)
         {
-            agregar = true;
-            eliminar = false;
-            modificar = false;
-            txtnombrecategoria.Clear();
-            paneldatoscategoria.Visible = true;
-            txtnombrecategoria.Visible = true;
-            lblnombrecategoria.Visible = true;
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    cc.Agregar_Categoria(txtnombrecategoria.Text);
+                    cargar_tabla();
+                    txtnombrecategoria.Clear();
+                    txtnombrecategoria.Focus();
+                    dgvcategoria.ClearSelection();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    txtnombrecategoria.Clear();
+                    txtnombrecategoria.Focus();
+                    dgvcategoria.ClearSelection();
+                }
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+                txtnombrecategoria.Clear();
+                txtnombrecategoria.Focus();
+                dgvcategoria.ClearSelection();
+            }
         }
 
         private void dgvcategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {   
+            txtnombrecategoria.Focus();
+            txtnombrecategoria.Text = dgvcategoria.CurrentRow.Cells[1].Value.ToString();
+            btneliminarcategoria.Enabled = true;
+            btnmodificarcategoria.Enabled = true;
+            btnagregarcategoria.Enabled = false;
+            
+        }
+
+        private void btnsalir_Click(object sender, EventArgs e)
         {
-            if (modificar == true)
-            {
-                txtnombrecategoria.Text = dgvcategoria.CurrentRow.Cells[1].Value.ToString();
-            }
+            this.Close();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            btneliminarcategoria.Enabled = false;
+            btnmodificarcategoria.Enabled = false;
+            btnagregarcategoria.Enabled = true;
+            dgvcategoria.ClearSelection();
+            txtnombrecategoria.Clear();
+            txtnombrecategoria.Focus();
         }
     }
 }

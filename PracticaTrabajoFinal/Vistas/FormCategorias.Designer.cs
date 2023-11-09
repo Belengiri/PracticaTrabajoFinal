@@ -33,7 +33,8 @@
             this.btnmodificarcategoria = new System.Windows.Forms.Button();
             this.btnagregarcategoria = new System.Windows.Forms.Button();
             this.paneldatoscategoria = new System.Windows.Forms.Panel();
-            this.btnaceptarcategoria = new System.Windows.Forms.Button();
+            this.btnsalir = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.lblnombrecategoria = new System.Windows.Forms.Label();
             this.txtnombrecategoria = new System.Windows.Forms.TextBox();
             this.paneldgvcategoria = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@
             // 
             // btneliminarcategoria
             // 
+            this.btneliminarcategoria.Enabled = false;
             this.btneliminarcategoria.Location = new System.Drawing.Point(191, 0);
             this.btneliminarcategoria.Name = "btneliminarcategoria";
             this.btneliminarcategoria.Size = new System.Drawing.Size(88, 34);
@@ -67,6 +69,7 @@
             // 
             // btnmodificarcategoria
             // 
+            this.btnmodificarcategoria.Enabled = false;
             this.btnmodificarcategoria.Location = new System.Drawing.Point(97, 0);
             this.btnmodificarcategoria.Name = "btnmodificarcategoria";
             this.btnmodificarcategoria.Size = new System.Drawing.Size(88, 34);
@@ -87,31 +90,42 @@
             // 
             // paneldatoscategoria
             // 
-            this.paneldatoscategoria.Controls.Add(this.btnaceptarcategoria);
+            this.paneldatoscategoria.Controls.Add(this.btnsalir);
+            this.paneldatoscategoria.Controls.Add(this.btncancelar);
             this.paneldatoscategoria.Controls.Add(this.lblnombrecategoria);
             this.paneldatoscategoria.Controls.Add(this.txtnombrecategoria);
             this.paneldatoscategoria.Location = new System.Drawing.Point(327, 0);
             this.paneldatoscategoria.Name = "paneldatoscategoria";
-            this.paneldatoscategoria.Size = new System.Drawing.Size(242, 417);
+            this.paneldatoscategoria.Size = new System.Drawing.Size(251, 417);
             this.paneldatoscategoria.TabIndex = 8;
-            this.paneldatoscategoria.Visible = false;
             // 
-            // btnaceptarcategoria
+            // btnsalir
             // 
-            this.btnaceptarcategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnaceptarcategoria.Location = new System.Drawing.Point(68, 361);
-            this.btnaceptarcategoria.Name = "btnaceptarcategoria";
-            this.btnaceptarcategoria.Size = new System.Drawing.Size(98, 41);
-            this.btnaceptarcategoria.TabIndex = 5;
-            this.btnaceptarcategoria.Text = "Aceptar";
-            this.btnaceptarcategoria.UseVisualStyleBackColor = true;
-            this.btnaceptarcategoria.Click += new System.EventHandler(this.btnaceptarcategoria_Click);
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(230, 3);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(21, 23);
+            this.btnsalir.TabIndex = 6;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelar.Location = new System.Drawing.Point(77, 361);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(98, 41);
+            this.btncancelar.TabIndex = 5;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // lblnombrecategoria
             // 
             this.lblnombrecategoria.AutoSize = true;
             this.lblnombrecategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombrecategoria.Location = new System.Drawing.Point(29, 27);
+            this.lblnombrecategoria.Location = new System.Drawing.Point(19, 61);
             this.lblnombrecategoria.MinimumSize = new System.Drawing.Size(133, 13);
             this.lblnombrecategoria.Name = "lblnombrecategoria";
             this.lblnombrecategoria.Size = new System.Drawing.Size(133, 20);
@@ -120,7 +134,7 @@
             // 
             // txtnombrecategoria
             // 
-            this.txtnombrecategoria.Location = new System.Drawing.Point(18, 50);
+            this.txtnombrecategoria.Location = new System.Drawing.Point(8, 84);
             this.txtnombrecategoria.Name = "txtnombrecategoria";
             this.txtnombrecategoria.Size = new System.Drawing.Size(193, 20);
             this.txtnombrecategoria.TabIndex = 4;
@@ -176,10 +190,11 @@
         private System.Windows.Forms.Button btnmodificarcategoria;
         private System.Windows.Forms.Button btnagregarcategoria;
         private System.Windows.Forms.Panel paneldatoscategoria;
-        private System.Windows.Forms.Button btnaceptarcategoria;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Label lblnombrecategoria;
         private System.Windows.Forms.TextBox txtnombrecategoria;
         private System.Windows.Forms.Panel paneldgvcategoria;
         private System.Windows.Forms.DataGridView dgvcategoria;
+        private System.Windows.Forms.Button btnsalir;
     }
 }

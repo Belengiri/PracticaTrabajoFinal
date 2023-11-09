@@ -33,9 +33,10 @@
             this.btnmodificarlocalidad = new System.Windows.Forms.Button();
             this.btnagregarlocalidad = new System.Windows.Forms.Button();
             this.paneldatoslocalidades = new System.Windows.Forms.Panel();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.llblcodigopostal = new System.Windows.Forms.Label();
             this.txtcodigopostal = new System.Windows.Forms.TextBox();
-            this.btnaceptarlocalidad = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.lblnombrelocalidad = new System.Windows.Forms.Label();
             this.txtnombrelocalidad = new System.Windows.Forms.TextBox();
             this.paneldgvlocalidades = new System.Windows.Forms.Panel();
@@ -59,6 +60,7 @@
             // 
             // btneliminarlocalidad
             // 
+            this.btneliminarlocalidad.Enabled = false;
             this.btneliminarlocalidad.Location = new System.Drawing.Point(191, 0);
             this.btneliminarlocalidad.Name = "btneliminarlocalidad";
             this.btneliminarlocalidad.Size = new System.Drawing.Size(88, 34);
@@ -69,6 +71,7 @@
             // 
             // btnmodificarlocalidad
             // 
+            this.btnmodificarlocalidad.Enabled = false;
             this.btnmodificarlocalidad.Location = new System.Drawing.Point(97, 0);
             this.btnmodificarlocalidad.Name = "btnmodificarlocalidad";
             this.btnmodificarlocalidad.Size = new System.Drawing.Size(88, 34);
@@ -89,9 +92,10 @@
             // 
             // paneldatoslocalidades
             // 
+            this.paneldatoslocalidades.Controls.Add(this.btnsalir);
             this.paneldatoslocalidades.Controls.Add(this.llblcodigopostal);
             this.paneldatoslocalidades.Controls.Add(this.txtcodigopostal);
-            this.paneldatoslocalidades.Controls.Add(this.btnaceptarlocalidad);
+            this.paneldatoslocalidades.Controls.Add(this.btncancelar);
             this.paneldatoslocalidades.Controls.Add(this.lblnombrelocalidad);
             this.paneldatoslocalidades.Controls.Add(this.txtnombrelocalidad);
             this.paneldatoslocalidades.Dock = System.Windows.Forms.DockStyle.Right;
@@ -99,13 +103,23 @@
             this.paneldatoslocalidades.Name = "paneldatoslocalidades";
             this.paneldatoslocalidades.Size = new System.Drawing.Size(258, 417);
             this.paneldatoslocalidades.TabIndex = 8;
-            this.paneldatoslocalidades.Visible = false;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(233, 3);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(22, 23);
+            this.btnsalir.TabIndex = 8;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // llblcodigopostal
             // 
             this.llblcodigopostal.AutoSize = true;
             this.llblcodigopostal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblcodigopostal.Location = new System.Drawing.Point(10, 113);
+            this.llblcodigopostal.Location = new System.Drawing.Point(18, 153);
             this.llblcodigopostal.MinimumSize = new System.Drawing.Size(133, 13);
             this.llblcodigopostal.Name = "llblcodigopostal";
             this.llblcodigopostal.Size = new System.Drawing.Size(133, 20);
@@ -114,27 +128,27 @@
             // 
             // txtcodigopostal
             // 
-            this.txtcodigopostal.Location = new System.Drawing.Point(10, 150);
+            this.txtcodigopostal.Location = new System.Drawing.Point(18, 190);
             this.txtcodigopostal.Name = "txtcodigopostal";
             this.txtcodigopostal.Size = new System.Drawing.Size(193, 20);
             this.txtcodigopostal.TabIndex = 7;
             // 
-            // btnaceptarlocalidad
+            // btncancelar
             // 
-            this.btnaceptarlocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnaceptarlocalidad.Location = new System.Drawing.Point(88, 373);
-            this.btnaceptarlocalidad.Name = "btnaceptarlocalidad";
-            this.btnaceptarlocalidad.Size = new System.Drawing.Size(98, 41);
-            this.btnaceptarlocalidad.TabIndex = 5;
-            this.btnaceptarlocalidad.Text = "Aceptar";
-            this.btnaceptarlocalidad.UseVisualStyleBackColor = true;
-            this.btnaceptarlocalidad.Click += new System.EventHandler(this.btnaceptarlocalidad_Click);
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelar.Location = new System.Drawing.Point(88, 373);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(98, 41);
+            this.btncancelar.TabIndex = 5;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // lblnombrelocalidad
             // 
             this.lblnombrelocalidad.AutoSize = true;
             this.lblnombrelocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombrelocalidad.Location = new System.Drawing.Point(3, 21);
+            this.lblnombrelocalidad.Location = new System.Drawing.Point(11, 61);
             this.lblnombrelocalidad.MinimumSize = new System.Drawing.Size(133, 13);
             this.lblnombrelocalidad.Name = "lblnombrelocalidad";
             this.lblnombrelocalidad.Size = new System.Drawing.Size(175, 20);
@@ -143,7 +157,7 @@
             // 
             // txtnombrelocalidad
             // 
-            this.txtnombrelocalidad.Location = new System.Drawing.Point(3, 58);
+            this.txtnombrelocalidad.Location = new System.Drawing.Point(11, 98);
             this.txtnombrelocalidad.Name = "txtnombrelocalidad";
             this.txtnombrelocalidad.Size = new System.Drawing.Size(193, 20);
             this.txtnombrelocalidad.TabIndex = 4;
@@ -199,12 +213,13 @@
         private System.Windows.Forms.Button btnmodificarlocalidad;
         private System.Windows.Forms.Button btnagregarlocalidad;
         private System.Windows.Forms.Panel paneldatoslocalidades;
-        private System.Windows.Forms.Button btnaceptarlocalidad;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Label lblnombrelocalidad;
         private System.Windows.Forms.TextBox txtnombrelocalidad;
         private System.Windows.Forms.Panel paneldgvlocalidades;
         private System.Windows.Forms.DataGridView dgvlocalidades;
         private System.Windows.Forms.Label llblcodigopostal;
         private System.Windows.Forms.TextBox txtcodigopostal;
+        private System.Windows.Forms.Button btnsalir;
     }
 }
