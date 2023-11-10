@@ -259,6 +259,7 @@
             this.ClientSize = new System.Drawing.Size(762, 417);
             this.Controls.Add(this.panelcontenedor);
             this.Controls.Add(this.panelmenu);
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(778, 456);
             this.Name = "Laboratorio";
             this.panelmenu.ResumeLayout(false);

@@ -172,6 +172,7 @@
             this.Controls.Add(this.paneldatosespecialidad);
             this.Controls.Add(this.paneldgvespecialidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormEspecialidades";
             this.Text = "FormEspecialidades";

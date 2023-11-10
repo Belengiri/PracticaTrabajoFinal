@@ -332,6 +332,7 @@
             this.Controls.Add(this.panelbtnaceptar);
             this.Controls.Add(this.paneldgvmedicos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormPersonalMedico";
             this.Text = "FormPersonalMedico";

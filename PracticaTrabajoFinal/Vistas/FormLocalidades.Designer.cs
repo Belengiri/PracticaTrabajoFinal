@@ -194,6 +194,7 @@
             this.Controls.Add(this.paneldatoslocalidades);
             this.Controls.Add(this.paneldgvlocalidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormLocalidades";
             this.Text = "FormLocalidades";

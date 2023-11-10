@@ -171,6 +171,7 @@
             this.Controls.Add(this.paneldatoscategoria);
             this.Controls.Add(this.paneldgvcategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormCategorias";
             this.Text = "FormCategorias";

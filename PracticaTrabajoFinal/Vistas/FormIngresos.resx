@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnrecargarpacientes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAASJJREFUOE+dkj1Ow1AQhJ0KQQuR/FvhtECOAJTQg2jCNSLEaaAjITkBoqBEQsop
+        QhpIHwm+sQeCEwssRhqtd3bWb9/aQR3CMGzHcXwKLxWVu1Qgz/MNPy6RJEkH8wgu4DSKognx1fkwy7Jd
+        4jn6g1tKIB7DORzwkj3LBdAO4Iimd+ItfHbp+8Q5xb6lVbSoXcAXfB+VZhKNOnC6Bpq2qD+qybwpCl7O
+        YnXURqBRW506bYQ0TTcJLTX3GGtSys1AzxM8+9fJ+Gdc8+Tnnfdd+xV4u/LD7S/hXiySP4BvDJdfhgXk
+        3Fs/wJWlWlC/xvemP81SCcY+8gs0RddyAeVwrEZ8h5ar0ASYhlB3mukrKCrn+W7txDpg3NE2aeo5lsup
+        IAg+AZ9UTd/qN6YOAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnrecargarmedicos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EAAACxABrSO9dQAAASJJREFUOE+dkj1Ow1AQhJ0KQQuR/FvhtECOAJTQg2jCNSLEaaAjITkBoqBEQsop
+        QhpIHwm+sQeCEwssRhqtd3bWb9/aQR3CMGzHcXwKLxWVu1Qgz/MNPy6RJEkH8wgu4DSKognx1fkwy7Jd
+        4jn6g1tKIB7DORzwkj3LBdAO4Iimd+ItfHbp+8Q5xb6lVbSoXcAXfB+VZhKNOnC6Bpq2qD+qybwpCl7O
+        YnXURqBRW506bYQ0TTcJLTX3GGtSys1AzxM8+9fJ+Gdc8+Tnnfdd+xV4u/LD7S/hXiySP4BvDJdfhgXk
+        3Fs/wJWlWlC/xvemP81SCcY+8gs0RddyAeVwrEZ8h5ar0ASYhlB3mukrKCrn+W7txDpg3NE2aeo5lsup
+        IAg+AZ9UTd/qN6YOAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>
