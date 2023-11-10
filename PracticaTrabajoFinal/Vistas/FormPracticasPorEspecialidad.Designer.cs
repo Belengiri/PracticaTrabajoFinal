@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panelPracticasPorEspecialidadad = new System.Windows.Forms.Panel();
+            this.paneldgvpracticasporespecialidades = new System.Windows.Forms.Panel();
+            this.dgvpracticasporespecialidad = new System.Windows.Forms.DataGridView();
             this.panelbuscardor = new System.Windows.Forms.Panel();
             this.cbespecialidades = new System.Windows.Forms.ComboBox();
             this.btnbuscarpracticaporespecialidad = new System.Windows.Forms.Button();
             this.lblnombreespecialidad = new System.Windows.Forms.Label();
-            this.paneldgvpracticasporespecialidades = new System.Windows.Forms.Panel();
-            this.dgvpracticasporespecialidad = new System.Windows.Forms.DataGridView();
             this.panelPracticasPorEspecialidadad.SuspendLayout();
-            this.panelbuscardor.SuspendLayout();
             this.paneldgvpracticasporespecialidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpracticasporespecialidad)).BeginInit();
+            this.panelbuscardor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelPracticasPorEspecialidadad
@@ -52,6 +52,28 @@
             this.panelPracticasPorEspecialidadad.Name = "panelPracticasPorEspecialidadad";
             this.panelPracticasPorEspecialidadad.Size = new System.Drawing.Size(569, 414);
             this.panelPracticasPorEspecialidadad.TabIndex = 0;
+            // 
+            // paneldgvpracticasporespecialidades
+            // 
+            this.paneldgvpracticasporespecialidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldgvpracticasporespecialidades.Controls.Add(this.dgvpracticasporespecialidad);
+            this.paneldgvpracticasporespecialidades.Location = new System.Drawing.Point(72, 164);
+            this.paneldgvpracticasporespecialidades.Name = "paneldgvpracticasporespecialidades";
+            this.paneldgvpracticasporespecialidades.Size = new System.Drawing.Size(425, 241);
+            this.paneldgvpracticasporespecialidades.TabIndex = 7;
+            // 
+            // dgvpracticasporespecialidad
+            // 
+            this.dgvpracticasporespecialidad.AllowUserToAddRows = false;
+            this.dgvpracticasporespecialidad.AllowUserToDeleteRows = false;
+            this.dgvpracticasporespecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpracticasporespecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvpracticasporespecialidad.Location = new System.Drawing.Point(0, 0);
+            this.dgvpracticasporespecialidad.Name = "dgvpracticasporespecialidad";
+            this.dgvpracticasporespecialidad.Size = new System.Drawing.Size(425, 241);
+            this.dgvpracticasporespecialidad.TabIndex = 0;
             // 
             // panelbuscardor
             // 
@@ -96,28 +118,6 @@
             this.lblnombreespecialidad.TabIndex = 3;
             this.lblnombreespecialidad.Text = "Seleccione una Especialidad";
             // 
-            // paneldgvpracticasporespecialidades
-            // 
-            this.paneldgvpracticasporespecialidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldgvpracticasporespecialidades.Controls.Add(this.dgvpracticasporespecialidad);
-            this.paneldgvpracticasporespecialidades.Location = new System.Drawing.Point(72, 164);
-            this.paneldgvpracticasporespecialidades.Name = "paneldgvpracticasporespecialidades";
-            this.paneldgvpracticasporespecialidades.Size = new System.Drawing.Size(425, 241);
-            this.paneldgvpracticasporespecialidades.TabIndex = 7;
-            // 
-            // dgvpracticasporespecialidad
-            // 
-            this.dgvpracticasporespecialidad.AllowUserToAddRows = false;
-            this.dgvpracticasporespecialidad.AllowUserToDeleteRows = false;
-            this.dgvpracticasporespecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpracticasporespecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvpracticasporespecialidad.Location = new System.Drawing.Point(0, 0);
-            this.dgvpracticasporespecialidad.Name = "dgvpracticasporespecialidad";
-            this.dgvpracticasporespecialidad.Size = new System.Drawing.Size(425, 241);
-            this.dgvpracticasporespecialidad.TabIndex = 0;
-            // 
             // FormPracticasPorEspecialidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,15 +126,16 @@
             this.ClientSize = new System.Drawing.Size(581, 417);
             this.Controls.Add(this.panelPracticasPorEspecialidadad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormPracticasPorEspecialidad";
             this.Text = "FormPracticasPorEspecialidad";
             this.Load += new System.EventHandler(this.FormPracticasPorEspecialidad_Load);
             this.panelPracticasPorEspecialidadad.ResumeLayout(false);
-            this.panelbuscardor.ResumeLayout(false);
-            this.panelbuscardor.PerformLayout();
             this.paneldgvpracticasporespecialidades.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpracticasporespecialidad)).EndInit();
+            this.panelbuscardor.ResumeLayout(false);
+            this.panelbuscardor.PerformLayout();
             this.ResumeLayout(false);
 
         }

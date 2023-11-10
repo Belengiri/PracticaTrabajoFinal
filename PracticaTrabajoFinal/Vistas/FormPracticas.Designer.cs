@@ -37,6 +37,7 @@
             this.lbltipomuestra = new System.Windows.Forms.Label();
             this.cbtipodemuestra = new System.Windows.Forms.ComboBox();
             this.paneldatospracticas = new System.Windows.Forms.Panel();
+            this.btnsalir = new System.Windows.Forms.Button();
             this.panelnuevamuestra = new System.Windows.Forms.Panel();
             this.lblnuevamuestra = new System.Windows.Forms.Label();
             this.btncancelarmuestra = new System.Windows.Forms.Button();
@@ -49,7 +50,6 @@
             this.btnagregarpractica = new System.Windows.Forms.Button();
             this.btnmodificarpractica = new System.Windows.Forms.Button();
             this.btneliminarpractica = new System.Windows.Forms.Button();
-            this.btnsalir = new System.Windows.Forms.Button();
             this.paneldatospracticas.SuspendLayout();
             this.panelnuevamuestra.SuspendLayout();
             this.paneldgvpracticas.SuspendLayout();
@@ -150,6 +150,17 @@
             this.paneldatospracticas.Name = "paneldatospracticas";
             this.paneldatospracticas.Size = new System.Drawing.Size(241, 417);
             this.paneldatospracticas.TabIndex = 8;
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.BackColor = System.Drawing.Color.Red;
+            this.btnsalir.Location = new System.Drawing.Point(211, 4);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(27, 23);
+            this.btnsalir.TabIndex = 34;
+            this.btnsalir.Text = "X";
+            this.btnsalir.UseVisualStyleBackColor = false;
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
             // panelnuevamuestra
             // 
@@ -286,17 +297,6 @@
             this.btneliminarpractica.UseVisualStyleBackColor = true;
             this.btneliminarpractica.Click += new System.EventHandler(this.btneliminarpractica_Click);
             // 
-            // btnsalir
-            // 
-            this.btnsalir.BackColor = System.Drawing.Color.Red;
-            this.btnsalir.Location = new System.Drawing.Point(211, 4);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(27, 23);
-            this.btnsalir.TabIndex = 34;
-            this.btnsalir.Text = "X";
-            this.btnsalir.UseVisualStyleBackColor = false;
-            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
-            // 
             // FormPracticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +309,7 @@
             this.Controls.Add(this.paneldgvpracticas);
             this.Controls.Add(this.paneldatospracticas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(581, 417);
             this.Name = "FormPracticas";
             this.Text = "FormPracticas";
