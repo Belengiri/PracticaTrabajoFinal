@@ -31,7 +31,7 @@ namespace PracticaTrabajoFinal.Modelos
                 MessageBox.Show("error", ex.Message);
             }
         }
-        public void NuevaPracticaPorIngreso(int id_practica,int id_ingreso)
+        public void NuevaPracticaPorIngreso(List<int> id_practica,int id_ingreso)
         {
             try
             {
@@ -39,7 +39,10 @@ namespace PracticaTrabajoFinal.Modelos
                 string consulta = "insert into PracticasXingresos(id_practica,id_ingreso) values (@id_practica,@id_ingreso)";
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
-                comando.Parameters.AddWithValue("@id_practica", id_practica);
+                foreach(int id in id_practica)
+                {
+                    comando.Parameters.AddWithValue("@id_practica", id_practica);
+                }
                 comando.Parameters.AddWithValue("@id_ingreso", id_ingreso);
                 MessageBox.Show("Paciente AGREGADO");
             }
@@ -47,7 +50,6 @@ namespace PracticaTrabajoFinal.Modelos
             {
                 MessageBox.Show("error", ex.Message);
             }
-
         }
     }
 }

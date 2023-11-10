@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosingresos = new System.Windows.Forms.Panel();
             this.btnnuevomedico = new System.Windows.Forms.Button();
             this.btnnuevopaciente = new System.Windows.Forms.Button();
@@ -49,9 +49,9 @@
             this.lblfecharetiro = new System.Windows.Forms.Label();
             this.dtfechaingreso = new System.Windows.Forms.DateTimePicker();
             this.panelbotonesingresos = new System.Windows.Forms.Panel();
-            this.btneliminarespecialidad = new System.Windows.Forms.Button();
-            this.btnmodificarespecialidad = new System.Windows.Forms.Button();
-            this.btnagregarespecialidad = new System.Windows.Forms.Button();
+            this.btneliminaringreso = new System.Windows.Forms.Button();
+            this.btnmodificaringreso = new System.Windows.Forms.Button();
+            this.btnagregaringreso = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgv = new System.Windows.Forms.Panel();
             this.dgvingresos = new System.Windows.Forms.DataGridView();
@@ -228,6 +228,7 @@
             // 
             // checklistpracticas
             // 
+            this.checklistpracticas.CheckOnClick = true;
             this.checklistpracticas.FormattingEnabled = true;
             this.checklistpracticas.Location = new System.Drawing.Point(5, 221);
             this.checklistpracticas.Margin = new System.Windows.Forms.Padding(2);
@@ -236,6 +237,7 @@
             this.checklistpracticas.Sorted = true;
             this.checklistpracticas.TabIndex = 4;
             this.checklistpracticas.ThreeDCheckBoxes = true;
+           
             // 
             // dtfecharetiro
             // 
@@ -268,43 +270,44 @@
             // panelbotonesingresos
             // 
             this.panelbotonesingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelbotonesingresos.Controls.Add(this.btneliminarespecialidad);
-            this.panelbotonesingresos.Controls.Add(this.btnmodificarespecialidad);
-            this.panelbotonesingresos.Controls.Add(this.btnagregarespecialidad);
+            this.panelbotonesingresos.Controls.Add(this.btneliminaringreso);
+            this.panelbotonesingresos.Controls.Add(this.btnmodificaringreso);
+            this.panelbotonesingresos.Controls.Add(this.btnagregaringreso);
             this.panelbotonesingresos.Location = new System.Drawing.Point(8, 324);
             this.panelbotonesingresos.Margin = new System.Windows.Forms.Padding(2);
             this.panelbotonesingresos.Name = "panelbotonesingresos";
             this.panelbotonesingresos.Size = new System.Drawing.Size(321, 50);
             this.panelbotonesingresos.TabIndex = 2;
             // 
-            // btneliminarespecialidad
+            // btneliminaringreso
             // 
-            this.btneliminarespecialidad.Enabled = false;
-            this.btneliminarespecialidad.Location = new System.Drawing.Point(192, 5);
-            this.btneliminarespecialidad.Name = "btneliminarespecialidad";
-            this.btneliminarespecialidad.Size = new System.Drawing.Size(88, 34);
-            this.btneliminarespecialidad.TabIndex = 5;
-            this.btneliminarespecialidad.Text = "Eliminar";
-            this.btneliminarespecialidad.UseVisualStyleBackColor = true;
+            this.btneliminaringreso.Enabled = false;
+            this.btneliminaringreso.Location = new System.Drawing.Point(192, 5);
+            this.btneliminaringreso.Name = "btneliminaringreso";
+            this.btneliminaringreso.Size = new System.Drawing.Size(88, 34);
+            this.btneliminaringreso.TabIndex = 5;
+            this.btneliminaringreso.Text = "Eliminar";
+            this.btneliminaringreso.UseVisualStyleBackColor = true;
             // 
-            // btnmodificarespecialidad
+            // btnmodificaringreso
             // 
-            this.btnmodificarespecialidad.Enabled = false;
-            this.btnmodificarespecialidad.Location = new System.Drawing.Point(98, 5);
-            this.btnmodificarespecialidad.Name = "btnmodificarespecialidad";
-            this.btnmodificarespecialidad.Size = new System.Drawing.Size(88, 34);
-            this.btnmodificarespecialidad.TabIndex = 4;
-            this.btnmodificarespecialidad.Text = "Modificar";
-            this.btnmodificarespecialidad.UseVisualStyleBackColor = true;
+            this.btnmodificaringreso.Enabled = false;
+            this.btnmodificaringreso.Location = new System.Drawing.Point(98, 5);
+            this.btnmodificaringreso.Name = "btnmodificaringreso";
+            this.btnmodificaringreso.Size = new System.Drawing.Size(88, 34);
+            this.btnmodificaringreso.TabIndex = 4;
+            this.btnmodificaringreso.Text = "Modificar";
+            this.btnmodificaringreso.UseVisualStyleBackColor = true;
             // 
-            // btnagregarespecialidad
+            // btnagregaringreso
             // 
-            this.btnagregarespecialidad.Location = new System.Drawing.Point(4, 5);
-            this.btnagregarespecialidad.Name = "btnagregarespecialidad";
-            this.btnagregarespecialidad.Size = new System.Drawing.Size(88, 34);
-            this.btnagregarespecialidad.TabIndex = 3;
-            this.btnagregarespecialidad.Text = "Agregar";
-            this.btnagregarespecialidad.UseVisualStyleBackColor = true;
+            this.btnagregaringreso.Location = new System.Drawing.Point(4, 5);
+            this.btnagregaringreso.Name = "btnagregaringreso";
+            this.btnagregaringreso.Size = new System.Drawing.Size(88, 34);
+            this.btnagregaringreso.TabIndex = 3;
+            this.btnagregaringreso.Text = "Agregar";
+            this.btnagregaringreso.UseVisualStyleBackColor = true;
+            this.btnagregaringreso.Click += new System.EventHandler(this.btnagregaringreso_Click);
             // 
             // btncancelar
             // 
@@ -334,14 +337,14 @@
             this.dgvingresos.AllowUserToResizeColumns = false;
             this.dgvingresos.AllowUserToResizeRows = false;
             this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvingresos.Location = new System.Drawing.Point(0, 0);
             this.dgvingresos.MultiSelect = false;
@@ -388,9 +391,9 @@
 
         private System.Windows.Forms.Panel paneldatosingresos;
         private System.Windows.Forms.Panel panelbotonesingresos;
-        private System.Windows.Forms.Button btneliminarespecialidad;
-        private System.Windows.Forms.Button btnmodificarespecialidad;
-        private System.Windows.Forms.Button btnagregarespecialidad;
+        private System.Windows.Forms.Button btneliminaringreso;
+        private System.Windows.Forms.Button btnmodificaringreso;
+        private System.Windows.Forms.Button btnagregaringreso;
         private System.Windows.Forms.DateTimePicker dtfecharetiro;
         private System.Windows.Forms.Label lblfecharetiro;
         private System.Windows.Forms.DateTimePicker dtfechaingreso;
