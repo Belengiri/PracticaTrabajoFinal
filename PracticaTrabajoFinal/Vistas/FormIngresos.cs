@@ -24,6 +24,7 @@ namespace PracticaTrabajoFinal.Vistas
             cargarcbmedicos();
             cargar_tabla();
             dgvingresos.ClearSelection();
+            cargarchecklist();
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -95,7 +96,26 @@ namespace PracticaTrabajoFinal.Vistas
         }
         public void cargarchecklist()
         {
-
+            try
+            {
+                conexion = new Conexion();
+                checklistpracticas.DataSource = null;
+                checklistpracticas.Items.Clear();
+                string query = "select id_practica,nombre_practica  as nombre from Practicas";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataReader data = cmd.ExecuteReader();
+                while (data.Read())
+                {
+                    checklistpracticas.Items.Add(data["nombre"].ToString());
+                }
+                checklistpracticas.ValueMember = "id_practica";
+                checklistpracticas.DisplayMember = "nombre";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error", ex.Message);
+            }
         }
 
         private void btnrecargarpacientes_Click(object sender, EventArgs e)
