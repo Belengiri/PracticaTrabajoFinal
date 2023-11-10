@@ -94,8 +94,10 @@ namespace PracticaTrabajoFinal.Vistas
             }
 
         }
-        public void cargarchecklist()
+        
+        public List<int> cargarchecklist()
         {
+            List<int> ids_practicas = new List<int>();
             try
             {
                 conexion = new Conexion();
@@ -111,11 +113,18 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 checklistpracticas.ValueMember = "id_practica";
                 checklistpracticas.DisplayMember = "nombre";
+                
+                while (data.Read())
+                {
+                    ids_practicas.Add(Convert.ToInt32(checklistpracticas.SelectedValue.ToString()));
+                }
+                return ids_practicas;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
+            return ids_practicas;
         }
 
         private void btnrecargarpacientes_Click(object sender, EventArgs e)
@@ -138,6 +147,31 @@ namespace PracticaTrabajoFinal.Vistas
         {
             FormPersonalMedico fm=new FormPersonalMedico();
             fm.Show();
+        }
+
+        private void btnagregaringreso_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    ci.Agregar_Ingreso(Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()),dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
+                    
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                    
+                }
+                //ci.AgregarPracticaPorIngreso();
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+               
+            }
         }
     }
 }
