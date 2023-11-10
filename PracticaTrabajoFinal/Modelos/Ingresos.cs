@@ -10,6 +10,7 @@ namespace PracticaTrabajoFinal.Modelos
 {
     public class Ingresos
     {
+        int ultimoid;
         private Conexion conexion;
         public void Nuevoingreso(int id_paciente,int id_profesional, string ingreso, string retiro)
         {
@@ -25,13 +26,18 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.Parameters.AddWithValue("@retiro", retiro);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Paciente AGREGADO");
+                string query = "select MAX(id_ingreso)from Ingresos";
+                SqlCommand cmd = new SqlCommand(query);
+                comando.Connection = conexion.GetSqlConnection();
+                ultimoid= comando.ExecuteNonQuery();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
         }
-        public void NuevaPracticaPorIngreso(List<int> id_practica,int id_ingreso)
+        public void NuevaPracticaPorIngreso(List<int> id_practica)
         {
             try
             {
@@ -43,7 +49,7 @@ namespace PracticaTrabajoFinal.Modelos
                 {
                     comando.Parameters.AddWithValue("@id_practica", id_practica);
                 }
-                comando.Parameters.AddWithValue("@id_ingreso", id_ingreso);
+                comando.Parameters.AddWithValue("@id_ingreso", ultimoid);
                 MessageBox.Show("Paciente AGREGADO");
             }
             catch (Exception ex)

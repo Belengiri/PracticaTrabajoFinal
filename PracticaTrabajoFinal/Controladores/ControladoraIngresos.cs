@@ -11,11 +11,11 @@ namespace PracticaTrabajoFinal.Controladores
     {
         Ingresos ing = new Ingresos();
         
-        public void AgregarPracticaPorIngreso(List<int> id_practica,int id_ingreso)
+        public void AgregarPracticaPorIngreso(List<int> id_practica)
         {
-            if (id_practica!=null && id_ingreso!=0)
+            if (id_practica!=null)
             {
-                ing.NuevaPracticaPorIngreso(id_practica, id_ingreso);
+                ing.NuevaPracticaPorIngreso(id_practica);
             }
         }
         public void Agregar_Ingreso(int id_paciente,int id_medico,string ingreso,string retiro)

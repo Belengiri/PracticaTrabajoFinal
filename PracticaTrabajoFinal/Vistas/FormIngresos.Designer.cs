@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosingresos = new System.Windows.Forms.Panel();
             this.btnnuevomedico = new System.Windows.Forms.Button();
             this.btnnuevopaciente = new System.Windows.Forms.Button();
@@ -54,13 +54,19 @@
             this.btnagregaringreso = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgv = new System.Windows.Forms.Panel();
-            this.dgvingresos = new System.Windows.Forms.DataGridView();
             this.panelcancelar = new System.Windows.Forms.Panel();
+            this.panelpractXingre = new System.Windows.Forms.Panel();
+            this.dgvpractXespecialidad = new System.Windows.Forms.DataGridView();
+            this.lblpracticasxingreso = new System.Windows.Forms.Label();
+            this.dgvingresos = new System.Windows.Forms.DataGridView();
+            this.lblingreso = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.panelbotonesingresos.SuspendLayout();
             this.paneldgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).BeginInit();
             this.panelcancelar.SuspendLayout();
+            this.panelpractXingre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpractXespecialidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldatosingresos
@@ -237,7 +243,6 @@
             this.checklistpracticas.Sorted = true;
             this.checklistpracticas.TabIndex = 4;
             this.checklistpracticas.ThreeDCheckBoxes = true;
-           
             // 
             // dtfecharetiro
             // 
@@ -324,34 +329,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldgv.Controls.Add(this.dgvingresos);
-            this.paneldgv.Location = new System.Drawing.Point(8, 8);
+            this.paneldgv.Location = new System.Drawing.Point(8, 32);
             this.paneldgv.Margin = new System.Windows.Forms.Padding(2);
             this.paneldgv.Name = "paneldgv";
-            this.paneldgv.Size = new System.Drawing.Size(321, 300);
+            this.paneldgv.Size = new System.Drawing.Size(321, 120);
             this.paneldgv.TabIndex = 3;
-            // 
-            // dgvingresos
-            // 
-            this.dgvingresos.AllowUserToAddRows = false;
-            this.dgvingresos.AllowUserToDeleteRows = false;
-            this.dgvingresos.AllowUserToResizeColumns = false;
-            this.dgvingresos.AllowUserToResizeRows = false;
-            this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvingresos.Location = new System.Drawing.Point(0, 0);
-            this.dgvingresos.MultiSelect = false;
-            this.dgvingresos.Name = "dgvingresos";
-            this.dgvingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvingresos.Size = new System.Drawing.Size(321, 300);
-            this.dgvingresos.TabIndex = 7;
             // 
             // panelcancelar
             // 
@@ -362,12 +344,75 @@
             this.panelcancelar.Size = new System.Drawing.Size(82, 32);
             this.panelcancelar.TabIndex = 8;
             // 
+            // panelpractXingre
+            // 
+            this.panelpractXingre.Controls.Add(this.dgvpractXespecialidad);
+            this.panelpractXingre.Location = new System.Drawing.Point(8, 192);
+            this.panelpractXingre.Name = "panelpractXingre";
+            this.panelpractXingre.Size = new System.Drawing.Size(317, 127);
+            this.panelpractXingre.TabIndex = 9;
+            // 
+            // dgvpractXespecialidad
+            // 
+            this.dgvpractXespecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpractXespecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvpractXespecialidad.Location = new System.Drawing.Point(0, 0);
+            this.dgvpractXespecialidad.Name = "dgvpractXespecialidad";
+            this.dgvpractXespecialidad.Size = new System.Drawing.Size(317, 127);
+            this.dgvpractXespecialidad.TabIndex = 1;
+            // 
+            // lblpracticasxingreso
+            // 
+            this.lblpracticasxingreso.AutoSize = true;
+            this.lblpracticasxingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpracticasxingreso.Location = new System.Drawing.Point(81, 169);
+            this.lblpracticasxingreso.Name = "lblpracticasxingreso";
+            this.lblpracticasxingreso.Size = new System.Drawing.Size(160, 20);
+            this.lblpracticasxingreso.TabIndex = 2;
+            this.lblpracticasxingreso.Text = "Practicas Por Ingreso";
+            // 
+            // dgvingresos
+            // 
+            this.dgvingresos.AllowUserToAddRows = false;
+            this.dgvingresos.AllowUserToDeleteRows = false;
+            this.dgvingresos.AllowUserToResizeColumns = false;
+            this.dgvingresos.AllowUserToResizeRows = false;
+            this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvingresos.Location = new System.Drawing.Point(0, 0);
+            this.dgvingresos.MultiSelect = false;
+            this.dgvingresos.Name = "dgvingresos";
+            this.dgvingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvingresos.Size = new System.Drawing.Size(321, 120);
+            this.dgvingresos.TabIndex = 9;
+            // 
+            // lblingreso
+            // 
+            this.lblingreso.AutoSize = true;
+            this.lblingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblingreso.Location = new System.Drawing.Point(123, 9);
+            this.lblingreso.Name = "lblingreso";
+            this.lblingreso.Size = new System.Drawing.Size(71, 20);
+            this.lblingreso.TabIndex = 10;
+            this.lblingreso.Text = "Ingresos";
+            // 
             // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.lblingreso);
+            this.Controls.Add(this.lblpracticasxingreso);
+            this.Controls.Add(this.panelpractXingre);
             this.Controls.Add(this.panelcancelar);
             this.Controls.Add(this.paneldgv);
             this.Controls.Add(this.panelbotonesingresos);
@@ -381,9 +426,12 @@
             this.paneldatosingresos.PerformLayout();
             this.panelbotonesingresos.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).EndInit();
             this.panelcancelar.ResumeLayout(false);
+            this.panelpractXingre.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpractXespecialidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,6 +462,10 @@
         private System.Windows.Forms.Button btnrecargarpacientes;
         private System.Windows.Forms.Button btnnuevomedico;
         private System.Windows.Forms.Button btnnuevopaciente;
+        private System.Windows.Forms.Panel panelpractXingre;
+        private System.Windows.Forms.DataGridView dgvpractXespecialidad;
+        private System.Windows.Forms.Label lblpracticasxingreso;
         private System.Windows.Forms.DataGridView dgvingresos;
+        private System.Windows.Forms.Label lblingreso;
     }
 }

@@ -75,6 +75,7 @@ namespace PracticaTrabajoFinal.Vistas
                 MessageBox.Show("error", ex.Message);
             }
         }
+       
         public void cargar_tabla()
         {
             try
@@ -158,14 +159,14 @@ namespace PracticaTrabajoFinal.Vistas
                 try
                 {
                     ci.Agregar_Ingreso(Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()),dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
-                    
+                    ci.AgregarPracticaPorIngreso(cargarchecklist());
                 }
                 catch
                 {
                     MessageBox.Show("datos incorrectos");
                     
                 }
-                //ci.AgregarPracticaPorIngreso();
+               
             }
             else if (dr == DialogResult.Cancel)
             {
