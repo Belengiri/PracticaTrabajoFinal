@@ -80,35 +80,37 @@ namespace PracticaTrabajoFinal.Modelos
         }
         public int ObteneridMax()
         {
-            int ultimoid=0;
+            int id = 1;
             try
             {
                 conexion = new Conexion();
                 string query = "select MAX(id_ingreso)from Ingresos";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Connection = conexion.GetSqlConnection();
-                ultimoid = cmd.ExecuteNonQuery();
+                id = Convert.ToInt32(cmd.ExecuteScalar());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
-            return ultimoid;
+            return id;
         }
         public void NuevaPracticaPorIngreso(int id_practica)
         {
             try
             {
+                int ult = ObteneridMax();
                 conexion = new Conexion();
-                string consulta = "insert into PracticasXingresos(id_ingreso,id_practica) values (@id_ingreso,@id_practica)";
+                string consulta = "insert into PracticasXingresos(id_ingreso,id_practica) values (@id_ingreso,@id_practica) ";
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
-                comando.Parameters.AddWithValue("@id_ingreso", ObteneridMax());
-                comando.Parameters.AddWithValue("@id_practica", id_practica);
+                comando.Parameters.AddWithValue("@id_ingreso", ult);
+                comando.Parameters.AddWithValue("@id_practica", id_practica);    
+                comando.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show( ex.Message);
             }
         }
     }
