@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosingresos = new System.Windows.Forms.Panel();
+            this.btnagregarpractica = new System.Windows.Forms.Button();
+            this.lbpracticas = new System.Windows.Forms.ListBox();
+            this.cbpracticas = new System.Windows.Forms.ComboBox();
             this.btnnuevomedico = new System.Windows.Forms.Button();
             this.btnnuevopaciente = new System.Windows.Forms.Button();
             this.btnrecargarpacientes = new System.Windows.Forms.Button();
@@ -44,7 +47,6 @@
             this.lblmedico = new System.Windows.Forms.Label();
             this.cbmedicos = new System.Windows.Forms.ComboBox();
             this.lblpracticas = new System.Windows.Forms.Label();
-            this.checklistpracticas = new System.Windows.Forms.CheckedListBox();
             this.dtfecharetiro = new System.Windows.Forms.DateTimePicker();
             this.lblfecharetiro = new System.Windows.Forms.Label();
             this.dtfechaingreso = new System.Windows.Forms.DateTimePicker();
@@ -54,24 +56,27 @@
             this.btnagregaringreso = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgv = new System.Windows.Forms.Panel();
+            this.dgvingresos = new System.Windows.Forms.DataGridView();
             this.panelcancelar = new System.Windows.Forms.Panel();
             this.panelpractXingre = new System.Windows.Forms.Panel();
             this.dgvpractXespecialidad = new System.Windows.Forms.DataGridView();
             this.lblpracticasxingreso = new System.Windows.Forms.Label();
-            this.dgvingresos = new System.Windows.Forms.DataGridView();
             this.lblingreso = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.panelbotonesingresos.SuspendLayout();
             this.paneldgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).BeginInit();
             this.panelcancelar.SuspendLayout();
             this.panelpractXingre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpractXespecialidad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldatosingresos
             // 
             this.paneldatosingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldatosingresos.Controls.Add(this.btnagregarpractica);
+            this.paneldatosingresos.Controls.Add(this.lbpracticas);
+            this.paneldatosingresos.Controls.Add(this.cbpracticas);
             this.paneldatosingresos.Controls.Add(this.btnnuevomedico);
             this.paneldatosingresos.Controls.Add(this.btnnuevopaciente);
             this.paneldatosingresos.Controls.Add(this.btnrecargarpacientes);
@@ -85,7 +90,6 @@
             this.paneldatosingresos.Controls.Add(this.lblmedico);
             this.paneldatosingresos.Controls.Add(this.cbmedicos);
             this.paneldatosingresos.Controls.Add(this.lblpracticas);
-            this.paneldatosingresos.Controls.Add(this.checklistpracticas);
             this.paneldatosingresos.Controls.Add(this.dtfecharetiro);
             this.paneldatosingresos.Controls.Add(this.lblfecharetiro);
             this.paneldatosingresos.Controls.Add(this.dtfechaingreso);
@@ -94,6 +98,35 @@
             this.paneldatosingresos.Name = "paneldatosingresos";
             this.paneldatosingresos.Size = new System.Drawing.Size(248, 414);
             this.paneldatosingresos.TabIndex = 0;
+            // 
+            // btnagregarpractica
+            // 
+            this.btnagregarpractica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregarpractica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregarpractica.Image = ((System.Drawing.Image)(resources.GetObject("btnagregarpractica.Image")));
+            this.btnagregarpractica.Location = new System.Drawing.Point(153, 219);
+            this.btnagregarpractica.Name = "btnagregarpractica";
+            this.btnagregarpractica.Size = new System.Drawing.Size(21, 24);
+            this.btnagregarpractica.TabIndex = 27;
+            this.btnagregarpractica.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnagregarpractica.UseVisualStyleBackColor = true;
+            this.btnagregarpractica.Click += new System.EventHandler(this.btnagregarpractica_Click);
+            // 
+            // lbpracticas
+            // 
+            this.lbpracticas.FormattingEnabled = true;
+            this.lbpracticas.Location = new System.Drawing.Point(7, 249);
+            this.lbpracticas.Name = "lbpracticas";
+            this.lbpracticas.Size = new System.Drawing.Size(140, 56);
+            this.lbpracticas.TabIndex = 26;
+            // 
+            // cbpracticas
+            // 
+            this.cbpracticas.FormattingEnabled = true;
+            this.cbpracticas.Location = new System.Drawing.Point(3, 222);
+            this.cbpracticas.Name = "cbpracticas";
+            this.cbpracticas.Size = new System.Drawing.Size(144, 21);
+            this.cbpracticas.TabIndex = 25;
             // 
             // btnnuevomedico
             // 
@@ -232,18 +265,6 @@
             this.lblpracticas.TabIndex = 7;
             this.lblpracticas.Text = "Practicas";
             // 
-            // checklistpracticas
-            // 
-            this.checklistpracticas.CheckOnClick = true;
-            this.checklistpracticas.FormattingEnabled = true;
-            this.checklistpracticas.Location = new System.Drawing.Point(5, 221);
-            this.checklistpracticas.Margin = new System.Windows.Forms.Padding(2);
-            this.checklistpracticas.Name = "checklistpracticas";
-            this.checklistpracticas.Size = new System.Drawing.Size(197, 79);
-            this.checklistpracticas.Sorted = true;
-            this.checklistpracticas.TabIndex = 4;
-            this.checklistpracticas.ThreeDCheckBoxes = true;
-            // 
             // dtfecharetiro
             // 
             this.dtfecharetiro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -293,6 +314,7 @@
             this.btneliminaringreso.TabIndex = 5;
             this.btneliminaringreso.Text = "Eliminar";
             this.btneliminaringreso.UseVisualStyleBackColor = true;
+            this.btneliminaringreso.Click += new System.EventHandler(this.btneliminaringreso_Click);
             // 
             // btnmodificaringreso
             // 
@@ -303,6 +325,7 @@
             this.btnmodificaringreso.TabIndex = 4;
             this.btnmodificaringreso.Text = "Modificar";
             this.btnmodificaringreso.UseVisualStyleBackColor = true;
+            this.btnmodificaringreso.Click += new System.EventHandler(this.btnmodificaringreso_Click);
             // 
             // btnagregaringreso
             // 
@@ -322,6 +345,7 @@
             this.btncancelar.TabIndex = 6;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // paneldgv
             // 
@@ -334,42 +358,6 @@
             this.paneldgv.Name = "paneldgv";
             this.paneldgv.Size = new System.Drawing.Size(321, 120);
             this.paneldgv.TabIndex = 3;
-            // 
-            // panelcancelar
-            // 
-            this.panelcancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelcancelar.Controls.Add(this.btncancelar);
-            this.panelcancelar.Location = new System.Drawing.Point(247, 379);
-            this.panelcancelar.Name = "panelcancelar";
-            this.panelcancelar.Size = new System.Drawing.Size(82, 32);
-            this.panelcancelar.TabIndex = 8;
-            // 
-            // panelpractXingre
-            // 
-            this.panelpractXingre.Controls.Add(this.dgvpractXespecialidad);
-            this.panelpractXingre.Location = new System.Drawing.Point(8, 192);
-            this.panelpractXingre.Name = "panelpractXingre";
-            this.panelpractXingre.Size = new System.Drawing.Size(317, 127);
-            this.panelpractXingre.TabIndex = 9;
-            // 
-            // dgvpractXespecialidad
-            // 
-            this.dgvpractXespecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpractXespecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvpractXespecialidad.Location = new System.Drawing.Point(0, 0);
-            this.dgvpractXespecialidad.Name = "dgvpractXespecialidad";
-            this.dgvpractXespecialidad.Size = new System.Drawing.Size(317, 127);
-            this.dgvpractXespecialidad.TabIndex = 1;
-            // 
-            // lblpracticasxingreso
-            // 
-            this.lblpracticasxingreso.AutoSize = true;
-            this.lblpracticasxingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpracticasxingreso.Location = new System.Drawing.Point(81, 169);
-            this.lblpracticasxingreso.Name = "lblpracticasxingreso";
-            this.lblpracticasxingreso.Size = new System.Drawing.Size(160, 20);
-            this.lblpracticasxingreso.TabIndex = 2;
-            this.lblpracticasxingreso.Text = "Practicas Por Ingreso";
             // 
             // dgvingresos
             // 
@@ -393,6 +381,44 @@
             this.dgvingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvingresos.Size = new System.Drawing.Size(321, 120);
             this.dgvingresos.TabIndex = 9;
+            this.dgvingresos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvingresos_CellClick);
+            // 
+            // panelcancelar
+            // 
+            this.panelcancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelcancelar.Controls.Add(this.btncancelar);
+            this.panelcancelar.Location = new System.Drawing.Point(247, 379);
+            this.panelcancelar.Name = "panelcancelar";
+            this.panelcancelar.Size = new System.Drawing.Size(82, 32);
+            this.panelcancelar.TabIndex = 8;
+            // 
+            // panelpractXingre
+            // 
+            this.panelpractXingre.Controls.Add(this.dgvpractXespecialidad);
+            this.panelpractXingre.Location = new System.Drawing.Point(8, 192);
+            this.panelpractXingre.Name = "panelpractXingre";
+            this.panelpractXingre.Size = new System.Drawing.Size(317, 127);
+            this.panelpractXingre.TabIndex = 9;
+            // 
+            // dgvpractXespecialidad
+            // 
+            this.dgvpractXespecialidad.AllowUserToAddRows = false;
+            this.dgvpractXespecialidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpractXespecialidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvpractXespecialidad.Location = new System.Drawing.Point(0, 0);
+            this.dgvpractXespecialidad.Name = "dgvpractXespecialidad";
+            this.dgvpractXespecialidad.Size = new System.Drawing.Size(317, 127);
+            this.dgvpractXespecialidad.TabIndex = 1;
+            // 
+            // lblpracticasxingreso
+            // 
+            this.lblpracticasxingreso.AutoSize = true;
+            this.lblpracticasxingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpracticasxingreso.Location = new System.Drawing.Point(81, 169);
+            this.lblpracticasxingreso.Name = "lblpracticasxingreso";
+            this.lblpracticasxingreso.Size = new System.Drawing.Size(160, 20);
+            this.lblpracticasxingreso.TabIndex = 2;
+            this.lblpracticasxingreso.Text = "Practicas Por Ingreso";
             // 
             // lblingreso
             // 
@@ -426,10 +452,10 @@
             this.paneldatosingresos.PerformLayout();
             this.panelbotonesingresos.ResumeLayout(false);
             this.paneldgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).EndInit();
             this.panelcancelar.ResumeLayout(false);
             this.panelpractXingre.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpractXespecialidad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvingresos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,7 +473,6 @@
         private System.Windows.Forms.DateTimePicker dtfechaingreso;
         private System.Windows.Forms.Panel paneldgv;
         private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.CheckedListBox checklistpracticas;
         private System.Windows.Forms.Label lblagregarmedico;
         private System.Windows.Forms.Label lblmedico;
         private System.Windows.Forms.ComboBox cbmedicos;
@@ -467,5 +492,8 @@
         private System.Windows.Forms.Label lblpracticasxingreso;
         private System.Windows.Forms.DataGridView dgvingresos;
         private System.Windows.Forms.Label lblingreso;
+        private System.Windows.Forms.ListBox lbpracticas;
+        private System.Windows.Forms.ComboBox cbpracticas;
+        private System.Windows.Forms.Button btnagregarpractica;
     }
 }

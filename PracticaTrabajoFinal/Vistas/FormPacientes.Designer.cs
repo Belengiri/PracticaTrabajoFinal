@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
             this.dgvpacientes = new System.Windows.Forms.DataGridView();
             this.panelbtnaceptarpaciente = new System.Windows.Forms.Panel();
@@ -95,14 +95,14 @@
             this.dgvpacientes.AllowUserToResizeColumns = false;
             this.dgvpacientes.AllowUserToResizeRows = false;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvpacientes.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvpacientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpacientes.Location = new System.Drawing.Point(0, 0);
             this.dgvpacientes.MultiSelect = false;
@@ -111,6 +111,7 @@
             this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.dgvpacientes.TabIndex = 5;
             this.dgvpacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpacientes_CellClick);
+          
             // 
             // panelbtnaceptarpaciente
             // 
