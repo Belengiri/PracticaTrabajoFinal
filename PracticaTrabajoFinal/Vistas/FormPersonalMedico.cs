@@ -95,8 +95,6 @@ namespace PracticaTrabajoFinal.Vistas
                     txtapellidomedico.Clear();
                     txtmatriculamedico.Clear();
                 }
-                
-
             }
             else if (dr == DialogResult.Cancel)
             {

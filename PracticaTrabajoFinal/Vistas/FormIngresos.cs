@@ -24,7 +24,8 @@ namespace PracticaTrabajoFinal.Vistas
             cargarcbmedicos();
             cargar_tabla();
             dgvingresos.ClearSelection();
-            cargarchecklist();
+            cargarcbpracticas();
+            cargar_tablaPXI();
         }
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -75,12 +76,31 @@ namespace PracticaTrabajoFinal.Vistas
                 MessageBox.Show("error", ex.Message);
             }
         }
+       public void cargar_tablaPXI()
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "select R.apellido_paciente+' '+R.nombre_paciente as 'paciente',N.nombre_practica as Practicas from PracticasXingresos P inner join Ingresos I on I.id_ingreso=P.id_ingreso inner join Practicas N on P.id_practica=N.id_practica inner join Pacientes R on I.id_paciente=R.id_paciente";
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvpractXespecialidad.DataSource = dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("error", e.Message);
+            }
+
+        }
         public void cargar_tabla()
         {
             try
             {
                 conexion = new Conexion();
-                string consulta = "select I.id_ingreso as n, fecha_ingreso  as ingreso,fecha_retiro  as retiro,P.apellido_paciente +' '+P.nombre_paciente as 'paciente',M.apellido_profesional+' '+M.nombre_profesional as 'medico' from Ingresos I inner join Pacientes P on P.id_paciente = I.id_paciente inner join Profesionales M on M.id_profesional=I.id_profesional";
+                string consulta = "select I.id_ingreso as n,P.apellido_paciente +' '+P.nombre_paciente as 'paciente',M.apellido_profesional+' '+M.nombre_profesional as 'medico', fecha_ingreso  as ingreso,fecha_retiro  as retiro from Ingresos I inner join Pacientes P on P.id_paciente = I.id_paciente inner join Profesionales M on M.id_profesional=I.id_profesional";
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -93,38 +113,28 @@ namespace PracticaTrabajoFinal.Vistas
                 MessageBox.Show("error", e.Message);
             }
 
-        }
-        
-        public List<int> cargarchecklist()
+        } 
+        public void cargarcbpracticas()
         {
-            List<int> ids_practicas = new List<int>();
             try
             {
                 conexion = new Conexion();
-                checklistpracticas.DataSource = null;
-                checklistpracticas.Items.Clear();
-                string query = "select id_practica,nombre_practica  as nombre from Practicas";
+                cbpracticas.DataSource = null;
+                cbpracticas.Items.Clear();
+                string query = "select id_practica,nombre_practica as nombre from Practicas";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Connection = conexion.GetSqlConnection();
-                SqlDataReader data = cmd.ExecuteReader();
-                while (data.Read())
-                {
-                    checklistpracticas.Items.Add(data["nombre"].ToString());
-                }
-                checklistpracticas.ValueMember = "id_practica";
-                checklistpracticas.DisplayMember = "nombre";
-                
-                while (data.Read())
-                {
-                    ids_practicas.Add(Convert.ToInt32(checklistpracticas.SelectedValue.ToString()));
-                }
-                return ids_practicas;
+                SqlDataAdapter data = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                data.Fill(dt);
+                cbpracticas.ValueMember = "id_practica";
+                cbpracticas.DisplayMember = "nombre";
+                cbpracticas.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("error", e.Message);
             }
-            return ids_practicas;
         }
 
         private void btnrecargarpacientes_Click(object sender, EventArgs e)
@@ -148,8 +158,40 @@ namespace PracticaTrabajoFinal.Vistas
             FormPersonalMedico fm=new FormPersonalMedico();
             fm.Show();
         }
-
         private void btnagregaringreso_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            { 
+                try
+                {   
+                    ci.Agregar_Ingreso(Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()),dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
+                    cargar_tabla();
+                    foreach(int item in ids)
+                    {
+                        ci.AgregarPracticaPorIngreso(item);
+                    }
+                    cargar_tablaPXI();
+                    dgvpractXespecialidad.ClearSelection();
+                    dgvingresos.ClearSelection();
+                    cbmedicos.Items.Clear();
+                    cbpacientes.Items.Clear();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("datos incorrectos",ex.Message);
+                }
+               
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+               
+            }
+        }
+
+        private void btnmodificaringreso_Click(object sender, EventArgs e)
         {
             MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
@@ -157,21 +199,116 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 try
                 {
-                    ci.Agregar_Ingreso(Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()),dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
-                    
+
+                    ci.Modificar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()) ,Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()), dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
+                    cargar_tabla();
+                    btnmodificaringreso.Enabled = false;
+                    btneliminaringreso.Enabled = false;
+                    btnagregaringreso.Enabled = true;
+                    lblpracticas.Visible = true;
+                    cbpracticas.Visible = true;
+                    dgvingresos.ClearSelection();
+                    lblagreganuevopaciente.Visible = true;
+                    lblagregarmedico.Visible = true;
+                    btnnuevomedico.Visible = true;
+                    btnnuevopaciente.Visible = true;
+                    btnrecargarmedicos.Visible = true;
+                    btnrecargarpacientes.Visible = true;
+                    dgvpractXespecialidad.ClearSelection();
                 }
                 catch
                 {
                     MessageBox.Show("datos incorrectos");
-                    
                 }
-                //ci.AgregarPracticaPorIngreso();
+
             }
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("Accion no confirmada");
-               
+
             }
+
+        }
+
+        private void btneliminaringreso_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons confirmacion = MessageBoxButtons.OKCancel;
+            DialogResult dr = MessageBox.Show("Confirme la accion", "Confirmar", confirmacion, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    ci.Eliminar_PracXing(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()));
+                    ci.Eliminar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()));
+                    cargar_tabla();
+                    cargar_tablaPXI();
+                    btnmodificaringreso.Enabled = false;
+                    btneliminaringreso.Enabled = false;
+                    btnagregaringreso.Enabled = true;
+                    lblpracticas.Visible = true;
+                    cbpracticas.Visible = true;
+                    dgvingresos.ClearSelection();
+                    lblagreganuevopaciente.Visible = true;
+                    lblagregarmedico.Visible = true;
+                    btnnuevomedico.Visible = true;
+                    btnnuevopaciente.Visible = true;
+                    btnrecargarmedicos.Visible = true;
+                    btnrecargarpacientes.Visible = true;
+                    dgvpractXespecialidad.ClearSelection();
+                }
+                catch
+                {
+                    MessageBox.Show("datos incorrectos");
+                }
+
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                MessageBox.Show("Accion no confirmada");
+
+            }
+        }
+
+        private void dgvingresos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbpacientes.Text = dgvingresos.CurrentRow.Cells[1].Value.ToString();
+            cbmedicos.Text = dgvingresos.CurrentRow.Cells[2].Value.ToString();
+            dtfechaingreso.Text = dgvingresos.CurrentRow.Cells[3].Value.ToString();
+            dtfecharetiro.Text = dgvingresos.CurrentRow.Cells[4].Value.ToString();
+            btneliminaringreso.Enabled = true;
+            btnmodificaringreso.Enabled = true;
+            btnagregaringreso.Enabled = false;
+            cbpracticas.Visible = false;
+            lblpracticas.Visible = false;
+            lblagreganuevopaciente.Visible = false;
+            lblagregarmedico.Visible = false;
+            btnnuevomedico.Visible = false;
+            btnnuevopaciente.Visible = false;
+            btnrecargarmedicos.Visible = false;
+            btnrecargarpacientes.Visible = false;
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            btnagregaringreso.Enabled = true;
+            btneliminaringreso.Enabled = false;
+            btnmodificaringreso.Enabled = false;
+            cbpracticas.Visible = true;
+            lblpracticas.Visible = true;
+            dgvingresos.ClearSelection();
+            lblagreganuevopaciente.Visible = true;
+            lblagregarmedico.Visible = true;
+            btnnuevomedico.Visible = true;
+            btnnuevopaciente.Visible = true;
+            btnrecargarmedicos.Visible = true;
+            btnrecargarpacientes.Visible = true;
+            dgvpractXespecialidad.ClearSelection();
+        }
+        List<int> ids = new List<int>();
+        private void btnagregarpractica_Click(object sender, EventArgs e)
+        {
+            lbpracticas.Items.Add(cbpracticas.Text);
+            ids.Add(Convert.ToInt32(cbpracticas.SelectedValue));
         }
     }
 }
