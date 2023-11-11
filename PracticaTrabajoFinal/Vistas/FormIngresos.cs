@@ -170,13 +170,10 @@ namespace PracticaTrabajoFinal.Vistas
                     cargar_tabla();
                     foreach(int item in ids)
                     {
-                        ci.AgregarPracticaPorIngreso(item);
+                       ci.AgregarPracticaPorIngreso(item);
                     }
                     cargar_tablaPXI();
                     dgvpractXespecialidad.ClearSelection();
-                    dgvingresos.ClearSelection();
-                    cbmedicos.Items.Clear();
-                    cbpacientes.Items.Clear();
                 }
                 catch(Exception ex)
                 {
@@ -308,7 +305,7 @@ namespace PracticaTrabajoFinal.Vistas
         private void btnagregarpractica_Click(object sender, EventArgs e)
         {
             lbpracticas.Items.Add(cbpracticas.Text);
-            ids.Add(Convert.ToInt32(cbpracticas.SelectedValue));
+            ids.Add(Convert.ToInt32(cbpracticas.SelectedValue.ToString()));
         }
     }
 }
