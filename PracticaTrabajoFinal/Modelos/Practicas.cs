@@ -31,6 +31,7 @@ namespace PracticaTrabajoFinal.Modelos
                 }
                 else
                 {
+                    conexion = new Conexion();
                     //query que la agrega a la base de datos si no existe
                     string sql = "insert into Muestras(nombre_muestra)values('" + nombre + "')";
                     //vuelvo a asignarñe otra query y conexion al comando 

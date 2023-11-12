@@ -42,7 +42,7 @@ namespace PracticaTrabajoFinal.Modelos
                 MessageBox.Show("Error al Agregar un Servicio", ex.Message);
             }
         }
-        public void agregarmedico(int id_servicio,string nombre_profesional,string apellido_profesional,int matricula)
+        public void agregarmedico(int id_servicio,string nombre_profesional,string apellido_profesional,string matricula)
         {
             try
             {
@@ -63,12 +63,12 @@ namespace PracticaTrabajoFinal.Modelos
             }
 
         }
-        public void modificarmedico(int id_medico,int id_servicio, string nombre, string apellido, int matricula)
+        public void modificarmedico(int id_medico,int id_servicio, string nombre, string apellido, string matricula)
         {
             try
             {
                 conexion = new Conexion();
-                string consulta = "update Profesionales set id_servicio =" + id_servicio + ",nombre_profesional='" + nombre + "',apellido_profesional='" + apellido + "',matricula=" + matricula + "where id_profesional =" + id_medico;
+                string consulta = "update Profesionales set id_servicio =" + id_servicio + ",nombre_profesional='" + nombre + "',apellido_profesional='" + apellido + "',matricula='" + matricula + "' where id_profesional =" + id_medico;
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();

@@ -77,7 +77,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 try
                 {
-                    cm.Agregar_Medico(Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text, Convert.ToInt32(txtmatriculamedico.Text));
+                    cm.Agregar_Medico(Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text,txtmatriculamedico.Text);
                     cargar_tabla();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
@@ -110,6 +110,7 @@ namespace PracticaTrabajoFinal.Vistas
         private void agregarservicio_CheckedChanged(object sender, EventArgs e)
         {
             panelnuevoservicio.Visible = true;
+            txtnombreservicio.Focus();
         }
 
         private void btncancelarservicio_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 try
                 {
-                    cm.Modificar_Medico(Convert.ToInt32(dgvpmedicos.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text, Convert.ToInt32(txtmatriculamedico.Text));
+                    cm.Modificar_Medico(Convert.ToInt32(dgvpmedicos.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbservicio.SelectedValue.ToString()), txtnombremedico.Text, txtapellidomedico.Text,txtmatriculamedico.Text);
                     cargar_tabla();
                     btnmodificar.Enabled = false;
                     btneliminar.Enabled = false;

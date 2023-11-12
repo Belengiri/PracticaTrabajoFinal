@@ -10,7 +10,7 @@ namespace PracticaTrabajoFinal.Modelos
     internal class Conexion
     {
         SqlConnection conexion;
-        string cadena = "workstation id=TrabajoFinal.mssql.somee.com;packet size=4096;user id=belu_giri_SQLLogin_1;pwd=uepihkqvt1;data source=TrabajoFinal.mssql.somee.com;persist security info=False;initial catalog=TrabajoFinal";
+        string cadena = "Server=localhost;Database=TrabajoFinal;Trusted_Connection=True;";
         public SqlConnection GetSqlConnection()
         {
             if (conexion == null)

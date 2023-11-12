@@ -93,10 +93,10 @@
             this.paneldatosingresos.Controls.Add(this.dtfecharetiro);
             this.paneldatosingresos.Controls.Add(this.lblfecharetiro);
             this.paneldatosingresos.Controls.Add(this.dtfechaingreso);
-            this.paneldatosingresos.Location = new System.Drawing.Point(334, 0);
+            this.paneldatosingresos.Location = new System.Drawing.Point(352, 0);
             this.paneldatosingresos.Margin = new System.Windows.Forms.Padding(2);
             this.paneldatosingresos.Name = "paneldatosingresos";
-            this.paneldatosingresos.Size = new System.Drawing.Size(248, 414);
+            this.paneldatosingresos.Size = new System.Drawing.Size(230, 414);
             this.paneldatosingresos.TabIndex = 0;
             // 
             // btnagregarpractica

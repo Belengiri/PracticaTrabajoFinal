@@ -183,12 +183,8 @@ namespace PracticaTrabajoFinal.Vistas
         //y desabilita el boton aceptar
         private void agregarmuestra_CheckedChanged(object sender, EventArgs e)
         {
-            lblnuevamuestra.Visible = true;
-            txtnuevamuestra.Visible = true;
-            btnguardarmuestra.Visible = true;
-            btncancelarmuestra.Visible = true;
+            panelnuevamuestra.Visible = true;
             txtnuevamuestra.Focus();
-            btncancelar.Enabled=false;
         }
         //boton para guardar una nueva muestra
         private void btnguardarmuestra_Click(object sender, EventArgs e)
@@ -196,11 +192,8 @@ namespace PracticaTrabajoFinal.Vistas
             cp.Agregar_Muestra(txtnuevamuestra.Text);
             cargarcbmuestras();
             agregarmuestra.Checked = false;
-            btnguardarmuestra.Visible = false;
-            lblnuevamuestra.Visible = false;
-            txtnuevamuestra.Visible = false;
-            btncancelarmuestra.Visible = false;
-            btncancelar.Enabled = true;
+            panelnuevamuestra.Visible = false;
+            txtnuevamuestra.Clear();
         }
         //boton para cancelar la accion de la carga de nueva muestra
         private void btncancelar_Click(object sender, EventArgs e)
