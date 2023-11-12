@@ -26,7 +26,7 @@ namespace PracticaTrabajoFinal.Vistas
         public void cargar_tabla()
         {
             conexion = new Conexion();
-            string consulta = "select id_categoria as n,nombre_categoria as nombre from Categorias";
+            string consulta = "select id_categoria as Nº,nombre_categoria as Categoria from Categorias";
             SqlCommand cmd = new SqlCommand(consulta);
             cmd.Connection = conexion.GetSqlConnection();
             SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -54,7 +54,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrecategoria.Clear();
                     txtnombrecategoria.Focus();
                     dgvcategoria.ClearSelection();
@@ -62,7 +62,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrecategoria.Clear();
                 txtnombrecategoria.Focus();
                 dgvcategoria.ClearSelection();
@@ -88,7 +88,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrecategoria.Clear();
                     txtnombrecategoria.Focus();
                     dgvcategoria.ClearSelection();
@@ -96,7 +96,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrecategoria.Clear();
                 txtnombrecategoria.Focus();
                 dgvcategoria.ClearSelection();
@@ -119,7 +119,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrecategoria.Clear();
                     txtnombrecategoria.Focus();
                     dgvcategoria.ClearSelection();
@@ -127,22 +127,13 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrecategoria.Clear();
                 txtnombrecategoria.Focus();
                 dgvcategoria.ClearSelection();
             }
         }
 
-        private void dgvcategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {   
-            txtnombrecategoria.Focus();
-            txtnombrecategoria.Text = dgvcategoria.CurrentRow.Cells[1].Value.ToString();
-            btneliminarcategoria.Enabled = true;
-            btnmodificarcategoria.Enabled = true;
-            btnagregarcategoria.Enabled = false;
-            
-        }
 
         private void btnsalir_Click(object sender, EventArgs e)
         {
@@ -157,6 +148,15 @@ namespace PracticaTrabajoFinal.Vistas
             dgvcategoria.ClearSelection();
             txtnombrecategoria.Clear();
             txtnombrecategoria.Focus();
+        }
+
+        private void dgvcategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrecategoria.Focus();
+            txtnombrecategoria.Text = dgvcategoria.CurrentRow.Cells[1].Value.ToString();
+            btneliminarcategoria.Enabled = true;
+            btnmodificarcategoria.Enabled = true;
+            btnagregarcategoria.Enabled = false;
         }
     }
 }

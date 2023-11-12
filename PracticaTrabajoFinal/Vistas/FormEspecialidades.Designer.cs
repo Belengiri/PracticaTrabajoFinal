@@ -39,6 +39,7 @@
             this.btneliminarespecialidad = new System.Windows.Forms.Button();
             this.btnmodificarespecialidad = new System.Windows.Forms.Button();
             this.btnagregarespecialidad = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.Label();
             this.paneldgvespecialidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvespecialidades)).BeginInit();
             this.paneldatosespecialidad.SuspendLayout();
@@ -51,7 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldgvespecialidades.Controls.Add(this.dgvespecialidades);
-            this.paneldgvespecialidades.Location = new System.Drawing.Point(12, 12);
+            this.paneldgvespecialidades.Location = new System.Drawing.Point(12, 51);
             this.paneldgvespecialidades.Name = "paneldgvespecialidades";
             this.paneldgvespecialidades.Size = new System.Drawing.Size(305, 222);
             this.paneldgvespecialidades.TabIndex = 0;
@@ -59,13 +60,17 @@
             // dgvespecialidades
             // 
             this.dgvespecialidades.AllowUserToAddRows = false;
+            this.dgvespecialidades.AllowUserToDeleteRows = false;
+            this.dgvespecialidades.AllowUserToResizeRows = false;
+            this.dgvespecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvespecialidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvespecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvespecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvespecialidades.Location = new System.Drawing.Point(0, 0);
             this.dgvespecialidades.Name = "dgvespecialidades";
             this.dgvespecialidades.Size = new System.Drawing.Size(305, 222);
-            this.dgvespecialidades.TabIndex = 10;
-            this.dgvespecialidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvespecialidades_CellClick);
+            this.dgvespecialidades.TabIndex = 11;
+            this.dgvespecialidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvespecialidades_CellClick_1);
             // 
             // txtnombreespecialidad
             // 
@@ -125,7 +130,7 @@
             this.panelbotones.Controls.Add(this.btneliminarespecialidad);
             this.panelbotones.Controls.Add(this.btnmodificarespecialidad);
             this.panelbotones.Controls.Add(this.btnagregarespecialidad);
-            this.panelbotones.Location = new System.Drawing.Point(15, 240);
+            this.panelbotones.Location = new System.Drawing.Point(12, 279);
             this.panelbotones.Name = "panelbotones";
             this.panelbotones.Size = new System.Drawing.Size(294, 66);
             this.panelbotones.TabIndex = 6;
@@ -162,12 +167,25 @@
             this.btnagregarespecialidad.UseVisualStyleBackColor = true;
             this.btnagregarespecialidad.Click += new System.EventHandler(this.btnagregarespecialidad_Click);
             // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(92, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(153, 20);
+            this.nombre.TabIndex = 11;
+            this.nombre.Text = "Especialidades";
+            // 
             // FormEspecialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.paneldatosespecialidad);
             this.Controls.Add(this.paneldgvespecialidades);
@@ -183,6 +201,7 @@
             this.paneldatosespecialidad.PerformLayout();
             this.panelbotones.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -193,11 +212,12 @@
         private System.Windows.Forms.TextBox txtnombreespecialidad;
         private System.Windows.Forms.Label lblnombreespecialidad;
         private System.Windows.Forms.Panel paneldatosespecialidad;
-        private System.Windows.Forms.DataGridView dgvespecialidades;
         private System.Windows.Forms.Panel panelbotones;
         private System.Windows.Forms.Button btneliminarespecialidad;
         private System.Windows.Forms.Button btnmodificarespecialidad;
         private System.Windows.Forms.Button btnagregarespecialidad;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.DataGridView dgvespecialidades;
+        private System.Windows.Forms.Label nombre;
     }
 }

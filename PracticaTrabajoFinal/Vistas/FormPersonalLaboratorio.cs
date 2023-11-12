@@ -31,7 +31,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select id_personal_lab  as n, nombre_personal_lab  as nombre, apellido_personal_lab  as apellido,matricula_personal_lab  as matricula, E.nombre_especialidad as especialidad,C.nombre_categoria as categoria from Personal_Laboratorio P inner join Especialidades E on P.id_especialidad  = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria";
+                string consulta = "select id_personal_lab  as Nº, nombre_personal_lab  as Nombre, apellido_personal_lab  as Apellido,matricula_personal_lab  as Matricula, E.nombre_especialidad as Especialidad,C.nombre_categoria as Categoria from Personal_Laboratorio P inner join Especialidades E on P.id_especialidad  = E.id_especialidad inner join Categorias C on P.id_categoria = C.id_categoria";
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -41,7 +41,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Error al Cargar los Datos");
             }
         }
         public void cargacbcategoria()
@@ -63,7 +63,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Categorias", ex.Message);
             }
         }
         public void cargacbespecialidad()
@@ -85,7 +85,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Especialidades", ex.Message);
             }
         }
 
@@ -148,7 +148,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvperlab.ClearSelection();
                     txtnombrecategoria.Focus();
                     txtnombrecategoria.Clear();
@@ -156,7 +156,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvperlab.ClearSelection();
                 txtnombrecategoria.Focus();
                 txtnombrecategoria.Clear();
@@ -195,7 +195,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvperlab.ClearSelection();
                     txtespecialidadperlab.Focus();
                     txtespecialidadperlab.Clear();
@@ -203,7 +203,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvperlab.ClearSelection();
                 txtespecialidadperlab.Focus();
                 txtespecialidadperlab.Clear();
@@ -239,7 +239,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
                     txtnombreperlab.Clear();
@@ -249,7 +249,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvperlab.ClearSelection();
                 txtnombreperlab.Focus();
                 txtnombreperlab.Clear();
@@ -281,7 +281,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
                     txtnombreperlab.Clear();
@@ -292,7 +292,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvperlab.ClearSelection();
                 txtnombreperlab.Focus();
                 txtnombreperlab.Clear();
@@ -320,7 +320,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
                     txtnombreperlab.Clear();
@@ -332,7 +332,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvperlab.ClearSelection();
                 txtnombreperlab.Focus();
                 txtnombreperlab.Clear();

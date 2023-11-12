@@ -23,7 +23,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Eliminar las Practicas", ex.Message);
             }
         }
         public void Nuevoingreso(int id_paciente, int id_profesional, string ingreso, string retiro)
@@ -39,11 +39,11 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.Parameters.AddWithValue("@ingreso", ingreso);
                 comando.Parameters.AddWithValue("@retiro", retiro);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("ingreso AGREGADO");
+                MessageBox.Show("Ingreso AGREGADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Agregar un Ingreso", ex.Message);
             }
         }
         public void eliminaringreso(int id_ingreso)
@@ -55,11 +55,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro ELIMINADO");
+                MessageBox.Show("Ingreso ELIMINADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Eliminar el Ingreso", ex.Message);
             }
         }
         public void Modificaringreso(int id_ingreso, int id_paciente, int id_medico, string ingreso, string retiro)
@@ -71,11 +71,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro MODIFICADO");
+                MessageBox.Show("Ingreso MODIFICADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Modificar el Ingreso", ex.Message);
             }
         }
         public int ObteneridMax()
@@ -91,7 +91,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al obtener el ultimo Ingreso", ex.Message);
             }
             return id;
         }
@@ -107,7 +107,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Modificar la Practica", ex.Message);
             }
         }
         public void NuevaPracticaPorIngreso(int id_practica)
@@ -125,7 +125,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show( ex.Message);
+                MessageBox.Show("Error al Agregar una Practica",ex.Message);
             }
         }
     }

@@ -43,7 +43,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Localidades", ex.Message);
             }
         }
 
@@ -52,7 +52,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select p.id_paciente as n, nombre_paciente as nombre, apellido_paciente as apellido , dni,fecha_nacimiento as fecha,direccion_nombre as calle, direccion_numero as altura, direccion_piso as piso, direccion_departamento  as departamento,correo_paciente as correo,telefono_paciente as telefono ,L.nombre_localidad as localidad from Pacientes P inner join Localidades L on P.id_localidad = L.id_localidad";
+                string consulta = "select p.id_paciente as Nº, nombre_paciente as Nombre, apellido_paciente as Apellido , dni as DNI,fecha_nacimiento as Fecha_Nacimiento,direccion_nombre as Calle, direccion_numero as Altura_Calle, direccion_piso as Piso, direccion_departamento  as Departamento,correo_paciente as Correo,telefono_paciente as Telefono ,L.nombre_localidad as Localidad from Pacientes P inner join Localidades L on P.id_localidad = L.id_localidad";
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -61,7 +61,7 @@ namespace PracticaTrabajoFinal.Vistas
                 dgvpacientes.DataSource = dt;
             }catch(Exception e)
             {
-                MessageBox.Show("error", e.Message);
+                MessageBox.Show("Error al Cargar los Datos", e.Message);
             }
             
         }
@@ -103,7 +103,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpacientes.ClearSelection();
                     txtnombrepaciente.Clear();
                     txtapellidopaciente.Clear();
@@ -121,7 +121,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvpacientes.ClearSelection();
                 txtnombrepaciente.Clear();
                 txtapellidopaciente.Clear();
@@ -165,7 +165,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpacientes.ClearSelection();
                     txtnombrepaciente.Clear();
                     txtapellidopaciente.Clear();
@@ -182,7 +182,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvpacientes.ClearSelection();
                 txtnombrepaciente.Clear();
                 txtapellidopaciente.Clear();
@@ -225,7 +225,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpacientes.ClearSelection();
                     txtnombrepaciente.Clear();
                     txtapellidopaciente.Clear();
@@ -241,7 +241,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrepaciente.Clear();
                 txtapellidopaciente.Clear();
                 txtdnipaciente.Clear();
@@ -288,7 +288,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error al guardar la Localidad",ex.Message);
+                MessageBox.Show("Error al Guardar la Localidad",ex.Message);
             }
             
         }

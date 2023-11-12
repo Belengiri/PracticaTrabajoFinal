@@ -40,7 +40,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Especialidades", ex.Message);
             }
         }
         public void cargar_tabla()
@@ -48,7 +48,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select id_practica as numero, nombre_practica as nombre,tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra where E.id_especialidad="+Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
+                string consulta = "select id_practica as Nº, nombre_practica as Practicas,tiempo_resultado as Demora, E.nombre_especialidad as Especilidad,M.nombre_muestra as Muestra from Practicas P  inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra where E.id_especialidad="+Convert.ToInt32(cbespecialidades.SelectedValue.ToString());
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);

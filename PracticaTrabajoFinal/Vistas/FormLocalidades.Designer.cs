@@ -41,6 +41,7 @@
             this.txtnombrelocalidad = new System.Windows.Forms.TextBox();
             this.paneldgvlocalidades = new System.Windows.Forms.Panel();
             this.dgvlocalidades = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.Label();
             this.panelbotones.SuspendLayout();
             this.paneldatoslocalidades.SuspendLayout();
             this.paneldgvlocalidades.SuspendLayout();
@@ -53,7 +54,7 @@
             this.panelbotones.Controls.Add(this.btneliminarlocalidad);
             this.panelbotones.Controls.Add(this.btnmodificarlocalidad);
             this.panelbotones.Controls.Add(this.btnagregarlocalidad);
-            this.panelbotones.Location = new System.Drawing.Point(9, 240);
+            this.panelbotones.Location = new System.Drawing.Point(6, 285);
             this.panelbotones.Name = "panelbotones";
             this.panelbotones.Size = new System.Drawing.Size(294, 66);
             this.panelbotones.TabIndex = 9;
@@ -168,7 +169,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldgvlocalidades.Controls.Add(this.dgvlocalidades);
-            this.paneldgvlocalidades.Location = new System.Drawing.Point(6, 12);
+            this.paneldgvlocalidades.Location = new System.Drawing.Point(6, 57);
             this.paneldgvlocalidades.Name = "paneldgvlocalidades";
             this.paneldgvlocalidades.Size = new System.Drawing.Size(305, 222);
             this.paneldgvlocalidades.TabIndex = 7;
@@ -176,13 +177,30 @@
             // dgvlocalidades
             // 
             this.dgvlocalidades.AllowUserToAddRows = false;
+            this.dgvlocalidades.AllowUserToDeleteRows = false;
+            this.dgvlocalidades.AllowUserToResizeColumns = false;
+            this.dgvlocalidades.AllowUserToResizeRows = false;
+            this.dgvlocalidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlocalidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvlocalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlocalidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvlocalidades.Location = new System.Drawing.Point(0, 0);
             this.dgvlocalidades.Name = "dgvlocalidades";
             this.dgvlocalidades.Size = new System.Drawing.Size(305, 222);
-            this.dgvlocalidades.TabIndex = 11;
-            this.dgvlocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlocalidades_CellClick);
+            this.dgvlocalidades.TabIndex = 12;
+            this.dgvlocalidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlocalidades_CellClick_1);
+            // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(96, 19);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(126, 20);
+            this.nombre.TabIndex = 12;
+            this.nombre.Text = "Localidades";
             // 
             // FormLocalidades
             // 
@@ -190,6 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.paneldatoslocalidades);
             this.Controls.Add(this.paneldgvlocalidades);
@@ -204,6 +223,7 @@
             this.paneldgvlocalidades.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvlocalidades)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,9 +238,10 @@
         private System.Windows.Forms.Label lblnombrelocalidad;
         private System.Windows.Forms.TextBox txtnombrelocalidad;
         private System.Windows.Forms.Panel paneldgvlocalidades;
-        private System.Windows.Forms.DataGridView dgvlocalidades;
         private System.Windows.Forms.Label llblcodigopostal;
         private System.Windows.Forms.TextBox txtcodigopostal;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.DataGridView dgvlocalidades;
+        private System.Windows.Forms.Label nombre;
     }
 }

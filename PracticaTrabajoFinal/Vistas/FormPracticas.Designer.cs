@@ -50,6 +50,7 @@
             this.btnagregarpractica = new System.Windows.Forms.Button();
             this.btnmodificarpractica = new System.Windows.Forms.Button();
             this.btneliminarpractica = new System.Windows.Forms.Button();
+            this.nombre = new System.Windows.Forms.Label();
             this.paneldatospracticas.SuspendLayout();
             this.panelnuevamuestra.SuspendLayout();
             this.paneldgvpracticas.SuspendLayout();
@@ -246,7 +247,7 @@
             // 
             this.paneldgvpracticas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldgvpracticas.Controls.Add(this.dgvgrillapracticas);
-            this.paneldgvpracticas.Location = new System.Drawing.Point(12, 12);
+            this.paneldgvpracticas.Location = new System.Drawing.Point(12, 45);
             this.paneldgvpracticas.Name = "paneldgvpracticas";
             this.paneldgvpracticas.Size = new System.Drawing.Size(322, 312);
             this.paneldgvpracticas.TabIndex = 9;
@@ -254,18 +255,23 @@
             // dgvgrillapracticas
             // 
             this.dgvgrillapracticas.AllowUserToAddRows = false;
+            this.dgvgrillapracticas.AllowUserToDeleteRows = false;
+            this.dgvgrillapracticas.AllowUserToResizeColumns = false;
+            this.dgvgrillapracticas.AllowUserToResizeRows = false;
+            this.dgvgrillapracticas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvgrillapracticas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvgrillapracticas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvgrillapracticas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvgrillapracticas.Location = new System.Drawing.Point(0, 0);
             this.dgvgrillapracticas.Name = "dgvgrillapracticas";
             this.dgvgrillapracticas.Size = new System.Drawing.Size(322, 312);
-            this.dgvgrillapracticas.TabIndex = 11;
-            this.dgvgrillapracticas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgrillapracticas_CellClick);
+            this.dgvgrillapracticas.TabIndex = 12;
+            this.dgvgrillapracticas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgrillapracticas_CellClick_1);
             // 
             // btnagregarpractica
             // 
             this.btnagregarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnagregarpractica.Location = new System.Drawing.Point(12, 330);
+            this.btnagregarpractica.Location = new System.Drawing.Point(12, 360);
             this.btnagregarpractica.Name = "btnagregarpractica";
             this.btnagregarpractica.Size = new System.Drawing.Size(75, 23);
             this.btnagregarpractica.TabIndex = 10;
@@ -277,7 +283,7 @@
             // 
             this.btnmodificarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnmodificarpractica.Enabled = false;
-            this.btnmodificarpractica.Location = new System.Drawing.Point(93, 330);
+            this.btnmodificarpractica.Location = new System.Drawing.Point(93, 360);
             this.btnmodificarpractica.Name = "btnmodificarpractica";
             this.btnmodificarpractica.Size = new System.Drawing.Size(75, 23);
             this.btnmodificarpractica.TabIndex = 11;
@@ -289,7 +295,7 @@
             // 
             this.btneliminarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btneliminarpractica.Enabled = false;
-            this.btneliminarpractica.Location = new System.Drawing.Point(174, 330);
+            this.btneliminarpractica.Location = new System.Drawing.Point(174, 360);
             this.btneliminarpractica.Name = "btneliminarpractica";
             this.btneliminarpractica.Size = new System.Drawing.Size(75, 23);
             this.btneliminarpractica.TabIndex = 13;
@@ -297,12 +303,25 @@
             this.btneliminarpractica.UseVisualStyleBackColor = true;
             this.btneliminarpractica.Click += new System.EventHandler(this.btneliminarpractica_Click);
             // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(111, 22);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(105, 20);
+            this.nombre.TabIndex = 14;
+            this.nombre.Text = "Practicas";
+            // 
             // FormPracticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.btneliminarpractica);
             this.Controls.Add(this.btnmodificarpractica);
             this.Controls.Add(this.btnagregarpractica);
@@ -321,6 +340,7 @@
             this.paneldgvpracticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvgrillapracticas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -345,8 +365,9 @@
         private System.Windows.Forms.TextBox txtnuevamuestra;
         private System.Windows.Forms.Label lblnuevamuestra;
         private System.Windows.Forms.Button btncancelarmuestra;
-        private System.Windows.Forms.DataGridView dgvgrillapracticas;
         private System.Windows.Forms.Panel panelnuevamuestra;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.DataGridView dgvgrillapracticas;
+        private System.Windows.Forms.Label nombre;
     }
 }

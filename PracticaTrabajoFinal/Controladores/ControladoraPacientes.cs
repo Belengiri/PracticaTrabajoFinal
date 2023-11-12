@@ -23,13 +23,13 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Agregar la Localidad");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al agregar una localidad", ex.Message);
+                MessageBox.Show("Error al Agregar una Localidad", ex.Message);
             }
         }
         public void Modificar_Localidad(int id_localidad,string nombre_localidad,int codigo_postal)
@@ -41,13 +41,13 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Modificar una Localidad");
                 }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar la localidad", e.ToString());
+                MessageBox.Show("Error al Modificar la Localidad", e.Message);
             }
 
         }
@@ -61,12 +61,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Eliminar la Localidad");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar la localidad", e.ToString());
+                MessageBox.Show("Error al Eliminar la Localidad", e.Message);
             }
         }
         public void Agregar_Paciente(int idlocal,string nombre,string apellido,int dni, string fecha, string calle,int altura,int piso,int depto,string correo,string telefono)
@@ -78,10 +78,14 @@ namespace PracticaTrabajoFinal.Controladores
                 {
                     pac.agregarpaciente(idlocal, nombre, apellido, fecha, dni, calle, altura, piso, depto, correo, telefono);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Agregar el Paciente");
+                }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al agregar un pacinte", e.ToString());
+                MessageBox.Show("Error al Agregar el Pacinte", e.Message);
             }
         }
         public void Modificar_Paciente(int idpaciente,int localidad, string nombre, string apellido, int dni, string fecha, string calle, int altura, int piso, int depto, string correo, string telefono)
@@ -92,11 +96,15 @@ namespace PracticaTrabajoFinal.Controladores
                 {
                     pac.modificarpaciente(Convert.ToInt32(localidad),nombre, apellido,fecha,dni,calle,altura,piso,depto,correo,telefono,idpaciente);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Modificar el Paciente");
+                }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar el paciente", e.ToString());
+                MessageBox.Show("Error al Modificar el Paciente", e.Message);
             }
         }
         public void Eliminar_Paciente(int idpaciente)
@@ -107,10 +115,14 @@ namespace PracticaTrabajoFinal.Controladores
                 {
                     pac.eliminarpaciente(idpaciente);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar el Paciente");
+                }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar el paciente", e.ToString());
+                MessageBox.Show("Error al Eliminar el Paciente", e.Message);
             }
         }
     }

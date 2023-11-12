@@ -39,6 +39,7 @@
             this.txtnombrecategoria = new System.Windows.Forms.TextBox();
             this.paneldgvcategoria = new System.Windows.Forms.Panel();
             this.dgvcategoria = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.Label();
             this.panelbotones.SuspendLayout();
             this.paneldatoscategoria.SuspendLayout();
             this.paneldgvcategoria.SuspendLayout();
@@ -51,7 +52,7 @@
             this.panelbotones.Controls.Add(this.btneliminarcategoria);
             this.panelbotones.Controls.Add(this.btnmodificarcategoria);
             this.panelbotones.Controls.Add(this.btnagregarcategoria);
-            this.panelbotones.Location = new System.Drawing.Point(9, 279);
+            this.panelbotones.Location = new System.Drawing.Point(12, 303);
             this.panelbotones.Name = "panelbotones";
             this.panelbotones.Size = new System.Drawing.Size(294, 66);
             this.panelbotones.TabIndex = 9;
@@ -90,6 +91,8 @@
             // 
             // paneldatoscategoria
             // 
+            this.paneldatoscategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldatoscategoria.Controls.Add(this.btnsalir);
             this.paneldatoscategoria.Controls.Add(this.btncancelar);
             this.paneldatoscategoria.Controls.Add(this.lblnombrecategoria);
@@ -145,7 +148,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.paneldgvcategoria.Controls.Add(this.dgvcategoria);
-            this.paneldgvcategoria.Location = new System.Drawing.Point(6, 12);
+            this.paneldgvcategoria.Location = new System.Drawing.Point(8, 36);
             this.paneldgvcategoria.Name = "paneldgvcategoria";
             this.paneldgvcategoria.Size = new System.Drawing.Size(321, 261);
             this.paneldgvcategoria.TabIndex = 7;
@@ -153,13 +156,30 @@
             // dgvcategoria
             // 
             this.dgvcategoria.AllowUserToAddRows = false;
+            this.dgvcategoria.AllowUserToDeleteRows = false;
+            this.dgvcategoria.AllowUserToResizeColumns = false;
+            this.dgvcategoria.AllowUserToResizeRows = false;
+            this.dgvcategoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvcategoria.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvcategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvcategoria.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvcategoria.Location = new System.Drawing.Point(0, 0);
             this.dgvcategoria.Name = "dgvcategoria";
             this.dgvcategoria.Size = new System.Drawing.Size(321, 261);
-            this.dgvcategoria.TabIndex = 11;
-            this.dgvcategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategoria_CellContentClick);
+            this.dgvcategoria.TabIndex = 12;
+            this.dgvcategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategoria_CellClick);
+            // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(95, 2);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(117, 20);
+            this.nombre.TabIndex = 10;
+            this.nombre.Text = "Categorias";
             // 
             // FormCategorias
             // 
@@ -167,6 +187,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.paneldatoscategoria);
             this.Controls.Add(this.paneldgvcategoria);
@@ -181,6 +202,7 @@
             this.paneldgvcategoria.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategoria)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,7 +217,8 @@
         private System.Windows.Forms.Label lblnombrecategoria;
         private System.Windows.Forms.TextBox txtnombrecategoria;
         private System.Windows.Forms.Panel paneldgvcategoria;
-        private System.Windows.Forms.DataGridView dgvcategoria;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.DataGridView dgvcategoria;
+        private System.Windows.Forms.Label nombre;
     }
 }

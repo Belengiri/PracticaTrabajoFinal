@@ -23,14 +23,14 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Error al Agregar la Categoria");
                 }
 
             }
             catch (Exception ex)
             {
                 //error si no pudo enviar los datos
-                MessageBox.Show("la muestra es existente", ex.Message);
+                MessageBox.Show("Error al Agregar la Categoria", ex.Message);
             }
         }
         public void Modificar_Categoria(string nombre ,int id_categoria)
@@ -43,12 +43,16 @@ namespace PracticaTrabajoFinal.Controladores
                     //manda los datos al modelo
                     pl.modificarcategoria(id_categoria,nombre);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Modificar la Categoria");
+                }
 
             }
             catch (Exception e)
             {
                 //error si no puede enviar los datos
-                MessageBox.Show("error al modificar el registro", e.ToString());
+                MessageBox.Show("Error al Modificar la Categoria", e.Message);
             }
         }
         public void Eliminar_Categoria(int id_categoria)
@@ -61,11 +65,15 @@ namespace PracticaTrabajoFinal.Controladores
                     //manda el id al modelo
                     pl.eliminarcategoria(id_categoria);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar la Categoria");
+                }
             }
             catch (Exception e)
             {
                 //error si no puede mandarlo
-                MessageBox.Show("error al eliminar el registro", e.ToString());
+                MessageBox.Show("Error al Eliminar la Categoria", e.Message);
             }
 
         }
@@ -79,12 +87,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Agregar el Personal del Laboratorio");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al agregar un Medico", ex.Message);
+                MessageBox.Show("Error al Agregar el Personal del Laboratorio", ex.Message);
             }
         }
         public void Modificar_Personal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
@@ -97,13 +105,13 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Modificar el Personal del Laboratorio");
                 }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar un Medico", e.ToString());
+                MessageBox.Show("Error al Modificar el Personal del Laboratorio", e.Message);
             }
         }
         public void Eliminar_Personal(int id_personal)
@@ -116,12 +124,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Eliminar el Personal del Laboratorio ");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar un Medico", e.ToString());
+                MessageBox.Show("Error al Eliminar el Personal del Laboratorio", e.Message);
             }
         }
     }

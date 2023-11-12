@@ -26,7 +26,7 @@ namespace PracticaTrabajoFinal.Vistas
         public void cargar_tabla()
         {
             conexion = new Conexion();
-            string consulta = "select id_profesional as n, nombre_profesional as nombre, apellido_profesional as apellido,matricula as matricula, S.nombre_servicio as servicio from Profesionales P inner join Servicios S on P.id_servicio = S.id_servicio";
+            string consulta = "select id_profesional as Nº, nombre_profesional as Nombre, apellido_profesional as Apellido,matricula as Matricula, S.nombre_servicio as Servicio from Profesionales P inner join Servicios S on P.id_servicio = S.id_servicio";
             SqlCommand cmd = new SqlCommand(consulta);
             cmd.Connection = conexion.GetSqlConnection();
             SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -54,7 +54,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar los Servicios", ex.Message);
             }
         }
         private void btncancelar_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpmedicos.ClearSelection();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
@@ -98,7 +98,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvpmedicos.ClearSelection();
                 txtnombremedico.Focus();
                 txtnombremedico.Clear();
@@ -151,7 +151,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpmedicos.ClearSelection();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
@@ -162,7 +162,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvpmedicos.ClearSelection();
                 txtnombremedico.Focus();
                 txtnombremedico.Clear();
@@ -207,7 +207,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvpmedicos.ClearSelection();
                     txtnombremedico.Focus();
                     txtnombremedico.Clear();
@@ -217,7 +217,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvpmedicos.ClearSelection();
                 txtnombremedico.Focus();
                 txtnombremedico.Clear();

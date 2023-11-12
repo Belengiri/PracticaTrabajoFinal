@@ -81,7 +81,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select id_practicaXingreso as n, R.apellido_paciente+' '+R.nombre_paciente as 'paciente',N.nombre_practica as Practicas,I.id_ingreso as NºIngreso from PracticasXingresos P inner join Ingresos I on I.id_ingreso=P.id_ingreso inner join Practicas N on P.id_practica=N.id_practica inner join Pacientes R on I.id_paciente=R.id_paciente";
+                string consulta = "select id_practicaXingreso as Nº, R.apellido_paciente+' '+R.nombre_paciente as 'Paciente',N.nombre_practica as Practicas,I.id_ingreso as NºIngreso from PracticasXingresos P inner join Ingresos I on I.id_ingreso=P.id_ingreso inner join Practicas N on P.id_practica=N.id_practica inner join Pacientes R on I.id_paciente=R.id_paciente";
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -100,7 +100,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select I.id_ingreso as n,P.apellido_paciente +' '+P.nombre_paciente as 'paciente',M.apellido_profesional+' '+M.nombre_profesional as 'medico', fecha_ingreso  as ingreso,fecha_retiro  as retiro from Ingresos I inner join Pacientes P on P.id_paciente = I.id_paciente inner join Profesionales M on M.id_profesional=I.id_profesional";
+                string consulta = "select I.id_ingreso as Nº,P.apellido_paciente +' '+P.nombre_paciente as 'paciente',M.apellido_profesional+' '+M.nombre_profesional as 'medico', fecha_ingreso  as ingreso,fecha_retiro  as retiro from Ingresos I inner join Pacientes P on P.id_paciente = I.id_paciente inner join Profesionales M on M.id_profesional=I.id_profesional";
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -178,14 +178,46 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("datos incorrectos",ex.Message);
+                    MessageBox.Show("Datos Incorrectos",ex.Message);
+                    btnagregaringreso.Enabled = true;
+                    btneliminaringreso.Enabled = false;
+                    btnmodificaringreso.Enabled = false;
+                    cbpracticas.Visible = true;
+                    lblpracticas.Visible = true;
+                    dgvingresos.ClearSelection();
+                    lblagreganuevopaciente.Visible = true;
+                    lblagregarmedico.Visible = true;
+                    btnnuevomedico.Visible = true;
+                    btnnuevopaciente.Visible = true;
+                    btnrecargarmedicos.Visible = true;
+                    btnrecargarpacientes.Visible = true;
+                    dgvpractXingreso.ClearSelection();
+                    lbpracticas.Items.Clear();
+                    lbpracticas.Visible = true;
+                    btnagregarpractica.Visible = true;
                 }
                
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
-               
+                MessageBox.Show("Accion no Confirmada");
+                btnagregaringreso.Enabled = true;
+                btneliminaringreso.Enabled = false;
+                btnmodificaringreso.Enabled = false;
+                cbpracticas.Visible = true;
+                lblpracticas.Visible = true;
+                dgvingresos.ClearSelection();
+                lblagreganuevopaciente.Visible = true;
+                lblagregarmedico.Visible = true;
+                btnnuevomedico.Visible = true;
+                btnnuevopaciente.Visible = true;
+                btnrecargarmedicos.Visible = true;
+                btnrecargarpacientes.Visible = true;
+                dgvpractXingreso.ClearSelection();
+                lbpracticas.Items.Clear();
+                lbpracticas.Visible = true;
+                btnagregarpractica.Visible = true;
+
             }
         }
 
@@ -220,13 +252,45 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
+                    btnagregaringreso.Enabled = true;
+                    btneliminaringreso.Enabled = false;
+                    btnmodificaringreso.Enabled = false;
+                    cbpracticas.Visible = true;
+                    lblpracticas.Visible = true;
+                    dgvingresos.ClearSelection();
+                    lblagreganuevopaciente.Visible = true;
+                    lblagregarmedico.Visible = true;
+                    btnnuevomedico.Visible = true;
+                    btnnuevopaciente.Visible = true;
+                    btnrecargarmedicos.Visible = true;
+                    btnrecargarpacientes.Visible = true;
+                    dgvpractXingreso.ClearSelection();
+                    lbpracticas.Items.Clear();
+                    lbpracticas.Visible = true;
+                    btnagregarpractica.Visible = true;
                 }
 
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
+                btnagregaringreso.Enabled = true;
+                btneliminaringreso.Enabled = false;
+                btnmodificaringreso.Enabled = false;
+                cbpracticas.Visible = true;
+                lblpracticas.Visible = true;
+                dgvingresos.ClearSelection();
+                lblagreganuevopaciente.Visible = true;
+                lblagregarmedico.Visible = true;
+                btnnuevomedico.Visible = true;
+                btnnuevopaciente.Visible = true;
+                btnrecargarmedicos.Visible = true;
+                btnrecargarpacientes.Visible = true;
+                dgvpractXingreso.ClearSelection();
+                lbpracticas.Items.Clear();
+                lbpracticas.Visible = true;
+                btnagregarpractica.Visible = true;
 
             }
 
@@ -262,13 +326,45 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
+                    btnagregaringreso.Enabled = true;
+                    btneliminaringreso.Enabled = false;
+                    btnmodificaringreso.Enabled = false;
+                    cbpracticas.Visible = true;
+                    lblpracticas.Visible = true;
+                    dgvingresos.ClearSelection();
+                    lblagreganuevopaciente.Visible = true;
+                    lblagregarmedico.Visible = true;
+                    btnnuevomedico.Visible = true;
+                    btnnuevopaciente.Visible = true;
+                    btnrecargarmedicos.Visible = true;
+                    btnrecargarpacientes.Visible = true;
+                    dgvpractXingreso.ClearSelection();
+                    lbpracticas.Items.Clear();
+                    lbpracticas.Visible = true;
+                    btnagregarpractica.Visible = true;
                 }
 
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
+                btnagregaringreso.Enabled = true;
+                btneliminaringreso.Enabled = false;
+                btnmodificaringreso.Enabled = false;
+                cbpracticas.Visible = true;
+                lblpracticas.Visible = true;
+                dgvingresos.ClearSelection();
+                lblagreganuevopaciente.Visible = true;
+                lblagregarmedico.Visible = true;
+                btnnuevomedico.Visible = true;
+                btnnuevopaciente.Visible = true;
+                btnrecargarmedicos.Visible = true;
+                btnrecargarpacientes.Visible = true;
+                dgvpractXingreso.ClearSelection();
+                lbpracticas.Items.Clear();
+                lbpracticas.Visible = true;
+                btnagregarpractica.Visible = true;
 
             }
         }
@@ -289,7 +385,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Practicas", ex.Message);
             }
         }
         private void btncancelar_Click(object sender, EventArgs e)
@@ -310,6 +406,13 @@ namespace PracticaTrabajoFinal.Vistas
             lbpracticas.Items.Clear();
             lbpracticas.Visible = true;
             btnagregarpractica.Visible = true;
+            btnagregarpractica.Enabled = true;
+            cbpacientes.Enabled = true;
+            btnnuevopaciente.Enabled = true;
+            cbmedicos.Enabled = true;
+            btnnuevomedico.Enabled = true;
+            dtfechaingreso.Enabled = true;
+            dtfecharetiro.Enabled = true;
         }
         List<int> ids = new List<int>();
         private void btnagregarpractica_Click(object sender, EventArgs e)
@@ -337,7 +440,6 @@ namespace PracticaTrabajoFinal.Vistas
             btnrecargarmedicos.Visible = false;
             btnrecargarpacientes.Visible = false;
             lblpracticas.Visible = true;
-            lbpracticas.Visible = false ;
             btnagregarpractica.Visible = false;
             practicas();
             cbpracticas.Visible = true;
@@ -347,6 +449,14 @@ namespace PracticaTrabajoFinal.Vistas
         private void dgvpractXingreso_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnagregarpractica.Visible = false;
+            lbpracticas.Visible=false;
+            cbpacientes.Enabled = false;
+            btnnuevopaciente.Enabled = false;
+            cbmedicos.Enabled = false;
+            btnnuevomedico.Enabled = false;
+            dtfechaingreso.Enabled = false;
+            dtfecharetiro.Enabled = false;
+            cbpracticas.Text = dgvpractXingreso.CurrentRow.Cells[2].Value.ToString();
         }
     }
 }

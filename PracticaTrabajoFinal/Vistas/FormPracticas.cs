@@ -27,14 +27,21 @@ namespace PracticaTrabajoFinal.Vistas
         //metodo para carga la grilla de practicas mostrando nombre de  especialidad y muestra
         public void cargar_tabla()
         {
-            conexion = new Conexion();
-            string consulta = "select p.id_practica as numero, nombre_practica as nombre, tiempo_resultado as demora, E.nombre_especialidad as especilidad,M.nombre_muestra as muestra from Practicas P inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra";
-            SqlCommand cmd = new SqlCommand(consulta);
-            cmd.Connection = conexion.GetSqlConnection();
-            SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adaptador.Fill(dt);
-            dgvgrillapracticas.DataSource = dt;
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "select p.id_practica as Nº, nombre_practica as Practica, tiempo_resultado as Demora, E.nombre_especialidad as Especilidad,M.nombre_muestra as Muestra from Practicas P inner join Especialidades E on P.id_especialidad = E.id_especialidad inner join Muestras M on P.id_muestra = M.id_muestra";
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvgrillapracticas.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Cargar los Datos", ex.Message);
+            }
 
         }
         //metodo para cargar el combobox de especialidades con las especialidades disponibles
@@ -56,7 +63,7 @@ namespace PracticaTrabajoFinal.Vistas
                 cbespacialidadpractica.DataSource = dt;
             }catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Especialidades", ex.Message);
             }
         }
         //metodo para carga combobox con las muestras que ahi disponibles
@@ -78,7 +85,7 @@ namespace PracticaTrabajoFinal.Vistas
                 cbtipodemuestra.DataSource = dt;
             }catch(Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Cargar las Muestras", ex.Message);
             }
         }
         private void FormPracticas_Load(object sender, EventArgs e)
@@ -106,7 +113,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrepractica.Focus();
                     txtnombrepractica.Clear();
                     txttiempoderesultado.Clear();
@@ -115,7 +122,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrepractica.Focus();
                 txtnombrepractica.Clear();
                 txttiempoderesultado.Clear();
@@ -144,7 +151,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrepractica.Focus();
                     txtnombrepractica.Clear();
                     txttiempoderesultado.Clear();
@@ -153,7 +160,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrepractica.Focus();
                 txtnombrepractica.Clear();
                 txttiempoderesultado.Clear();
@@ -161,17 +168,6 @@ namespace PracticaTrabajoFinal.Vistas
             }
         }
         //metodo de la grilla para cargar los textbox con los datos seleccionados
-        private void dgvgrillapracticas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
-            txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
-            cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
-            cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
-            btneliminarpractica.Enabled = true;
-            btnmodificarpractica.Enabled = true;
-            btnagregarpractica.Enabled = false;
-            agregarmuestra.Visible = false;
-        }
        
         //metodo del textbox para cambiar el foco del nombre ala demora con la tecla enter
         private void txtnombrepractica_KeyPress(object sender, KeyPressEventArgs e)
@@ -239,7 +235,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombrepractica.Focus();
                     txtnombrepractica.Clear();
                     txttiempoderesultado.Clear();
@@ -248,7 +244,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombrepractica.Focus();
                 txtnombrepractica.Clear();
                 txttiempoderesultado.Clear();
@@ -272,6 +268,18 @@ namespace PracticaTrabajoFinal.Vistas
             agregarmuestra.Visible = true;
             dgvgrillapracticas.ClearSelection();
             panelnuevamuestra.Visible = false;
+        }
+
+        private void dgvgrillapracticas_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
+            txttiempoderesultado.Text = dgvgrillapracticas.CurrentRow.Cells[2].Value.ToString();
+            cbespacialidadpractica.Text = dgvgrillapracticas.CurrentRow.Cells[3].Value.ToString();
+            cbtipodemuestra.Text = dgvgrillapracticas.CurrentRow.Cells[4].Value.ToString();
+            btneliminarpractica.Enabled = true;
+            btnmodificarpractica.Enabled = true;
+            btnagregarpractica.Enabled = false;
+            agregarmuestra.Visible = false;
         }
     }
 }

@@ -69,6 +69,7 @@
             this.txtdnipaciente = new System.Windows.Forms.TextBox();
             this.txtapellidopaciente = new System.Windows.Forms.TextBox();
             this.txtnombrepaciente = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.Label();
             this.paneldgvpacientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacientes)).BeginInit();
             this.panelbtnaceptarpaciente.SuspendLayout();
@@ -94,6 +95,8 @@
             this.dgvpacientes.AllowUserToDeleteRows = false;
             this.dgvpacientes.AllowUserToResizeColumns = false;
             this.dgvpacientes.AllowUserToResizeRows = false;
+            this.dgvpacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvpacientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvpacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -111,7 +114,6 @@
             this.dgvpacientes.Size = new System.Drawing.Size(346, 248);
             this.dgvpacientes.TabIndex = 5;
             this.dgvpacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpacientes_CellClick);
-          
             // 
             // panelbtnaceptarpaciente
             // 
@@ -498,12 +500,25 @@
             this.txtnombrepaciente.Size = new System.Drawing.Size(100, 20);
             this.txtnombrepaciente.TabIndex = 0;
             // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(119, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(103, 20);
+            this.nombre.TabIndex = 12;
+            this.nombre.Text = "Pacientes";
+            // 
             // FormPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.paneldatospaciente);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.panelbtnaceptarpaciente);
@@ -523,6 +538,7 @@
             this.panelnuevalocalidad.ResumeLayout(false);
             this.panelnuevalocalidad.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -568,5 +584,6 @@
         private System.Windows.Forms.DataGridView dgvpacientes;
         private System.Windows.Forms.DateTimePicker dtfecha;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.Label nombre;
     }
 }

@@ -61,6 +61,7 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvpacientes = new System.Windows.Forms.Panel();
             this.dgvperlab = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.Label();
             this.paneldatosperlab.SuspendLayout();
             this.panelnuevacategoria.SuspendLayout();
             this.panelagregarnuevaespecialidad.SuspendLayout();
@@ -395,6 +396,8 @@
             this.dgvperlab.AllowUserToDeleteRows = false;
             this.dgvperlab.AllowUserToResizeColumns = false;
             this.dgvperlab.AllowUserToResizeRows = false;
+            this.dgvperlab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvperlab.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvperlab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -413,12 +416,25 @@
             this.dgvperlab.TabIndex = 5;
             this.dgvperlab.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvperlab_CellClick);
             // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(36, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(262, 20);
+            this.nombre.TabIndex = 12;
+            this.nombre.Text = "Personal del Laboratorio";
+            // 
             // FormPersonalLaboratorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.paneldatosperlab);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.panelbtnaceptarpaciente);
@@ -439,6 +455,7 @@
             this.paneldgvpacientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvperlab)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -476,5 +493,6 @@
         private System.Windows.Forms.Label lblnombreespecialidad;
         private System.Windows.Forms.TextBox txtespecialidadperlab;
         private System.Windows.Forms.Button btnsalir;
+        private System.Windows.Forms.Label nombre;
     }
 }

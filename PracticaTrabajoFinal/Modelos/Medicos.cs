@@ -24,7 +24,7 @@ namespace PracticaTrabajoFinal.Modelos
                 if (existe == nombre)
                 {
                     //mesaje si existe
-                    MessageBox.Show("la muestra ya existe");
+                    MessageBox.Show("El Servicio ya existe");
                 }
                 else
                 {
@@ -39,7 +39,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar los datos", ex.Message);
+                MessageBox.Show("Error al Agregar un Servicio", ex.Message);
             }
         }
         public void agregarmedico(int id_servicio,string nombre_profesional,string apellido_profesional,int matricula)
@@ -55,11 +55,11 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.Parameters.AddWithValue("@apellido_profesional", apellido_profesional);
                 comando.Parameters.AddWithValue("@matricula", matricula);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro AGREGADO");
+                MessageBox.Show("Medico AGREGADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Agregar un Medico", ex.Message);
             }
 
         }
@@ -72,11 +72,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro MODIFICADO");
+                MessageBox.Show("Medico MODIFICADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Modificar un Medico", ex.Message);
             }
 
         }
@@ -89,11 +89,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro ELIMINADO");
+                MessageBox.Show("Medico ELIMINADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Eliminar un Medico", ex.Message);
             }
 
         }

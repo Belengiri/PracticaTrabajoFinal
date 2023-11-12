@@ -21,10 +21,10 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(sql);
                 comando.Connection=conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("registro AGREGADO");
+                MessageBox.Show("Especialidad AGREGADA");
             }catch (Exception ex)
             {
-                MessageBox.Show("error al cargar los datos", ex.Message);
+                MessageBox.Show("Error al Agregar la Especialidad", ex.Message);
             }
         }
         public void modificarespecialidad(string nombre,int idespecialidad)
@@ -36,11 +36,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Connection = conexion.GetSqlConnection();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("registro MODIFICADO");
+                MessageBox.Show("Especialidad MODIFICADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar los datos", ex.Message);
+                MessageBox.Show("Error al Modificar la Especialidad", ex.Message);
             }
         }
         public void eliminarespecialidad(int idespecialidad)
@@ -52,11 +52,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Connection = conexion.GetSqlConnection();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("registro ELIMINADO");
+                MessageBox.Show("Especialidad ELIMINADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar los datos", ex.Message);
+                MessageBox.Show("Error al Eliminar la Especialidad", ex.Message);
             }
         }
     }
