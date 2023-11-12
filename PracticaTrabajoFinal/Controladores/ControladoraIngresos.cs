@@ -26,6 +26,14 @@ namespace PracticaTrabajoFinal.Controladores
                 ing.Nuevoingreso(id_paciente, id_medico, ingreso, retiro);
             }
         }
+        public void Modificar_PXI(int id_practica,int id_prac_x_ingr)
+        {
+            if (id_practica != 0 && id_prac_x_ingr != 0 )
+            {
+                ing.ModificarPracticasPorIngreso(id_practica,id_prac_x_ingr);
+            }
+
+        }
         public void Modificar_Ingreso(int id_ingreso,int id_paciente, int id_medico, string ingreso, string retiro)
         {
             try
