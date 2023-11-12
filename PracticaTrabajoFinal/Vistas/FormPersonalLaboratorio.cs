@@ -96,20 +96,19 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
+            agregarnuevaespecialidad.Checked = false;
+            agregarnuevacategoria.Checked = false;
+            panelagregarnuevaespecialidad.Visible = false;
+            panelnuevacategoria.Visible = false;
             btneliminar.Enabled = false;
             btnmodificar.Enabled = false;
             btnagregar.Enabled = true;
             txtnombreperlab.Clear();
             txtapellidoperlab.Clear();
             txtmatriculaperlab.Clear();
-            agregarnuevacategoria.Visible = true;
-            agregarnuevaespecialidad.Visible = true;
-            panelnuevacategoria.Visible = false;
-            panelagregarnuevaespecialidad.Visible = false;
             dgvperlab.ClearSelection();
+            
         }
-
-
 
         private void agregarnuevacategoria_CheckedChanged(object sender, EventArgs e)
         {
@@ -118,13 +117,7 @@ namespace PracticaTrabajoFinal.Vistas
             agregarnuevaespecialidad.Checked = false;
         }
 
-        private void agregarnuevaespecialidad_CheckedChanged(object sender, EventArgs e)
-        {
-            panelnuevacategoria.Visible = false ;
-            panelagregarnuevaespecialidad.Visible = true;
-            agregarnuevacategoria.Checked = false;
-        }
-
+        
         private void btncancelarcategoria_Click(object sender, EventArgs e)
         {
             agregarnuevacategoria.Checked = false;
@@ -339,6 +332,13 @@ namespace PracticaTrabajoFinal.Vistas
                 txtapellidoperlab.Clear();
                 txtmatriculaperlab.Clear();
             }
+        }
+
+        private void agregarnuevaespecialidad_CheckedChanged(object sender, EventArgs e)
+        {
+            panelnuevacategoria.Visible = false;
+            panelagregarnuevaespecialidad.Visible = true;
+            agregarnuevacategoria.Checked = false;
         }
     }
 }
