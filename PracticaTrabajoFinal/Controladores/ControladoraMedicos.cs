@@ -30,11 +30,11 @@ namespace PracticaTrabajoFinal.Controladores
                 MessageBox.Show("Error al Agregar un Servicio", ex.Message);
             }
         }
-        public void Agregar_Medico(int id_servicio, string nombre, string apellido, int matricula)
+        public void Agregar_Medico(int id_servicio, string nombre, string apellido, string matricula)
         {
             try
             {
-                if (id_servicio != 0 && nombre != "" && apellido != "" && matricula != 0)
+                if (id_servicio != 0 && nombre != "" && apellido != "" && matricula != "")
                 {
                     medico.agregarmedico(id_servicio, nombre, apellido, matricula);
                 }
@@ -48,11 +48,11 @@ namespace PracticaTrabajoFinal.Controladores
                 MessageBox.Show("Error al Agregar un Medico", ex.Message);
             }
         }
-        public void Modificar_Medico(int id_medico, int id_servicio, string nombre, string apellido, int matricula)
+        public void Modificar_Medico(int id_medico, int id_servicio, string nombre, string apellido, string matricula)
         {
             try
             {
-                if (id_medico != 0 && nombre != "" && id_servicio != 0 && apellido != "" && matricula != 0)
+                if (id_medico != 0 && nombre != "" && id_servicio != 0 && apellido != "" && matricula != "")
                 {
                     medico.modificarmedico(id_medico, id_servicio, nombre, apellido, matricula);
                 }

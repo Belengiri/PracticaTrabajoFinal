@@ -77,11 +77,11 @@ namespace PracticaTrabajoFinal.Controladores
             }
 
         }
-        public void Agregar_Personal(int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
+        public void Agregar_Personal(int id_categoria,int id_especialidad, string nombre, string apellido, string matricula)
         {
             try
             {
-                if (id_categoria != 0 && nombre != "" && apellido != "" && matricula != 0&& id_especialidad!=0)
+                if (id_categoria != 0 && nombre != "" && apellido != "" && matricula != ""&& id_especialidad!=0)
                 {
                     pl.agregarpersonal(id_categoria,id_especialidad, nombre, apellido, matricula);
                 }
@@ -95,11 +95,11 @@ namespace PracticaTrabajoFinal.Controladores
                 MessageBox.Show("Error al Agregar el Personal del Laboratorio", ex.Message);
             }
         }
-        public void Modificar_Personal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
+        public void Modificar_Personal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, string matricula)
         {
             try
             {
-                if (id_personal != 0 && nombre != "" && id_categoria != 0 && apellido != "" && matricula != 0&& id_especialidad!=0)
+                if (id_personal != 0 && nombre != "" && id_categoria != 0 && apellido != "" && matricula != ""&& id_especialidad!=0)
                 {
                     pl.modificarpersonal(id_personal,id_categoria, id_especialidad, nombre, apellido, matricula);
                 }

@@ -184,7 +184,6 @@
             this.lblnuevamuestra.Size = new System.Drawing.Size(80, 13);
             this.lblnuevamuestra.TabIndex = 30;
             this.lblnuevamuestra.Text = "Nueva Muestra";
-            this.lblnuevamuestra.Visible = false;
             // 
             // btncancelarmuestra
             // 
@@ -195,7 +194,6 @@
             this.btncancelarmuestra.TabIndex = 32;
             this.btncancelarmuestra.Text = "Cancelar";
             this.btncancelarmuestra.UseVisualStyleBackColor = true;
-            this.btncancelarmuestra.Visible = false;
             this.btncancelarmuestra.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btnguardarmuestra
@@ -207,7 +205,6 @@
             this.btnguardarmuestra.TabIndex = 29;
             this.btnguardarmuestra.Text = "Guardar";
             this.btnguardarmuestra.UseVisualStyleBackColor = true;
-            this.btnguardarmuestra.Visible = false;
             this.btnguardarmuestra.Click += new System.EventHandler(this.btnguardarmuestra_Click);
             // 
             // txtnuevamuestra
@@ -217,7 +214,6 @@
             this.txtnuevamuestra.Name = "txtnuevamuestra";
             this.txtnuevamuestra.Size = new System.Drawing.Size(100, 20);
             this.txtnuevamuestra.TabIndex = 31;
-            this.txtnuevamuestra.Visible = false;
             // 
             // agregarmuestra
             // 
@@ -273,7 +269,7 @@
             this.btnagregarpractica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnagregarpractica.Location = new System.Drawing.Point(12, 360);
             this.btnagregarpractica.Name = "btnagregarpractica";
-            this.btnagregarpractica.Size = new System.Drawing.Size(75, 23);
+            this.btnagregarpractica.Size = new System.Drawing.Size(80, 34);
             this.btnagregarpractica.TabIndex = 10;
             this.btnagregarpractica.Text = "Agregar";
             this.btnagregarpractica.UseVisualStyleBackColor = true;
@@ -285,7 +281,7 @@
             this.btnmodificarpractica.Enabled = false;
             this.btnmodificarpractica.Location = new System.Drawing.Point(93, 360);
             this.btnmodificarpractica.Name = "btnmodificarpractica";
-            this.btnmodificarpractica.Size = new System.Drawing.Size(75, 23);
+            this.btnmodificarpractica.Size = new System.Drawing.Size(80, 34);
             this.btnmodificarpractica.TabIndex = 11;
             this.btnmodificarpractica.Text = "Modificar";
             this.btnmodificarpractica.UseVisualStyleBackColor = true;
@@ -297,7 +293,7 @@
             this.btneliminarpractica.Enabled = false;
             this.btneliminarpractica.Location = new System.Drawing.Point(174, 360);
             this.btneliminarpractica.Name = "btneliminarpractica";
-            this.btneliminarpractica.Size = new System.Drawing.Size(75, 23);
+            this.btneliminarpractica.Size = new System.Drawing.Size(80, 34);
             this.btneliminarpractica.TabIndex = 13;
             this.btneliminarpractica.Text = "Eliminar";
             this.btneliminarpractica.UseVisualStyleBackColor = true;
@@ -305,8 +301,7 @@
             // 
             // nombre
             // 
-            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.nombre.AutoSize = true;
             this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombre.Location = new System.Drawing.Point(111, 22);

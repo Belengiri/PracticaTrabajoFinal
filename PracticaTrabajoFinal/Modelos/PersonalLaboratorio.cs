@@ -73,7 +73,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
 
         }
-        public void agregarpersonal(int id_categoria,int id_especialidad, string nombre_personal_lab, string apellido_personal_lab, int matricula_personal_lab)
+        public void agregarpersonal(int id_categoria,int id_especialidad, string nombre_personal_lab, string apellido_personal_lab, string matricula_personal_lab)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
 
         }
-        public void modificarpersonal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, int matricula)
+        public void modificarpersonal(int id_personal, int id_categoria,int id_especialidad, string nombre, string apellido, string matricula)
         {
             try
             {

@@ -266,7 +266,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 try
                 {
-                    cpl.Modificar_Personal(Convert.ToInt32(dgvperlab.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), Convert.ToInt32(cbespecialidadperlab.SelectedValue.ToString()), txtnombreperlab.Text, txtapellidoperlab.Text, Convert.ToInt32(txtmatriculaperlab.Text));
+                    cpl.Modificar_Personal(Convert.ToInt32(dgvperlab.CurrentRow.Cells[0].Value.ToString()), Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), Convert.ToInt32(cbespecialidadperlab.SelectedValue.ToString()), txtnombreperlab.Text, txtapellidoperlab.Text,txtmatriculaperlab.Text);
                     cargar_tabla();
                     btnmodificar.Enabled = false;
                     btneliminar.Enabled = false;
@@ -309,7 +309,7 @@ namespace PracticaTrabajoFinal.Vistas
             {
                 try
                 {
-                    cpl.Agregar_Personal(Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), txtnombreperlab.Text, txtapellidoperlab.Text, Convert.ToInt32(txtmatriculaperlab.Text));
+                    cpl.Agregar_Personal(Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), Convert.ToInt32(cbcategoriaperlab.SelectedValue.ToString()), txtnombreperlab.Text, txtapellidoperlab.Text,txtmatriculaperlab.Text);
                     cargar_tabla();
                     dgvperlab.ClearSelection();
                     txtnombreperlab.Focus();
