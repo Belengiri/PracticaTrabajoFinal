@@ -21,12 +21,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("error al cargar la especialidad");
+                    MessageBox.Show("Error al Agregar la Especialidad");
                 }
 
             }catch(Exception e)
             {
-                MessageBox.Show("error la especialidad ya existe", e.Message);
+                MessageBox.Show("Error al Agregar Especialidad ", e.Message);
             }
         }
         public void Modificar_Especialidad(string nombre,int idespecialidad)
@@ -39,12 +39,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("error al modificar la especialidad");
+                    MessageBox.Show("Error al Modificar la Especialidad");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar registro",e.Message);
+                MessageBox.Show("Error al Modificar la Especialidad",e.Message);
             }
             
         }
@@ -58,12 +58,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("error al eliminar la especialidad");
+                    MessageBox.Show("Error al Eliminar la Especialidad");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar registro", e.Message);
+                MessageBox.Show("Error al Eliminar la Especialidad", e.Message);
             }
         }
     }

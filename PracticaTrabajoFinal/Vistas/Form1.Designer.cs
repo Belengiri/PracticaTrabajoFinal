@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Laboratorio));
             this.panelmenu = new System.Windows.Forms.Panel();
             this.btnlocalidades = new System.Windows.Forms.Button();
             this.btnsalirprogram = new System.Windows.Forms.Button();
@@ -244,7 +245,7 @@
             // 
             // panelcontenedor
             // 
-            this.panelcontenedor.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelcontenedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelcontenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelcontenedor.Location = new System.Drawing.Point(181, 0);
             this.panelcontenedor.MinimumSize = new System.Drawing.Size(489, 373);
@@ -259,6 +260,7 @@
             this.ClientSize = new System.Drawing.Size(762, 417);
             this.Controls.Add(this.panelcontenedor);
             this.Controls.Add(this.panelmenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(150, 150);
             this.MinimumSize = new System.Drawing.Size(778, 456);
             this.Name = "Laboratorio";

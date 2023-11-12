@@ -25,23 +25,13 @@ namespace PracticaTrabajoFinal.Vistas
         public void cargar_tabla()
         {
             conexion = new Conexion();
-            string consulta = "select id_localidad as n,nombre_localidad as nombre,codigo_postal as CP from Localidades";
+            string consulta = "select id_localidad as Nº,nombre_localidad as Localidad,codigo_postal as Cod_Postal from Localidades";
             SqlCommand cmd = new SqlCommand(consulta);
             cmd.Connection = conexion.GetSqlConnection();
             SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adaptador.Fill(dt);
             dgvlocalidades.DataSource = dt;
-        }
-
-        private void dgvlocalidades_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtnombrelocalidad.Text = dgvlocalidades.CurrentRow.Cells[1].Value.ToString();
-            txtcodigopostal.Text = dgvlocalidades.CurrentRow.Cells[2].Value.ToString();
-            btneliminarlocalidad.Enabled = true;
-            btnmodificarlocalidad.Enabled = true;
-            btnagregarlocalidad.Enabled = false;
-            
         }
 
         private void btnagregarlocalidad_Click(object sender, EventArgs e)
@@ -61,7 +51,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvlocalidades.ClearSelection();
                     txtnombrelocalidad.Focus();
                     txtnombrelocalidad.Clear();
@@ -70,7 +60,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvlocalidades.ClearSelection();
                 txtnombrelocalidad.Focus();
                 txtnombrelocalidad.Clear();
@@ -98,7 +88,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvlocalidades.ClearSelection();
                     txtnombrelocalidad.Focus();
                     txtnombrelocalidad.Clear();
@@ -107,7 +97,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvlocalidades.ClearSelection();
                 txtnombrelocalidad.Focus();
                 txtnombrelocalidad.Clear();
@@ -135,7 +125,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     dgvlocalidades.ClearSelection();
                     txtnombrelocalidad.Focus();
                     txtnombrelocalidad.Clear();
@@ -144,7 +134,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 dgvlocalidades.ClearSelection();
                 txtnombrelocalidad.Focus();
                 txtnombrelocalidad.Clear();
@@ -165,6 +155,15 @@ namespace PracticaTrabajoFinal.Vistas
             txtnombrelocalidad.Clear();
             txtcodigopostal.Clear();
             txtnombrelocalidad.Focus();
+        }
+
+        private void dgvlocalidades_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombrelocalidad.Text = dgvlocalidades.CurrentRow.Cells[1].Value.ToString();
+            txtcodigopostal.Text = dgvlocalidades.CurrentRow.Cells[2].Value.ToString();
+            btneliminarlocalidad.Enabled = true;
+            btnmodificarlocalidad.Enabled = true;
+            btnagregarlocalidad.Enabled = false;
         }
     }
 }

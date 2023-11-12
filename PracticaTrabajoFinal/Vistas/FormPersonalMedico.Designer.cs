@@ -53,6 +53,7 @@
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvmedicos = new System.Windows.Forms.Panel();
             this.dgvpmedicos = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.Label();
             this.paneldatosmedico.SuspendLayout();
             this.panelnuevoservicio.SuspendLayout();
             this.panelbotones.SuspendLayout();
@@ -303,6 +304,8 @@
             this.dgvpmedicos.AllowUserToDeleteRows = false;
             this.dgvpmedicos.AllowUserToResizeColumns = false;
             this.dgvpmedicos.AllowUserToResizeRows = false;
+            this.dgvpmedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvpmedicos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvpmedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -321,12 +324,25 @@
             this.dgvpmedicos.TabIndex = 6;
             this.dgvpmedicos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpmedicos_CellClick);
             // 
+            // nombre
+            // 
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(106, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(93, 20);
+            this.nombre.TabIndex = 12;
+            this.nombre.Text = "Medicos ";
+            // 
             // FormPersonalMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.paneldatosmedico);
             this.Controls.Add(this.panelbotones);
             this.Controls.Add(this.panelbtnaceptar);
@@ -345,6 +361,7 @@
             this.paneldgvmedicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpmedicos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -374,5 +391,6 @@
         private System.Windows.Forms.ComboBox cbservicio;
         private System.Windows.Forms.DataGridView dgvpmedicos;
         private System.Windows.Forms.Button btnsalirvista;
+        private System.Windows.Forms.Label nombre;
     }
 }

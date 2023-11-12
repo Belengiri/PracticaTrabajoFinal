@@ -21,13 +21,13 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Agregar un Servicio");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al agregar un Servicio", ex.Message);
+                MessageBox.Show("Error al Agregar un Servicio", ex.Message);
             }
         }
         public void Agregar_Medico(int id_servicio, string nombre, string apellido, int matricula)
@@ -40,12 +40,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Agregar un Medico");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al agregar un Medico", ex.Message);
+                MessageBox.Show("Error al Agregar un Medico", ex.Message);
             }
         }
         public void Modificar_Medico(int id_medico, int id_servicio, string nombre, string apellido, int matricula)
@@ -58,13 +58,13 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Modificar un Medico");
                 }
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al modificar un Medico", e.ToString());
+                MessageBox.Show("Error al Modificar un Medico", e.ToString());
             }
         }
         public void Eliminar_Medico(int id_medico)
@@ -77,12 +77,12 @@ namespace PracticaTrabajoFinal.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("campos vacios");
+                    MessageBox.Show("Error al Eliminar un Medico");
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("error al eliminar un Medico", e.ToString());
+                MessageBox.Show("Error al Eliminar un Medico", e.ToString());
             }
         }
     }

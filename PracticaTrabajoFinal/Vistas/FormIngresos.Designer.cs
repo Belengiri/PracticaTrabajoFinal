@@ -60,8 +60,8 @@
             this.panelcancelar = new System.Windows.Forms.Panel();
             this.panelpractXingre = new System.Windows.Forms.Panel();
             this.dgvpractXingreso = new System.Windows.Forms.DataGridView();
-            this.lblpracticasxingreso = new System.Windows.Forms.Label();
-            this.lblingreso = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.panelbotonesingresos.SuspendLayout();
             this.paneldgv.SuspendLayout();
@@ -421,26 +421,29 @@
             this.dgvpractXingreso.TabIndex = 6;
             this.dgvpractXingreso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpractXingreso_CellClick);
             // 
-            // lblpracticasxingreso
+            // nombre
             // 
-            this.lblpracticasxingreso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblpracticasxingreso.AutoSize = true;
-            this.lblpracticasxingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpracticasxingreso.Location = new System.Drawing.Point(81, 169);
-            this.lblpracticasxingreso.Name = "lblpracticasxingreso";
-            this.lblpracticasxingreso.Size = new System.Drawing.Size(160, 20);
-            this.lblpracticasxingreso.TabIndex = 2;
-            this.lblpracticasxingreso.Text = "Practicas Por Ingreso";
+            this.nombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre.AutoSize = true;
+            this.nombre.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(102, 9);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(95, 20);
+            this.nombre.TabIndex = 11;
+            this.nombre.Text = "Ingresos";
             // 
-            // lblingreso
+            // label2
             // 
-            this.lblingreso.AutoSize = true;
-            this.lblingreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblingreso.Location = new System.Drawing.Point(123, 9);
-            this.lblingreso.Name = "lblingreso";
-            this.lblingreso.Size = new System.Drawing.Size(71, 20);
-            this.lblingreso.TabIndex = 10;
-            this.lblingreso.Text = "Ingresos";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(52, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(236, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Practicas por Ingresos";
             // 
             // FormIngresos
             // 
@@ -448,8 +451,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(581, 417);
-            this.Controls.Add(this.lblingreso);
-            this.Controls.Add(this.lblpracticasxingreso);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.panelpractXingre);
             this.Controls.Add(this.panelcancelar);
             this.Controls.Add(this.paneldgv);
@@ -500,12 +503,12 @@
         private System.Windows.Forms.Button btnnuevomedico;
         private System.Windows.Forms.Button btnnuevopaciente;
         private System.Windows.Forms.Panel panelpractXingre;
-        private System.Windows.Forms.Label lblpracticasxingreso;
-        private System.Windows.Forms.Label lblingreso;
         private System.Windows.Forms.ListBox lbpracticas;
         private System.Windows.Forms.ComboBox cbpracticas;
         private System.Windows.Forms.Button btnagregarpractica;
         private System.Windows.Forms.DataGridView dgvingresos;
         private System.Windows.Forms.DataGridView dgvpractXingreso;
+        private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -27,13 +27,13 @@ namespace PracticaTrabajoFinal.Controladores
                     prac.agregarmuestra(nombre_muestra);
                 }else
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Error al Agregar la Muestra");
                 }
 
             }catch (Exception ex)
             {
                 //error si no pudo enviar los datos
-                MessageBox.Show("la muestra es existente", ex.Message);
+                MessageBox.Show("Error al Agregar la Muestra", ex.Message);
             }
         }
         //metodo que manda los datos para agregar una practica al modelo
@@ -48,12 +48,16 @@ namespace PracticaTrabajoFinal.Controladores
                     //manda los datos al modelo
                     prac.agregarpractica(nombre_practica, tiempo_resultado,Convert.ToInt32( especialidad_practica),Convert.ToInt32( tipo_muestra));
                 }
+                else
+                {
+                    MessageBox.Show("Error al Agregar la Practica");
+                }
 
             }
             catch(Exception e)
             {
                 //error si no pudo enviar los datos
-                MessageBox.Show("error",e.ToString());
+                MessageBox.Show("Error al Agregar la Practica",e.Message);
             }
         }
         //metodo que manda los datos para modificar una practica al modelo
@@ -67,11 +71,16 @@ namespace PracticaTrabajoFinal.Controladores
                     //manda los datos al modelo
                     prac.modificarpractica(nombre, resultado, Convert.ToInt32(especialidad), Convert.ToInt32(tipomuestra),idpractica);
                 }
+                else
+                {
+                    MessageBox.Show("Error al Modificar la Practica");
+                }
 
-            }catch(Exception e)
+            }
+            catch(Exception e)
             {
                 //error si no puede enviar los datos
-                MessageBox.Show("error al modificar el registro", e.ToString());
+                MessageBox.Show("Error al Modificar la Practica", e.Message);
             }
         }
         //metodo que manda el id de la practica al modelo para eliminar una practica 
@@ -85,10 +94,15 @@ namespace PracticaTrabajoFinal.Controladores
                     //manda el id al modelo
                     prac.eliminarpractica(idpractica);
                 }
-            }catch (Exception e)
+                else
+                {
+                    MessageBox.Show("Error al Eliminar la Practica");
+                }
+            }
+            catch (Exception e)
             {
                 //error si no puede mandarlo
-                MessageBox.Show("error al eliminar el registro", e.ToString());
+                MessageBox.Show("Error al Eliminar la Practica", e.ToString());
             }
             
         }

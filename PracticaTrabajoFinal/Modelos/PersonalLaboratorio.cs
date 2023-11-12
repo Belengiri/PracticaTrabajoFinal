@@ -22,7 +22,7 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.ExecuteNonQuery();
                 if (existe == nombre)
                 {
-                    MessageBox.Show("la localidad ya existe");
+                    MessageBox.Show("La Categoria ya existe");
                 }
                 else
                 {
@@ -31,12 +31,12 @@ namespace PracticaTrabajoFinal.Modelos
                     comando = new SqlCommand(sql);
                     comando.Connection = conexion.GetSqlConnection();
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("categoria AGREGADA");
+                    MessageBox.Show("Categoria AGREGADA");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al cargar la categoria", ex.Message);
+                MessageBox.Show("Error al Agregar una Categoria", ex.Message);
             }
         }
         public void modificarcategoria(int id_categoria, string nombre)
@@ -48,11 +48,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("categoria MODIFICADA");
+                MessageBox.Show("Categoria MODIFICADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar categoria", ex.Message);
+                MessageBox.Show("Error al Modificar la Categoria", ex.Message);
             }
 
         }
@@ -65,11 +65,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("categoria ELIMINADA");
+                MessageBox.Show("Categoria ELIMINADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al eliminar categoria", ex.Message);
+                MessageBox.Show("Error al Eliminar la Categoria", ex.Message);
             }
 
         }
@@ -87,11 +87,11 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.Parameters.AddWithValue("@apellido_personal_lab", apellido_personal_lab);
                 comando.Parameters.AddWithValue("@matricula_personal_lab", matricula_personal_lab);
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro AGREGADO");
+                MessageBox.Show("Personal del Laboratorio AGREGADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Agregar un Personal del Laboratorio", ex.Message);
             }
 
         }
@@ -104,11 +104,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro MODIFICADO");
+                MessageBox.Show("Personal del Laboratorio MODIFICADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Modificar el Personal del Laboratorio", ex.Message);
             }
 
         }
@@ -121,11 +121,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Registro ELIMINADO");
+                MessageBox.Show("Personal del Laboratorio ELIMINADO");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Eliminar el Personal del Laboratorio", ex.Message);
             }
 
         }

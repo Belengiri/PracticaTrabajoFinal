@@ -24,7 +24,7 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.ExecuteNonQuery();
                 if (existe == nombre)
                 {
-                    MessageBox.Show("la localidad ya existe");
+                    MessageBox.Show("La Localidad ya existe");
                 }
                 else
                 {
@@ -38,7 +38,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al cargar la localidad", ex.Message);
+                MessageBox.Show("Error al Agregar la Localidad", ex.Message);
             }
         }
         public void modificarlocalidad(int id_localidad,string nombre_localidad,int codigo_postal)
@@ -50,11 +50,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("localidad MODIFICADA");
+                MessageBox.Show("Localidad MODIFICADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Modificar la Localidad", ex.Message);
             }
 
         }
@@ -67,11 +67,11 @@ namespace PracticaTrabajoFinal.Modelos
                 SqlCommand comando = new SqlCommand(consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("localidad ELIMINADA");
+                MessageBox.Show("Localidad ELIMINADA");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Eliminar la Localidad", ex.Message);
             }
 
         }
@@ -99,7 +99,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error", ex.Message);
+                MessageBox.Show("Error al Agregar un Paciente", ex.Message);
             }
         }
         public void modificarpaciente(int idlocal,string nombre,string apellido,string fecha,int dni,string calle,int altura,int piso,int depto,string correo,string telefono,int idpaciente)
@@ -115,7 +115,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Modificar el Paciente", ex.Message);
             }
         }
         public void eliminarpaciente(int idpaciente)
@@ -131,7 +131,7 @@ namespace PracticaTrabajoFinal.Modelos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error al modificar registro", ex.Message);
+                MessageBox.Show("Error al Eliminar el Paciente", ex.Message);
             }
         }
     }

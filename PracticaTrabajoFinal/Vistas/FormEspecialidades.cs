@@ -25,7 +25,7 @@ namespace PracticaTrabajoFinal.Vistas
         public void cargar_tabla()
         {
             conexion = new Conexion();
-            string consulta = "select id_especialidad as numero,nombre_especialidad as nombre from Especialidades";
+            string consulta = "select id_especialidad as Nº,nombre_especialidad as Especialidad from Especialidades";
             SqlCommand cmd = new SqlCommand(consulta);
             cmd.Connection = conexion.GetSqlConnection();
             SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -50,7 +50,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombreespecialidad.Clear();
                     txtnombreespecialidad.Focus();
                     dgvespecialidades.ClearSelection();
@@ -58,7 +58,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombreespecialidad.Clear();
                 txtnombreespecialidad.Focus();
                 dgvespecialidades.ClearSelection();
@@ -84,7 +84,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombreespecialidad.Clear();
                     txtnombreespecialidad.Focus();
                     dgvespecialidades.ClearSelection();
@@ -92,7 +92,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombreespecialidad.Clear();
                 txtnombreespecialidad.Focus();
                 dgvespecialidades.ClearSelection();
@@ -119,7 +119,7 @@ namespace PracticaTrabajoFinal.Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("datos incorrectos");
+                    MessageBox.Show("Datos Incorrectos");
                     txtnombreespecialidad.Clear();
                     txtnombreespecialidad.Focus();
                     dgvespecialidades.ClearSelection();
@@ -127,7 +127,7 @@ namespace PracticaTrabajoFinal.Vistas
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("Accion no confirmada");
+                MessageBox.Show("Accion no Confirmada");
                 txtnombreespecialidad.Clear();
                 txtnombreespecialidad.Focus();
                 dgvespecialidades.ClearSelection();
@@ -140,13 +140,6 @@ namespace PracticaTrabajoFinal.Vistas
             txtnombreespecialidad.Focus();
         }
 
-        private void dgvespecialidades_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtnombreespecialidad.Text = dgvespecialidades.CurrentRow.Cells[1].Value.ToString();
-            btneliminarespecialidad.Enabled = true;
-            btnmodificarespecialidad.Enabled = true;
-            btnagregarespecialidad.Enabled = false;
-        }
 
         private void btnsalir_Click(object sender, EventArgs e)
         {
@@ -161,6 +154,14 @@ namespace PracticaTrabajoFinal.Vistas
             txtnombreespecialidad.Clear();
             txtnombreespecialidad.Focus();
             dgvespecialidades.ClearSelection();
+        }
+
+        private void dgvespecialidades_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombreespecialidad.Text = dgvespecialidades.CurrentRow.Cells[1].Value.ToString();
+            btneliminarespecialidad.Enabled = true;
+            btnmodificarespecialidad.Enabled = true;
+            btnagregarespecialidad.Enabled = false;
         }
     }
 }
