@@ -95,16 +95,21 @@ namespace PracticaTrabajoFinal.Modelos
             }
             return id;
         }
-       /* public void ModificarPracticasPorIngreso(int id_practica,int id_ing_x_prac)
+        public void ModificarPracticasPorIngreso(int id_practica,int id_ing_x_prac)
         {
-            conexion = new Conexion();
-            string consulta = "insert into PracticasXingresos(id_ingreso,id_practica) values (@id_ingreso,@id_practica) ";
-            SqlCommand comando = new SqlCommand(consulta);
-            comando.Connection = conexion.GetSqlConnection();
-            comando.Parameters.AddWithValue("@id_ingreso",);
-            comando.Parameters.AddWithValue("@id_practica", id_practica);
-            comando.ExecuteNonQuery();
-        }*/
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "update PracticasXingresos set id_practica=" + id_practica + " where id_practicaXingreso =" + id_ing_x_prac;
+                SqlCommand comando = new SqlCommand(consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error", ex.Message);
+            }
+        }
         public void NuevaPracticaPorIngreso(int id_practica)
         {
             try
