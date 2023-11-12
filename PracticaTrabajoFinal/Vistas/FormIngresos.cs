@@ -199,6 +199,12 @@ namespace PracticaTrabajoFinal.Vistas
 
                     ci.Modificar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()) ,Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()), dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
                     cargar_tabla();
+                    foreach (int item in ids)
+                    {
+                        ci.AgregarPracticaPorIngreso(item);
+                    }
+                    cargar_tablaPXI();
+                    btnagregarpractica.Visible = true;
                     btnmodificaringreso.Enabled = false;
                     btneliminaringreso.Enabled = false;
                     btnagregaringreso.Enabled = true;
@@ -239,6 +245,7 @@ namespace PracticaTrabajoFinal.Vistas
                     ci.Eliminar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
                     cargar_tablaPXI();
+                    btnagregarpractica.Visible = true;
                     btnmodificaringreso.Enabled = false;
                     btneliminaringreso.Enabled = false;
                     btnagregaringreso.Enabled = true;
@@ -266,25 +273,25 @@ namespace PracticaTrabajoFinal.Vistas
             }
         }
 
-        private void dgvingresos_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void practicas()
         {
-            cbpacientes.Text = dgvingresos.CurrentRow.Cells[1].Value.ToString();
-            cbmedicos.Text = dgvingresos.CurrentRow.Cells[2].Value.ToString();
-            dtfechaingreso.Text = dgvingresos.CurrentRow.Cells[3].Value.ToString();
-            dtfecharetiro.Text = dgvingresos.CurrentRow.Cells[4].Value.ToString();
-            btneliminaringreso.Enabled = true;
-            btnmodificaringreso.Enabled = true;
-            btnagregaringreso.Enabled = false;
-            cbpracticas.Visible = false;
-            lblpracticas.Visible = false;
-            lblagreganuevopaciente.Visible = false;
-            lblagregarmedico.Visible = false;
-            btnnuevomedico.Visible = false;
-            btnnuevopaciente.Visible = false;
-            btnrecargarmedicos.Visible = false;
-            btnrecargarpacientes.Visible = false;
+            try
+            {
+                conexion = new Conexion();
+                string query = "select P.nombre_practica from PracticasXingresos S inner join Practicas P on S.id_practica=P.id_practica where S.id_ingreso =" + Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString());
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lbpracticas.Items.Add(dr.GetString(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error", ex.Message);
+            }
         }
-
         private void btncancelar_Click(object sender, EventArgs e)
         {
             btnagregaringreso.Enabled = true;
@@ -300,12 +307,52 @@ namespace PracticaTrabajoFinal.Vistas
             btnrecargarmedicos.Visible = true;
             btnrecargarpacientes.Visible = true;
             dgvpractXespecialidad.ClearSelection();
+            lbpracticas.Items.Clear();
+            btnagregarpractica.Visible = true;
         }
         List<int> ids = new List<int>();
         private void btnagregarpractica_Click(object sender, EventArgs e)
         {
             lbpracticas.Items.Add(cbpracticas.Text);
             ids.Add(Convert.ToInt32(cbpracticas.SelectedValue.ToString()));
+        }
+       
+
+        private void dgvingresos_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            lbpracticas.Items.Clear();
+            cbpacientes.Text = dgvingresos.CurrentRow.Cells[1].Value.ToString();
+            cbmedicos.Text = dgvingresos.CurrentRow.Cells[2].Value.ToString();
+            dtfechaingreso.Text = dgvingresos.CurrentRow.Cells[3].Value.ToString();
+            dtfecharetiro.Text = dgvingresos.CurrentRow.Cells[4].Value.ToString();
+            btneliminaringreso.Enabled = true;
+            btnmodificaringreso.Enabled = true;
+            btnagregaringreso.Enabled = false;
+            lblpracticas.Visible = false;
+            lblagreganuevopaciente.Visible = false;
+            lblagregarmedico.Visible = false;
+            btnnuevomedico.Visible = false;
+            btnnuevopaciente.Visible = false;
+            btnrecargarmedicos.Visible = false;
+            btnrecargarpacientes.Visible = false;
+            lblpracticas.Visible = true;
+            lbpracticas.Visible = true;
+            btnagregarpractica.Visible = false;
+            practicas();
+            cbpracticas.Visible = true;
+            btnmodificarpracticas.Visible = true;
+            btnagregarpractica.Visible = true;
+        }
+
+        private void btnmodificarpracticas_Click(object sender, EventArgs e)
+        {
+            lbpracticas.Items.Clear();
+        }
+
+        private void dgvpractXespecialidad_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lbpracticas.Items.Clear();
+            btnagregarpractica.Visible = true;
         }
     }
 }

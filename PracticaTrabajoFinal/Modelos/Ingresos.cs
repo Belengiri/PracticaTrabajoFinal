@@ -16,7 +16,7 @@ namespace PracticaTrabajoFinal.Modelos
             try
             {
                 conexion = new Conexion();
-                string consulta = "delete from PracticasXingresos where id_ingreso="+id_ingreso;
+                string consulta = "delete from PracticasXingresos where id_ingreso=" + id_ingreso;
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
@@ -26,7 +26,7 @@ namespace PracticaTrabajoFinal.Modelos
                 MessageBox.Show("error", ex.Message);
             }
         }
-        public void Nuevoingreso(int id_paciente,int id_profesional, string ingreso, string retiro)
+        public void Nuevoingreso(int id_paciente, int id_profesional, string ingreso, string retiro)
         {
             try
             {
@@ -62,7 +62,7 @@ namespace PracticaTrabajoFinal.Modelos
                 MessageBox.Show("error al modificar registro", ex.Message);
             }
         }
-        public void Modificaringreso(int id_ingreso,int id_paciente,int id_medico,string ingreso,string retiro)
+        public void Modificaringreso(int id_ingreso, int id_paciente, int id_medico, string ingreso, string retiro)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace PracticaTrabajoFinal.Modelos
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Registro MODIFICADO");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("error", ex.Message);
             }
@@ -95,6 +95,16 @@ namespace PracticaTrabajoFinal.Modelos
             }
             return id;
         }
+       /* public void ModificarPracticasPorIngreso(int id_practica,int id_ing_x_prac)
+        {
+            conexion = new Conexion();
+            string consulta = "insert into PracticasXingresos(id_ingreso,id_practica) values (@id_ingreso,@id_practica) ";
+            SqlCommand comando = new SqlCommand(consulta);
+            comando.Connection = conexion.GetSqlConnection();
+            comando.Parameters.AddWithValue("@id_ingreso",);
+            comando.Parameters.AddWithValue("@id_practica", id_practica);
+            comando.ExecuteNonQuery();
+        }*/
         public void NuevaPracticaPorIngreso(int id_practica)
         {
             try
