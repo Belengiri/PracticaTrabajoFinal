@@ -121,7 +121,7 @@
   <data name="btnagregarpractica.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAESSURBVDhPtdLP
+        cwAAAHMBY8FD/gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAESSURBVDhPtdLP
         SgJRFMfxeYBUKLV6iEIKQaEWuRLaRdSTRFvJFPeCtulJ2rashHyAaNcfahFlLfv+7rm3mnHGVf7gA+cy
         M4cz995oHllFF7eY4B03aKOMmdnFKwbYxiIK2MEZ9GwfqTnAPepulZ4NPGKqyQpekPx43fubKp5Rciuf
         DjR2Mi0vmXOcWGkZY8vKWLIa6F1t7E+000Ur3cjH3oUX1mtQlvBmpeUJeStdg5536YV1aJDDh5WWazSs
@@ -149,6 +149,18 @@
         YnXURqBRW506bYQ0TTcJLTX3GGtSys1AzxM8+9fJ+Gdc8+Tnnfdd+xV4u/LD7S/hXiySP4BvDJdfhgXk
         3Fs/wJWlWlC/xvemP81SCcY+8gs0RddyAeVwrEZ8h5ar0ASYhlB3mukrKCrn+W7txDpg3NE2aeo5lsup
         IAg+AZ9UTd/qN6YOAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnmodificarpracticas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF0SURBVFhH7da9L0NRHMbxGxJvk3hLOhi8hEEsNgx2SRd/
+        gJlBgs0uRrOIhNU/IIIwiIFJMDKymUiQCL6P9iSN3HOd3+0ZOtwn+US1kedpe24rKVKkSKNnBGOBWqE0
+        YQ0X2EE3cmUC3wYaofJdPGEJ57hBL8yZxBtaAjVD5V9QcQfacYJrtMEUNyAk7pk/YhoqPINGiF6ROZgS
+        OqC2fFR3kB64EQN4xixMCRmg8j24cr3kG9WfbsQHDqG3yJT/BqSV6/3WoVN5H+5wBD1mTtaArHKd+LrL
+        Fd8AX/kt0soHMQVzfAN0mnXd6zpXdAluwvfMV3BauWmLb8AWHqDHyrqjGld+jNqXPfoAlc9jEW6Er1yJ
+        OmAI+qQr/f6WJMt4xz3SypWoAxagT7VVHOAVL9hHWrkSdYBO/ycusY4Z6BBmJeoAfbV2VW4GJ/ohtEZv
+        V+4BOmD9dRiGyrdhzjh04v/+42F1BXfVmNMJfbHkpb8vUqSRkyQ/xe6BPKNQiSwAAAAASUVORK5CYII=
 </value>
   </data>
 </root>
