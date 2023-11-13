@@ -74,7 +74,7 @@ namespace PracticaTrabajoFinal.Controladores
 
             try
             {
-                if (idlocal!=0 && nombre != "" && apellido != "" && dni != 0 && fecha != null && calle != "" && altura != 0 && piso !=0 && depto !=0 && correo != "" && telefono != "")
+                if (idlocal!=0 && nombre != "" && apellido != "" && dni != 0 && fecha != null && calle != "" && altura != 0 && correo != "" && telefono != "")
                 {
                     pac.agregarpaciente(idlocal, nombre, apellido, fecha, dni, calle, altura, piso, depto, correo, telefono);
                 }
