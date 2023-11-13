@@ -104,7 +104,7 @@
             this.btnagregarpractica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregarpractica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagregarpractica.Image = ((System.Drawing.Image)(resources.GetObject("btnagregarpractica.Image")));
-            this.btnagregarpractica.Location = new System.Drawing.Point(153, 219);
+            this.btnagregarpractica.Location = new System.Drawing.Point(153, 201);
             this.btnagregarpractica.Name = "btnagregarpractica";
             this.btnagregarpractica.Size = new System.Drawing.Size(21, 24);
             this.btnagregarpractica.TabIndex = 27;
@@ -115,7 +115,7 @@
             // lbpracticas
             // 
             this.lbpracticas.FormattingEnabled = true;
-            this.lbpracticas.Location = new System.Drawing.Point(7, 249);
+            this.lbpracticas.Location = new System.Drawing.Point(4, 228);
             this.lbpracticas.Name = "lbpracticas";
             this.lbpracticas.Size = new System.Drawing.Size(140, 56);
             this.lbpracticas.TabIndex = 26;
@@ -123,7 +123,7 @@
             // cbpracticas
             // 
             this.cbpracticas.FormattingEnabled = true;
-            this.cbpracticas.Location = new System.Drawing.Point(3, 222);
+            this.cbpracticas.Location = new System.Drawing.Point(0, 201);
             this.cbpracticas.Name = "cbpracticas";
             this.cbpracticas.Size = new System.Drawing.Size(144, 21);
             this.cbpracticas.TabIndex = 25;
@@ -190,7 +190,7 @@
             // lblfechaingresos
             // 
             this.lblfechaingresos.AutoSize = true;
-            this.lblfechaingresos.Location = new System.Drawing.Point(10, 316);
+            this.lblfechaingresos.Location = new System.Drawing.Point(2, 297);
             this.lblfechaingresos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaingresos.Name = "lblfechaingresos";
             this.lblfechaingresos.Size = new System.Drawing.Size(89, 13);
@@ -258,7 +258,7 @@
             // lblpracticas
             // 
             this.lblpracticas.AutoSize = true;
-            this.lblpracticas.Location = new System.Drawing.Point(2, 206);
+            this.lblpracticas.Location = new System.Drawing.Point(4, 176);
             this.lblpracticas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblpracticas.Name = "lblpracticas";
             this.lblpracticas.Size = new System.Drawing.Size(51, 13);
@@ -268,7 +268,7 @@
             // dtfecharetiro
             // 
             this.dtfecharetiro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfecharetiro.Location = new System.Drawing.Point(5, 378);
+            this.dtfecharetiro.Location = new System.Drawing.Point(2, 349);
             this.dtfecharetiro.Margin = new System.Windows.Forms.Padding(2);
             this.dtfecharetiro.Name = "dtfecharetiro";
             this.dtfecharetiro.Size = new System.Drawing.Size(197, 20);
@@ -277,7 +277,7 @@
             // lblfecharetiro
             // 
             this.lblfecharetiro.AutoSize = true;
-            this.lblfecharetiro.Location = new System.Drawing.Point(2, 363);
+            this.lblfecharetiro.Location = new System.Drawing.Point(4, 334);
             this.lblfecharetiro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfecharetiro.Name = "lblfecharetiro";
             this.lblfecharetiro.Size = new System.Drawing.Size(78, 13);
@@ -287,7 +287,7 @@
             // dtfechaingreso
             // 
             this.dtfechaingreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfechaingreso.Location = new System.Drawing.Point(5, 335);
+            this.dtfechaingreso.Location = new System.Drawing.Point(2, 312);
             this.dtfechaingreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtfechaingreso.Name = "dtfechaingreso";
             this.dtfechaingreso.Size = new System.Drawing.Size(197, 20);
