@@ -261,6 +261,7 @@ namespace PracticaTrabajoFinal.Vistas
             agregarmuestra.Visible = true;
             dgvgrillapracticas.ClearSelection();
             panelnuevamuestra.Visible = false;
+            agregarmuestra.Checked = false;
         }
 
         private void dgvgrillapracticas_CellClick_1(object sender, DataGridViewCellEventArgs e)
