@@ -101,20 +101,9 @@ namespace PracticaTrabajoFinal.Vistas
                     txtdepartamento.Clear();
                     btnagregarpaciente.Enabled = true;
                 }
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Datos Incorrectos");
-                    dgvpacientes.ClearSelection();
-                    txtnombrepaciente.Clear();
-                    txtapellidopaciente.Clear();
-                    txtdnipaciente.Clear();
-                    dtfecha.Text = "";
-                    txtcorreo.Clear();
-                    txttelefono.Clear();
-                    txtcalle.Clear();
-                    txtaltura.Clear();
-                    txtpiso.Clear();
-                    txtdepartamento.Clear();
+                    MessageBox.Show(ex.Message);
                 }
 
 
