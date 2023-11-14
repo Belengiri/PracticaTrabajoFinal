@@ -181,31 +181,20 @@ namespace PracticaTrabajoFinal.Vistas
         }
         //check box para darle la opcion de agregar una nueva muestra
         //y desabilita el boton aceptar
-        private void agregarmuestra_CheckedChanged(object sender, EventArgs e)
-        {
-            panelnuevamuestra.Visible = true;
-            txtnuevamuestra.Focus();
-        }
+        
         //boton para guardar una nueva muestra
         private void btnguardarmuestra_Click(object sender, EventArgs e)
         {
             cp.Agregar_Muestra(txtnuevamuestra.Text);
+            paneldgvmuestras.Visible = false;
             cargarcbmuestras();
             agregarmuestra.Checked = false;
+            paneldgvmuestras.Visible = false;
             panelnuevamuestra.Visible = false;
             txtnuevamuestra.Clear();
         }
         //boton para cancelar la accion de la carga de nueva muestra
-        private void btncancelar_Click(object sender, EventArgs e)
-        {
-            agregarmuestra.Checked = false;
-            btncancelarmuestra.Visible = false;
-            lblnuevamuestra.Visible = false;
-            txtnuevamuestra.Visible = false;
-            btnguardarmuestra.Visible = false;
-            btncancelar.Enabled = true;
-            dgvgrillapracticas.ClearSelection();
-        }
+       
         //boton para eliminar una practica
         private void btneliminarpractica_Click(object sender, EventArgs e)
         {
@@ -250,20 +239,6 @@ namespace PracticaTrabajoFinal.Vistas
             this.Close();
         }
 
-        private void btncancelar_Click_1(object sender, EventArgs e)
-        {
-            btneliminarpractica.Enabled = false;
-            btnmodificarpractica.Enabled = false;
-            btnagregarpractica.Enabled = true;
-            txtnombrepractica.Clear();
-            txttiempoderesultado.Clear();
-            txtnombrepractica.Focus();
-            agregarmuestra.Visible = true;
-            dgvgrillapracticas.ClearSelection();
-            panelnuevamuestra.Visible = false;
-            agregarmuestra.Checked = false;
-        }
-
         private void dgvgrillapracticas_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txtnombrepractica.Text = dgvgrillapracticas.CurrentRow.Cells[1].Value.ToString();
@@ -274,6 +249,90 @@ namespace PracticaTrabajoFinal.Vistas
             btnmodificarpractica.Enabled = true;
             btnagregarpractica.Enabled = false;
             agregarmuestra.Visible = false;
+        }
+        public void Cargar_Muestras()
+        {
+            try
+            {
+                conexion = new Conexion();
+                dgvmuestra.DataSource = null;
+                string consulta = "select nombre_muestra  as Muestras,id_muestra as Nº from Muestras";
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvmuestra.DataSource = dt;
+                txtnuevamuestra.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvmuestra_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnuevamuestra.Text = dgvmuestra.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void btneliminarmuestra_Click(object sender, EventArgs e)
+        {
+            cp.Eliminar_muestra(Convert.ToInt32(dgvmuestra.CurrentRow.Cells[1].Value.ToString()));
+            cargarcbmuestras();
+            agregarmuestra.Checked = false;
+            paneldgvmuestras.Visible = false;
+            panelnuevamuestra.Visible = false;
+        }
+
+        private void btnmodificarmuestra_Click(object sender, EventArgs e)
+        {
+            cp.Modificar_Muestra(txtnuevamuestra.Text, Convert.ToInt32(dgvmuestra.CurrentRow.Cells[1].Value.ToString()));
+            cargarcbmuestras();
+            agregarmuestra.Checked = false;
+            paneldgvmuestras.Visible = false;
+            panelnuevamuestra.Visible = false;
+        }
+
+       
+
+        private void agregarmuestra_CheckedChanged(object sender, EventArgs e)
+        {
+            paneldgvmuestras.Visible = true;
+            panelnuevamuestra.Visible = true;
+            Cargar_Muestras();
+            txtnuevamuestra.Focus();
+            txtnuevamuestra.Clear();
+        }
+
+        private void btncancelarmuestra_Click(object sender, EventArgs e)
+        {
+            agregarmuestra.Checked = false;
+            btneliminarpractica.Enabled = false;
+            btnmodificarpractica.Enabled = false;
+            btnagregarpractica.Enabled = true;
+            txtnombrepractica.Clear();
+            txttiempoderesultado.Clear();
+            txtnombrepractica.Focus();
+            agregarmuestra.Visible = true;
+            dgvgrillapracticas.ClearSelection();
+            panelnuevamuestra.Visible = false;
+            paneldgvmuestras.Visible = false;
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            agregarmuestra.Checked = false;
+            btneliminarpractica.Enabled = false;
+            btnmodificarpractica.Enabled = false;
+            btnagregarpractica.Enabled = true;
+            txtnombrepractica.Clear();
+            txttiempoderesultado.Clear();
+            txtnombrepractica.Focus();
+            agregarmuestra.Visible = true;
+            dgvgrillapracticas.ClearSelection();
+            panelnuevamuestra.Visible = false;
+            paneldgvmuestras.Visible = false;
         }
     }
 }

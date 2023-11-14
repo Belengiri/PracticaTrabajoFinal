@@ -234,11 +234,11 @@ namespace PracticaTrabajoFinal.Vistas
                     ci.Modificar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()) ,Convert.ToInt32(cbpacientes.SelectedValue.ToString()), Convert.ToInt32(cbmedicos.SelectedValue.ToString()), dtfechaingreso.Value.ToShortDateString(), dtfecharetiro.Value.ToShortDateString());
                     cargar_tabla();
                     ci.Modificar_PXI(Convert.ToInt32(cbpracticas.SelectedValue.ToString()), Convert.ToInt32(dgvpractXingreso.CurrentRow.Cells[0].Value.ToString()));
-                    cargar_tablaPXI();
                     if (txtresultado.Text != "")
                     {
                         ci.Agregar_Resultado(txtresultado.Text, Convert.ToInt32(dgvpractXingreso.CurrentRow.Cells[0].Value.ToString()));
                     }
+                    cargar_tablaPXI();
                     txtresultado.Visible = false;
                     lblresultado.Visible = false;
                     dgvpractXingreso.DataSource = null;
@@ -254,14 +254,12 @@ namespace PracticaTrabajoFinal.Vistas
                     btnagregaringreso.Enabled = true;
                     lblpracticas.Visible = true;
                     cbpracticas.Visible = true;
-                    dgvingresos.ClearSelection();
                     lblagreganuevopaciente.Visible = true;
                     lblagregarmedico.Visible = true;
                     btnnuevomedico.Visible = true;
                     btnnuevopaciente.Visible = true;
                     btnrecargarmedicos.Visible = true;
                     btnrecargarpacientes.Visible = true;
-                    dgvpractXingreso.ClearSelection();
                 }
                 catch(Exception ex)
                 {
@@ -483,12 +481,13 @@ namespace PracticaTrabajoFinal.Vistas
             lbpracticas.Visible = false;
             lblpracticas.Visible = true;
             cbpracticas.Visible = true;
+            lblresultado.Visible = true;
+            txtresultado.Visible = true;
             btnagregarpractica.Visible = false;
             cbpracticas.Text = dgvpractXingreso.CurrentRow.Cells[2].Value.ToString();
             txtresultado.Text = dgvpractXingreso.CurrentRow.Cells[3].Value.ToString();
             btnmodificaringreso.Enabled = true;
             btneliminaringreso.Enabled = false;
-            txtresultado.Visible = true;
             lblresultado.Visible = true;
         }
     }

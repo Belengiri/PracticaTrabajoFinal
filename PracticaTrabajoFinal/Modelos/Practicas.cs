@@ -12,7 +12,38 @@ namespace PracticaTrabajoFinal.Modelos
     {
 
         private Conexion conexion;
-
+        public void Eliminar_muestra(int id_muestra)
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "delete from Muestras where id_muestra = " + id_muestra;
+                SqlCommand comando = new SqlCommand(consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Muestra ELIMINADO");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar una Muestra", ex.Message);
+            }
+        }
+        public void Modificar_muestra(string Muestra, int id_muestra)
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "update Muestras set nombre_muestra  ='" + Muestra + "' where id_muestra =" + id_muestra;
+                SqlCommand comando = new SqlCommand(@consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Muestra MODIFICADA");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar una Muestra", ex.Message);
+            }
+        }
         //agrega una muestra nueva a la base de datos
         public void agregarmuestra(string nombre)
         {

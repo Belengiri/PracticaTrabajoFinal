@@ -44,35 +44,36 @@ namespace PracticaTrabajoFinal.Modelos
                 MessageBox.Show("Error al Modificar un Servicio", ex.Message);
             }
         }
-        public void agregarservicio(string nombre)
+        public void agregarservicio(string servicio)
         {
-            try
-            {
-                conexion = new Conexion();
-                string existe = "select nombre_servicio  from Servicios where nombre_servicio='" + nombre + "'";
-                SqlCommand comando = new SqlCommand(existe);
-                comando.Connection = conexion.GetSqlConnection();
-                comando.ExecuteNonQuery();
-                if (existe == nombre)
-                {
-                    //mesaje si existe
-                    MessageBox.Show("El Servicio ya existe");
-                }
-                else
+                try
                 {
                     conexion = new Conexion();
-                    //query que la agrega a la base de datos si no existe
-                    string sql = "insert into Servicios(nombre_servicio)values('" + nombre + "')";
-                    //vuelvo a asignarñe otra query y conexion al comando 
-                    comando = new SqlCommand(sql);
+                    //query que corrobora que no exista la muestra nueva en la base de datos
+                    string existe = "select nombre_servicio from Servicios where nombre_servicio='" + servicio + "'";
+                    SqlCommand comando = new SqlCommand(existe);
                     comando.Connection = conexion.GetSqlConnection();
                     comando.ExecuteNonQuery();
+                    if (existe == servicio)
+                    {
+                        //mesaje si existe
+                        MessageBox.Show("el Servicio ya existe");
+                    }
+                    else
+                    {
+                        conexion = new Conexion();
+                        //query que la agrega a la base de datos si no existe
+                        string sql = "insert into Servicios(nombre_servicio)values('" + servicio + "')";
+                        //vuelvo a asignarñe otra query y conexion al comando 
+                        SqlCommand cmd = new SqlCommand(sql);
+                        cmd.Connection = conexion.GetSqlConnection();
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al Agregar un Servicio", ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al Agregar el Servicio", ex.Message);
+                }
         }
         public void agregarmedico(int id_servicio,string nombre_profesional,string apellido_profesional,string matricula)
         {
