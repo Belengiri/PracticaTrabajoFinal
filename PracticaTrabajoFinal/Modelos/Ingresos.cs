@@ -11,6 +11,21 @@ namespace PracticaTrabajoFinal.Modelos
     public class Ingresos
     {
         private Conexion conexion;
+        public void Agregar_Resultado(string resultado, int id_practica)
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "update PracticasXingresos set Resultado='"+resultado+"'where id_practicaXingreso =" + id_practica;
+                SqlCommand comando = new SqlCommand(@consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Agregar Resultado", ex.Message);
+            }
+        }
         public void eliminarpracXingre(int id_ingreso)
         {
             try

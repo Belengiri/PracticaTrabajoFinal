@@ -80,7 +80,7 @@ namespace PracticaTrabajoFinal.Vistas
             try
             {
                 conexion = new Conexion();
-                string consulta = "select id_practicaXingreso as Nº,R.apellido_paciente+' '+R.nombre_paciente as 'Paciente',N.nombre_practica as Practicas from PracticasXingresos P inner join Ingresos I on I.id_ingreso=P.id_ingreso inner join Practicas N on P.id_practica=N.id_practica inner join Pacientes R on I.id_paciente=R.id_paciente where P.id_ingreso=" + Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString());
+                string consulta = "select id_practicaXingreso as Nº,R.apellido_paciente+' '+R.nombre_paciente as 'Paciente',N.nombre_practica as Practicas,Resultado from PracticasXingresos P inner join Ingresos I on I.id_ingreso=P.id_ingreso inner join Practicas N on P.id_practica=N.id_practica inner join Pacientes R on I.id_paciente=R.id_paciente where P.id_ingreso=" + Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString());
                 SqlCommand cmd = new SqlCommand(consulta);
                 cmd.Connection = conexion.GetSqlConnection();
                 SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
@@ -174,7 +174,7 @@ namespace PracticaTrabajoFinal.Vistas
                     cargar_tablaPXI();
                     lbpracticas.Items.Clear();
                     lbpracticas.Visible = true;
-                    dgvpractXingreso.ClearSelection();
+                    dgvpractXingreso.DataSource = null;
                     dgvingresos.ClearSelection();
                 }
                 catch(Exception ex)
@@ -235,6 +235,13 @@ namespace PracticaTrabajoFinal.Vistas
                     cargar_tabla();
                     ci.Modificar_PXI(Convert.ToInt32(cbpracticas.SelectedValue.ToString()), Convert.ToInt32(dgvpractXingreso.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tablaPXI();
+                    if (txtresultado.Text != "")
+                    {
+                        ci.Agregar_Resultado(txtresultado.Text, Convert.ToInt32(dgvpractXingreso.CurrentRow.Cells[0].Value.ToString()));
+                    }
+                    txtresultado.Visible = false;
+                    lblresultado.Visible = false;
+                    dgvpractXingreso.DataSource = null;
                     lbpracticas.Visible = true;
                     cbpacientes.Enabled = true;
                     cbmedicos.Enabled = true;
@@ -314,6 +321,7 @@ namespace PracticaTrabajoFinal.Vistas
                     ci.Eliminar_Ingreso(Convert.ToInt32(dgvingresos.CurrentRow.Cells[0].Value.ToString()));
                     cargar_tabla();
                     cargar_tablaPXI();
+                    dgvpractXingreso.DataSource = null;
                     lbpracticas.Visible = true;
                     lbpracticas.Items.Clear();
                     btnagregarpractica.Visible = true;
@@ -421,6 +429,8 @@ namespace PracticaTrabajoFinal.Vistas
             btnnuevomedico.Enabled = true;
             dtfechaingreso.Enabled = true;
             dtfecharetiro.Enabled = true;
+            lblresultado.Visible = false;
+            txtresultado.Visible = false;
         }
         List<int> ids = new List<int>();
         private void btnagregarpractica_Click(object sender, EventArgs e)
@@ -435,6 +445,8 @@ namespace PracticaTrabajoFinal.Vistas
             lbpracticas.Visible = false;
             lbpracticas.Items.Clear();
             cbpracticas.Visible = false;
+            txtresultado.Visible = false;
+            lblresultado.Visible = false;
             cbpacientes.Text = dgvingresos.CurrentRow.Cells[1].Value.ToString();
             cbmedicos.Text = dgvingresos.CurrentRow.Cells[2].Value.ToString();
             dtfechaingreso.Text = dgvingresos.CurrentRow.Cells[3].Value.ToString();
@@ -473,8 +485,11 @@ namespace PracticaTrabajoFinal.Vistas
             cbpracticas.Visible = true;
             btnagregarpractica.Visible = false;
             cbpracticas.Text = dgvpractXingreso.CurrentRow.Cells[2].Value.ToString();
+            txtresultado.Text = dgvpractXingreso.CurrentRow.Cells[3].Value.ToString();
             btnmodificaringreso.Enabled = true;
             btneliminaringreso.Enabled = false;
+            txtresultado.Visible = true;
+            lblresultado.Visible = true;
         }
     }
 }

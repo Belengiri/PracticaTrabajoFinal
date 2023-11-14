@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosingresos = new System.Windows.Forms.Panel();
             this.btnagregarpractica = new System.Windows.Forms.Button();
             this.lbpracticas = new System.Windows.Forms.ListBox();
@@ -62,6 +62,8 @@
             this.dgvpractXingreso = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtresultado = new System.Windows.Forms.TextBox();
+            this.lblresultado = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.panelbotonesingresos.SuspendLayout();
             this.paneldgv.SuspendLayout();
@@ -74,6 +76,8 @@
             // paneldatosingresos
             // 
             this.paneldatosingresos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldatosingresos.Controls.Add(this.lblresultado);
+            this.paneldatosingresos.Controls.Add(this.txtresultado);
             this.paneldatosingresos.Controls.Add(this.btnagregarpractica);
             this.paneldatosingresos.Controls.Add(this.lbpracticas);
             this.paneldatosingresos.Controls.Add(this.cbpracticas);
@@ -368,14 +372,14 @@
             this.dgvingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvingresos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvingresos.Location = new System.Drawing.Point(0, 0);
             this.dgvingresos.MultiSelect = false;
@@ -445,6 +449,25 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Practicas por Ingresos";
             // 
+            // txtresultado
+            // 
+            this.txtresultado.Location = new System.Drawing.Point(2, 384);
+            this.txtresultado.Name = "txtresultado";
+            this.txtresultado.Size = new System.Drawing.Size(197, 20);
+            this.txtresultado.TabIndex = 29;
+            this.txtresultado.Visible = false;
+            // 
+            // lblresultado
+            // 
+            this.lblresultado.AutoSize = true;
+            this.lblresultado.Location = new System.Drawing.Point(4, 371);
+            this.lblresultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblresultado.Name = "lblresultado";
+            this.lblresultado.Size = new System.Drawing.Size(55, 13);
+            this.lblresultado.TabIndex = 30;
+            this.lblresultado.Text = "Resultado";
+            this.lblresultado.Visible = false;
+            // 
             // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +533,7 @@
         private System.Windows.Forms.DataGridView dgvpractXingreso;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtresultado;
+        private System.Windows.Forms.Label lblresultado;
     }
 }
