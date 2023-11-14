@@ -71,8 +71,7 @@ namespace PracticaTrabajoFinal.Vistas
             agregarservicio.Checked = false;
             paneldgvservicio.Visible = false;
             panelnuevoservicio.Visible = false;
-            btneliminarservicio.Visible = false;
-            btnmodificarservicio.Visible = false;
+            txtnombreservicio.Clear();
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
@@ -125,7 +124,7 @@ namespace PracticaTrabajoFinal.Vistas
                 DataTable dt = new DataTable();
                 adaptador.Fill(dt);
                 dgvservicio.DataSource = dt;
-                txtnombremedico.Focus();
+                txtnombreservicio.Focus();
             }
             catch (Exception ex)
             {
@@ -136,11 +135,7 @@ namespace PracticaTrabajoFinal.Vistas
         {
             panelnuevoservicio.Visible = true;
             paneldgvservicio.Visible = true;
-            txtnombreservicio.Focus();
-            txtnombreservicio.Clear();
             Cargar_Servicios();
-            btncancelarservicio.Visible = true;
-            btnguardarservicio.Visible = true;
         }
 
         private void btncancelarservicio_Click(object sender, EventArgs e)
@@ -151,21 +146,17 @@ namespace PracticaTrabajoFinal.Vistas
             btneliminarservicio.Visible = false;
             btnmodificarservicio.Visible = false;
             paneldgvservicio.Visible = false;
-            btneliminarservicio.Visible = false;
-            btnmodificarservicio.Visible = false;
+            txtnombreservicio.Clear();
         }
 
         private void btnguardarservicio_Click(object sender, EventArgs e)
         {
             agregarservicio.Checked = false;
             cm.Agregar_Servicio(txtnombreservicio.Text);
-            txtnombreservicio.Clear();
-            txtnombreservicio.Focus();
             cargarcbservicio();
             panelnuevoservicio.Visible = false;
             paneldgvservicio.Visible = false;
-            btneliminarservicio.Visible = false;
-            btnmodificarservicio.Visible = false;
+            txtnombreservicio.Clear();
         }
 
 
@@ -277,24 +268,22 @@ namespace PracticaTrabajoFinal.Vistas
 
         private void btneliminarservicio_Click(object sender, EventArgs e)
         {
-            cm.Eliminar_Servicio(Convert.ToInt32(dgvservicio.CurrentRow.Cells[0].Value.ToString()));
+            cm.Eliminar_Servicio(Convert.ToInt32(dgvservicio.CurrentRow.Cells[1].Value.ToString()));
             cargarcbservicio();
             agregarservicio.Checked = false;
             paneldgvservicio.Visible = false;
             panelnuevoservicio.Visible = false;
-            btneliminarservicio.Visible = false;
-            btnmodificarservicio.Visible = false;
+            txtnombreservicio.Clear();
         }
 
         private void btnmodificarservicio_Click(object sender, EventArgs e)
         {
-            cm.Modificar_Servicio(txtnombreservicio.Text, Convert.ToInt32(dgvservicio.CurrentRow.Cells[0].Value.ToString()));
+            cm.Modificar_Servicio(txtnombreservicio.Text, Convert.ToInt32(dgvservicio.CurrentRow.Cells[1].Value.ToString()));
             cargarcbservicio();
             agregarservicio.Checked = false; 
             paneldgvservicio.Visible = false;
             panelnuevoservicio.Visible = false;
-            btneliminarservicio.Visible = false;
-            btnmodificarservicio.Visible = false;
+            txtnombreservicio.Clear();
         }
         private void dgvservicio_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {

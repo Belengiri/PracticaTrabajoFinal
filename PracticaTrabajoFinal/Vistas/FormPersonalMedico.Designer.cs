@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosmedico = new System.Windows.Forms.Panel();
+            this.btnguardarservicio = new System.Windows.Forms.Button();
+            this.btncancelarservicio = new System.Windows.Forms.Button();
+            this.paneldgvservicio = new System.Windows.Forms.Panel();
+            this.dgvservicio = new System.Windows.Forms.DataGridView();
             this.btnsalirvista = new System.Windows.Forms.Button();
             this.lblserviciomedico = new System.Windows.Forms.Label();
             this.cbservicio = new System.Windows.Forms.ComboBox();
             this.panelnuevoservicio = new System.Windows.Forms.Panel();
-            this.btncancelarservicio = new System.Windows.Forms.Button();
-            this.btnguardarservicio = new System.Windows.Forms.Button();
-            this.lblnombreservicio = new System.Windows.Forms.Label();
             this.txtnombreservicio = new System.Windows.Forms.TextBox();
+            this.btneliminarservicio = new System.Windows.Forms.Button();
+            this.btnmodificarservicio = new System.Windows.Forms.Button();
+            this.lblnombreservicio = new System.Windows.Forms.Label();
             this.agregarservicio = new System.Windows.Forms.CheckBox();
             this.lblapellidomedico = new System.Windows.Forms.Label();
             this.lblmatriculamedico = new System.Windows.Forms.Label();
@@ -54,24 +58,18 @@
             this.paneldgvmedicos = new System.Windows.Forms.Panel();
             this.dgvpmedicos = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.Label();
-            this.paneldgvservicio = new System.Windows.Forms.Panel();
-            this.btneliminarservicio = new System.Windows.Forms.Button();
-            this.btnmodificarservicio = new System.Windows.Forms.Button();
-            this.dgvservicio = new System.Windows.Forms.DataGridView();
             this.paneldatosmedico.SuspendLayout();
+            this.paneldgvservicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvservicio)).BeginInit();
             this.panelnuevoservicio.SuspendLayout();
             this.panelbotones.SuspendLayout();
             this.panelbtnaceptar.SuspendLayout();
             this.paneldgvmedicos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpmedicos)).BeginInit();
-            this.paneldgvservicio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvservicio)).BeginInit();
             this.SuspendLayout();
             // 
             // paneldatosmedico
             // 
-            this.paneldatosmedico.Controls.Add(this.btnguardarservicio);
-            this.paneldatosmedico.Controls.Add(this.btncancelarservicio);
             this.paneldatosmedico.Controls.Add(this.paneldgvservicio);
             this.paneldatosmedico.Controls.Add(this.btnsalirvista);
             this.paneldatosmedico.Controls.Add(this.lblserviciomedico);
@@ -89,6 +87,54 @@
             this.paneldatosmedico.Name = "paneldatosmedico";
             this.paneldatosmedico.Size = new System.Drawing.Size(228, 417);
             this.paneldatosmedico.TabIndex = 7;
+            // 
+            // btnguardarservicio
+            // 
+            this.btnguardarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnguardarservicio.Location = new System.Drawing.Point(22, 33);
+            this.btnguardarservicio.Name = "btnguardarservicio";
+            this.btnguardarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btnguardarservicio.TabIndex = 24;
+            this.btnguardarservicio.Text = "Agregar";
+            this.btnguardarservicio.UseVisualStyleBackColor = true;
+            this.btnguardarservicio.Click += new System.EventHandler(this.btnguardarservicio_Click);
+            // 
+            // btncancelarservicio
+            // 
+            this.btncancelarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelarservicio.Location = new System.Drawing.Point(103, 33);
+            this.btncancelarservicio.Name = "btncancelarservicio";
+            this.btncancelarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btncancelarservicio.TabIndex = 25;
+            this.btncancelarservicio.Text = "Cancelar";
+            this.btncancelarservicio.UseVisualStyleBackColor = true;
+            this.btncancelarservicio.Click += new System.EventHandler(this.btncancelarservicio_Click);
+            // 
+            // paneldgvservicio
+            // 
+            this.paneldgvservicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldgvservicio.Controls.Add(this.dgvservicio);
+            this.paneldgvservicio.Location = new System.Drawing.Point(7, 141);
+            this.paneldgvservicio.Name = "paneldgvservicio";
+            this.paneldgvservicio.Size = new System.Drawing.Size(218, 122);
+            this.paneldgvservicio.TabIndex = 27;
+            this.paneldgvservicio.Visible = false;
+            // 
+            // dgvservicio
+            // 
+            this.dgvservicio.AllowUserToAddRows = false;
+            this.dgvservicio.AllowUserToDeleteRows = false;
+            this.dgvservicio.AllowUserToResizeColumns = false;
+            this.dgvservicio.AllowUserToResizeRows = false;
+            this.dgvservicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvservicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvservicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvservicio.Location = new System.Drawing.Point(0, 0);
+            this.dgvservicio.Name = "dgvservicio";
+            this.dgvservicio.Size = new System.Drawing.Size(218, 122);
+            this.dgvservicio.TabIndex = 5;
+            this.dgvservicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvservicio_CellClick_1);
             // 
             // btnsalirvista
             // 
@@ -123,39 +169,46 @@
             // 
             this.panelnuevoservicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelnuevoservicio.Controls.Add(this.btnguardarservicio);
             this.panelnuevoservicio.Controls.Add(this.txtnombreservicio);
+            this.panelnuevoservicio.Controls.Add(this.btncancelarservicio);
             this.panelnuevoservicio.Controls.Add(this.btneliminarservicio);
             this.panelnuevoservicio.Controls.Add(this.btnmodificarservicio);
             this.panelnuevoservicio.Controls.Add(this.lblnombreservicio);
             this.panelnuevoservicio.Location = new System.Drawing.Point(15, 280);
             this.panelnuevoservicio.Name = "panelnuevoservicio";
-            this.panelnuevoservicio.Size = new System.Drawing.Size(201, 54);
+            this.panelnuevoservicio.Size = new System.Drawing.Size(201, 89);
             this.panelnuevoservicio.TabIndex = 24;
             this.panelnuevoservicio.Visible = false;
             // 
-            // btncancelarservicio
+            // txtnombreservicio
             // 
-            this.btncancelarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancelarservicio.Location = new System.Drawing.Point(118, 338);
-            this.btncancelarservicio.Name = "btncancelarservicio";
-            this.btncancelarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btncancelarservicio.TabIndex = 25;
-            this.btncancelarservicio.Text = "Cancelar";
-            this.btncancelarservicio.UseVisualStyleBackColor = true;
-            this.btncancelarservicio.Visible = false;
-            this.btncancelarservicio.Click += new System.EventHandler(this.btncancelarservicio_Click);
+            this.txtnombreservicio.Location = new System.Drawing.Point(94, 3);
+            this.txtnombreservicio.Name = "txtnombreservicio";
+            this.txtnombreservicio.Size = new System.Drawing.Size(100, 20);
+            this.txtnombreservicio.TabIndex = 1;
             // 
-            // btnguardarservicio
+            // btneliminarservicio
             // 
-            this.btnguardarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnguardarservicio.Location = new System.Drawing.Point(37, 338);
-            this.btnguardarservicio.Name = "btnguardarservicio";
-            this.btnguardarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btnguardarservicio.TabIndex = 24;
-            this.btnguardarservicio.Text = "Agregar";
-            this.btnguardarservicio.UseVisualStyleBackColor = true;
-            this.btnguardarservicio.Visible = false;
-            this.btnguardarservicio.Click += new System.EventHandler(this.btnguardarservicio_Click);
+            this.btneliminarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btneliminarservicio.Location = new System.Drawing.Point(103, 62);
+            this.btneliminarservicio.Name = "btneliminarservicio";
+            this.btneliminarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btneliminarservicio.TabIndex = 28;
+            this.btneliminarservicio.Text = "Eliminar";
+            this.btneliminarservicio.UseVisualStyleBackColor = true;
+            this.btneliminarservicio.Click += new System.EventHandler(this.btneliminarservicio_Click);
+            // 
+            // btnmodificarservicio
+            // 
+            this.btnmodificarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnmodificarservicio.Location = new System.Drawing.Point(22, 62);
+            this.btnmodificarservicio.Name = "btnmodificarservicio";
+            this.btnmodificarservicio.Size = new System.Drawing.Size(75, 23);
+            this.btnmodificarservicio.TabIndex = 29;
+            this.btnmodificarservicio.Text = "Modificar";
+            this.btnmodificarservicio.UseVisualStyleBackColor = true;
+            this.btnmodificarservicio.Click += new System.EventHandler(this.btnmodificarservicio_Click);
             // 
             // lblnombreservicio
             // 
@@ -166,13 +219,6 @@
             this.lblnombreservicio.Size = new System.Drawing.Size(85, 13);
             this.lblnombreservicio.TabIndex = 23;
             this.lblnombreservicio.Text = "Nombre Servicio";
-            // 
-            // txtnombreservicio
-            // 
-            this.txtnombreservicio.Location = new System.Drawing.Point(94, 3);
-            this.txtnombreservicio.Name = "txtnombreservicio";
-            this.txtnombreservicio.Size = new System.Drawing.Size(100, 20);
-            this.txtnombreservicio.TabIndex = 1;
             // 
             // agregarservicio
             // 
@@ -321,14 +367,14 @@
             this.dgvpmedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvpmedicos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvpmedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvpmedicos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvpmedicos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvpmedicos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvpmedicos.Location = new System.Drawing.Point(0, 0);
             this.dgvpmedicos.MultiSelect = false;
@@ -350,54 +396,6 @@
             this.nombre.TabIndex = 12;
             this.nombre.Text = "Medicos ";
             // 
-            // paneldgvservicio
-            // 
-            this.paneldgvservicio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.paneldgvservicio.Controls.Add(this.dgvservicio);
-            this.paneldgvservicio.Location = new System.Drawing.Point(7, 141);
-            this.paneldgvservicio.Name = "paneldgvservicio";
-            this.paneldgvservicio.Size = new System.Drawing.Size(218, 122);
-            this.paneldgvservicio.TabIndex = 27;
-            this.paneldgvservicio.Visible = false;
-            // 
-            // btneliminarservicio
-            // 
-            this.btneliminarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btneliminarservicio.Location = new System.Drawing.Point(103, 27);
-            this.btneliminarservicio.Name = "btneliminarservicio";
-            this.btneliminarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btneliminarservicio.TabIndex = 28;
-            this.btneliminarservicio.Text = "Eliminar";
-            this.btneliminarservicio.UseVisualStyleBackColor = true;
-            this.btneliminarservicio.Click += new System.EventHandler(this.btneliminarservicio_Click);
-            // 
-            // btnmodificarservicio
-            // 
-            this.btnmodificarservicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnmodificarservicio.Location = new System.Drawing.Point(22, 27);
-            this.btnmodificarservicio.Name = "btnmodificarservicio";
-            this.btnmodificarservicio.Size = new System.Drawing.Size(75, 23);
-            this.btnmodificarservicio.TabIndex = 29;
-            this.btnmodificarservicio.Text = "Modificar";
-            this.btnmodificarservicio.UseVisualStyleBackColor = true;
-            this.btnmodificarservicio.Click += new System.EventHandler(this.btnmodificarservicio_Click);
-            // 
-            // dgvservicio
-            // 
-            this.dgvservicio.AllowUserToAddRows = false;
-            this.dgvservicio.AllowUserToDeleteRows = false;
-            this.dgvservicio.AllowUserToResizeColumns = false;
-            this.dgvservicio.AllowUserToResizeRows = false;
-            this.dgvservicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvservicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvservicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvservicio.Location = new System.Drawing.Point(0, 0);
-            this.dgvservicio.Name = "dgvservicio";
-            this.dgvservicio.Size = new System.Drawing.Size(218, 122);
-            this.dgvservicio.TabIndex = 5;
-            this.dgvservicio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvservicio_CellClick_1);
-            // 
             // FormPersonalMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,14 +414,14 @@
             this.Text = "FormPersonalMedico";
             this.paneldatosmedico.ResumeLayout(false);
             this.paneldatosmedico.PerformLayout();
+            this.paneldgvservicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvservicio)).EndInit();
             this.panelnuevoservicio.ResumeLayout(false);
             this.panelnuevoservicio.PerformLayout();
             this.panelbotones.ResumeLayout(false);
             this.panelbtnaceptar.ResumeLayout(false);
             this.paneldgvmedicos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpmedicos)).EndInit();
-            this.paneldgvservicio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvservicio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

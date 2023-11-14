@@ -14,8 +14,46 @@ namespace PracticaTrabajoFinal.Controladores
     {
         // aca se hacen todos los controles de los datos que vienen de la vista y van al modelo
         Practicas prac = new Practicas();//instancion una nueva practica para mandarle los datos 
-        
+
         //metodo que manda los datos para agregar una muestra al modelo
+        public void Eliminar_muestra(int id_muestra)
+        {
+            try
+            {
+                if (id_muestra != 0)
+                {
+                    prac.Eliminar_muestra(id_muestra);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar una Muestra");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar una Muestra", ex.Message);
+            }
+        }
+        public void Modificar_Muestra(string muestra, int id_muestra)
+        {
+            try
+            {
+                if (id_muestra != 0 && muestra != "")
+                {
+                    prac.Modificar_muestra(muestra, id_muestra);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Modificar una Muestra");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar una Muestra", ex.Message);
+            }
+        }
         public void Agregar_Muestra(string nombre_muestra)
         {
             try

@@ -37,12 +37,16 @@
             this.lbltipomuestra = new System.Windows.Forms.Label();
             this.cbtipodemuestra = new System.Windows.Forms.ComboBox();
             this.paneldatospracticas = new System.Windows.Forms.Panel();
+            this.paneldgvmuestras = new System.Windows.Forms.Panel();
+            this.dgvmuestra = new System.Windows.Forms.DataGridView();
             this.btnsalir = new System.Windows.Forms.Button();
             this.panelnuevamuestra = new System.Windows.Forms.Panel();
-            this.lblnuevamuestra = new System.Windows.Forms.Label();
-            this.btncancelarmuestra = new System.Windows.Forms.Button();
-            this.btnguardarmuestra = new System.Windows.Forms.Button();
+            this.btneliminarmuestra = new System.Windows.Forms.Button();
             this.txtnuevamuestra = new System.Windows.Forms.TextBox();
+            this.btnguardarmuestra = new System.Windows.Forms.Button();
+            this.btnmodificarmuestra = new System.Windows.Forms.Button();
+            this.btncancelarmuestra = new System.Windows.Forms.Button();
+            this.lblnuevamuestra = new System.Windows.Forms.Label();
             this.agregarmuestra = new System.Windows.Forms.CheckBox();
             this.btncancelar = new System.Windows.Forms.Button();
             this.paneldgvpracticas = new System.Windows.Forms.Panel();
@@ -52,6 +56,8 @@
             this.btneliminarpractica = new System.Windows.Forms.Button();
             this.nombre = new System.Windows.Forms.Label();
             this.paneldatospracticas.SuspendLayout();
+            this.paneldgvmuestras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmuestra)).BeginInit();
             this.panelnuevamuestra.SuspendLayout();
             this.paneldgvpracticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvgrillapracticas)).BeginInit();
@@ -59,9 +65,8 @@
             // 
             // lblnombrepractica
             // 
-            this.lblnombrepractica.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblnombrepractica.AutoSize = true;
-            this.lblnombrepractica.Location = new System.Drawing.Point(21, 9);
+            this.lblnombrepractica.Location = new System.Drawing.Point(3, 4);
             this.lblnombrepractica.Name = "lblnombrepractica";
             this.lblnombrepractica.Size = new System.Drawing.Size(112, 13);
             this.lblnombrepractica.TabIndex = 0;
@@ -69,8 +74,7 @@
             // 
             // txtnombrepractica
             // 
-            this.txtnombrepractica.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtnombrepractica.Location = new System.Drawing.Point(24, 34);
+            this.txtnombrepractica.Location = new System.Drawing.Point(6, 20);
             this.txtnombrepractica.Name = "txtnombrepractica";
             this.txtnombrepractica.Size = new System.Drawing.Size(90, 20);
             this.txtnombrepractica.TabIndex = 1;
@@ -78,9 +82,8 @@
             // 
             // lbltiempoderesultado
             // 
-            this.lbltiempoderesultado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbltiempoderesultado.AutoSize = true;
-            this.lbltiempoderesultado.Location = new System.Drawing.Point(21, 71);
+            this.lbltiempoderesultado.Location = new System.Drawing.Point(5, 45);
             this.lbltiempoderesultado.Name = "lbltiempoderesultado";
             this.lbltiempoderesultado.Size = new System.Drawing.Size(110, 13);
             this.lbltiempoderesultado.TabIndex = 2;
@@ -88,17 +91,15 @@
             // 
             // txttiempoderesultado
             // 
-            this.txttiempoderesultado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txttiempoderesultado.Location = new System.Drawing.Point(24, 97);
+            this.txttiempoderesultado.Location = new System.Drawing.Point(8, 61);
             this.txttiempoderesultado.Name = "txttiempoderesultado";
             this.txttiempoderesultado.Size = new System.Drawing.Size(90, 20);
             this.txttiempoderesultado.TabIndex = 3;
             // 
             // lblespecialidadpractica
             // 
-            this.lblespecialidadpractica.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblespecialidadpractica.AutoSize = true;
-            this.lblespecialidadpractica.Location = new System.Drawing.Point(21, 139);
+            this.lblespecialidadpractica.Location = new System.Drawing.Point(5, 84);
             this.lblespecialidadpractica.Name = "lblespecialidadpractica";
             this.lblespecialidadpractica.Size = new System.Drawing.Size(134, 13);
             this.lblespecialidadpractica.TabIndex = 4;
@@ -106,18 +107,16 @@
             // 
             // cbespacialidadpractica
             // 
-            this.cbespacialidadpractica.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbespacialidadpractica.FormattingEnabled = true;
-            this.cbespacialidadpractica.Location = new System.Drawing.Point(24, 168);
+            this.cbespacialidadpractica.Location = new System.Drawing.Point(6, 100);
             this.cbespacialidadpractica.Name = "cbespacialidadpractica";
             this.cbespacialidadpractica.Size = new System.Drawing.Size(90, 21);
             this.cbespacialidadpractica.TabIndex = 5;
             // 
             // lbltipomuestra
             // 
-            this.lbltipomuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbltipomuestra.AutoSize = true;
-            this.lbltipomuestra.Location = new System.Drawing.Point(21, 206);
+            this.lbltipomuestra.Location = new System.Drawing.Point(3, 124);
             this.lbltipomuestra.Name = "lbltipomuestra";
             this.lbltipomuestra.Size = new System.Drawing.Size(84, 13);
             this.lbltipomuestra.TabIndex = 6;
@@ -125,19 +124,18 @@
             // 
             // cbtipodemuestra
             // 
-            this.cbtipodemuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbtipodemuestra.FormattingEnabled = true;
-            this.cbtipodemuestra.Location = new System.Drawing.Point(24, 233);
+            this.cbtipodemuestra.Location = new System.Drawing.Point(6, 140);
             this.cbtipodemuestra.Name = "cbtipodemuestra";
             this.cbtipodemuestra.Size = new System.Drawing.Size(90, 21);
             this.cbtipodemuestra.TabIndex = 7;
             // 
             // paneldatospracticas
             // 
+            this.paneldatospracticas.Controls.Add(this.paneldgvmuestras);
             this.paneldatospracticas.Controls.Add(this.btnsalir);
             this.paneldatospracticas.Controls.Add(this.panelnuevamuestra);
             this.paneldatospracticas.Controls.Add(this.agregarmuestra);
-            this.paneldatospracticas.Controls.Add(this.btncancelar);
             this.paneldatospracticas.Controls.Add(this.lblnombrepractica);
             this.paneldatospracticas.Controls.Add(this.cbtipodemuestra);
             this.paneldatospracticas.Controls.Add(this.txtnombrepractica);
@@ -152,6 +150,32 @@
             this.paneldatospracticas.Size = new System.Drawing.Size(241, 417);
             this.paneldatospracticas.TabIndex = 8;
             // 
+            // paneldgvmuestras
+            // 
+            this.paneldgvmuestras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.paneldgvmuestras.Controls.Add(this.dgvmuestra);
+            this.paneldgvmuestras.Location = new System.Drawing.Point(8, 198);
+            this.paneldgvmuestras.Name = "paneldgvmuestras";
+            this.paneldgvmuestras.Size = new System.Drawing.Size(221, 100);
+            this.paneldgvmuestras.TabIndex = 35;
+            this.paneldgvmuestras.Visible = false;
+            // 
+            // dgvmuestra
+            // 
+            this.dgvmuestra.AllowUserToAddRows = false;
+            this.dgvmuestra.AllowUserToDeleteRows = false;
+            this.dgvmuestra.AllowUserToResizeColumns = false;
+            this.dgvmuestra.AllowUserToResizeRows = false;
+            this.dgvmuestra.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvmuestra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvmuestra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvmuestra.Location = new System.Drawing.Point(0, 0);
+            this.dgvmuestra.Name = "dgvmuestra";
+            this.dgvmuestra.Size = new System.Drawing.Size(221, 100);
+            this.dgvmuestra.TabIndex = 0;
+            this.dgvmuestra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvmuestra_CellClick);
+            // 
             // btnsalir
             // 
             this.btnsalir.BackColor = System.Drawing.Color.Red;
@@ -165,61 +189,86 @@
             // 
             // panelnuevamuestra
             // 
-            this.panelnuevamuestra.Controls.Add(this.lblnuevamuestra);
-            this.panelnuevamuestra.Controls.Add(this.btncancelarmuestra);
-            this.panelnuevamuestra.Controls.Add(this.btnguardarmuestra);
+            this.panelnuevamuestra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelnuevamuestra.Controls.Add(this.btneliminarmuestra);
             this.panelnuevamuestra.Controls.Add(this.txtnuevamuestra);
-            this.panelnuevamuestra.Location = new System.Drawing.Point(24, 283);
+            this.panelnuevamuestra.Controls.Add(this.btnguardarmuestra);
+            this.panelnuevamuestra.Controls.Add(this.btnmodificarmuestra);
+            this.panelnuevamuestra.Controls.Add(this.btncancelarmuestra);
+            this.panelnuevamuestra.Controls.Add(this.lblnuevamuestra);
+            this.panelnuevamuestra.Location = new System.Drawing.Point(8, 304);
             this.panelnuevamuestra.Name = "panelnuevamuestra";
-            this.panelnuevamuestra.Size = new System.Drawing.Size(200, 100);
+            this.panelnuevamuestra.Size = new System.Drawing.Size(221, 101);
             this.panelnuevamuestra.TabIndex = 33;
             this.panelnuevamuestra.Visible = false;
+            // 
+            // btneliminarmuestra
+            // 
+            this.btneliminarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btneliminarmuestra.Location = new System.Drawing.Point(114, 66);
+            this.btneliminarmuestra.Name = "btneliminarmuestra";
+            this.btneliminarmuestra.Size = new System.Drawing.Size(71, 28);
+            this.btneliminarmuestra.TabIndex = 34;
+            this.btneliminarmuestra.Text = "Eliminar";
+            this.btneliminarmuestra.UseVisualStyleBackColor = true;
+            this.btneliminarmuestra.Click += new System.EventHandler(this.btneliminarmuestra_Click);
+            // 
+            // txtnuevamuestra
+            // 
+            this.txtnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtnuevamuestra.Location = new System.Drawing.Point(101, 3);
+            this.txtnuevamuestra.Name = "txtnuevamuestra";
+            this.txtnuevamuestra.Size = new System.Drawing.Size(84, 20);
+            this.txtnuevamuestra.TabIndex = 31;
+            // 
+            // btnguardarmuestra
+            // 
+            this.btnguardarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnguardarmuestra.Location = new System.Drawing.Point(37, 33);
+            this.btnguardarmuestra.Name = "btnguardarmuestra";
+            this.btnguardarmuestra.Size = new System.Drawing.Size(71, 28);
+            this.btnguardarmuestra.TabIndex = 29;
+            this.btnguardarmuestra.Text = "Agregar";
+            this.btnguardarmuestra.UseVisualStyleBackColor = true;
+            this.btnguardarmuestra.Click += new System.EventHandler(this.btnguardarmuestra_Click);
+            // 
+            // btnmodificarmuestra
+            // 
+            this.btnmodificarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnmodificarmuestra.Location = new System.Drawing.Point(114, 33);
+            this.btnmodificarmuestra.Name = "btnmodificarmuestra";
+            this.btnmodificarmuestra.Size = new System.Drawing.Size(71, 28);
+            this.btnmodificarmuestra.TabIndex = 33;
+            this.btnmodificarmuestra.Text = "Modificar";
+            this.btnmodificarmuestra.UseVisualStyleBackColor = true;
+            this.btnmodificarmuestra.Click += new System.EventHandler(this.btnmodificarmuestra_Click);
+            // 
+            // btncancelarmuestra
+            // 
+            this.btncancelarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btncancelarmuestra.Location = new System.Drawing.Point(37, 67);
+            this.btncancelarmuestra.Name = "btncancelarmuestra";
+            this.btncancelarmuestra.Size = new System.Drawing.Size(71, 28);
+            this.btncancelarmuestra.TabIndex = 32;
+            this.btncancelarmuestra.Text = "Cancelar";
+            this.btncancelarmuestra.UseVisualStyleBackColor = true;
+            this.btncancelarmuestra.Click += new System.EventHandler(this.btncancelarmuestra_Click);
             // 
             // lblnuevamuestra
             // 
             this.lblnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblnuevamuestra.AutoSize = true;
-            this.lblnuevamuestra.Location = new System.Drawing.Point(51, 12);
+            this.lblnuevamuestra.Location = new System.Drawing.Point(34, 10);
             this.lblnuevamuestra.Name = "lblnuevamuestra";
-            this.lblnuevamuestra.Size = new System.Drawing.Size(80, 13);
+            this.lblnuevamuestra.Size = new System.Drawing.Size(48, 13);
             this.lblnuevamuestra.TabIndex = 30;
-            this.lblnuevamuestra.Text = "Nueva Muestra";
-            // 
-            // btncancelarmuestra
-            // 
-            this.btncancelarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btncancelarmuestra.Location = new System.Drawing.Point(101, 51);
-            this.btncancelarmuestra.Name = "btncancelarmuestra";
-            this.btncancelarmuestra.Size = new System.Drawing.Size(58, 23);
-            this.btncancelarmuestra.TabIndex = 32;
-            this.btncancelarmuestra.Text = "Cancelar";
-            this.btncancelarmuestra.UseVisualStyleBackColor = true;
-            this.btncancelarmuestra.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btnguardarmuestra
-            // 
-            this.btnguardarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnguardarmuestra.Location = new System.Drawing.Point(32, 51);
-            this.btnguardarmuestra.Name = "btnguardarmuestra";
-            this.btnguardarmuestra.Size = new System.Drawing.Size(58, 23);
-            this.btnguardarmuestra.TabIndex = 29;
-            this.btnguardarmuestra.Text = "Guardar";
-            this.btnguardarmuestra.UseVisualStyleBackColor = true;
-            this.btnguardarmuestra.Click += new System.EventHandler(this.btnguardarmuestra_Click);
-            // 
-            // txtnuevamuestra
-            // 
-            this.txtnuevamuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtnuevamuestra.Location = new System.Drawing.Point(45, 28);
-            this.txtnuevamuestra.Name = "txtnuevamuestra";
-            this.txtnuevamuestra.Size = new System.Drawing.Size(100, 20);
-            this.txtnuevamuestra.TabIndex = 31;
+            this.lblnuevamuestra.Text = " Muestra";
             // 
             // agregarmuestra
             // 
-            this.agregarmuestra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.agregarmuestra.AutoSize = true;
-            this.agregarmuestra.Location = new System.Drawing.Point(24, 260);
+            this.agregarmuestra.Location = new System.Drawing.Point(8, 167);
             this.agregarmuestra.Name = "agregarmuestra";
             this.agregarmuestra.Size = new System.Drawing.Size(104, 17);
             this.agregarmuestra.TabIndex = 14;
@@ -229,15 +278,14 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancelar.Location = new System.Drawing.Point(85, 391);
+            this.btncancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancelar.Location = new System.Drawing.Point(260, 390);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.btncancelar.Size = new System.Drawing.Size(75, 27);
             this.btncancelar.TabIndex = 13;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click_1);
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // paneldgvpracticas
             // 
@@ -319,6 +367,7 @@
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.btneliminarpractica);
             this.Controls.Add(this.btnmodificarpractica);
+            this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnagregarpractica);
             this.Controls.Add(this.paneldgvpracticas);
             this.Controls.Add(this.paneldatospracticas);
@@ -330,6 +379,8 @@
             this.Load += new System.EventHandler(this.FormPracticas_Load);
             this.paneldatospracticas.ResumeLayout(false);
             this.paneldatospracticas.PerformLayout();
+            this.paneldgvmuestras.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmuestra)).EndInit();
             this.panelnuevamuestra.ResumeLayout(false);
             this.panelnuevamuestra.PerformLayout();
             this.paneldgvpracticas.ResumeLayout(false);
@@ -364,5 +415,9 @@
         private System.Windows.Forms.Button btnsalir;
         private System.Windows.Forms.DataGridView dgvgrillapracticas;
         private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.Panel paneldgvmuestras;
+        private System.Windows.Forms.Button btneliminarmuestra;
+        private System.Windows.Forms.Button btnmodificarmuestra;
+        private System.Windows.Forms.DataGridView dgvmuestra;
     }
 }

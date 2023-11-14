@@ -16,7 +16,7 @@ namespace PracticaTrabajoFinal.Modelos
             try
             {
                 conexion = new Conexion();
-                string consulta = "update PracticasXingresos set Resultado='"+resultado+"'where id_practicaXingreso =" + id_practica;
+                string consulta = "update PracticasXingresos set Resultado ='" + resultado+"'where id_practicaXingreso =" + id_practica;
                 SqlCommand comando = new SqlCommand(@consulta);
                 comando.Connection = conexion.GetSqlConnection();
                 comando.ExecuteNonQuery();
