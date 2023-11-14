@@ -12,6 +12,18 @@ namespace PracticaTrabajoFinal.Controladores
     {
         Ingresos ing = new Ingresos();
         
+        public void Agregar_Resultado(string resultado,int id_practica)
+        {
+            if (id_practica != 0)
+            {
+                ing.Agregar_Resultado(resultado, id_practica);
+            }
+            else
+            {
+                MessageBox.Show("Error al Agregar las Practicas");
+            }
+            
+        }
         public void AgregarPracticaPorIngreso(int id_practica)
         {
             try
