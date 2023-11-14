@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIngresos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneldatosingresos = new System.Windows.Forms.Panel();
+            this.lblresultado = new System.Windows.Forms.Label();
+            this.txtresultado = new System.Windows.Forms.TextBox();
             this.btnagregarpractica = new System.Windows.Forms.Button();
             this.lbpracticas = new System.Windows.Forms.ListBox();
             this.cbpracticas = new System.Windows.Forms.ComboBox();
@@ -62,8 +64,6 @@
             this.dgvpractXingreso = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtresultado = new System.Windows.Forms.TextBox();
-            this.lblresultado = new System.Windows.Forms.Label();
             this.paneldatosingresos.SuspendLayout();
             this.panelbotonesingresos.SuspendLayout();
             this.paneldgv.SuspendLayout();
@@ -103,12 +103,31 @@
             this.paneldatosingresos.Size = new System.Drawing.Size(230, 414);
             this.paneldatosingresos.TabIndex = 0;
             // 
+            // lblresultado
+            // 
+            this.lblresultado.AutoSize = true;
+            this.lblresultado.Location = new System.Drawing.Point(4, 350);
+            this.lblresultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblresultado.Name = "lblresultado";
+            this.lblresultado.Size = new System.Drawing.Size(55, 13);
+            this.lblresultado.TabIndex = 30;
+            this.lblresultado.Text = "Resultado";
+            this.lblresultado.Visible = false;
+            // 
+            // txtresultado
+            // 
+            this.txtresultado.Location = new System.Drawing.Point(7, 366);
+            this.txtresultado.Name = "txtresultado";
+            this.txtresultado.Size = new System.Drawing.Size(197, 20);
+            this.txtresultado.TabIndex = 29;
+            this.txtresultado.Visible = false;
+            // 
             // btnagregarpractica
             // 
             this.btnagregarpractica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregarpractica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagregarpractica.Image = ((System.Drawing.Image)(resources.GetObject("btnagregarpractica.Image")));
-            this.btnagregarpractica.Location = new System.Drawing.Point(153, 201);
+            this.btnagregarpractica.Location = new System.Drawing.Point(150, 185);
             this.btnagregarpractica.Name = "btnagregarpractica";
             this.btnagregarpractica.Size = new System.Drawing.Size(21, 24);
             this.btnagregarpractica.TabIndex = 27;
@@ -119,7 +138,7 @@
             // lbpracticas
             // 
             this.lbpracticas.FormattingEnabled = true;
-            this.lbpracticas.Location = new System.Drawing.Point(4, 228);
+            this.lbpracticas.Location = new System.Drawing.Point(4, 212);
             this.lbpracticas.Name = "lbpracticas";
             this.lbpracticas.Size = new System.Drawing.Size(140, 56);
             this.lbpracticas.TabIndex = 26;
@@ -127,15 +146,15 @@
             // cbpracticas
             // 
             this.cbpracticas.FormattingEnabled = true;
-            this.cbpracticas.Location = new System.Drawing.Point(0, 201);
+            this.cbpracticas.Location = new System.Drawing.Point(4, 185);
             this.cbpracticas.Name = "cbpracticas";
-            this.cbpracticas.Size = new System.Drawing.Size(144, 21);
+            this.cbpracticas.Size = new System.Drawing.Size(140, 21);
             this.cbpracticas.TabIndex = 25;
             // 
             // btnnuevomedico
             // 
             this.btnnuevomedico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnuevomedico.Location = new System.Drawing.Point(179, 145);
+            this.btnnuevomedico.Location = new System.Drawing.Point(177, 122);
             this.btnnuevomedico.Name = "btnnuevomedico";
             this.btnnuevomedico.Size = new System.Drawing.Size(27, 30);
             this.btnnuevomedico.TabIndex = 24;
@@ -146,7 +165,7 @@
             // btnnuevopaciente
             // 
             this.btnnuevopaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnuevopaciente.Location = new System.Drawing.Point(179, 58);
+            this.btnnuevopaciente.Location = new System.Drawing.Point(177, 48);
             this.btnnuevopaciente.Name = "btnnuevopaciente";
             this.btnnuevopaciente.Size = new System.Drawing.Size(27, 30);
             this.btnnuevopaciente.TabIndex = 23;
@@ -172,7 +191,7 @@
             this.btnrecargarmedicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrecargarmedicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnrecargarmedicos.Image = ((System.Drawing.Image)(resources.GetObject("btnrecargarmedicos.Image")));
-            this.btnrecargarmedicos.Location = new System.Drawing.Point(147, 119);
+            this.btnrecargarmedicos.Location = new System.Drawing.Point(146, 102);
             this.btnrecargarmedicos.Name = "btnrecargarmedicos";
             this.btnrecargarmedicos.Size = new System.Drawing.Size(24, 23);
             this.btnrecargarmedicos.TabIndex = 21;
@@ -194,7 +213,7 @@
             // lblfechaingresos
             // 
             this.lblfechaingresos.AutoSize = true;
-            this.lblfechaingresos.Location = new System.Drawing.Point(2, 297);
+            this.lblfechaingresos.Location = new System.Drawing.Point(4, 271);
             this.lblfechaingresos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfechaingresos.Name = "lblfechaingresos";
             this.lblfechaingresos.Size = new System.Drawing.Size(89, 13);
@@ -204,7 +223,7 @@
             // lblagreganuevopaciente
             // 
             this.lblagreganuevopaciente.AutoSize = true;
-            this.lblagreganuevopaciente.Location = new System.Drawing.Point(35, 68);
+            this.lblagreganuevopaciente.Location = new System.Drawing.Point(35, 65);
             this.lblagreganuevopaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblagreganuevopaciente.Name = "lblagreganuevopaciente";
             this.lblagreganuevopaciente.Size = new System.Drawing.Size(139, 13);
@@ -233,7 +252,7 @@
             // lblagregarmedico
             // 
             this.lblagregarmedico.AutoSize = true;
-            this.lblagregarmedico.Location = new System.Drawing.Point(35, 155);
+            this.lblagregarmedico.Location = new System.Drawing.Point(42, 139);
             this.lblagregarmedico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblagregarmedico.Name = "lblagregarmedico";
             this.lblagregarmedico.Size = new System.Drawing.Size(132, 13);
@@ -243,7 +262,7 @@
             // lblmedico
             // 
             this.lblmedico.AutoSize = true;
-            this.lblmedico.Location = new System.Drawing.Point(2, 104);
+            this.lblmedico.Location = new System.Drawing.Point(4, 90);
             this.lblmedico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblmedico.Name = "lblmedico";
             this.lblmedico.Size = new System.Drawing.Size(92, 13);
@@ -253,7 +272,7 @@
             // cbmedicos
             // 
             this.cbmedicos.FormattingEnabled = true;
-            this.cbmedicos.Location = new System.Drawing.Point(5, 119);
+            this.cbmedicos.Location = new System.Drawing.Point(4, 105);
             this.cbmedicos.Margin = new System.Windows.Forms.Padding(2);
             this.cbmedicos.Name = "cbmedicos";
             this.cbmedicos.Size = new System.Drawing.Size(137, 21);
@@ -262,7 +281,7 @@
             // lblpracticas
             // 
             this.lblpracticas.AutoSize = true;
-            this.lblpracticas.Location = new System.Drawing.Point(4, 176);
+            this.lblpracticas.Location = new System.Drawing.Point(2, 169);
             this.lblpracticas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblpracticas.Name = "lblpracticas";
             this.lblpracticas.Size = new System.Drawing.Size(51, 13);
@@ -272,16 +291,16 @@
             // dtfecharetiro
             // 
             this.dtfecharetiro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfecharetiro.Location = new System.Drawing.Point(2, 349);
+            this.dtfecharetiro.Location = new System.Drawing.Point(5, 323);
             this.dtfecharetiro.Margin = new System.Windows.Forms.Padding(2);
             this.dtfecharetiro.Name = "dtfecharetiro";
-            this.dtfecharetiro.Size = new System.Drawing.Size(197, 20);
+            this.dtfecharetiro.Size = new System.Drawing.Size(194, 20);
             this.dtfecharetiro.TabIndex = 3;
             // 
             // lblfecharetiro
             // 
             this.lblfecharetiro.AutoSize = true;
-            this.lblfecharetiro.Location = new System.Drawing.Point(4, 334);
+            this.lblfecharetiro.Location = new System.Drawing.Point(4, 308);
             this.lblfecharetiro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblfecharetiro.Name = "lblfecharetiro";
             this.lblfecharetiro.Size = new System.Drawing.Size(78, 13);
@@ -291,10 +310,10 @@
             // dtfechaingreso
             // 
             this.dtfechaingreso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtfechaingreso.Location = new System.Drawing.Point(2, 312);
+            this.dtfechaingreso.Location = new System.Drawing.Point(4, 286);
             this.dtfechaingreso.Margin = new System.Windows.Forms.Padding(2);
             this.dtfechaingreso.Name = "dtfechaingreso";
-            this.dtfechaingreso.Size = new System.Drawing.Size(197, 20);
+            this.dtfechaingreso.Size = new System.Drawing.Size(193, 20);
             this.dtfechaingreso.TabIndex = 1;
             // 
             // panelbotonesingresos
@@ -372,14 +391,14 @@
             this.dgvingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvingresos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvingresos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvingresos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvingresos.Location = new System.Drawing.Point(0, 0);
             this.dgvingresos.MultiSelect = false;
@@ -448,25 +467,6 @@
             this.label2.Size = new System.Drawing.Size(236, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Practicas por Ingresos";
-            // 
-            // txtresultado
-            // 
-            this.txtresultado.Location = new System.Drawing.Point(2, 384);
-            this.txtresultado.Name = "txtresultado";
-            this.txtresultado.Size = new System.Drawing.Size(197, 20);
-            this.txtresultado.TabIndex = 29;
-            this.txtresultado.Visible = false;
-            // 
-            // lblresultado
-            // 
-            this.lblresultado.AutoSize = true;
-            this.lblresultado.Location = new System.Drawing.Point(4, 371);
-            this.lblresultado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblresultado.Name = "lblresultado";
-            this.lblresultado.Size = new System.Drawing.Size(55, 13);
-            this.lblresultado.TabIndex = 30;
-            this.lblresultado.Text = "Resultado";
-            this.lblresultado.Visible = false;
             // 
             // FormIngresos
             // 

@@ -12,6 +12,38 @@ namespace PracticaTrabajoFinal.Modelos
     {
         private Conexion conexion;
 
+        public void Eliminar_servicio(int id_servicio)
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "delete from Servicios where id_servicio = " + id_servicio;
+                SqlCommand comando = new SqlCommand(consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Servicio ELIMINADO");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar un Servicio", ex.Message);
+            }
+        }
+        public void Modificar_Servicio(string servicio,int id_servicio)
+        {
+            try
+            {
+                conexion = new Conexion();
+                string consulta = "update Servicios set nombre_servicio  ='" + servicio + "' where id_servicio =" + id_servicio;
+                SqlCommand comando = new SqlCommand(@consulta);
+                comando.Connection = conexion.GetSqlConnection();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Servicio MODIFICADO");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar un Servicio", ex.Message);
+            }
+        }
         public void agregarservicio(string nombre)
         {
             try

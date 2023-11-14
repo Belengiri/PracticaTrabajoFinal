@@ -466,20 +466,20 @@ namespace PracticaTrabajoFinal.Vistas
             dgvpractXingreso.ClearSelection();
             lblpracticas.Visible = false;
             cargar_tablaPXI();
-            cbpacientes.Enabled = true;
-            cbmedicos.Enabled = true;
-            dtfechaingreso.Enabled = true;
-            dtfecharetiro.Enabled = true;
+            cbpacientes.Enabled = false;
+            cbmedicos.Enabled = false;
+            dtfechaingreso.Enabled = false;
+            dtfecharetiro.Enabled = false;
         }
 
         private void dgvpractXingreso_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbpacientes.Enabled = false;
+            cbpacientes.Enabled = true;
             btnnuevopaciente.Enabled = false;
-            cbmedicos.Enabled = false;
+            cbmedicos.Enabled = true;
             btnnuevomedico.Enabled = false;
-            dtfechaingreso.Enabled = false;
-            dtfecharetiro.Enabled = false;
+            dtfechaingreso.Enabled = true;
+            dtfecharetiro.Enabled = true;
             lbpracticas.Visible = false;
             lblpracticas.Visible = true;
             cbpracticas.Visible = true;

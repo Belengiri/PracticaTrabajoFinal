@@ -11,6 +11,44 @@ namespace PracticaTrabajoFinal.Controladores
     public class ControladoraMedicos
     {
         Medicos medico = new Medicos();
+        public void Eliminar_Servicio( int id_servicio)
+        {
+            try
+            {
+                if (id_servicio != 0 )
+                {
+                    medico.Eliminar_servicio( id_servicio);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar un Servicio");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar un Servicio", ex.Message);
+            }
+        }
+        public void Modificar_Servicio(string servicio,int id_servicio)
+        {
+            try
+            {
+                if (id_servicio!=0 && servicio!="")
+                {
+                    medico.Modificar_Servicio(servicio,id_servicio);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Modificar un Servicio");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar un Servicio", ex.Message);
+            }
+        }
         public void Agregar_Servicio(string nombre)
         {
             try

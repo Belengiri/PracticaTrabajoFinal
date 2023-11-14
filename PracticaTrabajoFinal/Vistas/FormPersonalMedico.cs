@@ -67,6 +67,12 @@ namespace PracticaTrabajoFinal.Vistas
             txtnombremedico.Clear();
             txtapellidomedico.Clear();
             txtmatriculamedico.Clear();
+            agregarservicio.Visible = true;
+            agregarservicio.Checked = false;
+            paneldgvservicio.Visible = false;
+            panelnuevoservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
@@ -106,17 +112,47 @@ namespace PracticaTrabajoFinal.Vistas
                 txtmatriculamedico.Clear();
             }
         }
-
+        public void Cargar_Servicios()
+        {
+            try
+            {
+                conexion = new Conexion();
+                dgvservicio.DataSource = null;
+                string consulta = "select nombre_servicio as Servicios,id_servicio as Nº from Servicios";
+                SqlCommand cmd = new SqlCommand(consulta);
+                cmd.Connection = conexion.GetSqlConnection();
+                SqlDataAdapter adaptador = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adaptador.Fill(dt);
+                dgvservicio.DataSource = dt;
+                txtnombremedico.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void agregarservicio_CheckedChanged(object sender, EventArgs e)
         {
             panelnuevoservicio.Visible = true;
+            paneldgvservicio.Visible = true;
             txtnombreservicio.Focus();
+            txtnombreservicio.Clear();
+            Cargar_Servicios();
+            btncancelarservicio.Visible = true;
+            btnguardarservicio.Visible = true;
         }
 
         private void btncancelarservicio_Click(object sender, EventArgs e)
         {
             agregarservicio.Checked = false;
             panelnuevoservicio.Visible = false;
+            paneldgvservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
+            paneldgvservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
         }
 
         private void btnguardarservicio_Click(object sender, EventArgs e)
@@ -127,6 +163,9 @@ namespace PracticaTrabajoFinal.Vistas
             txtnombreservicio.Focus();
             cargarcbservicio();
             panelnuevoservicio.Visible = false;
+            paneldgvservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
         }
 
 
@@ -184,6 +223,10 @@ namespace PracticaTrabajoFinal.Vistas
             btnagregar.Enabled = false;
             dgvpmedicos.ClearSelection();
             agregarservicio.Visible = false;
+            paneldgvservicio.Visible = false;
+            panelnuevoservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -230,6 +273,32 @@ namespace PracticaTrabajoFinal.Vistas
         private void btnsalirvista_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btneliminarservicio_Click(object sender, EventArgs e)
+        {
+            cm.Eliminar_Servicio(Convert.ToInt32(dgvservicio.CurrentRow.Cells[0].Value.ToString()));
+            cargarcbservicio();
+            agregarservicio.Checked = false;
+            paneldgvservicio.Visible = false;
+            panelnuevoservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
+        }
+
+        private void btnmodificarservicio_Click(object sender, EventArgs e)
+        {
+            cm.Modificar_Servicio(txtnombreservicio.Text, Convert.ToInt32(dgvservicio.CurrentRow.Cells[0].Value.ToString()));
+            cargarcbservicio();
+            agregarservicio.Checked = false; 
+            paneldgvservicio.Visible = false;
+            panelnuevoservicio.Visible = false;
+            btneliminarservicio.Visible = false;
+            btnmodificarservicio.Visible = false;
+        }
+        private void dgvservicio_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            txtnombreservicio.Text = dgvservicio.CurrentRow.Cells[0].Value.ToString();
         }
     }
 }
